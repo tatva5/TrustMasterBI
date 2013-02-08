@@ -62,6 +62,9 @@
     <Content Include="Authentication\forgotpin.html" />
     <Content Include="Authentication\login.html" />
     <Content Include="Authentication\registration.html" />
+    <Content Include="Common\blog.html" />
+    <Content Include="Common\home.html" />
+    <Content Include="Common\services.html" />
     <Content Include="index.html" />
     <Content Include="kendo\js\jquery.min.js" />
     <Content Include="kendo\js\kendo.mobile.min.js" />
