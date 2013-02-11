@@ -5,8 +5,22 @@
         <title></title>
     </head>
     <body>
-        <div data-role="view" data-title="WATSONLINE" data-layout="blogHeader"> 
+        <div id="blogData" data-role="view" data-title="WATSONLINE" data-layout="blogHeader"> 
             Welcome to Watsonline!
+            <div id="blogData">
+                
+            </div>
         </div>
+        <script src="../kendo/js/jquery.min.js"></script>
+         <script src="../kendo/js/kendo.all.js"></script>
+        <script>
+            $(document).ready(fuction(){
+                              debugger;
+                              $.get('http://www.watsonline.co.za/?page=rss&id=7', function(data) {
+                                    $('#blogData').html(data);
+                                        alert('Load was performed.');
+                                            },'json');
+                              });
+        </script>
     </body>
 </html>
