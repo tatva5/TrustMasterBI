@@ -3,7 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title></title>
-        
+        <link rel="stylesheet" href="../kendo/styles/kendo.mobile.all.min.css"/>
+        <link href="../kendo/styles/kendo.common.css" rel="stylesheet" />
+        <link href="../kendo/styles/kendo.default.css" rel="stylesheet" />
     </head>
     <body>
         <div data-role="view" data-title="TRUSTMASTER BI">
@@ -18,5 +20,31 @@
                 <li><a>Bosasa Group Website</a></li>
             </ul>
         </div>
+        
+        <section data-role="layout" data-id="customwidHeader">
+			<header data-role="header">
+				<div data-role="navbar">
+					<table width="100%">
+						<tr>
+							<td style="text-align: left" >
+								<a  data-role="backbutton" >Back</a>
+							</td>
+							<td style="text-align: left">
+								<span data-role="view-title"/>
+							</td>
+                            <td style="text-align: left">
+								<a  data-role="button" href="" >Registration</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</header>
+			<!--View content will render here-->
+		</section>
+        
+        <script src="../cordova.js"></script>
+        <script src="../kendo/js/jquery.min.js"></script>
+        <script src="../kendo/js/kendo.mobile.min.js"></script>
+        <script src="../kendo/js/kendo.all.js"></script>
     </body>
 </html>
