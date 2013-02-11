@@ -33,7 +33,6 @@
       <Platform>Android</Platform>
     </Folder>
     <Folder Include="Fleet" />
-    <Folder Include="Youthcentre" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="App_Resources\iOS\icon.png" />
@@ -63,6 +62,7 @@
     <Content Include="Authentication\login.html" />
     <Content Include="Authentication\registration.html" />
     <Content Include="Common\blog.html" />
+    <Content Include="Common\graphList.html" />
     <Content Include="Common\home.html" />
     <Content Include="Common\services.html" />
     <Content Include="images\HumanCapital.png" />
@@ -88,6 +88,7 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+    <Content Include="Youthcentre\YouthCare.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
