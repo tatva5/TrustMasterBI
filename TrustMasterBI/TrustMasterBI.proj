@@ -65,6 +65,9 @@
     <Content Include="Common\blog.html" />
     <Content Include="Common\home.html" />
     <Content Include="Common\services.html" />
+    <Content Include="images\HumanCapital.png" />
+    <Content Include="images\Kgwerano.png" />
+    <Content Include="images\YouthCenter.png" />
     <Content Include="index.html" />
     <Content Include="kendo\js\jquery.min.js" />
     <Content Include="kendo\js\kendo.all.js" />
