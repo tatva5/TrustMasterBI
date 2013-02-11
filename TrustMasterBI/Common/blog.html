@@ -5,5 +5,17 @@
         <title></title>
     </head>
     <body>
+        <div id="whatsonlineBlog" data-role="view" >
+            
+        </div>
+        <script src="../kendo/js/jquery.min.js"/>
+        <script>
+            $(document).ready(fuction(){
+                              $.get("http://www.watsonline.co.za/?page=rss&id=7",function(data){
+            
+                                $('#whatsonlineBlog').append(data)},"json");
+                              
+                              });
+        </script>
     </body>
 </html>
