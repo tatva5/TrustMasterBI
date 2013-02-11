@@ -4,8 +4,9 @@
         <title></title>
         <meta charset="utf-8" />     
         <meta http-equiv="refresh" content="3; url=Common/home.html" />
+     
     </head>
-    <body style="margin:0px; padding:0px">
+    <body style="margin:0px; padding:0px;width:100%; height:100%;">
         <table style="position:absolute; width:100%; height:100%; text-align:center; font-size:30px; font-weight: bold; font-family:Comic Sans MS; background-color:Orange; margin:0px; padding:0px">
              <tr>
                 <td>
@@ -19,6 +20,26 @@
             </tr>          
         </table> 
         
+        <section data-role="layout" data-id="customwidHeader">
+			<header data-role="header">
+				<div data-role="navbar">
+					<table width="100%">
+						<tr>
+							<td style="text-align: left" >
+								<a  data-role="backbutton" >Back</a>
+							</td>
+							<td style="text-align: left">
+								<span data-role="view-title"/>
+							</td>
+                            <td style="text-align: left">
+								<a href="" data-role="button" >Registration</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</header>
+			<!--View content will render here-->
+		</section>             
         <script>
             // var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mobile-tabstrip" });
              var app = new kendo.mobile.Application();
