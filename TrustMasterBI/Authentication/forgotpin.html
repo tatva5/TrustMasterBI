@@ -1,23 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title></title>
-        
-    </head>
-    <body>
-        <div data-role="view" data-title="Forgot Pin" data-layout="customwidHeader">        
-            Welcome to Forgot Pin!
-        </div>
-        
-       
-        <script src="../scripts/common.js" type="text/javascript"></script>
-        <script >
-            
-        document.ready(function() {        
-        createCSS();
-            createJS();
-        });
-        </script>
-    </body>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div data-role="view" data-title="Forgot Pin" data-layout="customwidHeader">
+			Welcome to Forgot Pin!
+		</div>
+        <script src="../kendo/js/jquery.min.js"></script>
+		<script src="../scripts/common.js" type="text/javascript"></script>
+		<script >
+			$(document).ready(function() {        
+				AddCSSOnPage();
+				AddJsOnPage();
+			});
+		</script>
+	</body>
 </html>
