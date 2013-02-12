@@ -2401,11 +2401,11 @@ padding:0 .2rem
 }
 .km-tablet .km-ios .km-view-title, .km-tablet .km-ios .km-modalview .km-view-title {
 	line-height:2.2em;
-	color:#848b92;
+	color:White;
 	text-shadow:0 1px rgba(255, 255, 255, 0.8)
 }
 .km-tablet .km-ios *:not(.km-tabstrip):not(.km-buttongroup)>.km-button {
-background:#6a727d
+background:#44648F
 }
 .km-ios6 *:not(.km-tabstrip):not(.km-buttongroup)>.km-button, .km-tablet .km-ios *:not(.km-tabstrip):not(.km-buttongroup)>.km-button {
 background-image:-webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0.5)), color-stop(1, rgba(255, 255, 255, 0)));
@@ -2418,12 +2418,11 @@ background-image:linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 2
 background-color:#44648f
 }
 .km-tablet .km-ios .km-navbar, .km-tablet .km-ios .km-toolbar, .km-tablet .km-ios .km-modalview .km-header {
-	background:#a8acb9;
-	background-image:-webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0.9)), color-stop(1, rgba(255, 255, 255, 0)));
-	background-image:-moz-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-	background-image:-ms-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-	background-image:-o-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-	background-image:linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0))
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(65, 98, 140, 100)), color-stop(1, rgba(43, 67, 97, 100)));
+	background-image:-moz-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
+	background-image:-ms-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
+	background-image:-o-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
+	background-image:linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
 }
 .km-tablet .km-ios .km-content {
 	background:#d7d9df none
