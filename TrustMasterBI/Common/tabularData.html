@@ -6,17 +6,16 @@
     </head>
     <body>
         <div data-role="view" data-title="Reports" data-layout="BackHeader">
-            <div id="reportData">
-                
-            </div>
+            <div id="reportData"/>
         </div>
         <script>
-            $(document).ready(function(){
+           $(function(){
+               try{
                 $.ajax({
                     "url": "http://onit1.homenet.org/TrustMasterMobileWebService/Chart/Test2",
                     "method": "post",
                     "dataType": "json"
-                }).done(function (data, textStatus, jqXHR) {
+                       }).done(function (data, textStatus, jqXHR) {
                            try {
                                 data = eval(data)[0];
                                 debugger;
