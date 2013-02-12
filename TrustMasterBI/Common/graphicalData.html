@@ -1,13 +1,55 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <div data-role="view" data-title="Graph" data-layout="grahicalDataLayout">
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div data-role="view" data-title="Graph" data-layout="grahicalDataLayout">
 			Welcome to Graph!
 			<div id="chartArea" />
+			<div data-role="popover" id="popover-people" data-popup='{"height": 150, "width": 200}'>
+				<div data-role="view" data-title="Search">
+					<div data-role="header">
+						<div data-role="navbar">
+							<a data-role="button" data-align="left" >Apply</a>
+                            <span data-role="view-title" style="color:white;"></span>
+							<a data-role="button" data-align="right" >Reset</a>
+						</div>
+					</div>
+					<table>
+						<tr>
+							<td>Range:</td>
+							<td>
+								<select id="ddlSelect" >
+									<option value="Custom" >Custom</option>
+									<option value="Auto" >Auto</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>From:</td>
+							<td>
+								<input id="datepicker"  style="width:120px;"/>
+							</td>
+						</tr>
+						<tr>
+							<td>To:</td>
+							<td>
+								<input id="datepicker1" style="width:120px;"/>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>            
+            
+			<script>
+				function closeParentPopover(e) {
+					var popover = e.sender.element.closest('[data-role=popover]').data('kendoMobilePopOver');
+				
+					popover.close();
+				}
+			</script>
 			<script>
 				$(function () {
 					try {
@@ -18,8 +60,7 @@
 							// "data": "arg1=val1&arg2=val2" // chart-specific arguments
 						})
 						.done(function (data, textStatus, jqXHR) {
-							try {
-								debugger;
+							try {								
 								data = eval(data)[0];
 								$("#chartArea").kendoChart(data);
 							}
@@ -35,8 +76,15 @@
 						alert("Error occurred. Please contact On-IT1.\n\n" + e);
 					}
 				});
-			
-				</script>
+				
+				$(document).ready(function() {
+					$("#ddlSelect").kendoDropDownList();
+					$("#datepicker").kendoDatePicker(); 
+					$("#datepicker1").kendoDatePicker();
+				});
+				
+			</script>
+				
 		</div>
-    </body>
+	</body>
 </html>

@@ -79,6 +79,9 @@
     <Content Include="kendo\styles\images\back.png" />
     <Content Include="kendo\styles\images\KendoUI.ttf" />
     <Content Include="kendo\styles\images\KendoUI.woff" />
+    <Content Include="kendo\styles\images\loading-image.gif" />
+    <Content Include="kendo\styles\images\loading.gif" />
+    <Content Include="kendo\styles\images\sprite.png" />
     <Content Include="kendo\styles\kendo.common.css" />
     <Content Include="kendo\styles\kendo.default.css" />
     <Content Include="kendo\styles\kendo.mobile.all.min.css" />
