@@ -5,5 +5,34 @@
         <title></title>
     </head>
     <body>
+        <div data-role="view" data-title="Reports" data-layout="BackHeader">
+            <div id="reportData"/>
+        </div>
+        <script>
+           $(function(){
+               try{
+                $.ajax({
+                    "url": "http://onit1.homenet.org/TrustMasterMobileWebService/Chart/Test2",
+                    "method": "post",
+                    "dataType": "json"
+                       }).done(function (data, textStatus, jqXHR) {
+                           try {
+                                data = eval(data)[0];
+                                debugger;
+                                $("#reportData").kendoGrid(data);
+                               }
+                           catch (e) {
+                                alert("Server sent incorrect data. Please contact On-IT1.");
+                                     }
+                          })
+                  .fail(function (jqXHR, textStatus, errorThrown) {
+                       alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
+                      })
+                                 }
+                         catch (e) {
+                              alert("Error occurred. Please contact On-IT1.\n\n" + e);
+                                    }
+                    });
+        </script>
     </body>
 </html>
