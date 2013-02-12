@@ -6,14 +6,13 @@
 	</head>
 	<body>
 		<div data-role="view" data-title="Graph" data-layout="grahicalDataLayout">
-			Welcome to Graph!
 			<div id="chartArea" />
-            <div data-role="popover" id="popover-people" data-popup='{"height": 180, "width": 230}' style="padding:0px;">
+			<div data-role="popover" id="popover-people" data-popup='{"height": 180, "width": 230}' style="padding:0px;">
 				<div data-role="view" data-title="Search">
 					<div data-role="header">
 						<div data-role="navbar">
 							<a data-role="button" data-align="left" >Apply</a>
-                            <span data-role="view-title" style="color:white;"></span>
+							<span data-role="view-title" style="color:white;"></span>
 							<a data-role="button" data-align="right" >Reset</a>
 						</div>
 					</div>
@@ -41,26 +40,26 @@
 						</tr>
 					</table>
 				</div>
-			</div>            
-            <style scoped>
-    .km-ios #popover .km-view-title,
-    .km-ios #popover-people .km-view-title
-    {
-        color: #fff;
-        text-shadow: 0 -1px rgba(0,0,0,.5);
-    }
+			</div>
+			<style scoped>
+				.km-ios #popover .km-view-title,
+				.km-ios #popover-people .km-view-title
+				{
+					color: #fff;
+					text-shadow: 0 -1px rgba(0, 0, 0, .5);
+				}
 
-    .km-ios #popover .km-navbar,
-    .km-root > * > #popover > .km-content
-    {
-        background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0.35)), color-stop(0.5, rgba(255, 255, 255, 0.1)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0))) #000;
-    }
+				.km-ios #popover .km-navbar,
+				.km-root > * > #popover > .km-content
+				{
+					background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0.35)), color-stop(0.5, rgba(255, 255, 255, 0.1)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0))) #000;
+				}
 
-    .km-ios #popover .km-navbar .km-button
-    {
-        background-color: #000;
-    }
-</style>
+				.km-ios #popover .km-navbar .km-button
+				{
+					background-color: #000;
+				}
+			</style>
 			<script>
 				function closeParentPopover(e) {
 					var popover = e.sender.element.closest('[data-role=popover]').data('kendoMobilePopOver');
@@ -80,6 +79,7 @@
 						.done(function (data, textStatus, jqXHR) {
 							try {								
 								data = eval(data)[0];
+                                debugger;
 								$("#chartArea").kendoChart(data);
 							}
 							catch (e) {
@@ -99,10 +99,9 @@
 					$("#ddlSelect").kendoDropDownList();
 					$("#datepicker").kendoDatePicker(); 
 					$("#datepicker1").kendoDatePicker();
-				});
-				
+				});				
 			</script>
-				
+			
 		</div>
 	</body>
 </html>
