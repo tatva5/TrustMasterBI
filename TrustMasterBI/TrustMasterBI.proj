@@ -62,9 +62,11 @@
     <Content Include="Authentication\login.html" />
     <Content Include="Authentication\registration.html" />
     <Content Include="Common\blog.html" />
+    <Content Include="Common\graphicalData.html" />
     <Content Include="Common\graphList.html" />
     <Content Include="Common\home.html" />
     <Content Include="Common\services.html" />
+    <Content Include="Common\tabularData.html" />
     <Content Include="Common\tabularList.html" />
     <Content Include="images\HumanCapital.png" />
     <Content Include="images\Kgwerano.png" />
