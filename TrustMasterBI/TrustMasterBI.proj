@@ -61,6 +61,7 @@
     <Content Include="Authentication\forgotpin.html" />
     <Content Include="Authentication\login.html" />
     <Content Include="Authentication\registration.html" />
+    <Content Include="Common\aboutUs.html" />
     <Content Include="Common\blog.html" />
     <Content Include="Common\graphicalData.html" />
     <Content Include="Common\graphList.html" />
