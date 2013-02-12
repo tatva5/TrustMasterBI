@@ -5,5 +5,38 @@
         <title></title>
     </head>
     <body>
+        <div data-role="view" data-title="Graph" data-layout="grahicalDataLayout">
+			Welcome to Graph!
+			<div id="chartArea" />
+			<script>
+				$(function () {
+					try {
+						$.ajax({
+							"url": "http://onit1.homenet.org/TrustMasterMobileWebService/Chart/Test1",
+							"method": "post",
+							"dataType": "json"
+							// "data": "arg1=val1&arg2=val2" // chart-specific arguments
+						})
+						.done(function (data, textStatus, jqXHR) {
+							try {
+								debugger;
+								data = eval(data)[0];
+								$("#chartArea").kendoChart(data);
+							}
+							catch (e) {
+								alert("Server sent incorrect data. Please contact On-IT1.");
+							}
+						})
+						.fail(function (jqXHR, textStatus, errorThrown) {
+							alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
+						})
+					}
+					catch (e) {
+						alert("Error occurred. Please contact On-IT1.\n\n" + e);
+					}
+				});
+			
+				</script>
+		</div>
     </body>
 </html>
