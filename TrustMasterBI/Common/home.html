@@ -127,7 +127,7 @@
 						<tr>
 							<td style="text-align: left" >
 								<a  data-role="backbutton" >Back</a>
-								<a  data-role="button" >Tabular</a>
+								<a  data-role="button" href="tabularList.html">Tabular</a>
 							</td>
 
 							<td style="text-align: center">
@@ -149,6 +149,35 @@
 			</footer>
 		</section>
 
+        <section data-role="layout" data-id="tabularLayout" >
+			<header data-role="header">
+				<div data-role="navbar">
+					<table width="100%">
+						<tr>
+							<td style="text-align: left" >
+								<a  data-role="backbutton" >Back</a>
+								<a  data-role="button" href="graphList.html" >Graphical</a>
+							</td>
+
+							<td style="text-align: center">
+								<span data-role="view-title"/>
+							</td>
+							<td style="text-align: right">
+								<a data-role="button" href="#home">Logout</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</header>
+			<!--View content will render here-->
+			<footer data-role="footer">
+				<div data-role="tabstrip">
+					<a href="services.html" data-icon="settings">Integrated Knowledge</a>
+					<a data-icon="contacts">About Us</a>
+				</div>
+			</footer>
+		</section>
+        
 		<script src="../cordova.js"></script>
 		<script src="../kendo/js/jquery.min.js"></script>
 		<script src="../kendo/js/kendo.mobile.min.js"></script>
