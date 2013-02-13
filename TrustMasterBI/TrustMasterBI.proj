@@ -73,6 +73,9 @@
     <Content Include="images\bosasagroup.png" />
     <Content Include="images\HumanCapital.png" />
     <Content Include="images\Kgwerano.png" />
+    <Content Include="images\login-bg.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\mainbg2.png" />
     <Content Include="images\watsonline.png" />
     <Content Include="images\YouthCenter.png" />
     <Content Include="index.html" />

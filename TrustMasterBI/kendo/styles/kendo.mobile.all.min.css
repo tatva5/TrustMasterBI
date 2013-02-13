@@ -6,6 +6,14 @@
 * https://www.kendoui.com/purchase/license-agreement/kendo-ui-mobile-commercial.aspx
 * If you do not own a commercial license, this file shall be governed by the trial license terms.
 */
+
+.loginbg{
+	background:url(../../images/login-bg.jpg);
+	background-size: 100% 100%;
+	width:100% !important;
+	height:100% !important;		
+}
+
 .km-root {
 	font-size:.92em
 }
