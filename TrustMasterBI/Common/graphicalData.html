@@ -60,6 +60,8 @@
 					background-color: #000;
 				}
 			</style>
+            
+                  
 			<script>
 				function closeParentPopover(e) {
 					var popover = e.sender.element.closest('[data-role=popover]').data('kendoMobilePopOver');
@@ -67,6 +69,7 @@
 					popover.close();
 				}
 			</script>
+            
 			<script>
 				$(function () {
 					try {
@@ -77,14 +80,11 @@
 							// "data": "arg1=val1&arg2=val2" // chart-specific arguments
 						})
 						.done(function (data, textStatus, jqXHR) {
-							try {								
+							
 								data = eval(data)[0];
-                                debugger;
+                                
 								$("#chartArea").kendoChart(data);
-							}
-							catch (e) {
-								alert("Server sent incorrect data. Please contact On-IT1.");
-							}
+							
 						})
 						.fail(function (jqXHR, textStatus, errorThrown) {
 							alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
@@ -101,6 +101,7 @@
 					$("#datepicker1").kendoDatePicker();
 				});				
 			</script>
+            
 			
 		</div>
 	</body>
