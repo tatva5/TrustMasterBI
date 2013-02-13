@@ -5,7 +5,7 @@
 		<title></title>
 	</head>
 	<body>
-		<div data-role="view" data-title="Graph" data-layout="tabularDataLayout">
+		<div data-role="view" data-title="Report" data-layout="tabularDataLayout">
 			<div id="gridArea"></div>
 			<div data-role="popover" id="popover-people" data-popup='{"height": 180, "width": 230}' style="padding:0px;">
 				<div data-role="view" data-title="Search">
@@ -78,8 +78,14 @@
 							// "data": "arg1=val1&arg2=val2" // chart-specific arguments
 						})
 						.done(function (data, textStatus, jqXHR) {
-							data = eval(data)[0];
-							$("#gridArea").kendoGrid(data);
+							try {
+								data = eval(data)[0];
+                                
+								$("#gridArea").kendoGrid(data);
+							}
+							catch (e) {
+								alert("Server sent incorrect data. Please contact On-IT1.");
+							}
 						})
 						.fail(function (jqXHR, textStatus, errorThrown) {
 							alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
@@ -96,6 +102,7 @@
 					$("#datepicker1").kendoDatePicker();
 				});				
 			</script>
+            
 		</div>
 	</body>
 </html>
