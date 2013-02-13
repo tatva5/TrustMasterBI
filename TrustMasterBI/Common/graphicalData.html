@@ -11,14 +11,14 @@
 				<div data-role="view" data-title="Search">
 					<div data-role="header">
 						<div data-role="navbar">
-							<a data-role="button" data-align="left" >Apply</a>
+							<a data-role="button" data-align="left" data-click="closeParentPopover">Apply</a>
 							<span data-role="view-title" style="color:white;"></span>
 							<a data-role="button" data-align="right" >Reset</a>
 						</div>
 					</div>
 					<table>
 						<tr>
-							<td>Range:</td>
+							<td style="color:white;">Range:</td>
 							<td>
 								<select id="ddlSelect" >
 									<option value="Custom" >Custom</option>
@@ -27,13 +27,13 @@
 							</td>
 						</tr>
 						<tr>
-							<td>From:</td>
+							<td style="color:white;">From:</td>
 							<td>
 								<input id="datepicker"  style="width:120px;"/>
 							</td>
 						</tr>
 						<tr>
-							<td>To:</td>
+							<td style="color:white;">To:</td>
 							<td>
 								<input id="datepicker1" style="width:120px;"/>
 							</td>
@@ -41,6 +41,7 @@
 					</table>
 				</div>
 			</div>
+
 			<style scoped>
 				.km-ios #popover .km-view-title,
 				.km-ios #popover-people .km-view-title
@@ -55,21 +56,15 @@
 					background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0.35)), color-stop(0.5, rgba(255, 255, 255, 0.1)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0))) #000;
 				}
 
-				.km-ios #popover .km-navbar .km-button
-				{
-					background-color: #000;
-				}
+				
 			</style>
-            
-                  
 			<script>
 				function closeParentPopover(e) {
-					var popover = e.sender.element.closest('[data-role=popover]').data('kendoMobilePopOver');
-				
+					var popover = e.sender.element.closest('[data-role=popover]').data('kendoMobilePopOver');				
 					popover.close();
 				}
 			</script>
-            
+
 			<script>
 				$(function () {
 					try {
@@ -80,11 +75,14 @@
 							// "data": "arg1=val1&arg2=val2" // chart-specific arguments
 						})
 						.done(function (data, textStatus, jqXHR) {
-							
+							try {
 								data = eval(data)[0];
                                 
 								$("#chartArea").kendoChart(data);
-							
+							}
+							catch (e) {
+								alert("Server sent incorrect data. Please contact On-IT1.");
+							}
 						})
 						.fail(function (jqXHR, textStatus, errorThrown) {
 							alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
@@ -101,8 +99,7 @@
 					$("#datepicker1").kendoDatePicker();
 				});				
 			</script>
-            
-			
+
 		</div>
 	</body>
 </html>
