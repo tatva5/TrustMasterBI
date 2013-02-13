@@ -3,20 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title></title>
-        
     </head>
      <body>
 		<div  data-role="view" data-title="WATSONLINE" data-layout="blogHeader">
-			<div id="rssfeed">welcome to whatsonline</div>
+            <div id="rssfeed" style="margin:10 px">Latest blog will show here from the site</div>
 		</div>
          
-	<!--	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
-		<script>
-			$(document).ready(function() {
-				$.get('http://www.watsonline.co.za/?page=rss&id=7', function(data) {
-					$('#rssfeed').append(data);
-				}, 'html');
-			});
-		</script>
 	</body>
 </html>

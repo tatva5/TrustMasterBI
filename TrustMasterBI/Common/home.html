@@ -2,24 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<link rel="stylesheet" href="../kendo/styles/kendo.mobile.all.min.css"/>
-		<link href="../kendo/styles/kendo.common.css" rel="stylesheet" />
-		<link href="../kendo/styles/kendo.default.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../kendo/styles/kendo.common.css"  />
+		<link rel="stylesheet" href="../kendo/styles/kendo.default.css"  />
 	</head>
 	<body>
-		<div id="home" data-role="view" data-title="TRUSTMASTER BI">
-			<ul data-role="listview" data-style="inset">
-				<li>
-					<a href="blog.html">Innovative Leadership</a>
-				</li>
-				<li>
-					<a>Bosasa Group Website</a>
-				</li>
-			</ul>
+		<div id="home" class="myBackground" data-role="view" data-title="TRUSTMASTER BI">			            
+            <ul class="mylist" data-role="listview" data-style="inset">       
+                <li><a href="blog.html"><img src="../images/watsonline.png" class="mylist_img" /><h3> Innovative Leadership</h3></a></li>
+                <li><a><img src="../images/bosasagroup.png" class="mylist_img" /><h3>Bosasa Group Website</h3></a></li>
+            </ul>
 		</div>
-
-        
-        
+              
 		<section data-role="layout" data-id="customwidHeader">
 			<header data-role="header">
 				<div data-role="navbar">
@@ -129,7 +124,7 @@
 			<header data-role="header">
 				<div data-role="navbar">
 					<a  data-role="backbutton" data-align="left">Back</a>
-					<a  data-role="button" href="graphList.html" data-align="left">Tabular</a>
+					<a  data-role="button" href="tabularList.html" data-align="left">Tabular</a>
 					<span data-role="view-title"/>
 					<a data-role="button" href="#popover-people" data-align="right" data-rel="popover">Search</a>
 					<a data-role="button" href="#home" data-align="right">Logout</a>
@@ -175,9 +170,8 @@
 
 		<script src="../cordova.js"></script>
 		<script src="../kendo/js/jquery.min.js"></script>
-		<script src="../kendo/js/kendo.mobile.min.js"></script>
-		<script src="../kendo/js/kendo.all.js"></script>
-       
+		<script src="../kendo/js/kendo.all.js"></script>          
+		<script src="../kendo/js/kendo.mobile.min.js"></script>          
 		<script>
 			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "titleOnlyHeader" });
 		</script>
