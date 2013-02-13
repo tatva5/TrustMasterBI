@@ -5,8 +5,8 @@
 		<title></title>
 	</head>
 	<body>
-		<div data-role="view" data-title="Graph" data-layout="grahicalDataLayout">
-			<div id="grid" />
+		<div data-role="view" data-title="Report" data-layout="tabularDataLayout">
+			<div id="grid"></div>
 			<div data-role="popover" id="popover-people" data-popup='{"height": 180, "width": 230}' style="padding:0px;">
 				<div data-role="view" data-title="Search">
 					<div data-role="header">
@@ -55,9 +55,8 @@
 				{
 					background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0.35)), color-stop(0.5, rgba(255, 255, 255, 0.1)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0))) #000;
 				}
-
-				
 			</style>
+
 			<script>
 				function closeParentPopover(e) {
 					var popover = e.sender.element.closest('[data-role=popover]').data('kendoMobilePopOver');				
@@ -66,30 +65,51 @@
 			</script>
 
 			<script>
-				$(function () {
-					try {
-						$.ajax({
-							"url": "http://onit1.homenet.org/TrustMasterMobileWebService/Chart/Test2",
-							"method": "post",
-							"dataType": "json"
-							// "data": "arg1=val1&arg2=val2" // chart-specific arguments
-						})
-						.done(function (data, textStatus, jqXHR) {
-							try {
-								data = eval(data)[0];    
-								$("#grid").kendoGrid(data);
+				$(document).ready(function() {
+					$("#grid").kendoGrid({
+						columns:[
+							{
+								field: "FirstName",
+								title: "First Name"
+							},{
+								field: "LastName",
+								title: "Last Name"
 							}
-							catch (e) {
-								alert("Server sent incorrect data. Please contact On-IT1.");
-							}
-						})
-						.fail(function (jqXHR, textStatus, errorThrown) {
-							alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
-						})
-					}
-					catch (e) {
-						alert("Error occurred. Please contact On-IT1.\n\n" + e);
-					}
+						],
+						dataSource: {
+							data: [
+								{
+									FirstName: "Joe",
+									LastName: "Smith"
+								},{
+									FirstName: "Jane",
+									LastName: "Smith"
+								},{
+									FirstName: "Joe",
+									LastName: "Smith"
+								},{
+									FirstName: "Jane",
+									LastName: "Smith"
+								},{
+									FirstName: "Joe",
+									LastName: "Smith"
+								},{
+									FirstName: "Jane",
+									LastName: "Smith"
+								},{
+									FirstName: "Joe",
+									LastName: "Smith"
+								},{
+									FirstName: "Jane",
+									LastName: "Smith"
+								}
+							]
+						},
+						groupable: true,
+						sortable: true,
+						pageable: true,
+                        pageSize: 5
+					});
 				});
 				
 				$(document).ready(function() {
@@ -98,7 +118,6 @@
 					$("#datepicker1").kendoDatePicker();
 				});				
 			</script>
-
 		</div>
 	</body>
 </html>
