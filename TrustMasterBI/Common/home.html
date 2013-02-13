@@ -37,10 +37,11 @@
 			<!--View content will render here-->
 		</section>
 
-		<section data-role="layout" data-id="titleOnlyHeader">
+		<section data-role="layout" data-id="mainHeader">
 			<header data-role="header">
 				<div data-role="navbar">
 					<span data-role="view-title"/>
+                    <a  data-role="button" href="../Authentication/login.html" data-align="right">Login</a>
 				</div>
 			</header>
 			<!--View content will render here-->
@@ -172,7 +173,7 @@
 		<script src="../kendo/js/jquery.min.js"></script>
 		<script src="../kendo/js/kendo.all.js"></script>		
 		<script>
-			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "titleOnlyHeader" });
+			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader" });
 		</script>
 	</body>
 </html>
