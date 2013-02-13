@@ -68,6 +68,7 @@
     <Content Include="Common\home.html" />
     <Content Include="Common\new1.html" />
     <Content Include="Common\services.html" />
+    <Content Include="Common\tabularData.html" />
     <Content Include="Common\tabularList.html" />
     <Content Include="images\bosasagroup.png" />
     <Content Include="images\HumanCapital.png" />
