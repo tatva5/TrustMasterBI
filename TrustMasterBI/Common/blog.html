@@ -1,19 +1,29 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title></title>
-    </head>
-     <body>
+	<head>
+		<title></title>
+	</head>
+	<body>
 		<div  data-role="view" data-title="WATSONLINE" data-layout="blogHeader">
-            <div id="rssfeed" style="margin:10 px"></div>
+			<div id="rssfeed" style="margin:25px;border:2px solid #d6d6d6;background:#FFFFFF;border-radius:5px;">
+                <div id="title" style="background:#DEDEDE;height:20px;padding:10px;"></div>
+                  <div id="description" style="margin:5px 8px 5px 12px;"></div>
+            </div>
 		</div>
-         <script>
-            $(document).ready(function(){
-              $.get('http://www.watsonline.co.za/?page=rss&id=7',function(data){
-                  $('#rssfeed').append(data);
-              },'html');
-            });
-        </script>
+		<script>
+			$(document).ready(function() {
+				$.get('http://www.watsonline.co.za/?page=rss&id=7', function(data) {
+					var $xmldoc = $($.parseXML(data));
+					$xmldoc.find("channel item").each(function() {                 
+                        $('#title').append($(this).find("title").text());
+                        $('#description').append($(this).find("description").text());
+                        return false;
+					});                  
+					//$('#rssfeed').append(data);
+				}, 'html');
+                 $('#description').attr('height',400);
+			});
+		</script>
 	</body>
 </html>
