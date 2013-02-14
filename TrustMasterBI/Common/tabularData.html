@@ -69,37 +69,14 @@
 			</script>
 
 			<script>
-				$(function () {
-					try {
-						$.ajax({
-							"url": "http://onit1.homenet.org/TrustMasterMobileWebService/Chart/Test2",
-							"method": "post",
-							"dataType": "json"
-							// "data": "arg1=val1&arg2=val2" // chart-specific arguments
-						})
-						.done(function (data, textStatus, jqXHR) {
-							try {
-								data = eval(data)[0];
-                                
-								$("#gridArea").kendoGrid(data);
-							}
-							catch (e) {
-								alert("Server sent incorrect data. Please contact On-IT1.");
-							}
-						})
-						.fail(function (jqXHR, textStatus, errorThrown) {
-							alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
-						})
-					}
-					catch (e) {
-						alert("Error occurred. Please contact On-IT1.\n\n" + e);
-					}
-				});
-				
 				$(document).ready(function() {
 					$("#ddlSelect").kendoDropDownList();
 					$("#datepicker").kendoDatePicker(); 
 					$("#datepicker1").kendoDatePicker();
+                    
+                    $(function () {
+                        $("#gridArea").kendoGrid(CallWebService('Chart','Test2',''));
+				    });
 				});				
 			</script>
             
