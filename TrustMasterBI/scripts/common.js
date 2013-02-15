@@ -11,30 +11,43 @@ function AddJsOnPage() {
 	document.write('<script src="../kendo/js/kendo.all.js" type="text/javascript"></script>');               
 }
 
+function GetQueryStringParams(sParam) {  
+	var sPageURL = window.location.search.substring(1);  
+	alert(sPageURL);
+	var sURLVariables = sPageURL.split('?');  
+	alert(sURLVariables);
+	for (var i = 0; i < sURLVariables.length; i++) {  
+		var sParameterName = sURLVariables[i].split('=');  
+		if (sParameterName[0] == sParam) {  
+			return sParameterName[1];  
+		}  
+	}  
+}
+
 function callwebservice(controller, method, parameter) {
 	var url = "http://onit1.homenet.org/TrustMasterMobileWebService/" + controller + "/" + method;
-    var receivedData;
+	var receivedData;
 	try {
 		$.ajax({
 			url: url,
 			cache: false,
 			dataType: 'json',
-            data:parameter,
+			data:parameter,
 			async: false,
-            beforeSend: function() {
-                app.showLoading();         
-            },
+			beforeSend: function() {
+				app.showLoading();         
+			},
 			success: function (data) {
-                receivedData=eval(data)[0];
+				receivedData = eval(data)[0];
 			},
 			error: function (msg) {
 				alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
 			},
-            complete: function() {
-                app.hideLoading();
-            }
+			complete: function() {
+				app.hideLoading();
+			}
 		});
-        return receivedData;
+		return receivedData;
 	}
 	catch (e) {
 		alert("Error occurred. Please contact On-IT1.\n\n" + e);
