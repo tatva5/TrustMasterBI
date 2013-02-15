@@ -1962,7 +1962,10 @@ body:before
 {
 	overflow: hidden
 }
-.km-ios .km-view-title, .km-ios .km-dialog-title
+
+/*** for header scaling****/ 
+
+.km-tablet .km-ios .km-view-title, .km-ios .km-dialog-title
 {
 	position: relative;
 	visibility: visible;
@@ -1977,6 +1980,23 @@ body:before
 	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
 	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3)
 }
+
+.km-ios .km-view-title, .km-ios .km-dialog-title
+{
+	position: relative;
+	visibility: visible;
+	text-align: center;
+	color: #fff;
+	font-size: 1.0em;
+	line-height: 3.22em;
+	font-weight: bold;
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.3)
+}
+
 .km-ios.km-horizontal .km-view-title
 {
 	line-height: 2em
@@ -1998,12 +2018,33 @@ body:before
 	text-decoration: none;
 	border: none !important;
 }
-.km-ios .km-button
+
+.km-tablet .km-ios .km-button
 {
 	text-align: center;
 	border-width: 0;
 	border: 1px solid rgba(39, 54, 73, 100);
 	padding: .5em 1em;
+	font-size: .90em;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	
+	background-color: #5778a1;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(114, 147, 186, 100)), color-stop(1, rgba(64, 97, 139, 100)));
+	background-image: -moz-linear-gradient(top, rgba(114, 147, 186, 100), rgba(64, 97, 139, 100));
+	background-image: -ms-linear-gradient(top, rgba(114, 147, 186, 100), rgba(64, 97, 139, 100));
+	background-image: -o-linear-gradient(top, rgba(114, 147, 186, 100), rgba(64, 97, 139, 100));
+	background-image: linear-gradient(top, rgba(114, 147, 186, 100), rgba(64, 97, 139, 100));
+}
+
+.km-ios .km-button
+{
+	text-align: center;
+	border-width: 0;
+	border: 1px solid rgba(39, 54, 73, 100);
+	padding: .em 1em;
 	font-size: .90em;
 	border-radius: 15px;
 	-moz-border-radius: 15px;
@@ -2418,23 +2459,17 @@ body:before
 	box-shadow: 0 -1px 0 0 #000;
 	-webkit-box-shadow: 0 -1px 0 0 #000;
 	text-shadow: none*/
-    padding:0;
-	border-top:1px solid #afafaf !important;
+	padding: 0;
+	border-top: 1px solid #afafaf !important;
 	
+	background-color: #c0c0c0;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(226, 226, 226, 100)), color-stop(1, rgba(192, 192, 192, 100)));
+	background-image: -moz-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
+	background-image: -ms-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
+	background-image: -o-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
+	background-image: linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
 	
-	background-color:#c0c0c0;
-	background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(226, 226, 226, 100)), color-stop(1, rgba(192, 192, 192, 100)));
-	background-image:-moz-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
-	background-image:-ms-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
-	background-image:-o-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
-	background-image:linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
-	
-	
-	
-	
-	
-	text-shadow:none
-    
+	text-shadow: none
 }
 .km-ios6 .km-tabstrip
 {
@@ -2445,22 +2480,17 @@ body:before
 	background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
 	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0));
 	background-image: linear-gradient(top, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0))*/
-    padding:0;
-	border-top:1px solid #afafaf !important;
+	padding: 0;
+	border-top: 1px solid #afafaf !important;
 	
+	background-color: #c0c0c0;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(226, 226, 226, 100)), color-stop(1, rgba(192, 192, 192, 100)));
+	background-image: -moz-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
+	background-image: -ms-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
+	background-image: -o-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
+	background-image: linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
 	
-	background-color:#c0c0c0;
-	background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(226, 226, 226, 100)), color-stop(1, rgba(192, 192, 192, 100)));
-	background-image:-moz-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
-	background-image:-ms-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
-	background-image:-o-linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
-	background-image:linear-gradient(top, rgba(226, 226, 226, 100), rgba(192, 192, 192, 100));
-	
-	
-	
-	
-	
-	text-shadow:none
+	text-shadow: none
 }
 .km-phone .km-ios .km-tabstrip
 {
@@ -2479,36 +2509,36 @@ body:before
 }
 .km-ios .km-tabstrip .km-button
 {
-	border-radius:0;
-	-moz-border-radius:0;
-	-webkit-border-radius:0;
-	box-shadow:none;
-	-webkit-box-shadow:none;
-	background:transparent;
-	border:0;
-	font-size:12px;
-	min-width:6em;
-    font-weight:bold !important;
-	margin:0;
-	text-shadow:inherit;
-	color:#333;
-    padding: .1rem .3rem;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	background: transparent;
+	border: 0;
+	font-size: 12px;
+	min-width: 6em;
+	font-weight: bold !important;
+	margin: 0;
+	text-shadow: inherit;
+	color: #333;
+	padding: .1rem .3rem;
 }
 .km-ios6 .km-tabstrip .km-button
 {
-	border-radius:0;
-	-moz-border-radius:0;
-	-webkit-border-radius:0;
-	box-shadow:none;
-	-webkit-box-shadow:none;
-	background:transparent;
-	border:0;
-	font-size:12px;
-	min-width:6em;
-	margin:0;
-	text-shadow:inherit;
-	color:#333;
-    padding: .1rem .3rem;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	background: transparent;
+	border: 0;
+	font-size: 12px;
+	min-width: 6em;
+	margin: 0;
+	text-shadow: inherit;
+	color: #333;
+	padding: .1rem .3rem;
 }
 .km-ios6 .km-tabstrip .km-button:last-child
 {
@@ -2521,13 +2551,13 @@ body:before
 }
 .km-ios .km-tabstrip .km-button:active, .km-ios .km-tabstrip .km-state-active
 {
-	color:#FFF;
-	background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(65, 98, 140, 100)), color-stop(1, rgba(43, 67, 97, 100)));
-	background-image:-moz-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
-	background-image:-ms-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
-	background-image:-o-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
-	background-image:linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
-	background-color:#2b4361;
+	color: #FFF;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(65, 98, 140, 100)), color-stop(1, rgba(43, 67, 97, 100)));
+	background-image: -moz-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
+	background-image: -ms-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
+	background-image: -o-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
+	background-image: linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
+	background-color: #2b4361;
 }
 .km-ios6 .km-tabstrip .km-button:active, .km-ios6 .km-tabstrip .km-state-active, .km-ios6 .km-tabstrip .km-state-active:last-child, .km-ios6 .km-tabstrip .km-button:active:last-child
 {
@@ -2540,13 +2570,13 @@ body:before
 	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.18)), -o-linear-gradient(left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 3%, rgba(0, 0, 0, 0) 97%, rgba(0, 0, 0, 0.6));
 	background-image: linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.18)), linear-gradient(left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 3%, rgba(0, 0, 0, 0) 97%, rgba(0, 0, 0, 0.6))*/
 
-    color:#FFF;
-	background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(65, 98, 140, 100)), color-stop(1, rgba(43, 67, 97, 100)));
-	background-image:-moz-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
-	background-image:-ms-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
-	background-image:-o-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
-	background-image:linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
-	background-color:#2b4361;
+	color: #FFF;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(65, 98, 140, 100)), color-stop(1, rgba(43, 67, 97, 100)));
+	background-image: -moz-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
+	background-image: -ms-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
+	background-image: -o-linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
+	background-image: linear-gradient(top, rgba(65, 98, 140, 100), rgba(43, 67, 97, 100));
+	background-color: #2b4361;
 }
 .km-ios .km-list
 {
@@ -3053,7 +3083,7 @@ body:before
 }
 .km-tablet .km-ios .km-tabstrip
 {
-    display: table;
+	display: table;
 	border-collapse: separate;
 	border-spacing: 3px 0
 	padding: .2rem 0 .2rem
@@ -3076,7 +3106,7 @@ body:before
 }
 .km-tablet .km-ios .km-tabstrip .km-button
 {
-    display: table-cell;
+	display: table-cell;
 	padding: .1rem .3rem;
 	margin: 0 1.5%
 }
@@ -6561,35 +6591,41 @@ body:before
 
 
 
-.km-ic1:after, .km-ic1:before {
-	content:"";
-	background:url(images/ic1.png) no-repeat !important;
-	margin:0 !important; padding:0 !important;	
+.km-ic1:after, .km-ic1:before
+{
+	content: "";
+	background: url(images/ic1.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; 
 }
-.km-state-active .km-ic1:after, .km-state-active .km-ic1:before {
-	content:"";
-	background:url(images/ic1_h.png) no-repeat !important;
-	margin:0 !important; padding:0 !important;
-}
-
-.km-ic2:after, .km-ic2:before {
-	content:"";
-	background:url(images/ic2.png) no-repeat !important;
-	margin:0 !important; padding:0 !important;	
-}
-.km-state-active .km-ic2:after, .km-state-active .km-ic2:before {
-	content:"";
-	background:url(images/ic2_h.png) no-repeat !important;
-	margin:0 !important; padding:0 !important;
+.km-state-active .km-ic1:after, .km-state-active .km-ic1:before
+{
+	content: "";
+	background: url(images/ic1_h.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important;
 }
 
-.km-ic3:after, .km-ic3:before {
-	content:"";
-	background:url(images/ic3.png) no-repeat !important;
-	margin:0 !important; padding:0 !important; width:40px !important;	
+.km-ic2:after, .km-ic2:before
+{
+	content: "";
+	background: url(images/ic2.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; 
 }
-.km-state-active .km-ic3:after, .km-state-active .km-ic3:before {
-	content:"";
-	background:url(images/ic3_h.png) no-repeat !important;
-	margin:0 !important; padding:0 !important; width:40px !important;
+.km-state-active .km-ic2:after, .km-state-active .km-ic2:before
+{
+	content: "";
+	background: url(images/ic2_h.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important;
+}
+
+.km-ic3:after, .km-ic3:before
+{
+	content: "";
+	background: url(images/ic3.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; width: 40px !important; 
+}
+.km-state-active .km-ic3:after, .km-state-active .km-ic3:before
+{
+	content: "";
+	background: url(images/ic3_h.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; width: 40px !important;
 }
