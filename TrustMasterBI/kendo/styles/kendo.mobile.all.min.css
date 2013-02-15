@@ -7,6 +7,7 @@
 * If you do not own a commercial license, this file shall be governed by the trial license terms.
 */
 
+
 .km-tablet .km-ios .logo img
 {
 	width: 100%;
@@ -45,7 +46,7 @@
 .km-tablet .km-ios .mylist_img { float: left; height: 87px; width: 248px; margin-right: 20px; }
 .km-tablet .km-ios .mylist h3 { margin: 31px 40px 0 0; padding: 17px 0 0 0; color: #FFF; font-size: 20px; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5); }
 
-.km-tablet .km-ios .login input[type=text]
+.km-tablet .km-ios .login input[type=text],.km-tablet .km-ios input[type=text],.km-tablet .km-ios input[type=password]
 {
 	font: normal 13px Arial; color: #666;
 	border-radius: 6px;
@@ -92,7 +93,7 @@
 .km-ios .login table { border-spacing: 6px; }
 .km-ios .pinWidth { width: 35px; }
 
-.km-ios .login input[type=text]
+.km-ios .login input[type=text],.km-ios input[type=text], .km-ios input[type=password]
 {
 	font: normal 8px Arial; color: #666;
 	border-radius: 6px;
@@ -101,6 +102,7 @@
 	border: 1px solid #a3a9b0;
 	padding: 2px; margin: 0; width: 165px;
 }
+
 
 .km-ios .login .fg_link { float: right; padding: 4px 0 0 0; }
 .km-ios .login .fg_link a { text-decoration: none; font-size: 9px; color: #333; }
@@ -6532,6 +6534,16 @@ body:before
 	-webkit-border-radius: 6px !important;
 }
 .login input[type=text]
+{
+	font: normal 13px Arial; color: #666;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #a3a9b0;
+	padding: 5px; margin: 0; width: 272px;
+}
+
+input[type=text], input[type=password]
 {
 	font: normal 13px Arial; color: #666;
 	border-radius: 6px;
