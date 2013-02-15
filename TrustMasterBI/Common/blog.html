@@ -13,6 +13,7 @@
 		</div>
 		<script>
 			$(document).ready(function() {
+                app.showLoading();
 				$.get('http://www.watsonline.co.za/?page=rss&id=7', function(data) {
 					var $xmldoc = $($.parseXML(data));
 					$xmldoc.find("channel item").each(function() {                 
@@ -20,8 +21,8 @@
 						$('#description').append($(this).find("description").text());
 						return false;
 					});                  
-					//$('#rssfeed').append(data);
 				}, 'html');
+                app.hideLoading();
 			});
 		</script>
 	</body>
