@@ -21,12 +21,18 @@ function callwebservice(controller, method, parameter) {
 			dataType: 'json',
             data:parameter,
 			async: false,
+            beforeSend: function() {
+                app.showLoading();         
+            },
 			success: function (data) {
                 receivedData=eval(data)[0];
 			},
 			error: function (msg) {
 				alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
 			}
+            complete: function() {
+                app.hideLoading();
+            }
 		});
         return receivedData;
 	}
