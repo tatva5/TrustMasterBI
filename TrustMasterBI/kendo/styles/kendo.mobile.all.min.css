@@ -6500,3 +6500,42 @@ body:before
 .con_area h3 { color: #1e4072; font-size: 18px; padding: 0 0 10px 0; margin: 0; }
 .con_area h3 span { font-weight: normal; font-size: 16px; }
 .con_area p { padding: 0 0 25px 0; margin: 0; }
+
+/******************** Icon Style **************************/
+.km-tabstrip .km-button{ border-left:1px solid #afafaf !important;}
+
+
+
+.km-ic1:after, .km-ic1:before {
+	content:"";
+	background:url(images/ic1.png) no-repeat !important;
+	margin:0 !important; padding:0 !important;	
+}
+.km-state-active .km-ic1:after, .km-state-active .km-ic1:before {
+	content:"";
+	background:url(images/ic1_h.png) no-repeat !important;
+	margin:0 !important; padding:0 !important;
+}
+
+.km-ic2:after, .km-ic2:before {
+	content:"";
+	background:url(images/ic2.png) no-repeat !important;
+	margin:0 !important; padding:0 !important;	
+}
+.km-state-active .km-ic2:after, .km-state-active .km-ic2:before {
+	content:"";
+	background:url(images/ic2_h.png) no-repeat !important;
+	margin:0 !important; padding:0 !important;
+}
+
+.km-ic3:after, .km-ic3:before {
+	content:"";
+	background:url(images/ic3.png) no-repeat !important;
+	margin:0 !important; padding:0 !important; width:40px !important;	
+}
+.km-state-active .km-ic3:after, .km-state-active .km-ic3:before {
+	content:"";
+	background:url(images/ic3_h.png) no-repeat !important;
+	margin:0 !important; padding:0 !important; width:40px !important;
+}
+
