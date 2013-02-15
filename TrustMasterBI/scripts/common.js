@@ -25,7 +25,6 @@ function GetQueryStringParams(sParam) {
 }
 
 function GetParams(e) {
-    debugger;
     alert(e.view.params);
 }
 
