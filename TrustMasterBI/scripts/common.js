@@ -29,7 +29,7 @@ function callwebservice(controller, method, parameter) {
 			},
 			error: function (msg) {
 				alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
-			}
+			},
             complete: function() {
                 app.hideLoading();
             }
