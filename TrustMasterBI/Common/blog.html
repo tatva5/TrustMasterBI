@@ -1,19 +1,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title></title>
-    </head>
-     <body>
-		<div  data-role="view" data-title="WATSONLINE" data-layout="blogHeader">
-            <div id="rssfeed" style="margin:10 px"></div>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div  data-role="view" data-title="WATSONLINE" data-layout="blogHeader" class="mainbg">
+			<div id="rssfeed" data-role="content" class="blog_box">
+				<h1 id="title"></h1>
+				<div id="description" class="con_area"></div>
+			</div>
 		</div>
-         <script>
-            $(document).ready(function(){
-              $.get('http://www.watsonline.co.za/?page=rss&id=7',function(data){
-                  $('#rssfeed').append(data);
-              },'html');
-            });
-        </script>
+		<script>
+			$(document).ready(function() {
+				$.get('http://www.watsonline.co.za/?page=rss&id=7', function(data) {
+					var $xmldoc = $($.parseXML(data));
+					$xmldoc.find("channel item").each(function() {                 
+						$('#title').append($(this).find("title").text());
+						$('#description').append($(this).find("description").text());
+						return false;
+					});                  
+					//$('#rssfeed').append(data);
+				}, 'html');
+			});
+		</script>
 	</body>
 </html>

@@ -42,8 +42,8 @@
 .km-tablet .km-ios .login table { border-spacing: 13px; }
 .km-tablet .km-ios .pinWidth { width: 50px; }
 
-.km-tablet .km-ios .mylist_img{ float:left; height:87px; width:248px; margin-right:20px;}
-.km-tablet .km-ios .mylist h3{ margin:31px 40px 0 0; padding:17px 0 0 0; color:#FFF; font-size:20px; text-shadow:0 2px 0 rgba(0, 0, 0, 0.5);}
+.km-tablet .km-ios .mylist_img { float: left; height: 87px; width: 248px; margin-right: 20px; }
+.km-tablet .km-ios .mylist h3 { margin: 31px 40px 0 0; padding: 17px 0 0 0; color: #FFF; font-size: 20px; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5); }
 
 .km-tablet .km-ios .login input[type=text]
 {
@@ -187,9 +187,9 @@
 	float: left; height: 200; width: 200; border: none; background: none; padding: 0px; margin: 60px 35px 20px 35px;
 }
  
-.km-ios .servicesList,.km-ios .servicesListFirst
+.km-ios .servicesList, .km-ios .servicesListFirst
 {
-	float: left; height: 200; width: 200; border: none !important; background: none !important; padding: 0px; margin:  20px 35px 0px 70px;
+	float: left; height: 200; width: 200; border: none !important; background: none !important; padding: 0px; margin: 20px 35px 0px 70px;
 }
 
 .km-tablet .km-android .login background-image
@@ -284,6 +284,19 @@
 	background-size: 100% 100%;
 	width: 100% !important;
 	height: 100% !important;
+}
+
+.loginbg .km-content 
+{
+	background: none !important;
+}
+.loginbg .km-footer
+{
+	background: none;
+}
+.km-footer
+{
+	background: none;
 }
 
 :-moz-any(.km-view, .km-pane)
@@ -1934,11 +1947,17 @@ body:before
 	content: url("images/back.png");
 	display: none
 }
-.km-ios
+
+.km-tablet .km-ios .km-navbar
 {
-	background: #fff;
 	font: bold .9rem HelveticaNeue, sans-serif
 }
+
+.km-ios .km-navbar
+{
+	font: bold .7rem HelveticaNeue, sans-serif
+}
+
 .km-ios .km-view
 {
 	overflow: hidden
@@ -6410,7 +6429,7 @@ body:before
 .mylist h3 { margin: 0px 20px 0 0; padding: 0; padding-right: 20px; height: 48px; display: table-cell; line-height: 100%; color: #FFF; vertical-align: middle; font-size: 0.8em; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5); text-overflow: ellipsis }
 .mylist a { overflow: hidden !important; }
 .mylist li { padding: 0px !important; }
-.login { background: url(images/loginbg.png) no-repeat; margin: 0 auto; height: 115px; padding: 40px 0 0 0; color: #FFF; }
+.login { background: url(../../images/loginbg.png) no-repeat; margin: 0 auto; height: 115px; padding: 40px 0 0 0; color: #FFF; }
 .login table { border-spacing: 13px; }
 .logo { width: 312px; margin: 0 auto; }
 .login .btn { float: left; }
@@ -6436,3 +6455,48 @@ body:before
 	border: 1px solid #a3a9b0;
 	padding: 5px; margin: 0; width: 272px;
 }
+
+.km-tablet .km-ios .services_list { margin: 0 auto; padding: 30px 0 0 0; }
+.km-tablet .km-ios .services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 230px; height: 250px; margin: 0 10px; text-align: center; }
+.km-tablet .km-ios .services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; width: 141px; height: 170px; }
+.km-tablet .km-ios .services_list ul li a { color: #2c4564 !important; font-size: 20px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
+
+.km-ios .services_list { margin: 0 auto; padding: 20px 0 0 0; }
+.km-ios .services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 100px; height: 110px; margin: 0 3px; text-align: center; }
+.km-ios .services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; width: 63px; height: 77px; }
+.km-ios .services_list ul li a { color: #2c4564 !important; font-size: 10px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
+
+.services_list { margin: 0 auto; padding: 30px 0 0 0; }
+.services_list ul { margin: 0; padding: 0; list-style: none; }
+.services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 230px; height: 250px; margin: 0 10px; text-align: center; }
+.services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; }
+.services_list ul li a { color: #2c4564 !important; font-size: 20px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
+.services_list ul li a:hover { color: #f45a1d !important; }
+.services_list ul li .km-button { margin: 0 !important; padding: 0 !important; border: none !important; background: none !important; }
+
+.mainbg { background: #f1f1f1; }
+.blog_box
+{
+	background: #FFF !important; margin: 15px; border: 1px solid #d6d6d6;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+.blog_box h1
+{
+	margin: 0; padding: 8px 10px; font-size: 18px; color: #2d2f32;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(241, 241, 241, 100)), color-stop(1, rgba(182, 182, 182, 100)));
+	background-image: -moz-linear-gradient(top, rgba(241, 241, 241, 100), rgba(182, 182, 182, 100));
+	background-image: -ms-linear-gradient(top, rgba(241, 241, 241, 100), rgba(182, 182, 182, 100));
+	background-image: -o-linear-gradient(top, rgba(241, 241, 241, 100), rgba(182, 182, 182, 100));
+	background-image: linear-gradient(top, rgba(241, 241, 241, 100), rgba(182, 182, 182, 100));
+	background-color: #cfcfcf;
+	border-radius: 6px 6px 0px 0px;
+	-moz-border-radius: 6px 6px 0px 0px;
+	-webkit-border-radius: 6px 6px 0px 0px;
+}
+
+.con_area { padding: 15px; font-weight: normal; color: #333; }
+.con_area h3 { color: #1e4072; font-size: 18px; padding: 0 0 10px 0; margin: 0; }
+.con_area h3 span { font-weight: normal; font-size: 16px; }
+.con_area p { padding: 0 0 25px 0; margin: 0; }
