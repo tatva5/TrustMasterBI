@@ -6551,8 +6551,8 @@ body:before
 .km-ios .services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; width: 63px; height: 77px; }
 .km-ios .services_list ul li a { color: #2c4564 !important; font-size: 10px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
 
-.services_list { margin: 0 auto; padding: 30px 0 0 0; }
-.services_list ul { margin: 0; padding: 0; list-style: none; }
+.services_list { margin: 0px auto !important; padding: 30px 0 0 0; }
+.services_list ul { margin: 0px auto !important; padding: 0; list-style: none; width:750px; }
 .services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 230px; height: 250px; margin: 0 10px; text-align: center; }
 .services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; }
 .services_list ul li a { color: #2c4564 !important; font-size: 20px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
