@@ -11,6 +11,22 @@ function AddJsOnPage() {
 	document.write('<script src="../kendo/js/kendo.all.js" type="text/javascript"></script>');               
 }
 
+function GetQueryStringParams(sParam)  
+ {  
+     var sPageURL = window.location.search.substring(1);  
+     alert(window.location);
+     var sURLVariables = sPageURL.split('&');  
+     alert(sURLVariables);
+     for (var i = 0; i < sURLVariables.length; i++)   
+     {  
+         var sParameterName = sURLVariables[i].split('=');  
+         if (sParameterName[0] == sParam)   
+         {  
+             return sParameterName[1];  
+         }  
+     }  
+}
+
 function callwebservice(controller, method, parameter) {
 	var url = "http://onit1.homenet.org/TrustMasterMobileWebService/" + controller + "/" + method;
     var receivedData;
