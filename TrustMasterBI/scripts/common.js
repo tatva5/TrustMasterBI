@@ -21,7 +21,7 @@ function callwebservice(controller, method, parameter) {
 			dataType: 'json',
             data:parameter,
 			async: false,
-            delay: 15
+            delay: 15,
             beforeSend: function() {
                 app.showLoading();         
             },
