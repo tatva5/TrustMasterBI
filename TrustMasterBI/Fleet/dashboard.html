@@ -76,7 +76,11 @@
 												rotation: -45
 											}
 										},
-								
+								        chartArea:{
+													width:750,
+                                                    height :340,
+                                                    background: ""
+												},
 										tooltip: {
 											visible: true,
 											format: "{0}"
@@ -117,7 +121,7 @@
 									</dt>
 									<dd class="volumeMedium">12,000</dd>
 								</dl>
-								<div class="volume-chart" data-role="chart">
+								<div class="volume-chart k-chart" >
 									<div id="chart" ></div>
 									<script>
 										var internetUsers = [
@@ -178,7 +182,8 @@
 													majorUnit: 2000
 												},
 												chartArea:{
-													height:275, width:500
+													height:300, width:500,background: ""
+                                                    
 												},
 												categoryAxis: {
 													field: "year"

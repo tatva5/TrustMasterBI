@@ -17,8 +17,8 @@
 }
 .demo-section
 {
-	margin: 20px auto;
-	padding: 10px;
+	margin: 00px auto;
+	padding: 10px 10px 10px 10px;
 	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.45), inset 0 0 30px rgba(0, 0, 0, 0.07);
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.45), inset 0 0 30px rgba(0, 0, 0, 0.07);
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.45), inset 0 0 30px rgba(0, 0, 0, 0.07);
@@ -133,7 +133,7 @@
 {
 	background: transparent none no-repeat 100% 29px;
 	width: 160px;
-	margin-right: 97px;
+	margin-right: 50px;
 }
 .separator
 {
@@ -146,9 +146,9 @@
 	*display: inline;
 	zoom: 1;
 	width: 500px;
-	height: 136px;
+	height: 300px;
 	vertical-align: top;
 	margin: 4em 0 0 4em;
-	float: right;
+	
 } 
 /*-------------------------------*/
