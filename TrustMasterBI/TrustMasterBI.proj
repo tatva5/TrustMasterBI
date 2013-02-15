@@ -85,6 +85,12 @@
     <Content Include="kendo\styles\images\arrow.png" />
     <Content Include="kendo\styles\images\back.png" />
     <Content Include="kendo\styles\images\butbg.png" />
+    <Content Include="kendo\styles\images\ic1.png" />
+    <Content Include="kendo\styles\images\ic1_h.png" />
+    <Content Include="kendo\styles\images\ic2.png" />
+    <Content Include="kendo\styles\images\ic2_h.png" />
+    <Content Include="kendo\styles\images\ic3.png" />
+    <Content Include="kendo\styles\images\ic3_h.png" />
     <Content Include="kendo\styles\images\KendoUI.ttf" />
     <Content Include="kendo\styles\images\KendoUI.woff" />
     <Content Include="kendo\styles\images\loading-image.gif" />
