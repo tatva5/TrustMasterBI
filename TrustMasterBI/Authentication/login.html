@@ -1,37 +1,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <div class="loginbg" data-role="view" data-title="LOGIN" data-layout="customwidHeader" style="position: relative;">
-           <img src="../images/logo.png" style="position:absolute;top:80px;left:350px;"></img>
-            <table style="border: 7px solid #87888B;padding:20px;background: #76777B;border-radius:20px;margin:5px;position:absolute;top:250px;left:300px;padding-top:20px;">
-                <tr align="right">                   
-                    <td colspan="3" valign="top" style="height:30px;font-size:15px">
-                        LOGIN AREA
-                    </td>
-                </tr>   
-                <tr>
-                    <td>
-                        <span style="color: white; margin:10px;"> Pin:</span> 
-                    </td>
-                    <td colspan="2">
-                        <input type="password" class="k-textbox" style=" width:300px;height:30px;"/>                        
-                    </td>                    
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <a data-role="button" href="../Common/services.html" style="border-radius:5px;background:#87888B;border:none;color:white;margin:10px 0px;padding:10px 20px;font-size:15px">Login</a>
-                    </td>
-                    <td align="right">
-                        <a data-role="button" href="../Authentication/forgotpin.html" style="border:none;background:none;padding:0px;margin:0px;">Forgot Password?</a> 
-                    </td>
-                </tr>
-            </table>
-            
-        </div>        
-    </body>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div class="loginbg" data-role="view" data-title="LOGIN" data-layout="customwidHeader" style="position: relative;">
+			<style type="text/css">
+				
+				.km-content
+				{
+					background: none !important;
+				}
+				.km-footer
+				{
+					background: none;
+				}
+			</style>
+
+			<div class="logo">
+				<img src="../images/logo.png" alt="" />
+			</div>
+			<div class="login">
+				<table border="0"  cellpadding="0">
+					<tr>
+						<td class="pinWidth" align="right">Pin:</td>
+						<td>
+							<input name="" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>
+							<div class="btn">								
+                                 <a data-role="button" href="../Common/services.html" class="inputbtn">Login</a>
+							</div>
+							<div class="fg_link">
+								<a data-role="button" href="../Authentication/forgotpin.html" style="border:none;background:none;padding:0px;margin:0px;">Forgot Password?</a> 
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</body>
 </html>
