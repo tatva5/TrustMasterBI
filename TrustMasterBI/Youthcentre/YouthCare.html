@@ -6,44 +6,20 @@
     </head>
     <body>
         <div data-role="view" data-title="Youth Care"  data-layout="youthCareLayout">            
-       <ul data-role="listview" data-style="inset">
+           <ul data-role="listview" data-style="inset">
                 <li><a href="../Common/graphList.html">Youth Care 1</a></li>
                 <li><a href="../Common/graphList.html">Youth Care 2</a></li>
                 <li><a href="../Common/graphList.html">Youth Care 3</a></li>
                 <li><a href="../Common/graphList.html">Youth Care 4</a></li>
                 <li><a href="../Common/graphList.html">Youth Care 5</a></li>
-              
             </ul> 
-          <!--   <div id="listview"/> -->
+            
+            <script>				
+				$(document).ready(function() {
+					alert(GetQueryStringParams('id'));
+				});				
+			</script>
+
         </div> 
-       <!--    <script>
-                $(function(){
-               try{
-                $.ajax({
-                    "url": "http://onit1.homenet.org/TrustMasterMobileWebService/YouthCentre/Chart2",
-                    "method": "post",
-                    "dataType": "json"
-                       }).done(function (data, textStatus, jqXHR) {
-                           debugger;
-                           try {
-                                data = eval(data)[0];
-                                debugger;
-                                $("#listview").kendoChart(data);
-                               }
-                           catch (e) {
-                                alert("Server sent incorrect data. Please contact On-IT1.");
-                                     }
-                          })
-                  .fail(function (jqXHR, textStatus, errorThrown) {
-                      debugger;
-                       alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
-                      })
-                                 }
-                         catch (e) {
-                              alert("Error occurred. Please contact On-IT1.\n\n" + e);
-                                    }
-                    });
-        </script> -->
-        
     </body>
 </html>

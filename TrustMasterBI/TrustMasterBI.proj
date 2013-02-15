@@ -65,7 +65,6 @@
     <Content Include="Common\graphicalData.html" />
     <Content Include="Common\graphList.html" />
     <Content Include="Common\home.html" />
-    <Content Include="Common\new1.html" />
     <Content Include="Common\services.html" />
     <Content Include="Common\tabularData.html" />
     <Content Include="Common\tabularList.html" />
@@ -102,7 +101,6 @@
     <Content Include="kendo\styles\kendo.default.css" />
     <Content Include="kendo\styles\kendo.mobile.all.min.css" />
     <Content Include="scripts\common.js" />
-    <Content Include="styles\custom.css" />
     <Content Include="styles\main.css" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>
