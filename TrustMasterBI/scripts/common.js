@@ -24,6 +24,11 @@ function GetQueryStringParams(sParam) {
 	}  
 }
 
+function GetParams(e) {
+    debugger;
+    alert(e.view.params);
+}
+
 function callwebservice(controller, method, parameter) {
 	var url = "http://onit1.homenet.org/TrustMasterMobileWebService/" + controller + "/" + method;
 	var receivedData;
