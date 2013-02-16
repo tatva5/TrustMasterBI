@@ -29,7 +29,7 @@ function GetParams(e) {
 }
 
 function callwebservice(controller, method, parameter) {
-	var url = "http://onit1.homenet.org/TrustMasterMobileWebService/" + controller + "/" + method;
+	var url = "http://onit1.homenet.org/TrustMasterMobileServices/" + controller + "/" + method;
 	var receivedData;
 	try {
 		$.ajax({
