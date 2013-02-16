@@ -6,23 +6,25 @@
 	</head>
 	<body>
 		<div data-role="view" data-layout="youthCareLayout" data-show="modulelist">
-			<ul data-role="listview" data-style="inset">
-				<li>
-					<a href="../Fleet/dashboard.html">Operations</a>
-				</li>
-				<li>
-					<a>Financials</a>
-				</li>
-				<li>
-					<a>Reports</a>
-				</li>
-			</ul>
-			<script>			
+			<div id="Modulelist"></div>
+			<script id="modulelisttemplete" type="text/x-kendo-template">
+				<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
+					# for (var i = 0; i < data.length; i++) { #
+					<li>
+						<a href="#= data[i].Href #" data-role="button" class="km-listview-link">#= data[i].Name #</a>
+					</li>
+					# }
+					
+					#
+				</ul>
+			</script>
+			<script>
 				function modulelist(e) {
-					//debugger;
 					$("#module-navbar").data("kendoMobileNavBar").title(e.view.params.title);
+					var modulelisttemplete = kendo.template($("#modulelisttemplete").html());
+					$("#Modulelist").html(modulelisttemplete(callwebservice('Home', 'Modulelist','idService='+ e.view.params.id).dataSource));
 					//alert(e.view.params.id);
-				}
+				}				
 			</script>
 		</div>
 	</body>
