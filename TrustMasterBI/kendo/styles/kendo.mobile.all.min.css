@@ -46,7 +46,7 @@
 .km-tablet .km-ios .mylist_img { float: left; height: 87px; width: 248px; margin-right: 20px; }
 .km-tablet .km-ios .mylist h3 { margin: 31px 40px 0 0; padding: 17px 0 0 0; color: #FFF; font-size: 20px; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5); }
 
-.km-tablet .km-ios .login input[type=text], .km-tablet .km-ios input[type=text], .km-tablet .km-ios input[type=password]
+.km-tablet .km-ios .login input[type=text], .km-tablet .km-ios .login input[type=password]
 {
 	font: normal 13px Arial; color: #666;
 	border-radius: 6px;
@@ -93,7 +93,7 @@
 .km-ios .login table { border-spacing: 6px; }
 .km-ios .pinWidth { width: 35px; }
 
-.km-ios .login input[type=text], .km-ios input[type=text], .km-ios input[type=password]
+.km-ios .login input[type=text], .km-ios .login input[type=password]
 {
 	font: normal 8px Arial; color: #666;
 	border-radius: 6px;
@@ -205,6 +205,19 @@
 	margin: 9% 0% 0% 50%;
 }
 
+.km-ios #popover .km-view-title,
+.km-ios #popover-people .km-view-title
+{
+	color: #fff;
+	text-shadow: 0 -1px rgba(0, 0, 0, .5);
+}
+
+.km-ios #popover .km-navbar,
+.km-root > * > #popover > .km-content
+{
+	background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0.35)), color-stop(0.5, rgba(255, 255, 255, 0.1)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0))) #000;
+}
+
 .km-root
 {
 	font-size: .92em
@@ -217,7 +230,6 @@
 	color: white;
 	font-weight: bold;
 }
-
 
 .km-tablet
 {
@@ -3221,11 +3233,11 @@ body:before
 }
 .km-ios .km-popup.km-pane, .km-tablet .km-ios .km-actionsheet-wrapper, .km-ios .km-popup.km-pane .km-navbar .km-button
 {
-	background-color: rgba(10, 18, 38, 0.9)
+	/*background-color: rgba(10, 18, 38, 0.9)*/
 }
 .km-ios .km-popup.km-pane
 {
-	border: 5px solid transparent
+	border: 5px solid #2d4665 
 }
 .km-ios .km-popup.km-pane, .km-tablet .km-ios .km-actionsheet-wrapper
 {
@@ -3244,7 +3256,7 @@ body:before
 }
 .km-ios .km-modalview .km-navbar, .km-ios .km-modalview .km-toolbar, .km-ios .km-popup.km-pane .km-navbar, .km-ios .km-popup.km-pane .km-toolbar, .km-ios .km-popup.km-pane .km-tabstrip
 {
-	background: 0;
+	/*background: 0;*/
 	box-shadow: none;
 	-webkit-box-shadow: none
 }
@@ -6548,16 +6560,6 @@ body:before
 	padding: 5px; margin: 0; width: 272px;
 }
 
-input[type=text], input[type=password]
-{
-	font: normal 13px Arial; color: #666;
-	border-radius: 6px;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border: 1px solid #a3a9b0;
-	padding: 5px; margin: 0; width: 272px;
-}
-
 .km-tablet .km-ios .services_list { margin: 0 auto; padding: 30px 0 0 0; }
 .km-tablet .km-ios .services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 230px; height: 250px; margin: 0 10px; text-align: center; }
 .km-tablet .km-ios .services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; width: 141px; height: 170px; }
@@ -6646,3 +6648,20 @@ input[type=text], input[type=password]
 	background: url(images/ic3_h.png) no-repeat !important;
 	margin: 0 !important; padding: 0 !important; width: 40px !important;
 }
+
+/*** style for textbox **/
+.textboxStyle input[type=text], .textboxStyle input[type=password]
+{
+	font: normal 13px Arial; color: #666;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #a3a9b0;
+	padding: 5px; margin: 0; width: 272px;
+}
+
+.textboxStyle
+{
+	text-align: center; margin: 0px auto; margin-top: 15px;
+}
+
