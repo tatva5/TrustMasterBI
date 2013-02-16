@@ -1,16 +1,3 @@
-
-function AddCSSOnPage() {
-	document.write('<link rel="stylesheet" href="../kendo/styles/kendo.mobile.all.min.css" />');
-	document.write('<link rel="stylesheet" href="../kendo/styles/kendo.common.css"  />');
-	document.write('<link rel="stylesheet" href="../kendo/styles/kendo.default.css" />');   
-}
-
-function AddJsOnPage() {
-	document.write('<script src="../cordova.js" type="text/javascript"></script>');
-	document.write('<script src="../kendo/js/kendo.mobile.min.js" type="text/javascript"></script>');
-	document.write('<script src="../kendo/js/kendo.all.js" type="text/javascript"></script>');               
-}
-
 function GetQueryStringParams(sParam) {  
 	var sPageURL = window.location.search.substring(1);  
 	alert(sPageURL);
@@ -24,12 +11,9 @@ function GetQueryStringParams(sParam) {
 	}  
 }
 
-function GetParams(e) {
-    alert(e.view.params);
-}
-
 function callwebservice(controller, method, parameter) {
 	var url = "http://onit1.homenet.org/TrustMasterMobileServices/" + controller + "/" + method;
+    if(typeof(parameter)==='undefined') parameter='';
 	var receivedData;
 	try {
 		$.ajax({
