@@ -13,7 +13,8 @@ function GetQueryStringParams(sParam) {
 
 function callwebservice(controller, method, parameter) {
 	var url = "http://onit1.homenet.org/TrustMasterMobileServices/" + controller + "/" + method;
-    if(typeof(parameter)==='undefined') parameter='';
+	if (typeof(parameter)==='undefined')
+		parameter = '';
 	var receivedData;
 	try {
 		$.ajax({
@@ -40,4 +41,9 @@ function callwebservice(controller, method, parameter) {
 	catch (e) {
 		alert("Error occurred. Please contact On-IT1.\n\n" + e);
 	}
+}
+
+function closeParentPopover(e) {
+	var popover = e.sender.element.closest('[data-role=popover]').data('kendoMobilePopOver');				
+	popover.close();
 }
