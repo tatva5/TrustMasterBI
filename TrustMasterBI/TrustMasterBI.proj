@@ -66,6 +66,7 @@
     <Content Include="Common\graphList.html" />
     <Content Include="Common\home.html" />
     <Content Include="Common\modules.html" />
+    <Content Include="Common\report.html" />
     <Content Include="Common\services.html" />
     <Content Include="Common\tabularData.html" />
     <Content Include="Common\tabularList.html" />

@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="../styles/main.css" />
 	</head>
 	<body>
-        <!--Home page-->
+		<!--Home page-->
 		<div id="home" data-role="view" data-title="TRUSTMASTER BI">
 			<ul class="mylist" data-role="listview" data-style="inset">
 				<li>
@@ -27,7 +27,7 @@
 			</ul>
 		</div>
 
-        <!--customwidHeader-->
+		<!--customwidHeader-->
 		<section data-role="layout" data-id="customwidHeader">
 			<header data-role="header">
 				<div data-role="navbar">
@@ -43,7 +43,7 @@
 			</div>
 		</section>
 
-        <!--blogHeader-->
+		<!--blogHeader-->
 		<section data-role="layout" data-id="blogHeader">
 			<header data-role="header">
 				<div data-role="navbar">
@@ -54,7 +54,7 @@
 			</header>
 		</section>
 
-        <!--mainHeader-->
+		<!--mainHeader-->
 		<section data-role="layout" data-id="mainHeader">
 			<header data-role="header">
 				<div data-role="navbar">
@@ -69,7 +69,7 @@
 			</div>
 		</section>
 
-        <!--servicesLayout-->
+		<!--servicesLayout-->
 		<section data-role="layout" data-id="servicesLayout" >
 			<header data-role="header">
 				<div data-role="navbar">
@@ -88,7 +88,7 @@
 			</footer>
 		</section>
 
-        <!--youthCareLayout-->
+		<!--youthCareLayout-->
 		<section data-role="layout" data-id="youthCareLayout" >
 			<header data-role="header">
 				<div data-role="navbar" id="module-navbar">
@@ -106,7 +106,7 @@
 			</footer>
 		</section>
 
-        <!--graphicsLayout-->
+		<!--graphicsLayout-->
 		<section data-role="layout" data-id="graphicsLayout" >
 			<header data-role="header">
 				<div data-role="navbar">
@@ -124,7 +124,7 @@
 			</footer>
 		</section>
 
-        <!--tabularLayout-->
+		<!--tabularLayout-->
 		<section data-role="layout" data-id="tabularLayout" >
 			<header data-role="header">
 				<div data-role="navbar">
@@ -143,12 +143,12 @@
 			</footer>
 		</section>
 
-        <!--grahicalDataLayout-->
+		<!--grahicalDataLayout-->
 		<section data-role="layout" data-id="grahicalDataLayout" >
 			<header data-role="header">
 				<div data-role="navbar">
 					<a  data-role="backbutton" data-align="left">Back</a>
-					<a  data-role="button" href="tabularList.html" data-align="left">Tabular</a>
+					<a  data-role="button" data-click="transit" data-align="left">Tabular</a>
 					<span data-role="view-title"/>
 					<a data-role="button" href="#popover-people" data-align="right" data-rel="popover">Search</a>
 					<a data-role="button" href="#home" data-align="right">Logout</a>
@@ -162,7 +162,7 @@
 			</footer>
 		</section>
 
-        <!--tabularDataLayout-->
+		<!--tabularDataLayout-->
 		<section data-role="layout" data-id="tabularDataLayout" >
 			<header data-role="header">
 				<div data-role="navbar">
@@ -181,7 +181,7 @@
 			</footer>
 		</section>
 
-        <!--BackHeader-->
+		<!--BackHeader-->
 		<section data-role="layout" data-id="BackHeader">
 			<header data-role="header">
 				<div data-role="navbar">
@@ -191,7 +191,7 @@
 			</header>
 		</section>
 
-        <!--aboutUsLayout-->
+		<!--aboutUsLayout-->
 		<section data-role="layout" data-id="aboutUsLayout">
 			<header data-role="header">
 				<div data-role="navbar">
@@ -206,7 +206,7 @@
 			</footer>
 		</section>
 
-        <!--registrationHeader-->
+		<!--registrationHeader-->
 		<section data-role="layout" data-id="registrationHeader">
 			<header data-role="header">
 				<div data-role="navbar">
@@ -222,11 +222,26 @@
 			</div>
 		</section>
 
+
 		<script src="../cordova.js"></script>
 		<script src="../kendo/js/jquery.min.js"></script>
 		<script src="../kendo/js/kendo.all.js"></script>
 		<script src="../scripts/common.js"></script>
 		<script>
+			function transit(e) {
+				if (e.button.context.innerText == "Tabular") 
+                {
+					e.button.context.innerText = "Graphical";
+                    $("#chartArea").empty();
+					$("#chartArea").kendoGrid(callwebservice('Chart', 'Test2', ''));
+				}
+				else
+                {
+					e.button.context.innerText = "Tabular";
+                    $("#chartArea").empty();
+                    $("#chartArea").kendoChart(callwebservice('Chart', 'Test1', ''));
+                }
+			}
 			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader" });
 		</script>
 	</body>

@@ -25,7 +25,12 @@ function GetQueryStringParams(sParam) {
 }
 
 function GetParams(e) {
-    alert(e.view.params);
+	alert(e.view.params);
+}
+
+function closeParentPopover(e) {
+	var popover = e.sender.element.closest('[data-role=popover]').data('kendoMobilePopOver');				
+	popover.close();
 }
 
 function callwebservice(controller, method, parameter) {
@@ -51,6 +56,7 @@ function callwebservice(controller, method, parameter) {
 				app.hideLoading();
 			}
 		});
+		debugger;
 		return receivedData;
 	}
 	catch (e) {
