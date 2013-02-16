@@ -101,13 +101,13 @@
 }
 .stat .volumeBig
 {
-	font-size: 60px;
+	font-size: 50px;
 	color: #454447;
 	Margin-bottom: 10px;
 }
 .stat .volumeMedium
 {
-	font-size: 40px;
+	font-size: 30px;
 	color: #1c638d;
 	Margin-bottom: 10px;
 }
@@ -125,15 +125,12 @@
 	zoom: 1;
 	vertical-align: top;
 }
-.company-trends
-{
-	margin-left: 27px;
-}
+
 .trend-container
 {
 	background: transparent none no-repeat 100% 29px;
-	width: 160px;
-	margin-right: 50px;
+	width: 200px;
+	margin-right: 10px;
 }
 .separator
 {

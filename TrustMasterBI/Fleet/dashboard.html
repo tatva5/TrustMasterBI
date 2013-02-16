@@ -6,10 +6,7 @@
 	</head>
 	<body>
 		<div id="mainWrap" data-role="view" data-layout="fleetdashboardLayout" data-title="OPERATIONS">
-			<div id="main">
-				<div id="exampleWrap" style="visibility: visible; opacity: 1;">
-
-					<div id="dashboard">
+			<div id="dashboard">
 						<div class="demo-section">
 							<div class="company-info" id="Fleet">
 								<dl class="stat first">
@@ -21,7 +18,7 @@
 										<dd class="volumeMedium">215127.60</dd>
 									</dl>
 									<!--<dl class="stat trend-container"></dl>-->
-									<dl class="stat trend-container lowest-container">
+									<dl class="stat trend-container">
 										<dt class="dashboard-subtitle">
 											Previous Month<span class="metric">(01/01/2013)</span>
 										</dt>
@@ -39,6 +36,7 @@
 								</div>
 								<div class="separator"></div>
 							</div>
+                            <br/>
 							<dt class="dashboard-subtitle1">MONTHLY EXPENDITURE PER CATEGORY </dt>
 
 							<div id="Barchart"></div>
@@ -73,7 +71,9 @@
 										categoryAxis: {
 											categories: ["Body works", "Brakes", "Cooling system","Drive train", "Electrical","Engine","Exhaust and Manifolds","Fuel System","Services","Suspension","Tyres"],
 											labels: {
-												rotation: -45
+												rotation: -30,
+                                                margin: 0,
+                                                padding: { top: 0, left: 10, right :50 }
 											}
 										},
 								        chartArea:{
@@ -207,8 +207,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
 		</div>
 	</body>
 </html>
