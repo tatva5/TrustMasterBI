@@ -46,7 +46,7 @@
 .km-tablet .km-ios .mylist_img { float: left; height: 87px; width: 248px; margin-right: 20px; }
 .km-tablet .km-ios .mylist h3 { margin: 31px 40px 0 0; padding: 17px 0 0 0; color: #FFF; font-size: 20px; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5); }
 
-.km-tablet .km-ios .login input[type=text],.km-tablet .km-ios input[type=text],.km-tablet .km-ios input[type=password]
+.km-tablet .km-ios .login input[type=text], .km-tablet .km-ios input[type=text], .km-tablet .km-ios input[type=password]
 {
 	font: normal 13px Arial; color: #666;
 	border-radius: 6px;
@@ -93,7 +93,7 @@
 .km-ios .login table { border-spacing: 6px; }
 .km-ios .pinWidth { width: 35px; }
 
-.km-ios .login input[type=text],.km-ios input[type=text], .km-ios input[type=password]
+.km-ios .login input[type=text], .km-ios input[type=text], .km-ios input[type=password]
 {
 	font: normal 8px Arial; color: #666;
 	border-radius: 6px;
@@ -102,7 +102,6 @@
 	border: 1px solid #a3a9b0;
 	padding: 2px; margin: 0; width: 165px;
 }
-
 
 .km-ios .login .fg_link { float: right; padding: 4px 0 0 0; }
 .km-ios .login .fg_link a { text-decoration: none; font-size: 9px; color: #333; }
@@ -210,10 +209,16 @@
 {
 	font-size: .92em
 }
+
+/**Button style changed****/
 .km-root a
 {
-	color: inherit
+	/*color: inherit*/
+	color: white;
+	font-weight: bold;
 }
+
+
 .km-tablet
 {
 	font-size: 1em
@@ -6564,7 +6569,7 @@ input[type=text], input[type=password]
 .km-ios .services_list ul li a { color: #2c4564 !important; font-size: 10px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
 
 .services_list { margin: 0px auto !important; padding: 30px 0 0 0; }
-.services_list ul { margin: 0px auto !important; padding: 0; list-style: none; width:750px; }
+.services_list ul { margin: 0px auto !important; padding: 0; list-style: none; width: 750px; }
 .services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 230px; height: 250px; margin: 0 10px; text-align: center; }
 .services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; }
 .services_list ul li a { color: #2c4564 !important; font-size: 20px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
