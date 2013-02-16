@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div data-role="view" data-layout="youthCareLayout" data-show="modulelist">
+			<ul data-role="listview" data-style="inset">
+				<li>
+					<a href="../Fleet/dashboard.html">Operations</a>
+				</li>
+				<li>
+					<a>Financials</a>
+				</li>
+				<li>
+					<a>Reports</a>
+				</li>
+			</ul>
+			<script>			
+				function modulelist(e) {
+					//debugger;
+					$("#module-navbar").data("kendoMobileNavBar").title(e.view.params.title);
+					//alert(e.view.params.id);
+				}
+			</script>
+		</div>
+	</body>
+</html>

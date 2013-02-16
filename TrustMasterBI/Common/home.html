@@ -2,20 +2,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />                 
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		<link rel="stylesheet" href="../kendo/styles/kendo.mobile.all.min.css"/>
 		<link rel="stylesheet" href="../kendo/styles/kendo.common.css"  />
-		<link rel="stylesheet" href="../kendo/styles/kendo.default.css" />        
-        <link rel="stylesheet" href="../styles/main.css" />        
+		<link rel="stylesheet" href="../kendo/styles/kendo.default.css" />
+		<link rel="stylesheet" href="../styles/main.css" />
 	</head>
 	<body>
-		<div id="home" data-role="view" data-title="TRUSTMASTER BI">			            
-            <ul class="mylist" data-role="listview" data-style="inset">       
-                <li><a href="blog.html"><img src="../images/watsonline.png" class="mylist_img" /><h3> Innovative Leadership</h3></a></li>
-                <li><a><img src="../images/bosasagroup.png"  class="mylist_img" /><h3>Bosasa Group Website</h3></a></li>
-            </ul>
+        <!--Home page-->
+		<div id="home" data-role="view" data-title="TRUSTMASTER BI">
+			<ul class="mylist" data-role="listview" data-style="inset">
+				<li>
+					<a href="blog.html">
+						<img src="../images/watsonline.png" class="mylist_img" />
+						<h3> Innovative Leadership</h3>
+					</a>
+				</li>
+				<li>
+					<a>
+						<img src="../images/bosasagroup.png"  class="mylist_img" />
+						<h3>Bosasa Group Website</h3>
+					</a>
+				</li>
+			</ul>
 		</div>
-        
+
+        <!--customwidHeader-->
 		<section data-role="layout" data-id="customwidHeader">
 			<header data-role="header">
 				<div data-role="navbar">
@@ -24,14 +36,14 @@
 					<a  data-role="button" href="../Authentication/registration.html" data-align="right">Registration</a>
 				</div>
 			</header>
-			<!--View content will render here-->
-            <div data-role="footer">
+			<div data-role="footer">
 				<div>
-				<img class="footerimg"  src="../images/mainbg2.png"  />
+					<img class="footerimg"  src="../images/mainbg2.png"  />
 				</div>
 			</div>
 		</section>
 
+        <!--blogHeader-->
 		<section data-role="layout" data-id="blogHeader">
 			<header data-role="header">
 				<div data-role="navbar">
@@ -40,24 +52,24 @@
 					<a  data-role="button" href="../Authentication/login.html" data-align="right">Login</a>
 				</div>
 			</header>
-			<!--View content will render here-->
 		</section>
 
+        <!--mainHeader-->
 		<section data-role="layout" data-id="mainHeader">
 			<header data-role="header">
 				<div data-role="navbar">
 					<span data-role="view-title"/>
-                    <a  data-role="button" href="../Authentication/login.html" data-align="right">Login</a>
+					<a  data-role="button" href="../Authentication/login.html" data-align="right">Login</a>
 				</div>
 			</header>
-			<!--View content will render here-->
-            <div data-role="footer">
+			<div data-role="footer">
 				<div>
-				<img class="footerimg"  src="../images/mainbg2.png"  />
+					<img class="footerimg"  src="../images/mainbg2.png"  />
 				</div>
 			</div>
 		</section>
 
+        <!--servicesLayout-->
 		<section data-role="layout" data-id="servicesLayout" >
 			<header data-role="header">
 				<div data-role="navbar">
@@ -68,7 +80,6 @@
 
 				</div>
 			</header>
-			<!--View content will render here-->
 			<footer data-role="footer">
 				<div data-role="tabstrip">
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
@@ -77,17 +88,17 @@
 			</footer>
 		</section>
 
+        <!--youthCareLayout-->
 		<section data-role="layout" data-id="youthCareLayout" >
 			<header data-role="header">
-				<div data-role="navbar">
+				<div data-role="navbar" id="module-navbar">
 					<a  data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
 					<a data-role="button" href="#home" data-align="right">Logout</a>
 
 				</div>
 			</header>
-			<!--View content will render here-->
-                <footer data-role="footer">
+			<footer data-role="footer">
 				<div data-role="tabstrip">
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
 					<a data-icon="ic2" href="aboutUs.html">About Us</a>
@@ -95,6 +106,7 @@
 			</footer>
 		</section>
 
+        <!--graphicsLayout-->
 		<section data-role="layout" data-id="graphicsLayout" >
 			<header data-role="header">
 				<div data-role="navbar">
@@ -104,7 +116,6 @@
 					<a data-role="button" href="#home" data-align="right">Logout</a>
 				</div>
 			</header>
-			<!--View content will render here-->
 			<footer data-role="footer">
 				<div data-role="tabstrip">
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
@@ -113,6 +124,7 @@
 			</footer>
 		</section>
 
+        <!--tabularLayout-->
 		<section data-role="layout" data-id="tabularLayout" >
 			<header data-role="header">
 				<div data-role="navbar">
@@ -123,7 +135,6 @@
 
 				</div>
 			</header>
-			<!--View content will render here-->
 			<footer data-role="footer">
 				<div data-role="tabstrip">
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
@@ -132,6 +143,7 @@
 			</footer>
 		</section>
 
+        <!--grahicalDataLayout-->
 		<section data-role="layout" data-id="grahicalDataLayout" >
 			<header data-role="header">
 				<div data-role="navbar">
@@ -142,7 +154,6 @@
 					<a data-role="button" href="#home" data-align="right">Logout</a>
 				</div>
 			</header>
-			<!--View content will render here-->
 			<footer data-role="footer">
 				<div data-role="tabstrip">
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
@@ -150,8 +161,9 @@
 				</div>
 			</footer>
 		</section>
-        
-        <section data-role="layout" data-id="tabularDataLayout" >
+
+        <!--tabularDataLayout-->
+		<section data-role="layout" data-id="tabularDataLayout" >
 			<header data-role="header">
 				<div data-role="navbar">
 					<a  data-role="backbutton" data-align="left">Back</a>
@@ -161,7 +173,6 @@
 					<a data-role="button" href="#home" data-align="right">Logout</a>
 				</div>
 			</header>
-			<!--View content will render here-->
 			<footer data-role="footer">
 				<div data-role="tabstrip">
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
@@ -170,6 +181,7 @@
 			</footer>
 		</section>
 
+        <!--BackHeader-->
 		<section data-role="layout" data-id="BackHeader">
 			<header data-role="header">
 				<div data-role="navbar">
@@ -177,17 +189,16 @@
 					<span data-role="view-title"/>
 				</div>
 			</header>
-			<!--View content will render here-->
 		</section>
-        
-        <section data-role="layout" data-id="aboutUsLayout">
+
+        <!--aboutUsLayout-->
+		<section data-role="layout" data-id="aboutUsLayout">
 			<header data-role="header">
 				<div data-role="navbar">
 					<span data-role="view-title"/>
 				</div>
 			</header>
-			<!--View content will render here-->
-            <footer data-role="footer">
+			<footer data-role="footer">
 				<div data-role="tabstrip">
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
 					<a data-icon="ic2" href="aboutUs.html">About Us</a>
@@ -195,7 +206,8 @@
 			</footer>
 		</section>
 
-        <section data-role="layout" data-id="registrationHeader">
+        <!--registrationHeader-->
+		<section data-role="layout" data-id="registrationHeader">
 			<header data-role="header">
 				<div data-role="navbar">
 					<a  data-role="backbutton" data-align="left">Back</a>
@@ -203,17 +215,17 @@
 				</div>
 			</header>
 			<!--View content will render here-->
-            <div data-role="footer">
+			<div data-role="footer">
 				<div>
-				<img class="footerimg"  src="../images/mainbg2.png"  />
+					<img class="footerimg"  src="../images/mainbg2.png"  />
 				</div>
 			</div>
 		</section>
-        
+
 		<script src="../cordova.js"></script>
 		<script src="../kendo/js/jquery.min.js"></script>
-		<script src="../kendo/js/kendo.all.js"></script>		
-        <script src="../scripts/common.js"></script>		
+		<script src="../kendo/js/kendo.all.js"></script>
+		<script src="../scripts/common.js"></script>
 		<script>
 			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader" });
 		</script>
