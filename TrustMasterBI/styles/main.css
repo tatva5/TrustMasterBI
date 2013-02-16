@@ -1,0 +1,151 @@
+/* Fleet Style */
+
+/*-- Dashbaord--*/
+.floatWrap:after, #dashboard:after { content: ""; display: block; clear: both}
+.floatWrap, #dashboard { display: inline-block}
+.floatWrap, #dashboard { display: block}
+.clear { clear: both}
+#dashboard
+{
+	font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+.centerWrap
+{
+	width: 940px;
+	margin: 0 auto;
+	padding: 0;
+}
+.demo-section
+{
+	margin: 00px auto;
+	padding: 0px 10px 10px 10px;
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.45), inset 0 0 30px rgba(0, 0, 0, 0.07);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.45), inset 0 0 30px rgba(0, 0, 0, 0.07);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.45), inset 0 0 30px rgba(0, 0, 0, 0.07);
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.dashboard-title,
+.dashboard-subtitle,
+.metric,
+.dashboard-description,
+.stat dd
+{
+	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
+}
+.dashboard-title,
+.dashboard-subtitle
+{
+	text-transform: uppercase;
+}
+.dashboard-title
+{
+	color: #2b8abe;
+	font-size: 48px;
+	font-weight: 300;
+}
+.dashboard-title span,
+.first dd
+{
+	font-weight: 700;
+}
+.dashboard-description
+{
+	font-size: 18px;
+	font-weight: 300;
+	color: #1a364a;
+}
+.dashboard-subtitle1
+{
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 0;
+	color: #454447;
+}
+.dashboard-subtitle
+{
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 0;
+	color: #454447;
+}
+.metric
+{
+	display: block;
+	text-transform: none;
+	font-weight: 300;
+	font-size: 16px;
+	color: #999999;
+	margin: 0;
+}
+.dashboard-title,
+.dashboard-description
+{
+	display: inline-block;
+	margin: 0;
+}
+.stat .eoy-closing
+{
+	font-size: 110px;
+	line-height: 1em;
+	letter-spacing: -2px;
+	text-indent: -8px;
+	color: #454447;
+}
+.stat .volume
+{
+	font-size: 72px;
+	color: #454447;
+}
+.stat .volumeBig
+{
+	font-size: 50px;
+	color: #454447;
+	Margin-bottom: 10px;
+}
+.stat .volumeMedium
+{
+	font-size: 30px;
+	color: #1c638d;
+	Margin-bottom: 10px;
+}
+.stat dd
+{
+	margin: 0;
+}
+.stat,
+.relative-value-pie,
+.company-trends
+{
+	margin: 1em 0 0;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	vertical-align: top;
+}
+
+.trend-container
+{
+	background: transparent none no-repeat 100% 29px;
+	width: 200px;
+	margin-right: 10px;
+}
+.separator
+{
+	height: 1px;
+	background: #b3bbc5;
+}
+.volume-chart
+{
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	width: 400px;
+	height: 300px;
+	vertical-align: top;
+	margin: 4em 0 0 4em;
+	float:right;
+} 
+/*-------------------------------*/
