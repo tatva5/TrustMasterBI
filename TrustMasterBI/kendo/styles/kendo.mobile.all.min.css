@@ -6650,7 +6650,7 @@ body:before
 }
 
 /*** style for textbox **/
-.textboxStyle input[type=text], .textboxStyle input[type=password]
+.km-tablet .km-ios .textboxStyle input[type=text],.km-tablet .textboxStyle input[type=password]
 {
 	font: normal 13px Arial; color: #666;
 	border-radius: 6px;
@@ -6658,6 +6658,16 @@ body:before
 	-webkit-border-radius: 6px;
 	border: 1px solid #a3a9b0;
 	padding: 5px; margin: 0; width: 272px;
+}
+
+ .textboxStyle input[type=text], .textboxStyle input[type=password]
+{
+	font: normal 8px Arial; color: #666;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #a3a9b0;
+	padding: 2px; margin: 0; width: 165px;
 }
 
 .textboxStyle

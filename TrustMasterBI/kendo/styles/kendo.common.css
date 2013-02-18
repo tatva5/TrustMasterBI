@@ -3100,10 +3100,29 @@ span.k-tooltip
 {
     /*position: static;*/
     display: inline-block;
-    border-width: 1px;
+    /*border-width: 1px;*/
     padding: 10px 0px;
     min-width:10px;
 }
+
+.km-tablet .km-ios span.k-tooltip
+{
+    /*position: static;*/
+    display: inline-block;
+    /*border-width: 1px;*/
+    padding: 10px 0px;
+    min-width:10px;
+}
+
+.km-ios span.k-tooltip
+{
+    /*position: static;*/
+    display: inline-block;
+    border-width: 1px;
+    padding: 4px 0px;
+    min-width:10px;
+}
+
 .k-invalid-msg
 {
     display: none;
