@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<!--Home page-->
-		<div id="home" data-role="view" data-title="TRUSTMASTER BI">
+		<div id="home" data-role="view" data-title="trustMaster BI">
 			<ul class="mylist" data-role="listview" data-style="inset">
 				<li>
 					<a href="blog.html">
@@ -31,7 +31,7 @@
 		<section data-role="layout" data-id="customwidHeader">
 			<header data-role="header">
 				<div data-role="navbar">
-					<a  data-role="backbutton" data-align="left">Back</a>
+					<a data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
 					<a  data-role="button" href="../Authentication/registration.html" data-align="right">Registration</a>
 				</div>
@@ -220,18 +220,18 @@
 				</div>
 			</div>
 		</section>
-        
-         <!--fleetdashboardLayout-->
+
+		<!--fleetdashboardLayout-->
 		<section data-role="layout" data-id="fleetdashboardLayout">
 			<header data-role="header">
 				<div data-role="navbar">
-                    <a data-role="backbutton" data-align="left">Back</a>
+					<a data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
 				</div>
 			</header>
 			<footer data-role="footer">
 				<div data-role="tabstrip">
-                    <a data-icon="ic3" href="modules.html?id=3&title=Kgwerano">Kgwerano</a>
+					<a data-icon="ic3" href="modules.html?id=3&title=Kgwerano">Kgwerano</a>
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
 				</div>
 			</footer>
@@ -243,20 +243,19 @@
 		<script src="../scripts/common.js"></script>
 		<script>
 			function transit(e) {
-				if (e.button.context.innerText == "Tabular") 
-                {
+				if (e.button.context.innerText == "Tabular") {
 					e.button.context.innerText = "Graphical";
-                    $("#chartArea").empty();
+					$("#chartArea").empty();
 					$("#chartArea").kendoGrid(callwebservice('Chart', 'Test2', ''));
 				}
-				else
-                {
+				else {
 					e.button.context.innerText = "Tabular";
-                    $("#chartArea").empty();
-                    $("#chartArea").kendoChart(callwebservice('Chart', 'Test1', ''));
-                }
+					$("#chartArea").empty();
+					$("#chartArea").kendoChart(callwebservice('Chart', 'Test1', ''));
+				}
 			}
-			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader" });
+			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader",loading: "<h1>Please wait...</h1>" });
 		</script>
 	</body>
 </html>
+	
