@@ -303,6 +303,7 @@
 	background-size: 100% 100%;
 	width: 100% !important;
 	height: 100% !important;
+    position: relative;
 }
 
 .loginbg .km-content 
@@ -6675,7 +6676,29 @@ body:before
 	text-align: center; margin: 0px auto; margin-top: 15px;
 }
 
+.popupContent
+{
+    padding:0px;
+}
+
 .popupContent .km-content
 {
 	background: white !important;
+    
 }
+
+/**custom style for pages**/
+.lblStyle
+{font-weight:bold;
+}
+
+.linkStyle
+{
+border:none;background:none;padding:0px;margin:0px;
+}
+
+.aboutUsStyle
+{
+    text-align: center; margin:20px;
+}
+
