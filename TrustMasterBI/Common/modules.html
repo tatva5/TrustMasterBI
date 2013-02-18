@@ -12,7 +12,7 @@
 					# for (var i = 0; i < data.length; i++) { #
 					<li>
 						<a href="#= data[i].Href #
-						" data-role="button" class="km-listview-link">#= data[i].Name #</a>
+						   " data-role="button" class="km-listview-link">#= data[i].Name #</a>
 					</li>
 					# }
 					
@@ -23,8 +23,8 @@
 				function modulelist(e) {
 					$("#module-navbar").data("kendoMobileNavBar").title(e.view.params.title);
 					var moduletemplete = kendo.template($("#moduletemplete").html());
-					$("#module_list").html(moduletemplete(callwebservice('Home', 'Modulelist', 'idService=' + e.view.params.id).dataSource));
-					//alert(e.view.params.id);
+					var modData = callwebservice('Home', 'Modulelist', 'idService=' + e.view.params.id).dataSource;
+					$("#module_list").html(moduletemplete(modData));
 				}				
 			</script>
 		</div>
