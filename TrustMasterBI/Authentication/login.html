@@ -14,7 +14,7 @@
 					<tr>
 						<td class="pinWidth" align="right">Pin :</td>
 						<td>
-							<input name="pin" type="text" required validationMessage="*"  value="1234"/> 
+							<input name="pin" id="pin" type="text" required validationMessage="*"  value="1234"/>
 						</td>
 					</tr>
 					<tr>
@@ -32,12 +32,66 @@
 			</div>
 			<script>
 				var validator = $("#mylogin").kendoValidator().data("kendoValidator");
+				
+				// TrustMaster Mobile global variables
+				if (typeof window.top.Onit1 == "undefined") {
+					window.top.Onit1 = {};
+				}
+				
+				if (typeof window.top.Onit1.ResultCode == "undefined") {
+					window.top.Onit1.ResultCode = {
+						"Success": 0,
+						"Error": 1
+					};
+				}
+				
+				if (typeof window.top.Onit1.Paths == "undefined") {
+					window.top.Onit1.Paths = {
+						"Index": ""
+					};
+				}
+				
 				$("#loginbtn").on("click", function(e) {
-					if (validator.validate()) 
-						app.navigate("../Common/services.html");
+					if (validator.validate()) {
+						try {
+							$("#loginbtn").attr("disabled", "disabled");
+							$.ajax({
+								"url": "http://onit1.homenet.org/TrustMasterMobileWebService/User/Login",
+								"method": "post",
+								"dataType": "json",
+								"data": "deviceUuid=" + window.top.device.uuid + "&pin=" + $("#pin").val()
+							})
+							.done(function(data, textStatus, jqXHR) {
+								debugger;
+								try {
+									$("#loginbtn").removeAttr("disabled");
+									data = eval(data)[0];
+									if (data.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
+										alert("Login successful. Please proceed to Services tab.");
+										app.navigate("../Common/services.html");
+									}
+									else {
+										alert("Login failed:\n\n" + data.message);
+									}
+								}
+								catch (e) {
+									alert("Server sent incorrect data. Please contact On-IT1.");
+								}
+							})
+							.fail(function(jqXHR, textStatus, errorThrown) {
+								alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
+							})
+							.always(function () {
+								$("#btnLogOn").removeAttr("disabled");
+							});
+						}
+						catch (e) {
+							alert("Error occurred. Please contact On-IT1.\n\n" + e);
+						}
+					}
 				});				             
 			</script>
 		</div>
-	
+
 	</body>
 </html>
