@@ -221,6 +221,12 @@ html body .k-button-bare
     text-align: center;
     vertical-align: middle;
 }
+
+.noicon .k-icon, .k-sprite, .k-editor-button .k-tool-icon
+{
+    display: none !important;
+}
+
 .k-icon, .k-sprite
 {
     background-color: transparent;
@@ -3088,12 +3094,15 @@ div.k-slider
     filter: alpha(opacity=90);
     opacity: .9;
 }
+
+/*** custom tooltip ***/
 span.k-tooltip
 {
-    position: static;
+    /*position: static;*/
     display: inline-block;
     border-width: 1px;
-    padding: 2px 5px 1px 6px;
+    padding: 10px 0px;
+    min-width:10px;
 }
 .k-invalid-msg
 {
