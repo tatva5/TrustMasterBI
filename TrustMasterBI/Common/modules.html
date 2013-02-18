@@ -5,14 +5,14 @@
 		<title></title>
 	</head>
 	<body>
-		<div data-role="view" data-layout="youthCareLayout" data-show="modulelist">
+		<div id="myView" data-role="view" data-layout="youthCareLayout" data-show="modulelist">
 			<div id="module_list"></div>
 			<script id="moduletemplete" type="text/x-kendo-template">
 				<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
 					# for (var i = 0; i < data.length; i++) { #
 					<li>
 						<a href="#= data[i].Href #
-						" data-role="button" class="km-listview-link">#= data[i].Name #</a>
+						   " data-role="button" class="km-listview-link">#= data[i].Name #</a>
 					</li>
 					# }
 					
@@ -23,8 +23,8 @@
 				function modulelist(e) {
 					$("#module-navbar").data("kendoMobileNavBar").title(e.view.params.title);
 					var moduletemplete = kendo.template($("#moduletemplete").html());
-					$("#module_list").html(moduletemplete(callwebservice('Home', 'Modulelist', 'idService=' + e.view.params.id).dataSource));
-					//alert(e.view.params.id);
+					var modData = callwebservice('Home', 'Modulelist', 'idService=' + e.view.params.id).dataSource;
+					$("#module_list").html(moduletemplete(modData));
 				}				
 			</script>
 		</div>

@@ -5,32 +5,39 @@
 		<title></title>
 	</head>
 	<body>
-		<div class="loginbg" data-role="view" data-title="LOGIN" data-layout="customwidHeader" style="position: relative;">			
+		<div class="loginbg" data-role="view" data-title="LOGIN" data-layout="customwidHeader" style="position: relative;">
 			<div class="logo">
 				<img src="../images/logo.png" alt="" />
 			</div>
-			<div class="login">
-				<table border="0"  cellpadding="0">
+			<div class="login" id="mylogin">
+				<table border="0"  cellpadding="0" class="noicon">
 					<tr>
-						<td class="pinWidth" align="right">Pin:</td>
+						<td class="pinWidth" align="right">Pin :</td>
 						<td>
-							<input name="" type="text" />
+							<input name="pin" type="text" required validationMessage="*"/> 
 						</td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
 						<td>
-							<div class="btn">								
-                                 <a data-role="button" href="../Common/services.html" class="inputbtn">Login</a>
+							<div class="btn">
+								<a data-role="button" id="loginbtn" class="inputbtn">Login</a>
 							</div>
 							<div class="fg_link">
-								<a data-role="button" href="../Authentication/forgotpin.html" style="border:none;background:none;padding:0px;margin:0px;">Forgot Password?</a> 
+								<a data-role="button"  href="../Authentication/forgotpin.html" style="border:none;background:none;padding:0px;margin:0px;">Forgot Pin?</a>
 							</div>
 						</td>
 					</tr>
 				</table>
 			</div>
+			<script>
+				var validator = $("#mylogin").kendoValidator().data("kendoValidator");
+				$("#loginbtn").on("click", function(e) {
+					if (validator.validate()) 
+						app.navigate("../Common/services.html");
+				});				             
+			</script>
 		</div>
-
+	
 	</body>
 </html>
