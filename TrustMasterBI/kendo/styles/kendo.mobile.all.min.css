@@ -32,6 +32,35 @@
 	margin: 18% 0% 0% 36%;
 }
 
+.textboxStyle .logo{
+    margin:0px auto;
+    width: 100%;
+}
+
+.km-tablet .km-ios .textboxStyle .logo img
+{
+	width: 100%;
+	margin:0px auto;
+}
+
+.km-ios .textboxStyle .logo img
+{
+	width: 55%;
+	margin:0px auto;
+}
+
+.km-tablet .km-android .textboxStyle .logo img
+{
+	width: 70%;
+	margin:0px auto;
+}
+
+.km-android .textboxStyle .logo img
+{
+	width: 40%;
+	margin:0px auto;
+}
+
 .km-tablet .km-ios .login
 {
 	background-size: 100%;
