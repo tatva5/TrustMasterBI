@@ -56,7 +56,7 @@
 						try {
 							$("#loginbtn").attr("disabled", "disabled");
 							$.ajax({
-								"url": "http://localhost:29100/User/Login",
+								"url": "http://onit1.homenet.org/TrustMasterMobileServices/User/Login",
 								"method": "post",
 								"dataType": "json",
 								"data": "deviceUuid=" + window.top.device.uuid + "&pin=" + $("#pin").val()
@@ -69,14 +69,11 @@
 									if (data.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
 										app.navigate("../Common/services.html");
 									}
-									else {
-										/*if (data.message.indexOf("PIN locked out."))
-											alert("You have entered wrong pin more than 3 times. Your pin has been locked out!");
-										else*/
-											alert("We didn’t recognise your pin and device. Please try again");
-									}
+									else 
+										alert("We didn’t recognise your pin and device. Please try again");
 								}
-								catch (e) {s
+								catch (e) {
+									s
 									alert("Server sent incorrect data. Please contact On-IT1.");
 								}
 							})
@@ -94,6 +91,6 @@
 				});				             
 			</script>
 		</div>
-
+	
 	</body>
 </html>
