@@ -19,11 +19,42 @@
 					<td>
 					</td>
 					<td align="left">
-						<a id="submitButton" data-role="button" href="../Authentication/login.html">Submit</a>
+						<a id="btnSubmit" data-role="button" href="../Authentication/login.html">Submit</a>
 						<a id="resetButton" data-role="button">Reset</a>
 					</td>
 				</tr>
 			</table>
+			<script>
+				$("#btnSubmit").click(function () {
+					try {
+						$("#btnSubmit").attr("disabled", "disabled");
+						$.ajax({
+							"url": "http://onit1.homenet.org/TrustMasterMobileServices/User/ForgotPin",
+							"method": "post",
+							"dataType": "json",
+							"data": "deviceUuid=" + window.top.device.uuid + "&email=" + $("#email").val()
+						})
+						.done(function(data, textStatus, jqXHR) {
+							try {
+								data = eval(data)[0];
+								alert(data.message); // ignore result code
+							}
+							catch (e) {
+								alert("Server sent incorrect data. Please contact On-IT1.");
+							}
+						})
+						.fail(function(jqXHR, textStatus, errorThrown) {
+							alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
+						})
+						.always(function () {
+							$("#btnSubmit").removeAttr("disabled");
+						});
+					}
+					catch (e) {
+						alert("Error occurred. Please contact On-IT1.\n\n" + e);
+					}
+				});
+			</script>
 		</div>
 	</body>
 </html>

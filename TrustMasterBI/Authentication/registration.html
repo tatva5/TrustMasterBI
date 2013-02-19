@@ -27,24 +27,24 @@
 					</tr>
 					<tr>
 						<td>
-							<label for="txtemailId" class="lblStyle">Email Address :</label>
+							<label for="email" class="lblStyle">Email Address :</label>
 						</td>
 						<td >
-							<input type="text" id="txtemailId" value="" />
+							<input type="text" id="email" value="" />
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label for="txtPin" class="lblStyle">Pin :</label>
+							<label for="pin" class="lblStyle">Pin :</label>
 						</td>
 						<td>
-							<input type="password" id="txtPin" value="" />
+							<input type="password" id="pin" value="" />
 						</td>
 					</tr>
 					<tr>
 						<td></td>
 						<td align="left">
-							<a id="submitButton" data-role="button">Submit</a>
+							<a id="btnRegister" data-role="button">Submit</a>
 						</td>
 					</tr>
 				</table>
@@ -73,16 +73,45 @@
 			</div>
 
 			<script>
-				$("#submitButton").on("click", function(e) {
-					$("#registationForm").hide();
-                    $("#result").show();
+				$("#btnRegister").on("click", function(e) {
+                    debugger;
+					try {
+						$("#btnRegister").attr("disabled", "disabled");
+						$.ajax({
+							"url": "http://onit1.homenet.org/TrustMasterMobileServices/User/Register",
+							"method": "post",
+							"dataType": "json",
+							"data": "deviceUuid=" + window.top.device.uuid + "&email=" + $("#email").val() + "&pin=" + $("#pin").val()
+						})
+						.done(function (data, textStatus, jqXHR) {
+							try 
+                            {
+								data = eval(data)[0];
+								alert(data); // ignore result code
+							}
+							catch (e) {
+								alert("Server sent incorrect data. Please contact On-IT1.");
+							}
+						})
+						.fail(function (jqXHR, textStatus, errorThrown) {
+							alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
+						})
+						.always(function () {
+							$("#btnRegister").removeAttr("disabled");
+						});
+					}
+					catch (e) {
+						alert("Error occurred. Please contact On-IT1.\n\n" + e);
+					}
+					//$("#registationForm").hide();
+					//$("#result").show();
 				});
                 
-                $(document).ready(function() {
-                    debugger;
-                    $("#registationForm").show();
-                    $("#result").hide();
-                });
+				/*$(document).ready(function() {
+					//debugger;
+					$("#registationForm").show();
+					$("#result").hide();
+				});*/
 			</script>
 		</div>
 	</body>
