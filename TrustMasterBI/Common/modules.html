@@ -20,6 +20,7 @@
 			</script>
 			<script>
 				function modulelist(e) {
+                    var 
 					$("#module-navbar").data("kendoMobileNavBar").title(e.view.params.title);
 					var moduletemplete = kendo.template($("#moduletemplete").html());
 					var modData = callwebservice('Home', 'Modulelist', 'idService=' + e.view.params.id).dataSource;
