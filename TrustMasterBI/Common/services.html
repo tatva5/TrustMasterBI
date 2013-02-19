@@ -11,7 +11,7 @@
 					<ul>
 						# for (var i = 0; i < data.length; i++) { #
 						<li>
-							<a href="#= data[i].Href #" data-role="button">
+							<a onclick="navigate('#= data[i].Href #')" data-role="button">
 								<img src="#= data[i].ImagePath #" alt=""/><br/>#= data[i].Name #</a>
 						</li>
 						# }
@@ -21,6 +21,14 @@
 			</script>
 				
 			<script>
+                function navigate(url)
+                {
+                    alert(url);
+                    alert(GetQueryStringParams("id"));
+                    localStorage.setItem("id", 'PARTH');
+                    app.navigate(url);
+                }
+                
 				$(document).ready(function() {
 					var scriptTemplate = kendo.template($("#scriptTemplate").html(),{useWithBlock:false});
                     $("#example").html(scriptTemplate(callwebservice('Home','Servicelist').dataSource));
