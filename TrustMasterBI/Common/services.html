@@ -24,8 +24,8 @@
                 function navigate(url)
                 {
                     alert(url);
-                    alert(GetQueryStringParams("id"));
-                    localStorage.setItem("id", 'PARTH');
+                    localStorage.setItem("id", GetQueryStringParams("id",url));
+                    localStorage.setItem("title", GetQueryStringParams("title",url));
                     app.navigate(url);
                 }
                 
