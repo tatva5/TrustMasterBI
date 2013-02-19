@@ -79,12 +79,12 @@
                                 
 								//Dasboard Date Display
                                 
-								$("#lblexpnlastyearDate").html(temp.data[2].Date);
-								$("#lblexpnprevmonthDate").html(temp.data[1].Date);
-								$("#lblexpncurrDate").html(temp.data[0].Date);
-								$("#lblfleetcurDate").html(temp.data[3].Date);
-								$("#lblfleetprevmonthDate").html(temp.data[4].Date);
-								$("lblfleetlastyearDate").html(temp.data[5].Date);
+								$("#lblexpnlastyearDate").html("(" + temp.data[2].Date + ")");
+								$("#lblexpnprevmonthDate").html("(" + temp.data[1].Date + ")");
+								$("#lblexpncurrDate").html("(" + temp.data[0].Date + ")");
+								$("#lblfleetcurDate").html("(" + temp.data[3].Date + ")");
+								$("#lblfleetprevmonthDate").html("(" + temp.data[4].Date + ")");
+								$("lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");
                                 
 								setTimeout(function () {
 									// Initialize the chart with a delay to make sure
