@@ -40,6 +40,7 @@
 {
 	text-transform: uppercase;
 }
+
 .dashboard-title
 {
 	color: #2b8abe;
@@ -71,6 +72,16 @@
 	margin-bottom: 0;
 	color: #454447;
 }
+.dashboard-subtitle-right
+{
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 0;
+	color: #454447;
+    float : right;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
+}
 .metric
 {
 	display: block;
@@ -79,6 +90,17 @@
 	font-size: 16px;
 	color: #999999;
 	margin: 0;
+}
+.metric_right
+{
+	display: block;
+	text-transform: none;
+	font-weight: 300;
+	font-size: 16px;
+	color: #999999;
+	margin: 0px 10px;
+    font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
+    float:right;
 }
 .dashboard-title,
 .dashboard-description
@@ -96,18 +118,18 @@
 }
 .stat .volume
 {
-	font-size: 72px;
+	font-size: 42px;
 	color: #454447;
 }
 .stat .volumeBig
 {
-	font-size: 50px;
+	font-size: 40px;
 	color: #454447;
 	Margin-bottom: 10px;
 }
 .stat .volumeMedium
 {
-	font-size: 30px;
+	font-size: 20px;
 	color: #1c638d;
 	Margin-bottom: 10px;
 }
@@ -126,12 +148,18 @@
 	vertical-align: top;
    
 }
+.trend-container_first
+{
+	background: transparent none no-repeat 100% 29px;
+	width: 180px;
+	margin-right: 0px;
+}
 
 .trend-container
 {
 	background: transparent none no-repeat 100% 29px;
 	width: 200px;
-	margin-right: 10px;
+	margin-right: 0px;
 }
 .separator
 {
@@ -145,7 +173,7 @@
 	zoom: 1;
 	width: 500px;
 	height: 300px;
-	margin-left: 30px;
+	margin-left: 20px;
     margin-top: 60px;
 } 
 /*-------------------------------*/

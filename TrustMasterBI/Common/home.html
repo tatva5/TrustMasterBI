@@ -92,7 +92,7 @@
 		<section data-role="layout" data-id="youthCareLayout" >
 			<header data-role="header">
 				<div data-role="navbar" id="module-navbar">
-					<a  data-role="backbutton" data-align="left">Back</a>
+					<a data-role="backbutton" data-align="left" data-click="backClick">Back</a>
 					<span data-role="view-title"/>
 					<a data-role="button" href="#home" data-align="right">Logout</a>
 
@@ -241,7 +241,7 @@
 		<script src="../kendo/js/jquery.min.js"></script>
 		<script src="../kendo/js/kendo.all.js"></script>
 		<script src="../scripts/common.js"></script>
-		<script>
+		<script>			
 			function transit(e) {
 				if (e.button.context.innerText == "Tabular") {
 					e.button.context.innerText = "Graphical";
@@ -253,6 +253,15 @@
 					$("#chartArea").empty();
 					$("#chartArea").kendoChart(callwebservice('Chart', 'Test1', ''));
 				}
+			}
+            
+			function cleanview() {
+                //alert('cleanview');
+				$("div[data-role=view]").each(function(i, elem) {
+					if ($(elem).attr("data-url") && $(elem).attr("data-url") != window.location.href.split('#')[1]) {
+						$(elem).remove();
+					}
+				});
 			}
 			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader",loading: "<h1>Please wait...</h1>" });
 		</script>

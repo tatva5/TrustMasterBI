@@ -13,42 +13,64 @@
 							<dt class="dashboard-subtitle1">
 								TOTAL EXPENDITURE
 							</dt>
-							<dl class="stat trend-container">
-								<dt class="dashboard-subtitle">Last Year</dt><span class="metric">(01/02/2012)</span>
-								<dd class="volumeMedium">215127.60</dd>
+							<dl class="stat trend-container_first">
+								<dt class="dashboard-subtitle">Last Year</dt><span class="metric" id="lblexpnlastyearDate">(01/02/2012)</span>
+								<dd class="volumeMedium" id="lblexplastYear" ></dd>
 							</dl>
 							<!--<dl class="stat trend-container"></dl>-->
 							<dl class="stat trend-container">
 								<dt class="dashboard-subtitle">
-									Previous Month<span class="metric">(01/01/2013)</span>
+									Previous Month<span class="metric" id="lblexpnprevmonthDate" >(01/01/2013)</span>
 								</dt>
-								<dd class="volumeMedium">215234.67</dd>
+								<dd class="volumeMedium" id="lblexpnpreMonth">215234.67</dd>
 							</dl>
 
 						</dl>
 						<div class="company-trends">
 							<dl class="stat first">
-								<dt class="dashboard-subtitle">Date</dt><span class="metric">(01/02/2013)</span>
-								<dd class="volumeBig">334556.33</dd>
-
+								<span class="metric_right" id="lblexpncurrDate" >(01/02/2013)</span><dt class="dashboard-subtitle-right">Date</dt>
+								<dd class="volumeBig" id="lblexpncurrentDate">334556.33</dd>
 							</dl>
-
 						</div>
+
+						<script>
+							$(document).ready(function () {
+								var temp = ((callwebservice('fleet', 'getexpenditures').dataSource));  
+                                
+                                //Dashboard Numeric Display
+                                
+								$("#lblexplastYear").html(temp.data[2].LastYearExpenditure);
+								$("#lblexpnpreMonth").html(temp.data[1].PrevioudMonthExpenditure);
+								$("#lblexpncurrentDate").html(temp.data[0].TotalExpenditure);
+								$("#currentFleet").html(temp.data[3].FleetSize);
+								$("#prevFleet").html(temp.data[4].PrevMonthFleetSize);
+								$("#lastyearFleet").html(temp.data[5].FleetSizeLastYear);
+                                
+                                //Dasboard Date Display
+                                
+                                $("#lblexpnlastyearDate").html(temp.data[2].Date);
+                                $("#lblexpnprevmonthDate").html(temp.data[1].Date);
+                                $("#lblexpncurrDate").html(temp.data[0].Date);
+                                $("#lblfleetcurDate").html(temp.data[3].Date);
+                                $("#lblfleetprevmonthDate").html(temp.data[4].Date);
+                                $("lblfleetlastyearDate").html(temp.data[5].Date);
+                                
+							});
+						</script>
 						<div class="separator"></div>
 					</div>
 					<br/>
 					<dt class="dashboard-subtitle1">MONTHLY EXPENDITURE PER CATEGORY </dt>
-
 					<div id="Barchart"></div>
 					<script>
 						function createChart2() {
 							$("#Barchart").kendoChart({
 								theme: "blueopal",
-            
+						
 								legend: {
 									position: "top",
 									offsetX: 240
-        
+						
 								},
 								seriesDefaults: {
 									type: "column"
@@ -87,19 +109,19 @@
 								}
 							});
 						}
-								
+						
 						$(document).ready(function () {
 							setTimeout(function () {
 								// Initialize the chart with a delay to make sure
 								// the initial animation is visible
 								createChart2();
-								
+						
 								$("#dashboard").bind("kendo:skinChange", function (e) {
 									createChart2();
 								});
 							}, 400);
 						});
-								
+						
 					</script>
 					<div class="company-info" id="google">
 						<div class="separator"></div>
@@ -109,17 +131,20 @@
 							</dt>
 							<br/>
 							<dt class="dashboard-subtitle">
-								Date<span class="metric">(01/02/2013)</span>
+								Date<span class="metric" id="lblfleetcurDate" >(01/02/2013)</span>
 							</dt>
-							<dd class="volumeBig">16,000</dd>
+							<dd class="volumeBig" id="currentFleet" >16,000</dd>
+							
 							<dt class="dashboard-subtitle">
-								Previous Month<span class="metric">(01/01/2013)</span>
+								Previous Month<span class="metric" id="lblfleetprevmonthDate" >(01/01/2013)</span>
 							</dt>
-							<dd class="volumeMedium">14,000</dd>
+							<dd class="volumeMedium" id="prevFleet">14,000</dd>
+							
 							<dt class="dashboard-subtitle">
-								Last Year<span class="metric">(01/02/2012)</span>
+								Last Year<span class="metric" id="lblfleetlastyearDate" >(01/02/2012)</span>
 							</dt>
-							<dd class="volumeMedium">12,000</dd>
+							<dd class="volumeMedium" id="lastyearFleet" >12,000</dd>
+							
 						</dl>
 						<div class="volume-chart k-chart" >
 							<div id="chart" ></div>
@@ -151,14 +176,14 @@
 										"value": 10000
 									}
 								];
-										
+								
 								function createChart() {
 									$("#chart").kendoChart({
 										theme: "blueopal",
 										dataSource: {
 											data: internetUsers
 										},
-										
+								
 										legend: {
 											visible: false
 										},
@@ -183,20 +208,20 @@
 										},
 										chartArea:{
 											height:300, width:500,background: ""
-                                                    
+								
 										},
 										categoryAxis: {
 											field: "year"
 										}
 									});
 								}
-										
+								
 								$(document).ready(function() {
 									setTimeout(function() {
 										// Initialize the chart with a delay to make sure
 										// the initial animation is visible
 										createChart();
-										
+								
 										$("#dashboard").bind("kendo:skinChange", function(e) {
 											createChart();
 										});
