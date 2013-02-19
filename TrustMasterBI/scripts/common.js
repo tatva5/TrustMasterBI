@@ -12,7 +12,8 @@ function GetQueryStringParams(sParam, url) {
 }
 
 function callwebservice(controller, method, parameter) {
-	var url = "http://onit1.homenet.org/TrustMasterMobileServices/" + controller + "/" + method;
+    //var url = "http://onit1.homenet.org/TrustMasterMobileServices/" + controller + "/" + method;
+	var url = "http://183.182.91.146/TrustMasterBI/" + controller + "/" + method;
 	if (typeof(parameter)==='undefined')
 		parameter = '';
 	var receivedData;
