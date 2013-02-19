@@ -20,10 +20,10 @@
 			</script>
 			<script>
 				function modulelist(e) {
-                    var navbar=$("#module-navbar").data("kendoMobileNavBar");
-					$("#module-navbar").data("kendoMobileNavBar").title(e.view.params.title);
+                    //alert(localStorage.getItem("id"));
+					//$("#module-navbar").data("kendoMobileNavBar").title(localStorage.getItem("title"));
 					var moduletemplete = kendo.template($("#moduletemplete").html());
-					var modData = callwebservice('Home', 'Modulelist', 'idService=' + e.view.params.id).dataSource;
+					var modData = callwebservice('Home', 'Modulelist', 'idService=' + localStorage.getItem("id")).dataSource;
 					$("#module_list").html(moduletemplete(modData));
 				}				
 			</script>

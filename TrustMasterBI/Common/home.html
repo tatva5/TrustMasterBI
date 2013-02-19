@@ -26,6 +26,21 @@
 				</li>
 			</ul>
 		</div>
+        
+        <!--mainHeader-->
+		<section data-role="layout" data-id="mainHeader">
+			<header data-role="header">
+				<div data-role="navbar">
+					<span data-role="view-title"/>
+					<a  data-role="button" href="../Authentication/login.html" data-align="right">Login</a>
+				</div>
+			</header>
+			<div data-role="footer">
+				<div>
+					<img class="footerimg"  src="../images/mainbg2.png"  />
+				</div>
+			</div>
+		</section>
 
 		<!--customwidHeader-->
 		<section data-role="layout" data-id="customwidHeader">
@@ -38,7 +53,7 @@
 			</header>
 			<div data-role="footer">
 				<div>
-					<img class="footerimg"  src="../images/mainbg2.png"  />
+					<img class="footerimg" src="../images/mainbg2.png"  />
 				</div>
 			</div>
 		</section>
@@ -52,21 +67,6 @@
 					<a  data-role="button" href="../Authentication/login.html" data-align="right">Login</a>
 				</div>
 			</header>
-		</section>
-
-		<!--mainHeader-->
-		<section data-role="layout" data-id="mainHeader">
-			<header data-role="header">
-				<div data-role="navbar">
-					<span data-role="view-title"/>
-					<a  data-role="button" href="../Authentication/login.html" data-align="right">Login</a>
-				</div>
-			</header>
-			<div data-role="footer">
-				<div>
-					<img class="footerimg"  src="../images/mainbg2.png"  />
-				</div>
-			</div>
 		</section>
 
 		<!--servicesLayout-->
@@ -92,10 +92,9 @@
 		<section data-role="layout" data-id="youthCareLayout" >
 			<header data-role="header">
 				<div data-role="navbar" id="module-navbar">
-					<a data-role="backbutton" data-align="left" data-click="backClick">Back</a>
+					<a href="services.html" data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
 					<a data-role="button" href="#home" data-align="right">Logout</a>
-
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -256,10 +255,17 @@
 			}
             
 			function cleanview() {
-                //alert('cleanview');
+				//alert('cleanview');
 				$("div[data-role=view]").each(function(i, elem) {
 					if ($(elem).attr("data-url") && $(elem).attr("data-url") != window.location.href.split('#')[1]) {
 						$(elem).remove();
+					}
+					else {
+						//alert(elem.id);
+						if (elem.id == "myView") {
+                            $(":jqmData(role='view')").attr("data-title", localStorage.getItem("title"))
+                            //$(elem).attr("data-title",localStorage.getItem("title"));
+						}
 					}
 				});
 			}
@@ -267,4 +273,3 @@
 		</script>
 	</body>
 </html>
-	
