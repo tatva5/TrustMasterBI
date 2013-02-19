@@ -11,8 +11,8 @@
 					<ul>
 						# for (var i = 0; i < data.length; i++) { #
 						<li>
-							<a onclick="navigate('#= data[i].Href #')" data-role="button">
-								<img src="#= data[i].ImagePath #" alt=""/><br/>#= data[i].Name #</a>
+							<a onclick="navigate('#= data[i].href #')" data-role="button">
+								<img src="#= data[i].imagepath #" alt=""/><br/>#= data[i].name #</a>
 						</li>
 						# }
 						#
@@ -23,7 +23,7 @@
 			<script>
                 function navigate(url)
                 {
-                    alert(url);
+                    //alert(url);
                     localStorage.setItem("id", GetQueryStringParams("id",url));
                     localStorage.setItem("title", GetQueryStringParams("title",url));
                     app.navigate(url);
