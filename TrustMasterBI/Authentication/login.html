@@ -66,7 +66,6 @@
 									$("#loginbtn").removeAttr("disabled");
 									data = eval(data)[0];
 									if (data.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
-										alert("Login successful. Please proceed to Services tab.");
 										app.navigate("../Common/services.html");
 									}
 									else {
