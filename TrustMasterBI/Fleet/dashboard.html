@@ -48,12 +48,12 @@
                                 
                                 //Dasboard Date Display
                                 
-                                $("#lblexpnlastyearDate").html(temp.data[2].Date);
-                                $("#lblexpnprevmonthDate").html(temp.data[1].Date);
-                                $("#lblexpncurrDate").html(temp.data[0].Date);
-                                $("#lblfleetcurDate").html(temp.data[3].Date);
-                                $("#lblfleetprevmonthDate").html(temp.data[4].Date);
-                                $("lblfleetlastyearDate").html(temp.data[5].Date);
+                                $("#lblexpnlastyearDate").html("(" + temp.data[2].Date + ")");
+                                $("#lblexpnprevmonthDate").html("(" + temp.data[1].Date + ")");
+                                $("#lblexpncurrDate").html("(" + temp.data[0].Date + ")");
+                                $("#lblfleetcurDate").html("(" + temp.data[3].Date + ")");
+                                $("#lblfleetprevmonthDate").html("(" + temp.data[4].Date + ")");
+                                $("lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");
                                 
 							});
 						</script>
@@ -62,67 +62,7 @@
 					<br/>
 					<dt class="dashboard-subtitle1">MONTHLY EXPENDITURE PER CATEGORY </dt>
 					<div id="Barchart"></div>
-					<script>
-						function createChart2() {
-							$("#Barchart").kendoChart({
-								theme: "blueopal",
-						
-								legend: {
-									position: "top",
-									offsetX: 240
-						
-								},
-								seriesDefaults: {
-									type: "column"
-								},
-								series: [
-									{
-										name: "Prev. Month same date",
-										data: [12000, 30000, 46000, 56000, 23000,34000,56000,25000,76000,28000,55000]
-									}, {
-										name: "Current Month",
-										data: [18000, 28000, 34000, 46000, 20000,30000,50000,30000,65000,32000,60000]
-									}
-								],
-								valueAxis: {
-									labels: {
-										format: "{0}"
-									},
-									majorUnit: 10000
-								},
-								categoryAxis: {
-									categories: ["Body works", "Brakes", "Cooling system","Drive train", "Electrical","Engine","Exhaust and Manifolds","Fuel System","Services","Suspension","Tyres"],
-									labels: {
-										rotation: -30,
-										margin: 0,
-										padding: { top: 0, left: 10, right :50 }
-									}
-								},
-								chartArea:{
-									width:750,
-									height :340,
-									background: ""
-								},
-								tooltip: {
-									visible: true,
-									format: "{0}"
-								}
-							});
-						}
-						
-						$(document).ready(function () {
-							setTimeout(function () {
-								// Initialize the chart with a delay to make sure
-								// the initial animation is visible
-								createChart2();
-						
-								$("#dashboard").bind("kendo:skinChange", function (e) {
-									createChart2();
-								});
-							}, 400);
-						});
-						
-					</script>
+
 					<div class="company-info" id="google">
 						<div class="separator"></div>
 						<dl class="stat first">
@@ -148,7 +88,27 @@
 						</dl>
 						<div class="volume-chart k-chart" >
 							<div id="chart" ></div>
-							<script>
+                            
+                        <script>
+                                                   
+                        $(document).ready(function () {
+							setTimeout(function () {
+								// Initialize the chart with a delay to make sure
+								// the initial animation is visible
+								createBarChart();
+                                createLineChart();
+						
+								$("#dashboard").bind("kendo:skinChange", function (e) {
+									createBarChart();
+                                    createLineChart();
+								});
+							}, 200);
+						});
+						
+                        
+				        var bardata = callwebservice('fleet', 'GetExpendituresByCategory').dataSource;
+                        var linedata = callwebservice('fleet', 'GetActiveVehiclesPerMonth');
+                        
 								var internetUsers = [
 									{
 										"country": "Fleet",
@@ -175,58 +135,65 @@
 										"year": "JAN-13",
 										"value": 10000
 									}
-								];
+								];     
+                             
+                             
+						function createBarChart() {
+							$("#Barchart").kendoChart({
+								theme: "blueopal",
+						
+								legend: {
+									position: "top",
+									offsetX: 240
+						
+								},
+								seriesDefaults: {
+									type: "column"
+								},
+								series: [
+									{
+										name: "Prev. Month same date",
+										data: bardata.data1
+									}, {
+										name: "Current Month",
+										data: bardata.data2
+									}
+								],
+								valueAxis: {
+									labels: {
+										format: "{0}"
+									},
+									
+								},
+								categoryAxis: {
+									categories: bardata.data3,
+                                    baseUnit :"fit",
+									labels: {
+										rotation: -30,
+										margin: 0,
+										padding: { top: 0, left: 10, right :50 }
+                                        
+									}
+								},
+								chartArea:{
+									width:750,
+									height :340,
+									background: ""
+								},
+								tooltip: {
+									visible: true,
+									format: "{0}"
+								}
+							});
+						}
+						
 								
-								function createChart() {
-									$("#chart").kendoChart({
-										theme: "blueopal",
-										dataSource: {
-											data: internetUsers
-										},
-								
-										legend: {
-											visible: false
-										},
-										seriesDefaults: {
-											type: "line",
-											labels: {
-												visible: false,
-												format: "{0}"
-											}
-										},
-										series: [
-											{
-												field: "value",
-												name: "Fleet"
-											}
-										],
-										valueAxis: {
-											labels: {
-												format: "{0}"
-											},
-											majorUnit: 2000
-										},
-										chartArea:{
-											height:300, width:500,background: ""
-								
-										},
-										categoryAxis: {
-											field: "year"
-										}
-									});
+							function createLineChart() {
+									$("#chart").kendoChart(linedata
+								);
 								}
 								
-								$(document).ready(function() {
-									setTimeout(function() {
-										// Initialize the chart with a delay to make sure
-										// the initial animation is visible
-										createChart();
 								
-										$("#dashboard").bind("kendo:skinChange", function(e) {
-											createChart();
-										});
-									}, 300);
-								});
 							</script>
 						</div>
 					</div>
