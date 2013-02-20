@@ -35,7 +35,11 @@
 {
 	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
 }
-
+.dashboard-title,
+.dashboard-subtitle
+{
+	text-transform: uppercase;
+}
 
 .dashboard-title
 {
@@ -75,6 +79,7 @@
 	margin-bottom: 0;
 	color: #454447;
     float : right;
+    text-transform: uppercase;
     font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
 }
 .metric
