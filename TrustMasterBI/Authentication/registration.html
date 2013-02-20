@@ -8,7 +8,7 @@
 		<div data-role="view" data-title="Registration" data-layout="BackHeader" data-before-show="cleanview" class="scatterbg">
 			<div class="textboxStyle" id="#zoomable-explanation">
 				<h3>Please note this section is for Authorized Bosasa Group Employees only.</h3>
-                <img src="../images/logo.png" alt="" />
+				<img src="../images/logo.png" alt="" />
 				<table class="registration" id="registationForm" cellspacing="5px">
 					<tr>
 						<td>
@@ -75,21 +75,21 @@
 
 			<script>
 				$("#btnRegister").on("click", function(e) {
-                    debugger;
+                     alert("register clicked!")
 					try {
 						$("#btnRegister").attr("disabled", "disabled");
 						$.ajax({
+							//"url": "http://183.182.91.146/TrustMasterBI/User/Register",
 							"url": "http://183.182.91.146/TrustMasterBI/User/Register",
-                           
 							"method": "post",
 							"dataType": "json",
-							"data":"firstname=" + $("#txtFirstName").val() +"&lastname="+$("#txtSurname").val() + "&uidDevice=" + window.top.device.uuid + "&email=" + $("#email").val() + "&pin=" + $("#pin").val()
+							"data":"firstname=" + $("#txtFirstName").val() + "&lastname=" + $("#txtSurname").val() + "&uidDevice=" + window.top.device.uuid + "&email=" + $("#email").val() + "&pin=" + $("#pin").val()
 						})
 						.done(function (data, textStatus, jqXHR) {
-							try 
-                            {
-								data = eval(data)[0];
-								alert(data); // ignore result code
+							try {
+                                alert("success!");
+								$("#registationForm").hide();
+								$("#result").show();
 							}
 							catch (e) {
 								alert("Server sent incorrect data. Please contact On-IT1.");
@@ -105,8 +105,11 @@
 					catch (e) {
 						alert("Error occurred. Please contact On-IT1.\n\n" + e);
 					}
-					//$("#registationForm").hide();
-					//$("#result").show();
+				});
+                
+				$(document).ready(function() {
+					$("#registationForm").show();
+					$("#result").hide();
 				});
 			</script>
 		</div>
