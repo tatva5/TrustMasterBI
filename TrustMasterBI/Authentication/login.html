@@ -52,6 +52,10 @@
 				}
 				
 				$("#loginbtn").on("click", function(e) {
+                    alert("process to login...");
+                    app.navigate("../Common/services.html");
+                    return;
+                    alert("process to logedin...");
 					if (validator.validate()) {
 						try {
 							$("#loginbtn").attr("disabled", "disabled");
@@ -59,8 +63,7 @@
 								"url": "http://183.182.91.146/TrustMasterBI/User/Login",
 								"method": "post",
 								"dataType": "json",
-								//"data": "uidDevice=" + window.top.device.uuid + "&pin=" + $("#pin").val()
-                                "data": "deviceUuid=" + window.top.device.uuid + "&pin=" + $("#pin").val()
+                                "data": "uidDevice=" + window.top.device.uuid + "&pin=" + $("#pin").val()
 							})
 							.done(function(data, textStatus, jqXHR) {	
 								debugger;
