@@ -52,10 +52,6 @@
 				}
 				
 				$("#loginbtn").on("click", function(e) {
-                alert("login clicked!");
-                    app.navigate("../Common/services.html");
-                    return;
-                    alert('return');
 					if (validator.validate()) {
 						try {
 							$("#loginbtn").attr("disabled", "disabled");
