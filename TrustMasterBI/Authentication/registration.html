@@ -79,8 +79,8 @@
 					try {
 						$("#btnRegister").attr("disabled", "disabled");
 						$.ajax({
-							"url": "http://localhost:29100/User/Register",
-                           // "url": "http://onit1.homenet.org/TrustMasterMobileServices/User/Register",
+							"url": "http://183.182.91.146/TrustMasterBI/User/Register",
+                           
 							"method": "post",
 							"dataType": "json",
 							"data":"firstname=" + $("#txtFirstName").val() +"&lastname="+$("#txtSurname").val() + "&uidDevice=" + window.top.device.uuid + "&email=" + $("#email").val() + "&pin=" + $("#pin").val()
