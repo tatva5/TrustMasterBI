@@ -232,7 +232,6 @@
 				<div data-role="navbar">
 					<a data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
-                    <a data-role="button" href="#home" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -249,7 +248,7 @@
 		<script src="../scripts/common.js"></script>
 		<script>			
 			function transit(e) {
-				if (e.button.context.innerText == "Tabular") {
+                if (e.button.context.innerText == "Tabular") {
 					e.button.context.innerText = "Graphical";
 					$("#chartArea").empty();
 					$("#chartArea").kendoGrid(callwebservice('Chart', 'Test2', ''));
