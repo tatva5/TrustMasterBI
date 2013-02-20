@@ -6680,6 +6680,19 @@ body:before
 	margin: 0 !important; padding: 0 !important; width: 40px !important;
 }
 
+.km-ic4:after, .km-ic4:before
+{
+	content: "";
+	background: url(images/ic4.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; width: 40px !important; 
+}
+.km-state-active .km-ic4:after, .km-state-active .km-ic4:before
+{
+	content: "";
+	background: url(images/ic4_h.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; width: 40px !important;
+}
+
 /*** style for textbox **/
 .km-tablet .km-ios .textboxStyle input[type=text], .km-tablet .textboxStyle input[type=password]
 {
