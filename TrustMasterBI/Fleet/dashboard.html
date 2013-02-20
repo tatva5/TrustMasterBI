@@ -108,7 +108,7 @@
                         
 				        var bardata = callwebservice('fleet', 'GetExpendituresByCategory').dataSource;
                         
-						var internetUsers = callwebservice('fleet', 'GetActiveVehiclesPerMonth');
+						var internetUsers = callwebservice('fleet', 'GetActiveVehiclesPerMonth').dataSource;
                              
                              
 						function createBarChart() {
@@ -166,7 +166,7 @@
 									$("#chart").kendoChart({
 										theme: "blueopal",
 										dataSource: {
-											data: internetUsers
+											data: internetUsers.data
 										},
 								
 										legend: {
@@ -197,7 +197,11 @@
 										},
 										categoryAxis: {
 											field: "year"
-										}
+										},
+                                        tooltip: {
+									        visible: true,
+									        format: "{0}"
+								            }
 									});
 								}
 								
