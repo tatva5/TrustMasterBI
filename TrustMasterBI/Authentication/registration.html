@@ -5,16 +5,17 @@
 		<title></title>
 	</head>
 	<body>
-		<div data-role="view" data-title="Registration" data-layout="BackHeader" data-before-show="cleanview">
+		<div data-role="view" data-title="Registration" data-layout="BackHeader" data-before-show="cleanview" class="scatterbg">
 			<div class="textboxStyle" id="#zoomable-explanation">
 				<h3>Please note this section is for Authorized Bosasa Group Employees only.</h3>
-				<table class="registration" id="registationForm">
+                <img src="../images/logo.png" alt="" />
+				<table class="registration" id="registationForm" cellspacing="5px">
 					<tr>
 						<td>
-							<label for="txtName" class="lblStyle">Name :</label>
+							<label for="txtFirstName" class="lblStyle">First Name :</label>
 						</td>
 						<td >
-							<input type="text" id="txtName" value="" />
+							<input type="text" id="txtFirstName" value="" />
 						</td>
 					</tr>
 					<tr>
@@ -43,7 +44,7 @@
 					</tr>
 					<tr>
 						<td></td>
-						<td align="left">
+						<td class="button">
 							<a id="btnRegister" data-role="button">Submit</a>
 						</td>
 					</tr>
@@ -78,10 +79,11 @@
 					try {
 						$("#btnRegister").attr("disabled", "disabled");
 						$.ajax({
-							"url": "http://onit1.homenet.org/TrustMasterMobileServices/User/Register",
+							"url": "http://183.182.91.146/TrustMasterBI/User/Register",
+                           
 							"method": "post",
 							"dataType": "json",
-							"data": "deviceUuid=" + window.top.device.uuid + "&email=" + $("#email").val() + "&pin=" + $("#pin").val()
+							"data":"firstname=" + $("#txtFirstName").val() +"&lastname="+$("#txtSurname").val() + "&uidDevice=" + window.top.device.uuid + "&email=" + $("#email").val() + "&pin=" + $("#pin").val()
 						})
 						.done(function (data, textStatus, jqXHR) {
 							try 
@@ -106,12 +108,6 @@
 					//$("#registationForm").hide();
 					//$("#result").show();
 				});
-                
-				/*$(document).ready(function() {
-					//debugger;
-					$("#registationForm").show();
-					$("#result").hide();
-				});*/
 			</script>
 		</div>
 	</body>

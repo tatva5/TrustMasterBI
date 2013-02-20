@@ -32,6 +32,36 @@
 	margin: 18% 0% 0% 36%;
 }
 
+.textboxStyle .logo
+{
+	margin: 0px auto;
+	width: 100%;
+}
+
+.km-tablet .km-ios .textboxStyle .logo img
+{
+	width: 100%;
+	margin: 0px auto;
+}
+
+.km-ios .textboxStyle .logo img
+{
+	width: 55%;
+	margin: 0px auto;
+}
+
+.km-tablet .km-android .textboxStyle .logo img
+{
+	width: 70%;
+	margin: 0px auto;
+}
+
+.km-android .textboxStyle .logo img
+{
+	width: 40%;
+	margin: 0px auto;
+}
+
 .km-tablet .km-ios .login
 {
 	background-size: 100%;
@@ -303,7 +333,7 @@
 	background-size: 100% 100%;
 	width: 100% !important;
 	height: 100% !important;
-    position: relative;
+	position: relative;
 }
 
 .loginbg .km-content 
@@ -6651,7 +6681,7 @@ body:before
 }
 
 /*** style for textbox **/
-.km-tablet .km-ios .textboxStyle input[type=text],.km-tablet .textboxStyle input[type=password]
+.km-tablet .km-ios .textboxStyle input[type=text], .km-tablet .textboxStyle input[type=password]
 {
 	font: normal 13px Arial; color: #666;
 	border-radius: 6px;
@@ -6661,7 +6691,7 @@ body:before
 	padding: 5px; margin: 0; width: 272px;
 }
 
- .textboxStyle input[type=text], .textboxStyle input[type=password]
+.textboxStyle input[type=text], .textboxStyle input[type=password]
 {
 	font: normal 8px Arial; color: #666;
 	border-radius: 6px;
@@ -6676,44 +6706,70 @@ body:before
 	text-align: center; margin: 0px auto; margin-top: 15px;
 }
 
+.scatterbg .km-content 
+{
+	background-image: url(../../images/registrationBackground.png) !important;
+    background-size:641px 311px;
+}
+
+.km-tablet .km-ios .scatterbg .km-content 
+{
+	background-image: url(../../images/registrationBackground.png) !important;
+    background-size:100% 100%;
+    background-repeat:repeat;
+}
+
+.km-ios .scatterbg .km-content 
+{
+	background-image: url(../../images/registrationBackground.png) !important;
+    background-size:50% 50%;
+}
+
 .popupContent
 {
-    padding:0px;
+	padding: 0px;
 }
 
 .popupContent .km-content
 {
 	background: white !important;
-    
 }
 
 /**custom style for pages**/
 .lblStyle
-{font-weight:bold;
+{
+	font-weight: bold;
+	text-align: right;
 }
 
 .linkStyle
 {
-border:none;background:none;padding:0px;margin:0px;
+	border: none; background: none; padding: 0px; margin: 0px;
 }
 
 .aboutUsStyle
 {
-    text-align: center; margin:20px;
+	text-align: center; margin: 20px;
 }
 
-.registration {
-    margin:0px auto;
+.registration
+{
+	margin: 0px auto;
 }
 
 .registration td
 {
-    text-align: left;
+	text-align: right;
+}
+
+.registration .button
+{
+	text-align: left;
 }
 
 .registrationresult td
 {
-    text-align: left;
-    padding-left:10px;
-    display:none;
+	text-align: left;
+	padding-left: 10px;
+	display: none;
 }

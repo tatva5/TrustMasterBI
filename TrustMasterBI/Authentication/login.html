@@ -56,13 +56,13 @@
 						try {
 							$("#loginbtn").attr("disabled", "disabled");
 							$.ajax({
-								"url": "http://onit1.homenet.org/TrustMasterMobileServices/User/Login",
+								"url": "http://183.182.91.146/TrustMasterBI/User/Login",
 								"method": "post",
 								"dataType": "json",
-								"data": "deviceUuid=" + window.top.device.uuid + "&pin=" + $("#pin").val()
+								//"data": "uidDevice=" + window.top.device.uuid + "&pin=" + $("#pin").val()
+                                "data": "uidDevice=" + window.top.device.uuid + "&pin=" + $("#pin").val()
 							})
-							.done(function(data, textStatus, jqXHR) {	
-								//debugger;
+							.done(function(data, textStatus, jqXHR) {									
 								try {
 									$("#loginbtn").removeAttr("disabled");
 									data = eval(data)[0];
