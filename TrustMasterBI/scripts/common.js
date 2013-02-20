@@ -18,7 +18,28 @@ $("#loginbtn").live("click", function(e) {
 	}
 	else 
 		alert("We didn’t recognise your pin and device. Please try again");
-});		
+});
+
+$("#btnRegister").live("click", function(e) {		
+	alert("Registration successfully!");
+    $("#registationForm").css("visibility","hidden");
+    $("#result").css("visibility","visible");
+	return;
+    
+	//Validate control
+	if (!validateControl('registationForm'))
+		return;
+    
+	//Registration
+	var result = callwebservice('User', 'Register', 'firstname=' + $("#txtFirstName").val() + '&lastname=' + $("#txtSurname").val() + '&uidDevice=' + window.top.device.uuid + '&email=' + $("#email").val() + '&pin=' + $("#pin").val());
+	if (typeof(result)==='undefined') 
+		return;
+	if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
+		alert("Registration successfully!");
+	}
+	else 
+		alert("Error occured while registration. Please try again");
+});
 
 function cleanview() {
 	//alert('cleanview');
@@ -61,6 +82,7 @@ function callwebservice(controller, method, parameter) {
 	var url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
 	if (typeof(parameter)==='undefined')
 		parameter = '';
+	alert(parameter);
 	var receivedData;
 	try {
 		$.ajax({
