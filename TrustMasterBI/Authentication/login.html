@@ -30,71 +30,25 @@
 					</tr>
 				</table>
 			</div>
+
 			<script>
-				var validator = $("#mylogin").kendoValidator().data("kendoValidator");
-				
-				// TrustMaster Mobile global variables
-				if (typeof window.top.Onit1 == "undefined") {
-					window.top.Onit1 = {};
-				}
-				
-				if (typeof window.top.Onit1.ResultCode == "undefined") {
-					window.top.Onit1.ResultCode = {
-						"Success": 0,
-						"Error": 1
-					};
-				}
-				
-				if (typeof window.top.Onit1.Paths == "undefined") {
-					window.top.Onit1.Paths = {
-						"Index": ""
-					};
-				}
-				
 				$("#loginbtn").on("click", function(e) {
-                    alert("process to login...");
-                    app.navigate("../Common/services.html");
-                    return;
-                    alert("process to logedin...");
-					if (validator.validate()) {
-						try {
-							$("#loginbtn").attr("disabled", "disabled");
-							$.ajax({
-								"url": "http://183.182.91.146/TrustMasterBI/User/Login",
-								"method": "post",
-								"dataType": "json",
-                                "data": "uidDevice=" + window.top.device.uuid + "&pin=" + $("#pin").val()
-							})
-							.done(function(data, textStatus, jqXHR) {	
-								debugger;
-								try {
-									$("#loginbtn").removeAttr("disabled");
-									data = eval(data)[0];
-									if (data.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
-										app.navigate("../Common/services.html");
-									}
-									else 
-										alert("We didn’t recognise your pin and device. Please try again");
-								}
-								catch (e) {
-									s
-									alert("Server sent incorrect data. Please contact On-IT1.");
-								}
-							})
-							.fail(function(jqXHR, textStatus, errorThrown) {
-								alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
-							})
-							.always(function () {
-								$("#btnLogOn").removeAttr("disabled");
-							});
-						}
-						catch (e) {
-							alert("Error occurred. Please contact On-IT1.\n\n" + e);
-						}
+					//Validate control
+					if (!validateControl('mylogin'))
+						return;
+				
+					//Authentication
+					var result = callwebservice('User', 'Login', 'uidDevice=' + window.top.device.uuid + '&pin=' + $("#pin").val());
+					if (typeof(result)==='undefined') 
+						return;
+					if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
+						alert("Logedin successfully!");
+						app.navigate("../Common/services.html");
 					}
+					else 
+						alert("We didn’t recognise your pin and device. Please try again");
 				});				             
 			</script>
 		</div>
-	
 	</body>
 </html>

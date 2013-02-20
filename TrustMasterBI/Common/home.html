@@ -118,7 +118,7 @@
 			<footer data-role="footer">
 				<div data-role="tabstrip">
 					<a data-icon="ic4" href="../Youthcentre/index.html">Youth Development Centre</a>
-                    <a href="services.html" data-icon="ic1">Integrated Knowledge</a>
+					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
 				</div>
 			</footer>
 		</section>
@@ -137,7 +137,7 @@
 			<footer data-role="footer">
 				<div data-role="tabstrip">
 					<a data-icon="ic4" href="../Youthcentre/index.html">Youth Development Centre</a>
-                    <a href="services.html" data-icon="ic1">Integrated Knowledge</a>
+					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
 				</div>
 			</footer>
 		</section>
@@ -156,7 +156,7 @@
 			<footer data-role="footer">
 				<div data-role="tabstrip">
 					<a data-icon="ic4" href="../Youthcentre/index.html">Youth Development Centre</a>
-                    <a href="services.html" data-icon="ic1">Integrated Knowledge</a>
+					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
 				</div>
 			</footer>
 		</section>
@@ -188,7 +188,7 @@
 					<span data-role="view-title"/>
 				</div>
 			</header>
-            <div data-role="footer">
+			<div data-role="footer">
 				<div>
 					<img class="footerimg"  src="../images/mainbg2.png"  />
 				</div>
@@ -232,7 +232,7 @@
 				<div data-role="navbar">
 					<a data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
-                    <a data-role="button" href="#home" data-align="right">Logout</a>
+					<a data-role="button" href="#home" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -248,9 +248,25 @@
 		<script src="../kendo/js/kendo.all.js"></script>
 		<script src="../scripts/common.js"></script>
 		<script>			
-			
-			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader",loading: "<h1>Please wait...</h1>" });
+			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader"});
+            
+			// TrustMaster Mobile global variables
+			if (typeof window.top.Onit1 == "undefined") {
+				window.top.Onit1 = {};
+			}
+				
+			if (typeof window.top.Onit1.ResultCode == "undefined") {
+				window.top.Onit1.ResultCode = {
+					"Success": 0,
+					"Error": 1
+				};
+			}
+				
+			if (typeof window.top.Onit1.Paths == "undefined") {
+				window.top.Onit1.Paths = {
+					"Index": ""
+				};
+			}
 		</script>
 	</body>
 </html>
-	
