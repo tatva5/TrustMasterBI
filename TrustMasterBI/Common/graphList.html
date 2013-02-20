@@ -5,14 +5,28 @@
         <title></title>
     </head>
     <body>
-        <div id="home" data-role="view" data-title="Graphics" data-layout="graphicsLayout" data-before-show="cleanview">            
-            <ul data-role="listview" data-style="inset">
-                <li><a href="report.html">Graph 1</a></li>
-                <li><a href="report.html">Graph 2</a></li>
-                <li><a href="report.html">Graph 3</a></li>
-                <li><a href="report.html">Graph 4</a></li>
-                <li><a href="report.html">Graph 5</a></li>
-            </ul>        
+        <div id="home" data-role="view" data-title="Graphics" data-layout="graphicsLayout" data-before-show="cleanview" data-show="modulelist"> 
+            <div id="graph_list"/>
+            
+            <script id="graphTemplate" type="text/x-kendo-template">
+					<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
+					# for (var i = 0; i < data.length; i++) { #
+					<li>
+						<a href="report.html" class="km-listview-link">#= data[i].name #</a>
+					</li>
+					# }
+					#
+				</ul>
+			</script>
+            <script>
+				function modulelist(e) {
+                    debugger;
+					//$("#module-navbar").data("kendoMobileNavBar").title(localStorage.getItem("title"));
+					var moduletemplete = kendo.template($("#graphTemplate").html());
+					var modData = callwebservice('YouthCentre', 'Chartlist','').dataSource;
+					$("#graph_list").html(moduletemplete(modData));
+				}				
+			</script>
         </div>   
     </body>
 </html>
