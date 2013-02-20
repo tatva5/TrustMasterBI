@@ -6788,9 +6788,8 @@ body:before
 	text-align: left;
 }
 
-.registrationresult td
+.registrationresult
 {
 	text-align: left;
 	padding-left: 10px;
-	display: none;
 }

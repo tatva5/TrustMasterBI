@@ -21,11 +21,6 @@ $("#loginbtn").live("click", function(e) {
 });
 
 $("#btnRegister").live("click", function(e) {		
-	alert("Registration successfully!");
-    $("#registationForm").css("visibility","hidden");
-    $("#result").css("visibility","visible");
-	return;
-    
 	//Validate control
 	if (!validateControl('registationForm'))
 		return;
@@ -36,6 +31,8 @@ $("#btnRegister").live("click", function(e) {
 		return;
 	if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
 		alert("Registration successfully!");
+        $("#registationForm").hide();
+	    $("#result").show();
 	}
 	else 
 		alert("Error occured while registration. Please try again");
