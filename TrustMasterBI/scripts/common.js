@@ -1,3 +1,25 @@
+function cleanview() {
+	//alert('cleanview');
+	$("div[data-role=view]").each(function(i, elem) {
+		if ($(elem).attr("data-url") && $(elem).attr("data-url") != window.location.href.split('#')[1]) {
+			$(elem).remove();
+		}
+	});
+}
+
+function transit(e) {
+                if (e.button.context.innerText == "Tabular") {
+					e.button.context.innerText = "Graphical";
+					$("#chartArea").empty();
+					$("#chartArea").kendoGrid(callwebservice('Chart', 'Test2', ''));
+				}
+				else {
+					e.button.context.innerText = "Tabular";
+					$("#chartArea").empty();
+					$("#chartArea").kendoChart(callwebservice('Chart', 'Test1', ''));
+				}
+			}
+
 function GetQueryStringParams(sParam, url) {  
  if (typeof(url)==='undefined')    
   url = window.location.href;

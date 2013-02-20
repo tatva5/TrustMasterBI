@@ -260,15 +260,6 @@
 					$("#chartArea").kendoChart(callwebservice('Chart', 'Test1', ''));
 				}
 			}
-            
-			function cleanview() {
-                //alert('cleanview');
-				$("div[data-role=view]").each(function(i, elem) {
-					if ($(elem).attr("data-url") && $(elem).attr("data-url") != window.location.href.split('#')[1]) {
-						$(elem).remove();
-					}
-				});
-			}
 			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader",loading: "<h1>Please wait...</h1>" });
 		</script>
 	</body>
