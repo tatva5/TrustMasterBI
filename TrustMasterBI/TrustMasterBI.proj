@@ -71,6 +71,7 @@
     <Content Include="Common\report.html" />
     <Content Include="Common\services.html" />
     <Content Include="Fleet\dashboard.html" />
+    <Content Include="Fleet\index.html" />
     <Content Include="images\bosasagroup.png" />
     <Content Include="images\HumanCapital.png" />
     <Content Include="images\Kgwerano.png" />
@@ -94,6 +95,8 @@
     <Content Include="kendo\styles\images\ic2_h.png" />
     <Content Include="kendo\styles\images\ic3.png" />
     <Content Include="kendo\styles\images\ic3_h.png" />
+    <Content Include="kendo\styles\images\ic4.png" />
+    <Content Include="kendo\styles\images\ic4_h.png" />
     <Content Include="kendo\styles\images\KendoUI.ttf" />
     <Content Include="kendo\styles\images\KendoUI.woff" />
     <Content Include="kendo\styles\images\loading-image.gif" />
@@ -113,6 +116,7 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+    <Content Include="Youthcentre\index.html" />
     <Content Include="Youthcentre\YouthCare.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
