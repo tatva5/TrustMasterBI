@@ -62,8 +62,7 @@
 								//"data": "uidDevice=" + window.top.device.uuid + "&pin=" + $("#pin").val()
                                 "data": "uidDevice=" + window.top.device.uuid + "&pin=" + $("#pin").val()
 							})
-							.done(function(data, textStatus, jqXHR) {	
-								debugger;
+							.done(function(data, textStatus, jqXHR) {									
 								try {
 									$("#loginbtn").removeAttr("disabled");
 									data = eval(data)[0];
