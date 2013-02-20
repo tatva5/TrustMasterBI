@@ -74,12 +74,10 @@
 			</div>
 
 			<script>
-				$("#btnRegister").on("click", function(e) {
-                     alert("register clicked!");
+				$("#btnRegister").on("click", function(e) {                     
 					try {
 						$("#btnRegister").attr("disabled", "disabled");
-						$.ajax({
-							//"url": "http://183.182.91.146/TrustMasterBI/User/Register",
+						$.ajax({							
 							"url": "http://183.182.91.146/TrustMasterBI/User/Register",
 							"method": "post",
 							"dataType": "json",
