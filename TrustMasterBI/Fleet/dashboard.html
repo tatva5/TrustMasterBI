@@ -107,35 +107,8 @@
 						
                         
 				        var bardata = callwebservice('fleet', 'GetExpendituresByCategory').dataSource;
-                        var linedata = callwebservice('fleet', 'GetActiveVehiclesPerMonth');
                         
-								var internetUsers = [
-									{
-										"country": "Fleet",
-										"year": "JUL-12",
-										"value": 7000
-									},{
-										"country": "Fleet",
-										"year": "AUG-12",
-										"value": 6000
-									},{
-										"country": "Fleet",
-										"year": "SEP-12",
-										"value": 4000
-									},{
-										"country": "Fleet",
-										"year": "OCT-12",
-										"value": 9000
-									},{
-										"country": "Fleet",
-										"year": "DEC-12",
-										"value": 10000
-									},{
-										"country": "Fleet",
-										"year": "JAN-13",
-										"value": 10000
-									}
-								];     
+						var internetUsers =callwebservice('fleet', 'GetActiveVehiclesPerMonth');
                              
                              
 						function createBarChart() {
@@ -187,10 +160,45 @@
 							});
 						}
 						
+						
 								
-							function createLineChart() {
-									$("#chart").kendoChart(linedata
-								);
+								function createLineChart() {
+									$("#chart").kendoChart({
+										theme: "blueopal",
+										dataSource: {
+											data: internetUsers
+										},
+								
+										legend: {
+											visible: false
+										},
+										seriesDefaults: {
+											type: "line",
+											labels: {
+												visible: false,
+												format: "{0}"
+											}
+										},
+										series: [
+											{
+												field: "value",
+												name: "Fleet"
+											}
+										],
+										valueAxis: {
+											labels: {
+												format: "{0}"
+											},
+											majorUnit: 2000
+										},
+										chartArea:{
+											height:300, width:500,background: ""
+								
+										},
+										categoryAxis: {
+											field: "year"
+										}
+									});
 								}
 								
 								
