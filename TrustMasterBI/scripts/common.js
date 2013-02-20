@@ -1,8 +1,24 @@
-function validateControl(divname)
-{
-    var validator = $("#"+divname).kendoValidator().data("kendoValidator");
-    return validator.validate();
+function validateControl(divname) {
+	var validator = $("#" + divname).kendoValidator().data("kendoValidator");
+	return validator.validate();
 }
+
+$("#loginbtn").live("click", function(e) {
+	//Validate control
+	if (!validateControl('divlogin'))
+		return;
+				
+	//Authentication
+	var result = callwebservice('User', 'Login', 'uidDevice=' + window.top.device.uuid + '&pin=' + $("#loginpin").val());
+	if (typeof(result)==='undefined') 
+		return;
+	if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
+		alert("Logedin successfully!");
+		app.navigate("../Common/services.html");
+	}
+	else 
+		alert("We didn’t recognise your pin and device. Please try again");
+});		
 
 function cleanview() {
 	//alert('cleanview');
@@ -41,7 +57,7 @@ function GetQueryStringParams(sParam, url) {
 
 function callwebservice(controller, method, parameter) {
 	//var url = "http://onit1.homenet.org/TrustMasterMobileServices/" + controller + "/" + method;
-    //var url = "http://183.182.91.146/TrustMasterBI/" + controller + "/" + method;
+	//var url = "http://183.182.91.146/TrustMasterBI/" + controller + "/" + method;
 	var url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
 	if (typeof(parameter)==='undefined')
 		parameter = '';

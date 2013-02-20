@@ -9,12 +9,12 @@
 			<div class="logo">
 				<img src="../images/logo.png" alt="" />
 			</div>
-			<div class="login" id="mylogin">
-				<table border="0"  cellpadding="0" class="noicon">
+			<div class="login" id="divlogin">
+				<table border="0" cellpadding="0" class="noicon">
 					<tr>
 						<td class="pinWidth" align="right">Pin :</td>
 						<td>
-							<input name="pin" id="pin" type="text" required validationMessage="*"  value="1234"/>
+							<input id="loginpin" type="text" required validationMessage="*" value="1234"/>
 						</td>
 					</tr>
 					<tr>
@@ -24,31 +24,12 @@
 								<a data-role="button" id="loginbtn" class="inputbtn">Login</a>
 							</div>
 							<div class="fg_link">
-								<a data-role="button"  href="../Authentication/forgotpin.html" style="border:none;background:none;padding:0px;margin:0px;">Forgot Pin?</a>
+								<a data-role="button" href="../Authentication/forgotpin.html" style="border:none;background:none;padding:0px;margin:0px;">Forgot Pin?</a>
 							</div>
 						</td>
 					</tr>
 				</table>
 			</div>
-
-			<script>
-				$("#loginbtn").on("click", function(e) {
-					//Validate control
-					if (!validateControl('mylogin'))
-						return;
-				
-					//Authentication
-					var result = callwebservice('User', 'Login', 'uidDevice=' + window.top.device.uuid + '&pin=' + $("#pin").val());
-					if (typeof(result)==='undefined') 
-						return;
-					if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
-						alert("Logedin successfully!");
-						app.navigate("../Common/services.html");
-					}
-					else 
-						alert("We didn’t recognise your pin and device. Please try again");
-				});				             
-			</script>
 		</div>
 	</body>
 </html>
