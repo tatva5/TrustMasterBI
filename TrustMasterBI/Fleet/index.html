@@ -5,13 +5,14 @@
 		<title></title>
 	</head>
 	<body>
-		<div id="myView" data-role="view" data-layout="youthCareLayout" data-show="modulelist" data-before-show="cleanview">
+		<div data-role="view" data-layout="fleetdashboardLayout" data-title="Kgwerano" data-show="modulelist" data-before-show="cleanview">
 			<div id="module_list"></div>
+            
 			<script id="moduletemplete" type="text/x-kendo-template">
 				<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
 					# for (var i = 0; i < data.length; i++) { #
 					<li>
-						<a href="#= data[i].Href #" data-role="button" class="km-listview-link">#= data[i].Name #</a>
+						<a href="#= data[i].href #" data-role="button" class="km-listview-link">#= data[i].name #</a>
 					</li>
 					# }
 					
@@ -20,8 +21,6 @@
 			</script>
 			<script>
 				function modulelist(e) {
-                    //var navbar=$("#module-navbar").data("kendoMobileNavBar");
-                    //alert(navbar);
 					//$("#module-navbar").data("kendoMobileNavBar").title(e.view.params.title);
 					var moduletemplete = kendo.template($("#moduletemplete").html());
 					var modData = callwebservice('Home', 'Modulelist', 'idService=' + e.view.params.id).dataSource;
@@ -29,5 +28,19 @@
 				}				
 			</script>
 		</div>
+        <section data-role="layout" data-id="fleetdashboardLayout">
+			<header data-role="header">
+				<div data-role="navbar">
+					<a data-role="backbutton" data-align="left">Back</a>
+					<span data-role="view-title"/>
+				</div>
+			</header>
+			<footer data-role="footer">
+				<div data-role="tabstrip">
+					<a data-icon="ic3" href="modules.html?id=3&title=Kgwerano">Kgwerano</a>
+					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
+				</div>
+			</footer>
+		</section>
 	</body>
 </html>

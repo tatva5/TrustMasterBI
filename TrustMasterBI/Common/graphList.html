@@ -19,13 +19,12 @@
 				</ul>
 			</script>
             <script>
-				function modulelist(e) {
-                    debugger;
+				$(document).ready(function(){
 					//$("#module-navbar").data("kendoMobileNavBar").title(localStorage.getItem("title"));
 					var moduletemplete = kendo.template($("#graphTemplate").html());
 					var modData = callwebservice('YouthCentre', 'Chartlist','').dataSource;
 					$("#graph_list").html(moduletemplete(modData));
-				}				
+				});				
 			</script>
         </div>   
     </body>
