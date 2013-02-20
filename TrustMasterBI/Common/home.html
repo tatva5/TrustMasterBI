@@ -248,18 +248,7 @@
 		<script src="../kendo/js/kendo.all.js"></script>
 		<script src="../scripts/common.js"></script>
 		<script>			
-			function transit(e) {
-                if (e.button.context.innerText == "Tabular") {
-					e.button.context.innerText = "Graphical";
-					$("#chartArea").empty();
-					$("#chartArea").kendoGrid(callwebservice('Chart', 'Test2', ''));
-				}
-				else {
-					e.button.context.innerText = "Tabular";
-					$("#chartArea").empty();
-					$("#chartArea").kendoChart(callwebservice('Chart', 'Test1', ''));
-				}
-			}
+			
 			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader",loading: "<h1>Please wait...</h1>" });
 		</script>
 	</body>

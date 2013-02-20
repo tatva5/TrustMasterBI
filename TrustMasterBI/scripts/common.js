@@ -8,34 +8,34 @@ function cleanview() {
 }
 
 function transit(e) {
-                if (e.button.context.innerText == "Tabular") {
-					e.button.context.innerText = "Graphical";
-					$("#chartArea").empty();
-					$("#chartArea").kendoGrid(callwebservice('Chart', 'Test2', ''));
-				}
-				else {
-					e.button.context.innerText = "Tabular";
-					$("#chartArea").empty();
-					$("#chartArea").kendoChart(callwebservice('Chart', 'Test1', ''));
-				}
-			}
+	if (e.button.context.innerText == "Tabular") {
+		e.button.context.innerText = "Graphical";
+		$("#chartArea").empty();
+		$("#chartArea").kendoGrid(callwebservice('Chart', 'Test2', ''));
+	}
+	else {
+		e.button.context.innerText = "Tabular";
+		$("#chartArea").empty();
+		$("#chartArea").kendoChart(callwebservice('Chart', 'Test1', ''));
+	}
+}
 
 function GetQueryStringParams(sParam, url) {  
- if (typeof(url)==='undefined')    
-  url = window.location.href;
- var sPageURL = url;  
- var sURLVariables = sPageURL.split('?')[1].split('&');  
- for (var i = 0; i < sURLVariables.length; i++) {  
-  var sParameterName = sURLVariables[i].split('=');  
-  if (sParameterName[0] == sParam) {  
-   return sParameterName[1];  
-  }  
- }  
+	if (typeof(url)==='undefined')    
+		url = window.location.href;
+	var sPageURL = url;  
+	var sURLVariables = sPageURL.split('?')[1].split('&');  
+	for (var i = 0; i < sURLVariables.length; i++) {  
+		var sParameterName = sURLVariables[i].split('=');  
+		if (sParameterName[0] == sParam) {  
+			return sParameterName[1];  
+		}  
+	}  
 }
 
 function callwebservice(controller, method, parameter) {
 	//var url = "http://onit1.homenet.org/TrustMasterMobileServices/" + controller + "/" + method;
-    var url = "http://183.182.91.146/TrustMasterBI/" + controller + "/" + method;
+	var url = "http://183.182.91.146/TrustMasterBI/" + controller + "/" + method;
 	if (typeof(parameter)==='undefined')
 		parameter = '';
 	var receivedData;
