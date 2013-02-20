@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div data-role="view" data-layout="fleetdashboardLayout" data-title="Kgwerano" data-show="modulelist" data-before-show="cleanview">
+			<div id="module_list"></div>
+			<script id="moduletemplete" type="text/x-kendo-template">
+				<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
+					# for (var i = 0; i < data.length; i++) { #
+					<li>
+						<a href="#= data[i].href #" data-role="button" class="km-listview-link">#= data[i].name #</a>
+					</li>
+					# }
+					
+					#
+				</ul>
+			</script>
+			<script>
+				function modulelist(e) {
+					//$("#module-navbar").data("kendoMobileNavBar").title(e.view.params.title);
+					var moduletemplete = kendo.template($("#moduletemplete").html(), {useWithBlock:false});
+					var modData = callwebservice('Home', 'Modulelist', 'idService=' + e.view.params.id).dataSource;
+					$("#module_list").html(moduletemplete(modData));
+				}				
+			</script>
+		</div>
+	</body>
+</html>
