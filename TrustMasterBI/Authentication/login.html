@@ -9,12 +9,12 @@
 			<div class="logo">
 				<img src="../images/logo.png" alt="" />
 			</div>
-			<div class="login" id="mylogin">
-				<table border="0"  cellpadding="0" class="noicon">
+			<div class="login" id="divlogin">
+				<table border="0" cellpadding="0" class="noicon">
 					<tr>
 						<td class="pinWidth" align="right">Pin :</td>
 						<td>
-							<input name="pin" id="pin" type="text" required validationMessage="*"  value="1234"/>
+							<input id="loginpin" type="text" required validationMessage="*" value="1234"/>
 						</td>
 					</tr>
 					<tr>
@@ -24,77 +24,12 @@
 								<a data-role="button" id="loginbtn" class="inputbtn">Login</a>
 							</div>
 							<div class="fg_link">
-								<a data-role="button"  href="../Authentication/forgotpin.html" style="border:none;background:none;padding:0px;margin:0px;">Forgot Pin?</a>
+								<a data-role="button" href="../Authentication/forgotpin.html" style="border:none;background:none;padding:0px;margin:0px;">Forgot Pin?</a>
 							</div>
 						</td>
 					</tr>
 				</table>
 			</div>
-			<script>
-				var validator = $("#mylogin").kendoValidator().data("kendoValidator");
-				
-				// TrustMaster Mobile global variables
-				if (typeof window.top.Onit1 == "undefined") {
-					window.top.Onit1 = {};
-				}
-				
-				if (typeof window.top.Onit1.ResultCode == "undefined") {
-					window.top.Onit1.ResultCode = {
-						"Success": 0,
-						"Error": 1
-					};
-				}
-				
-				if (typeof window.top.Onit1.Paths == "undefined") {
-					window.top.Onit1.Paths = {
-						"Index": ""
-					};
-				}
-				
-				$("#loginbtn").on("click", function(e) {
-                    alert("process to login...");
-                    app.navigate("../Common/services.html");
-                    return;
-                    alert("process to logedin...");
-					if (validator.validate()) {
-						try {
-							$("#loginbtn").attr("disabled", "disabled");
-							$.ajax({
-								"url": "http://183.182.91.146/TrustMasterBI/User/Login",
-								"method": "post",
-								"dataType": "json",
-                                "data": "uidDevice=" + window.top.device.uuid + "&pin=" + $("#pin").val()
-							})
-							.done(function(data, textStatus, jqXHR) {	
-								debugger;
-								try {
-									$("#loginbtn").removeAttr("disabled");
-									data = eval(data)[0];
-									if (data.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
-										app.navigate("../Common/services.html");
-									}
-									else 
-										alert("We didn’t recognise your pin and device. Please try again");
-								}
-								catch (e) {
-									s
-									alert("Server sent incorrect data. Please contact On-IT1.");
-								}
-							})
-							.fail(function(jqXHR, textStatus, errorThrown) {
-								alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
-							})
-							.always(function () {
-								$("#btnLogOn").removeAttr("disabled");
-							});
-						}
-						catch (e) {
-							alert("Error occurred. Please contact On-IT1.\n\n" + e);
-						}
-					}
-				});				             
-			</script>
 		</div>
-	
 	</body>
 </html>
