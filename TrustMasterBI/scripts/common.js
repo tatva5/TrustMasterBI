@@ -38,10 +38,13 @@ $("#btnRegister").live("click", function(e) {
 		alert("Error occured while registration. Please try again");
 });
 
-$("#btnSubmit").live("click", function(e) {
+/*$("#btnSubmit").live("click", function(e) {
 	//Validate control
 	if (!validateControl('forgotPinForm'))
 		return;
+    
+    alert("forgot pin click");
+    
 	var result = callwebservice('User', 'ForgotPin', 'uidDevice=' + window.top.device.uuid + '&email=' + $("#txtemailId").val());
 	if (typeof(result)==='undefined') 
 		return;
@@ -53,7 +56,7 @@ $("#btnSubmit").live("click", function(e) {
 	}
 	else 
 		alert(result.message);
-});
+});*/
 
 $("#resetButton").live("click", function(e) {
 	//reset email text box

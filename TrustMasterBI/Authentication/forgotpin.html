@@ -7,7 +7,7 @@
 	<body>
 		<div data-role="view" data-title="Forgot Pin" data-layout="BackHeader" data-before-show="cleanview">
 			<div class="textboxStyle" id="forgotPinForm">
-               <div class="logo">
+				<div class="logo">
 					<img src="../images/logo.png" alt="" />
 				</div>
 				<table  class="form">
@@ -28,15 +28,39 @@
 						</td>
 					</tr>
 				</table>
-                </div>
-            <div id="Response">                          
+			</div>
+			<div id="Response">
 				<div  class="response">
-					Please check your mail.
-                    <br/>
+					Please check your mail. <br/>
 					We've sent your pin to your email address.
 				</div>
 			</div>
 			<script>
+				$("#btnSubmit").click(function() {
+                    alert("forgot pin click");
+					//Validate control
+					if (!validateControl('forgotPinForm'))
+						return;
+    
+					alert("forgot pin click");
+    
+					var result = callwebservice('User', 'ForgotPin', 'uidDevice=' + window.top.device.uuid + '&email=' + $("#txtemailId").val());
+					if (typeof(result)==='undefined') 
+						return;
+    
+					if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
+						alert("Your pin sent successfully!");
+						$("#forgotPinForm").hide();
+						$("#Response").show();
+					}
+					else 
+						alert(result.message);
+				});
+				$("#resetButton").click(function() {
+					alert("reset click");
+					//reset email text box
+					$("#txtemailId").val('');
+				});
 				$(document).ready(function() {
 					$("#forgotPinForm").show();
 					$("#Response").hide();
