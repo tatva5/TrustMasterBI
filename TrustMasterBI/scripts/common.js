@@ -3,7 +3,7 @@ function validateControl(divname) {
 	return validator.validate();
 }
 
-$("#loginbtn").live("click", function(e) {
+function login() {
 	//Validate control
 	if (!validateControl('divlogin'))
 		return;
@@ -18,9 +18,9 @@ $("#loginbtn").live("click", function(e) {
 	}
 	else 
 		alert("We didn’t recognise your pin and device. Please try again");
-});
+}
 
-$("#btnRegister").live("click", function(e) {		
+function registeruser() {		
 	//Validate control
 	if (!validateControl('registationForm'))
 		return;
@@ -36,14 +36,14 @@ $("#btnRegister").live("click", function(e) {
 	}
 	else 
 		alert("Error occured while registration. Please try again");
-});
+}
 
-/*$("#btnSubmit").live("click", function(e) {
+function forgotPin() {
+    alert("forgot pin click");
+    
 	//Validate control
 	if (!validateControl('forgotPinForm'))
 		return;
-    
-    alert("forgot pin click");
     
 	var result = callwebservice('User', 'ForgotPin', 'uidDevice=' + window.top.device.uuid + '&email=' + $("#txtemailId").val());
 	if (typeof(result)==='undefined') 
@@ -56,12 +56,13 @@ $("#btnRegister").live("click", function(e) {
 	}
 	else 
 		alert(result.message);
-});*/
+};
 
-$("#resetButton").live("click", function(e) {
+function reset(e) {
+	alert("reset clicked");
 	//reset email text box
 	$("#txtemailId").val('');
-});
+};
 
 function onserviceclick(url) {
 	//alert(url);

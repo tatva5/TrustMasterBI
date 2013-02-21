@@ -23,8 +23,8 @@
 						<td>
 						</td>
 						<td class="button">
-							<a id="btnSubmit" data-role="button">Submit</a>
-							<a id="resetButton" data-role="button">Reset</a>
+							<a id="btnSubmit" data-role="button" data-click="forgotPin">Submit</a>
+							<a id="resetButton" data-role="button" data-click="reset">Reset</a>
 						</td>
 					</tr>
 				</table>
@@ -36,31 +36,7 @@
 				</div>
 			</div>
 			<script>
-				$("#btnSubmit").click(function() {
-                    alert("forgot pin click");
-					//Validate control
-					if (!validateControl('forgotPinForm'))
-						return;
-    
-					alert("forgot pin click");
-    
-					var result = callwebservice('User', 'ForgotPin', 'uidDevice=' + window.top.device.uuid + '&email=' + $("#txtemailId").val());
-					if (typeof(result)==='undefined') 
-						return;
-    
-					if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
-						alert("Your pin sent successfully!");
-						$("#forgotPinForm").hide();
-						$("#Response").show();
-					}
-					else 
-						alert(result.message);
-				});
-				$("#resetButton").click(function() {
-					alert("reset click");
-					//reset email text box
-					$("#txtemailId").val('');
-				});
+				
 				$(document).ready(function() {
 					$("#forgotPinForm").show();
 					$("#Response").hide();
