@@ -40,12 +40,13 @@
 					</table>
 				</div>
 			</div>
-			<div id="chartArea" />
+			<div id="chartArea" class="chartArea"/>
 			<script>
 				$(document).ready(function() {
 					$("#ddlSelect").kendoComboBox();
 					$("#datepicker").kendoDatePicker(); 
 					$("#datepicker1").kendoDatePicker();
+					$("#chartArea").css('width', windowWidth);
 					$("#chartArea").kendoChart(callwebservice('Chart', 'Test1', ''));
 				});				
 			</script>
