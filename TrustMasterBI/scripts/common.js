@@ -31,11 +31,28 @@ $("#btnRegister").live("click", function(e) {
 		return;
 	if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
 		alert("Registration successfully!");
-        $("#registationForm").hide();
-	    $("#result").show();
+		$("#registationForm").hide();
+		$("#result").show();
 	}
 	else 
 		alert("Error occured while registration. Please try again");
+});
+
+$("#btnSubmit").live("click", function(e) {
+	//Validate control
+	if (!validateControl('forgotPinForm'))
+		return;
+	var result = callwebservice('User', 'ForgotPin', 'uidDevice=' + window.top.device.uuid + '&email=' + $("#txtemailId").val());
+	if (typeof(result)==='undefined') 
+		return;
+    
+	if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
+		alert("Your pin sent successfully!");
+		$("#forgotPinForm").hide();
+		$("#Response").show();
+	}
+	else 
+		alert(result.message);
 });
 
 function cleanview() {

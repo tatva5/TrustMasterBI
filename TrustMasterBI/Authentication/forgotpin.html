@@ -13,10 +13,10 @@
 				<table id="forgotPinForm" class="form">
 					<tr>
 						<td>
-							<label for="txtemailId" class="lblStyle">Email :</label>
+							<label class="lblStyle">Email :</label>
 						</td>
 						<td>
-							<input type="text" id="txtemailId" value="" />
+							<input type="text" id="txtemailId" value="" required validationMessage="*"/>
 						</td>
 					</tr>
 					<tr>
@@ -34,40 +34,6 @@
 				</div>
 			</div>
 			<script>
-				$("#btnSubmit").click(function () {
-					try {
-						$("#btnSubmit").attr("disabled", "disabled");
-						$.ajax({
-							"url": "http://localhost:29100/User/ForgotPin",
-							"method": "post",
-							"dataType": "json",
-							"data": "uidDevice=" + window.top.device.uuid + "&email=" + $("#txtemailId").val()
-						})
-						.done(function(data, textStatus, jqXHR) {
-							try {
-								data = eval(data)[0];
-								if (data.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
-									$("#forgotPinForm").hide();
-									$("#Response").show();
-								}
-								else 
-									alert(data.message);
-							}
-							catch (e) {
-								alert("Server sent incorrect data. Please contact On-IT1.");
-							}
-						})
-						.fail(function(jqXHR, textStatus, errorThrown) {
-							alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
-						})
-						.always(function () {
-							$("#btnSubmit").removeAttr("disabled");
-						});
-					}
-					catch (e) {
-						alert("Error occurred. Please contact On-IT1.\n\n" + e);
-					}
-				});
 				$(document).ready(function() {
 					$("#forgotPinForm").show();
 					$("#Response").hide();
