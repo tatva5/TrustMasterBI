@@ -5,22 +5,7 @@
 	</head>
 	<body>
 		<div data-role="view" data-layout="servicesLayout" data-title="Integrated Knowledge" data-before-show="cleanview" data-show="servicelist">
-			<div id="divservice"></div>
-				
-			<script>
-                function navigate(url)
-                {
-                    //alert(url);
-                    localStorage.setItem("id", GetQueryStringParams("id",url));
-                    localStorage.setItem("title", GetQueryStringParams("title",url));
-                    app.navigate(url);
-                }
-                
-				$(document).ready(function() {
-					var scriptTemplate = kendo.template($("#scriptTemplate").html(),{useWithBlock:false});
-                    $("#example").html(scriptTemplate(callwebservice('Home','Servicelist').dataSource));
-				});
-			</script>
+			<div id="divservice"></div>			
 		</div>
 	</body>
 </html>
