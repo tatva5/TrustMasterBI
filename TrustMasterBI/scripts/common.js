@@ -55,6 +55,11 @@ $("#btnSubmit").live("click", function(e) {
 		alert(result.message);
 });
 
+$("#resetButton").live("click", function(e) {
+    //reset email text box
+    $("#txtemailId").val('');
+});
+
 function cleanview() {
 	//alert('cleanview');
 	$("div[data-role=view]").each(function(i, elem) {
