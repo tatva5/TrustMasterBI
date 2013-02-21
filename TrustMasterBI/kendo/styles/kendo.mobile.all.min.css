@@ -6791,5 +6791,12 @@ body:before
 .registrationresult
 {
 	text-align: left;
-	padding-left: 10px;
+	padding: 10px;    
+}
+
+.response
+{
+    font-weight: bold;
+    text-align:left;
+    padding: 10px; 
 }

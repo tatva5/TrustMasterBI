@@ -6,12 +6,12 @@
 	</head>
 	<body>
 		<div data-role="view" data-title="Registration" data-layout="BackHeader" data-before-show="cleanview" >
-			<div class="textboxStyle">
+			<div class="textboxStyle" id="registationForm">
 				<h3>Please note this section is for Authorized Bosasa Group Employees only.</h3>
 				<div class="logo">
 					<img src="../images/logo.png" alt="" />
 				</div>
-				<table class="form" id="registationForm" cellspacing="5px">
+				<table class="form" cellspacing="5px">
 					<tr>
 						<td>
 							<label class="lblStyle">First Name :</label>
@@ -51,8 +51,9 @@
 						</td>
 					</tr>
 				</table>
-
-				<table class="registrationresult" id="result">
+                </div>
+                <div id="result">
+				<table class="registrationresult">
 					<tr>
 						<td>
 							<label class="lblStyle">Thank you for registering.</label>
@@ -63,6 +64,7 @@
 							<label class="lblStyle">We’ll get back to you once we have processed your request.</label>
 						</td>
 					</tr>
+                    <tr><td>&nbsp;</td></tr>
 					<tr>
 						<td>
 							<label class="lblStyle">Best Regards,</label>
