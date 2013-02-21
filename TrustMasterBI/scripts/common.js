@@ -1,3 +1,6 @@
+var windowWidth = $(window).width(); //retrieve current window width
+var windowHeight = $(window).height(); //retrieve current window height
+
 function validateControl(divname) {
 	var validator = $("#" + divname).kendoValidator().data("kendoValidator");
 	return validator.validate();
@@ -13,11 +16,11 @@ function login() {
 	if (typeof(result)==='undefined') 
 		return;
 	if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
-		alert("Logedin successfully!");
+		//alert("Logedin successfully!");
 		app.navigate("../Common/services.html");
 	}
 	else 
-		alert("We didn’t recognise your pin and device. Please try again");
+		alert("We did not recognise your pin and device. Please try again");
 }
 
 function registeruser() {		
@@ -39,7 +42,7 @@ function registeruser() {
 }
 
 function forgotPin() {
-    alert("forgot pin click");
+    //alert("forgot pin click");
     
 	//Validate control
 	if (!validateControl('forgotPinForm'))
@@ -65,7 +68,6 @@ function reset(e) {
 };
 
 function onClick(e) {
-    debugger;
     //var url=e.button.data().id;
 	alert(url);
 	localStorage.setItem("id", GetQueryStringParams("id", url));
@@ -81,6 +83,8 @@ function cleanview() {
 		}
 	});
 }
+
+
 
 function transit(e) {
 	if (e.button.context.innerText == "Tabular") {
