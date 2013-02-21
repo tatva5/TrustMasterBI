@@ -62,7 +62,7 @@ function forgotPin() {
 };
 
 function reset(e) {
-	alert("reset clicked");
+	//alert("reset clicked");
 	//reset email text box
 	$("#txtemailId").val('');
 };
@@ -114,9 +114,9 @@ function GetQueryStringParams(sParam, url) {
 
 function callwebservice(controller, method, parameter) {
 	var url;
-	//url = "http://196.214.67.67/TrustMasterMobileServices/" + controller + "/" + method;
+	url = "http://196.214.67.67/TrustMasterMobileServices/" + controller + "/" + method;
 	//url = "http://183.182.91.146/TrustMasterBI/" + controller + "/" + method;
-	url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
+	//url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
 	if (typeof(parameter)==='undefined')
 		parameter = '';
 	//alert(url);
