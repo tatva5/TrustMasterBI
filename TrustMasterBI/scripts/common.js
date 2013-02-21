@@ -110,9 +110,9 @@ function GetQueryStringParams(sParam, url) {
 
 function callwebservice(controller, method, parameter) {
 	var url;
-	//url = "http://onit1.homenet.org/TrustMasterMobileServices/" + controller + "/" + method;
-	url = "http://183.182.91.146/TrustMasterBI/" + controller + "/" + method;
-	//url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
+	//url = "http://196.214.67.67/TrustMasterMobileServices/" + controller + "/" + method;
+	//url = "http://183.182.91.146/TrustMasterBI/" + controller + "/" + method;
+	url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
 	if (typeof(parameter)==='undefined')
 		parameter = '';
 	//alert(url);
@@ -151,6 +151,22 @@ function modulelist(e) {
 	if (typeof(result)==='undefined') 
 		return;
 	$("#divmodule").html(moduletemplete(result.dataSource));
+}
+
+function graphlist(e) {
+    //$("#module-navbar").data("kendoMobileNavBar").title(localStorage.getItem("title"));
+	var moduletemplete = kendo.template($("#moduletemplete").html(), {useWithBlock:false});
+	var result = callwebservice('YouthCentre', 'Chartlist','').dataSource;
+    if (typeof(result)==='undefined') 
+		return;
+	$("#graph_list").html(moduletemplete(result));
+}
+
+function showchart(e){
+    var result=callwebservice(e.view.params.controller, e.view.params.method, '');
+    if (typeof(result)==='undefined') 
+		return;
+    $("#chartArea").kendoChart(result);    
 }
 
 function closeParentPopover(e) {
