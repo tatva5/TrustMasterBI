@@ -144,7 +144,7 @@ function modulelist(e) {
 	var result = callwebservice('Home', 'Modulelist', 'idService=' + e.view.params.id);
 	if (typeof(result)==='undefined') 
 		return;
-	$("#module_list").html(moduletemplete(result.dataSource));
+	$("#divmodule").html(moduletemplete(result.dataSource));
 }
 
 function closeParentPopover(e) {
