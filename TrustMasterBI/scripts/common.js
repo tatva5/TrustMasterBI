@@ -64,8 +64,10 @@ function reset(e) {
 	$("#txtemailId").val('');
 };
 
-function onserviceclick(url) {
-	//alert(url);
+function onClick(e) {
+    debugger;
+    //var url=e.button.data().id;
+	alert(url);
 	localStorage.setItem("id", GetQueryStringParams("id", url));
 	localStorage.setItem("title", GetQueryStringParams("title", url));
 	app.navigate(url);
