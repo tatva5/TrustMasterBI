@@ -18,7 +18,54 @@ $("#loginbtn").live("click", function(e) {
 	}
 	else 
 		alert("We didn’t recognise your pin and device. Please try again");
-});		
+});
+
+$("#btnRegister").live("click", function(e) {		
+	//Validate control
+	if (!validateControl('registationForm'))
+		return;
+    
+	//Registration
+	var result = callwebservice('User', 'Register', 'firstname=' + $("#txtFirstName").val() + '&lastname=' + $("#txtSurname").val() + '&uidDevice=' + window.top.device.uuid + '&email=' + $("#email").val() + '&pin=' + $("#pin").val());
+	if (typeof(result)==='undefined') 
+		return;
+	if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
+		alert("Registration successfully!");
+		$("#registationForm").hide();
+		$("#result").show();
+	}
+	else 
+		alert("Error occured while registration. Please try again");
+});
+
+$("#btnSubmit").live("click", function(e) {
+	//Validate control
+	if (!validateControl('forgotPinForm'))
+		return;
+	var result = callwebservice('User', 'ForgotPin', 'uidDevice=' + window.top.device.uuid + '&email=' + $("#txtemailId").val());
+	if (typeof(result)==='undefined') 
+		return;
+    
+	if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
+		alert("Your pin sent successfully!");
+		$("#forgotPinForm").hide();
+		$("#Response").show();
+	}
+	else 
+		alert(result.message);
+});
+
+$("#resetButton").live("click", function(e) {
+	//reset email text box
+	$("#txtemailId").val('');
+});
+
+function onserviceclick(url) {
+	//alert(url);
+	localStorage.setItem("id", GetQueryStringParams("id", url));
+	localStorage.setItem("title", GetQueryStringParams("title", url));
+	app.navigate(url);
+}
 
 function cleanview() {
 	//alert('cleanview');
@@ -56,11 +103,14 @@ function GetQueryStringParams(sParam, url) {
 }
 
 function callwebservice(controller, method, parameter) {
-	//var url = "http://onit1.homenet.org/TrustMasterMobileServices/" + controller + "/" + method;
-	//var url = "http://183.182.91.146/TrustMasterBI/" + controller + "/" + method;
-	var url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
+	var url;
+	//url = "http://onit1.homenet.org/TrustMasterMobileServices/" + controller + "/" + method;
+	//url = "http://183.182.91.14/TrustMasterBI/" + controller + "/" + method;
+	url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
 	if (typeof(parameter)==='undefined')
 		parameter = '';
+	//alert(url);
+	//alert(parameter);
 	var receivedData;
 	try {
 		$.ajax({
@@ -69,24 +119,32 @@ function callwebservice(controller, method, parameter) {
 			dataType: 'json',
 			data:parameter,
 			async: false,
-			beforeSend: function() {
-				app.showLoading();         
-			},
 			success: function (data) {
 				receivedData = eval(data)[0];
 			},
 			error: function (msg) {
 				alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
-			},
-			complete: function() {
-				app.hideLoading();
 			}
 		});
-		return receivedData;
 	}
 	catch (e) {
 		alert("Error occurred. Please contact On-IT1.\n\n" + e);
 	}
+	return receivedData;
+}
+
+function servicelist(e) {
+	var scriptTemplate = kendo.template($("#servicetemplete").html(), {useWithBlock:false});
+	$("#divservice").html(scriptTemplate(callwebservice('Home', 'Servicelist').dataSource));
+}
+
+function modulelist(e) {
+	//$("#module-navbar").data("kendoMobileNavBar").title(e.view.params.title);
+	var moduletemplete = kendo.template($("#moduletemplete").html());
+	var result = callwebservice('Home', 'Modulelist', 'idService=' + e.view.params.id);
+	if (typeof(result)==='undefined') 
+		return;
+	$("#divmodule").html(moduletemplete(result.dataSource));
 }
 
 function closeParentPopover(e) {

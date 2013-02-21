@@ -6,54 +6,38 @@
 	</head>
 	<body>
 		<div data-role="view" data-title="Forgot Pin" data-layout="BackHeader" data-before-show="cleanview">
-			<table class="textboxStyle">
-				<tr>
-					<td>
-						<label for="txtemailId" class="lblStyle">Email Id :</label>
-					</td>
-					<td>
-						<input type="text" id="txtemailId" value="" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-					</td>
-					<td align="left">
-						<a id="btnSubmit" data-role="button" href="../Authentication/login.html">Submit</a>
-						<a id="resetButton" data-role="button">Reset</a>
-					</td>
-				</tr>
-			</table>
+			<div class="textboxStyle">
+               <div class="logo">
+					<img src="../images/logo.png" alt="" />
+				</div>
+				<table id="forgotPinForm" class="form">
+					<tr>
+						<td>
+							<label class="lblStyle">Email :</label>
+						</td>
+						<td>
+							<input type="text" id="txtemailId" value="" required validationMessage="*"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td class="button">
+							<a id="btnSubmit" data-role="button">Submit</a>
+							<a id="resetButton" data-role="button">Reset</a>
+						</td>
+					</tr>
+				</table>
+				<div id="Response">
+					Please check your mail.
+					We've sent your password to your email address.
+				</div>
+			</div>
 			<script>
-				$("#btnSubmit").click(function () {
-					try {
-						$("#btnSubmit").attr("disabled", "disabled");
-						$.ajax({
-							"url": "http://onit1.homenet.org/TrustMasterMobileServices/User/ForgotPin",
-							"method": "post",
-							"dataType": "json",
-							"data": "deviceUuid=" + window.top.device.uuid + "&email=" + $("#email").val()
-						})
-						.done(function(data, textStatus, jqXHR) {
-							try {
-								data = eval(data)[0];
-								alert(data.message); // ignore result code
-							}
-							catch (e) {
-								alert("Server sent incorrect data. Please contact On-IT1.");
-							}
-						})
-						.fail(function(jqXHR, textStatus, errorThrown) {
-							alert("Server error. Please contact On-IT1.\n\n" + errorThrown);
-						})
-						.always(function () {
-							$("#btnSubmit").removeAttr("disabled");
-						});
-					}
-					catch (e) {
-						alert("Error occurred. Please contact On-IT1.\n\n" + e);
-					}
-				});
+				$(document).ready(function() {
+					$("#forgotPinForm").show();
+					$("#Response").hide();
+				});                
 			</script>
 		</div>
 	</body>
