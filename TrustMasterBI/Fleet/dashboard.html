@@ -68,8 +68,10 @@
                                                    
                             $(document).ready(function () {
                              
-                             var temp = ((callwebservice('fleet', 'getexpenditures').dataSource));  
+                             callwebservice('fleet', 'getexpenditures','',servicelistcomplete);  
                                 
+                             function servicelistcomplete(result) {
+	                            var temp = result.dataSource;
                                 //Dashboard Numeric Display
      
 								$("#lblexplastYear").html(temp.data[2].LastYearExpenditure);
@@ -86,29 +88,30 @@
                                 $("#lblexpncurrDate").html("(" + temp.data[0].Date + ")");
                                 $("#lblfleetcurDate").html("(" + temp.data[3].Date + ")");
                                 $("#lblfleetprevmonthDate").html("(" + temp.data[4].Date + ")");
-                                $("#lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");
+                                $("#lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");            
+                               
+                             } 
                                 
-                                
-                                // Initialize the chart with a delay to make sure
-							   setTimeout(function () {
-								
-								// the initial animation is visible
-								createBarChart();
-                                createLineChart();
-						
-								$("#dashboard").bind("kendo:skinChange", function (e) {
-									createBarChart();
-                                    createLineChart();
-								});
-							    }, 200);
+                               
+                                callwebservice('fleet', 'GetExpendituresByCategory','',bardatacomplete);
+                                callwebservice('fleet', 'GetActiveVehiclesPerMonth','',linedatacomplete);
 						    });
-						  
-				            var bardata = callwebservice('fleet', 'GetExpendituresByCategory').dataSource;
-						    var internetUsers = callwebservice('fleet', 'GetActiveVehiclesPerMonth').dataSource;
+						    
                             
-                            // Apply Style to Bar Chart 
-						    function createBarChart() {
-							$("#Barchart").kendoChart({
+                            
+                            
+				            var bardata ;
+                            var internetUsers;
+                            
+						    
+                            
+                            
+                            function bardatacomplete(result) {
+                                
+                                bardata =result.dataSource;
+                                
+                                
+                                $("#Barchart").kendoChart({
 								theme: "blueopal",
 						
 								legend: {
@@ -154,10 +157,13 @@
 									format: "{0}"
 								}
 							});
-						    }
-                            //Apply Style to Line Chart
-						    function createLineChart() {
-									$("#chart").kendoChart({
+
+                            }
+                             function linedatacomplete(result) {
+                                 
+                                internetUsers =result.dataSource;
+                                
+                                 $("#chart").kendoChart({
 										theme: "blueopal",
 										dataSource: {
 											data: internetUsers.data
@@ -197,6 +203,18 @@
 									        format: "{0}"
 								            }
 									});
+                            }
+                            
+                            
+                            // Apply Style to Bar Chart 
+						    function createBarChart() {
+                              
+                                
+							
+						    }
+                            //Apply Style to Line Chart
+						    function createLineChart() {
+									
 							}
 									
 					    </script>
