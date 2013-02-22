@@ -7,7 +7,7 @@
 .clear { clear: both}
 #dashboard
 {
-	font-family: Calibri;
+	font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
 }
 .centerWrap
 {
@@ -28,7 +28,7 @@
 .dashboard-description,
 .stat dd
 {
-	font-family: Calibri;
+	font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
 }
 .dashboard-title,
 .dashboard-subtitle
@@ -74,7 +74,7 @@
 	margin-bottom: 0;
 	color: #454447;
     float : right;
-    font-family:  Calibri;
+    font-family:  'Open Sans Condensed',Calibri, Verdana, sans-serif;
 }
 .metric
 {
@@ -93,7 +93,7 @@
 	font-size: 16px;
 	color: #999999;
 	margin: 0px 10px;
-    font-family: Calibri;
+    font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
     float:right;
 }
 .dashboard-title,
