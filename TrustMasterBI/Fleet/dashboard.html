@@ -28,7 +28,8 @@
 						</dl>
 						<div class="company-trends">
 							<dl class="stat first">
-								<span class="metric_right" id="lblexpncurrDate" ></span><dt class="dashboard-subtitle-right">Date</dt>
+								<span class="metric_right" id="lblexpncurrDate" ></span>
+								<dt class="dashboard-subtitle-right">Date</dt>
 								<dd class="volumeBig_right" id="lblexpncurrentDate"></dd>
 							</dl>
 						</div>
@@ -49,114 +50,107 @@
 								Date<span class="metric" id="lblfleetcurDate" ></span>
 							</dt>
 							<dd class="volumeBig" id="currentFleet" ></dd>
-							
+
 							<dt class="dashboard-subtitle">
 								Previous Month<span class="metric" id="lblfleetprevmonthDate" ></span>
 							</dt>
 							<dd class="volumeMedium" id="prevFleet"></dd>
-							
+
 							<dt class="dashboard-subtitle">
 								Last Year<span class="metric" id="lblfleetlastyearDate" ></span>
 							</dt>
 							<dd class="volumeMedium" id="lastyearFleet" ></dd>
-							
+
 						</dl>
 						<div class="volume-chart k-chart" >
 							<div id="chart" ></div>
-                            
-                        <script>
+
+							<script>
                                                    
-                            $(document).ready(function () {
-                             
-                             var temp = ((callwebservice('fleet', 'getexpenditures').dataSource));  
-                                
-                                //Dashboard Numeric Display
-     
-								$("#lblexplastYear").html(temp.data[2].LastYearExpenditure);
-								$("#lblexpnpreMonth").html(temp.data[1].PrevioudMonthExpenditure);
-								$("#lblexpncurrentDate").html(temp.data[0].TotalExpenditure);
-								$("#currentFleet").html(temp.data[3].FleetSize);
-								$("#prevFleet").html(temp.data[4].PrevMonthFleetSize);
-								$("#lastyearFleet").html(temp.data[5].FleetSizeLastYear);
-                                
-                                //Dasboard Date Display
-                                
-                                $("#lblexpnlastyearDate").html("(" + temp.data[2].Date + ")");
-                                $("#lblexpnprevmonthDate").html("(" + temp.data[1].Date + ")");
-                                $("#lblexpncurrDate").html("(" + temp.data[0].Date + ")");
-                                $("#lblfleetcurDate").html("(" + temp.data[3].Date + ")");
-                                $("#lblfleetprevmonthDate").html("(" + temp.data[4].Date + ")");
-                                $("#lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");
-                                
-                                
-                                // Initialize the chart with a delay to make sure
-							   setTimeout(function () {
+								$(document).ready(function () {
+									callwebservice('fleet', 'getexpenditures', '', servicelistcomplete);  
 								
-								// the initial animation is visible
-								createBarChart();
-                                createLineChart();
-						
-								$("#dashboard").bind("kendo:skinChange", function (e) {
-									createBarChart();
-                                    createLineChart();
+									function servicelistcomplete(result) {
+										var temp = result.dataSource;
+										//Dashboard Numeric Display
+								
+										$("#lblexplastYear").html(temp.data[2].LastYearExpenditure);
+										$("#lblexpnpreMonth").html(temp.data[1].PrevioudMonthExpenditure);
+										$("#lblexpncurrentDate").html(temp.data[0].TotalExpenditure);
+										$("#currentFleet").html(temp.data[3].FleetSize);
+										$("#prevFleet").html(temp.data[4].PrevMonthFleetSize);
+										$("#lastyearFleet").html(temp.data[5].FleetSizeLastYear);
+								
+										//Dasboard Date Display
+								
+										$("#lblexpnlastyearDate").html("(" + temp.data[2].Date + ")");
+										$("#lblexpnprevmonthDate").html("(" + temp.data[1].Date + ")");
+										$("#lblexpncurrDate").html("(" + temp.data[0].Date + ")");
+										$("#lblfleetcurDate").html("(" + temp.data[3].Date + ")");
+										$("#lblfleetprevmonthDate").html("(" + temp.data[4].Date + ")");
+										$("#lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");            
+									} 
+                                
+									callwebservice('fleet', 'GetExpendituresByCategory', '', bardatacomplete);
+									callwebservice('fleet', 'GetActiveVehiclesPerMonth', '', linedatacomplete);
 								});
-							    }, 200);
-						    });
-						  
-				            var bardata = callwebservice('fleet', 'GetExpendituresByCategory').dataSource;
-						    var internetUsers = callwebservice('fleet', 'GetActiveVehiclesPerMonth').dataSource;
+								
+								var bardata ;
+								var internetUsers;
                             
-                            // Apply Style to Bar Chart 
-						    function createBarChart() {
-							$("#Barchart").kendoChart({
-								theme: "blueopal",
+								function bardatacomplete(result) {
+									bardata = result.dataSource;
+                                
+									$("#Barchart").kendoChart({
+										theme: "blueopal",
 						
-								legend: {
-									position: "top",
-									offsetX: 240
-						
-								},
-								seriesDefaults: {
-									type: "column"
-								},
-								series: [
-									{
-										name: "Prev. Month same date",
-										data: bardata.data1
-									}, {
-										name: "Current Month",
-										data: bardata.data2
-									}
-								],
-								valueAxis: {
-									labels: {
-										format: "{0}"
-									},
-									
-								},
-								categoryAxis: {
-									categories: bardata.data3,
-                                    baseUnit :"fit",
-									labels: {
-										rotation: -30,
-										margin: 0,
-										padding: { top: 0, left: 10, right :50 }
-                                        
-									}
-								},
-								chartArea:{
-									width:750,
-									height :340,
-									background: ""
-								},
-								tooltip: {
-									visible: true,
-									format: "{0}"
+										legend: {
+											position: "top",
+											offsetX: 240
+								
+										},
+										seriesDefaults: {
+											type: "column"
+										},
+										series: [
+											{
+												name: "Prev. Month same date",
+												data: bardata.data1
+											}, {
+												name: "Current Month",
+												data: bardata.data2
+											}
+										],
+										valueAxis: {
+											labels: {
+												format: "{0}"
+											},
+								
+										},
+										categoryAxis: {
+											categories: bardata.data3,
+											baseUnit :"fit",
+											labels: {
+												rotation: -30,
+												margin: 0,
+												padding: { top: 0, left: 10, right :50 }
+								
+											}
+										},
+										chartArea:{
+											width:750,
+											height :340,
+											background: ""
+										},
+										tooltip: {
+											visible: true,
+											format: "{0}"
+										}
+									});
 								}
-							});
-						    }
-                            //Apply Style to Line Chart
-						    function createLineChart() {
+								function linedatacomplete(result) {
+									internetUsers = result.dataSource;
+								
 									$("#chart").kendoChart({
 										theme: "blueopal",
 										dataSource: {
@@ -192,14 +186,14 @@
 										categoryAxis: {
 											field: "year"
 										},
-                                        tooltip: {
-									        visible: true,
-									        format: "{0}"
-								            }
+										tooltip: {
+											visible: true,
+											format: "{0}"
+										}
 									});
-							}
-									
-					    </script>
+								}
+								
+							</script>
 						</div>
 					</div>
 				</div>
