@@ -6,7 +6,10 @@
 * https://www.kendoui.com/purchase/license-agreement/kendo-ui-mobile-commercial.aspx
 * If you do not own a commercial license, this file shall be governed by the trial license terms.
 */
-
+::-webkit-input-placeholder
+{
+	color: LightGray;
+}
 
 .km-tablet .km-ios .logo img
 {
@@ -2104,11 +2107,13 @@ body:before
 }
 .km-ios .km-button:active, .km-ios .km-button.km-state-active
 {
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(64, 97, 139, 100)), color-stop(1, rgba(114, 147, 186, 100)));
+	/*background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(64, 97, 139, 100)), color-stop(1, rgba(114, 147, 186, 100)));
 	background-image: -moz-linear-gradient(top, rgba(64, 97, 139, 100), rgba(114, 147, 186, 100));
 	background-image: -ms-linear-gradient(top, rgba(64, 97, 139, 100), rgba(114, 147, 186, 100));
 	background-image: -o-linear-gradient(top, rgba(64, 97, 139, 100), rgba(114, 147, 186, 100));
-	background-image: linear-gradient(top, rgba(64, 97, 139, 100), rgba(114, 147, 186, 100));
+	background-image: linear-gradient(top, rgba(64, 97, 139, 100), rgba(114, 147, 186, 100));*/
+   /* background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(214, 132, 33, 100)), color-stop(1, rgba(114, 147, 186, 100)));*/
+    background-color: #d68421 !important;
 }
 .km-ios li.km-state-active
 {
@@ -6563,7 +6568,7 @@ body:before
 .logo { width: 312px; margin: 0 auto; }
 .login .btn { float: left; }
 .login .fg_link { float: right; padding: 5px 0 0 0; }
-.login .fg_link a { text-decoration: none; font-size: 12px; color: #333;border:none !important;background:none !important;padding:0px !important; margin:0px !important; }
+.login .fg_link a { text-decoration: none; font-size: 12px; color: #333; border: none !important; background: none !important; padding: 0px !important; margin: 0px !important; }
 .login .fg_link a:hover { text-decoration: underline; }
 .inputbtn
 {
@@ -6632,7 +6637,6 @@ body:before
 
 /******************** Icon Style **************************/
 /*.km-tabstrip .km-button{ border-left:1px solid #afafaf !important;}*/
-
 
 
 .km-ic1:after, .km-ic1:before
@@ -6705,51 +6709,50 @@ body:before
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border: 1px solid #a3a9b0;
-	padding: 2px; margin: 0; width: 165px; height:15px;
+	padding: 2px; margin: 0; width: 165px; height: 15px;
 }
 
-.km-tablet .km-ios .textboxStyle input[type=text],.km-tablet .km-ios .textboxStyle input[type=password]
+.km-tablet .km-ios .textboxStyle input[type=text], .km-tablet .km-ios .textboxStyle input[type=password]
 {
-	font-size:1.2em !important;
-    height:21px !important;
+	font-size: 1.2em !important;
+	height: 21px !important;
 }
 
- .textboxStyle
+.textboxStyle
 {
 	text-align: center; margin: 0px auto; margin-top: 15px;
 }
 
 .textboxStyle h3
 {
-    font-weight:bold;
-    font-size:12px;
-    margin-bottom:0px;
+	font-weight: bold;
+	font-size: 12px;
+	margin-bottom: 0px;
 }
 
 .km-tablet .km-ios .textboxStyle h3
 {
-    font-weight:bold;
-    font-size:20px;
+	font-weight: bold;
+	font-size: 20px;
 }
- 
 
 .scatterbg .km-content 
 {
 	background-image: url(../../images/registrationBackground.png) !important;
-    background-size:641px 311px;
+	background-size: 641px 311px;
 }
 
 .km-tablet .km-ios .scatterbg .km-content 
 {
 	background-image: url(../../images/registrationBackground.png) !important;
-    background-size:100% 100%;
-    background-repeat:repeat;
+	background-size: 100% 100%;
+	background-repeat: repeat;
 }
 
 .km-ios .scatterbg .km-content 
 {
 	background-image: url(../../images/registrationBackground.png) !important;
-    background-size:50% 50%;
+	background-size: 50% 50%;
 }
 
 .popupContent
@@ -6797,12 +6800,17 @@ body:before
 .registrationresult
 {
 	text-align: left;
-	padding: 10px;    
+	padding: 10px; 
 }
 
 .response
 {
-    font-weight: bold;
-    text-align:left;
-    padding: 10px; 
+	font-weight: bold;
+	text-align: left;
+	padding: 10px; 
+}
+
+.chartArea .km-content
+{
+    background-color:White !important;
 }
