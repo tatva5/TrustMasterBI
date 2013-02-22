@@ -7,11 +7,11 @@
 .clear { clear: both}
 #dashboard
 {
-	font-family: Calibri;
+	font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
 }
 .centerWrap
 {
-	width: 940px;
+	width: 780px;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -28,7 +28,7 @@
 .dashboard-description,
 .stat dd
 {
-	font-family: Calibri;
+	font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
 }
 .dashboard-title,
 .dashboard-subtitle
@@ -71,10 +71,10 @@
 {
 	font-size: 18px;
 	font-weight: 700;
-	margin-bottom: 0;
+	Margin-top: 30px;
 	color: #454447;
     float : right;
-    font-family:  Calibri;
+    font-family:  'Open Sans Condensed',Calibri, Verdana, sans-serif;
 }
 .metric
 {
@@ -92,8 +92,9 @@
 	font-weight: 300;
 	font-size: 16px;
 	color: #999999;
-	margin: 0px 10px;
-    font-family: Calibri;
+	Margin-top: 30px;
+    Margin-left :5px;
+    font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
     float:right;
 }
 .dashboard-title,
@@ -117,13 +118,20 @@
 }
 .stat .volumeBig
 {
-	font-size: 40px;
+	font-size: 44px;
 	color: #454447;
-	Margin-bottom: 10px;
+	
 }
+.stat .volumeBig_right
+{
+	font-size: 44px;
+	color: #454447;
+	Margin-top: 55px;
+}
+
 .stat .volumeMedium
 {
-	font-size: 20px;
+	font-size: 24px;
 	color: #1c638d;
 	Margin-bottom: 10px;
 }

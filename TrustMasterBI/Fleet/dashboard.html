@@ -1,14 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html xmlns="http://www.w3.org/1999/xhtml" class="k-webkit k-webkit24">
 	<head>
 		<title>Kgwerano TrustMaster Fleet| Maintenance History</title>
 	</head>
 	<body>
 		<div id="mainWrap" data-role="view" data-layout="fleetdashboardLayout" data-title="OPERATIONS">
-			<div id="dashboard">
+			<div id="dashboard" class="centerWrap">
 				<div class="demo-section">
-					<div class="company-info" id="Fleet">
+					<div  id="Fleet">
 						<dl class="stat first">
 							<dt class="dashboard-subtitle1">
 								TOTAL EXPENDITURE
@@ -29,7 +29,7 @@
 						<div class="company-trends">
 							<dl class="stat first">
 								<span class="metric_right" id="lblexpncurrDate" ></span><dt class="dashboard-subtitle-right">Date</dt>
-								<dd class="volumeBig" id="lblexpncurrentDate"></dd>
+								<dd class="volumeBig_right" id="lblexpncurrentDate"></dd>
 							</dl>
 						</div>
 						<div class="separator"></div>
@@ -38,7 +38,7 @@
 					<dt class="dashboard-subtitle1">MONTHLY EXPENDITURE PER CATEGORY </dt>
 					<div id="Barchart"></div>
 
-					<div class="company-info" id="google">
+					<div  id="google">
 						<div class="separator"></div>
 						<dl class="stat first">
 							<dt class="dashboard-subtitle1">
@@ -67,11 +67,11 @@
                         <script>
                                                    
                             $(document).ready(function () {
-                                
+                             
                              var temp = ((callwebservice('fleet', 'getexpenditures').dataSource));  
                                 
                                 //Dashboard Numeric Display
-                                
+     
 								$("#lblexplastYear").html(temp.data[2].LastYearExpenditure);
 								$("#lblexpnpreMonth").html(temp.data[1].PrevioudMonthExpenditure);
 								$("#lblexpncurrentDate").html(temp.data[0].TotalExpenditure);
@@ -86,7 +86,7 @@
                                 $("#lblexpncurrDate").html("(" + temp.data[0].Date + ")");
                                 $("#lblfleetcurDate").html("(" + temp.data[3].Date + ")");
                                 $("#lblfleetprevmonthDate").html("(" + temp.data[4].Date + ")");
-                                $("lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");
+                                $("#lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");
                                 
                                 
                                 // Initialize the chart with a delay to make sure
@@ -102,7 +102,7 @@
 								});
 							    }, 200);
 						    });
-						
+						  
 				            var bardata = callwebservice('fleet', 'GetExpendituresByCategory').dataSource;
 						    var internetUsers = callwebservice('fleet', 'GetActiveVehiclesPerMonth').dataSource;
                             
