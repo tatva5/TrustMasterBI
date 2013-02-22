@@ -6569,6 +6569,7 @@ body:before
 .login .btn { float: left; }
 .login .fg_link { float: right; padding: 5px 0 0 0; }
 .login .fg_link a { text-decoration: none; font-size: 12px; color: #333; border: none !important; background: none !important; padding: 0px !important; margin: 0px !important; }
+.login .fg_link a:active { text-decoration: none; font-size: 12px; color: blue !important; border: none !important; background: none !important; padding: 0px !important; margin: 0px !important; }
 .login .fg_link a:hover { text-decoration: underline; }
 .inputbtn
 {
