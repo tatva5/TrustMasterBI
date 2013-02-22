@@ -3191,6 +3191,7 @@ span.k-tooltip
 {
     vertical-align: text-top;
     margin-right: 3px;
+    display:none;
 }
 .k-window .k-tooltip-validation
 {

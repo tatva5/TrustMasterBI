@@ -17,7 +17,7 @@
 							<label class="lblStyle">First Name :</label>
 						</td>
 						<td >
-							<input type="text" id="txtFirstName" required validationMessage="*" value="" />
+							<input type="text" id="txtFirstName" name="txtFirstName" required validationMessage="*" value="" maxlength="10"/>
 						</td>
 					</tr>
 					<tr>
@@ -25,7 +25,7 @@
 							<label class="lblStyle">Surname :</label>
 						</td>
 						<td >
-							<input type="text" id="txtSurname" required validationMessage="*" value="" />
+							<input type="text" id="txtSurname" name="txtSurname" required validationMessage="*" value="" maxlength="10"/>
 						</td>
 					</tr>
 					<tr>
@@ -33,7 +33,7 @@
 							<label class="lblStyle">Email :</label>
 						</td>
 						<td >
-							<input type="text" id="email" required validationMessage="*" value="" />
+							<input type="text" id="email" name="email" required validationMessage="*" value="" pattern="\b[a-zA-Z0-9._%-]+@?bosasa\.com"/>
 						</td>
 					</tr>
 					<tr>
@@ -41,7 +41,7 @@
 							<label class="lblStyle">Pin :</label>
 						</td>
 						<td>
-							<input type="password" id="pin" required validationMessage="*" value="" />
+							<input type="password" id="pin" name="pin" required validationMessage="*" value="" pattern="\d{4}"/>
 						</td>
 					</tr>
 					<tr>
