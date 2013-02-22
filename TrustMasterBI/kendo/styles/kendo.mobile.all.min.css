@@ -6563,7 +6563,7 @@ body:before
 .logo { width: 312px; margin: 0 auto; }
 .login .btn { float: left; }
 .login .fg_link { float: right; padding: 5px 0 0 0; }
-.login .fg_link a { text-decoration: none; font-size: 12px; color: #333; }
+.login .fg_link a { text-decoration: none; font-size: 12px; color: #333;border:none !important;background:none !important;padding:0px !important; margin:0px !important; }
 .login .fg_link a:hover { text-decoration: underline; }
 .inputbtn
 {
@@ -6700,12 +6700,18 @@ body:before
 
 .textboxStyle input[type=text], .textboxStyle input[type=password]
 {
-	font: normal 8px Arial; color: #666;
+	font: normal 10px Arial !important; color: #666;
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border: 1px solid #a3a9b0;
-	padding: 2px; margin: 0; width: 165px;
+	padding: 2px; margin: 0; width: 165px; height:15px;
+}
+
+.km-tablet .km-ios .textboxStyle input[type=text],.km-tablet .km-ios .textboxStyle input[type=password]
+{
+	font-size:1.2em !important;
+    height:21px !important;
 }
 
  .textboxStyle
@@ -6800,4 +6806,3 @@ body:before
     text-align:left;
     padding: 10px; 
 }
-

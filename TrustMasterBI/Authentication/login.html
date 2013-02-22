@@ -14,7 +14,7 @@
 					<tr>
 						<td class="pinWidth" align="right">Pin :</td>
 						<td>
-							<input id="loginpin" type="text" required validationMessage="*"/>
+							<input id="loginpin" type="text" name="loginpin" required validationMessage="*" pattern="\d{4}" placeholder="Please enter a four digit pin"/>
 						</td>
 					</tr>
 					<tr>
@@ -24,7 +24,7 @@
 								<a data-role="button" id="loginbtn" class="inputbtn" data-click="login">Login</a>
 							</div>
 							<div class="fg_link">
-								<a data-role="button" href="../Authentication/forgotpin.html" style="border:none;background:none;padding:0px;margin:0px;">Forgot Pin?</a>
+								<a data-role="button" href="../Authentication/forgotpin.html">Forgot Pin?</a>
 							</div>
 						</td>
 					</tr>
