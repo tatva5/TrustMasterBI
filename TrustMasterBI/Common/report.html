@@ -5,7 +5,7 @@
 		<title></title>
 	</head>
 	<body>
-		<div data-role="view" data-title="Report" data-layout="grahicalDataLayout" data-before-show="cleanview" data-show="showchart">
+		<div data-role="view" data-title="Report" data-layout="grahicalDataLayout" data-before-show="cleanview" data-show="showchart" data-init="onInit">
 			<div data-role="popover" id="popover-people" data-popup='{"height": 200, "width": 290}' class="popupContent">
 				<div data-role="view" data-title="Search">
 					<div data-role="header">
@@ -46,7 +46,9 @@
 					$("#ddlSelect").kendoComboBox();
 					$("#datepicker").kendoDatePicker(); 
 					$("#datepicker1").kendoDatePicker();
-				});				
+				});
+                
+        
 			</script>
 		</div>
 	</body>

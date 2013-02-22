@@ -167,6 +167,10 @@ function graphlist(e) {
 }
 
 function showchart(e){
+    var title = $(this).attr("title");
+    alert(title);
+  //e.view.title ="My custom Title";
+    $("#navbar").title("MyCustomTitle");
     var result=callwebservice(e.view.params.controller, e.view.params.method, '');
     if (typeof(result)==='undefined') 
 		return;
@@ -177,3 +181,7 @@ function closeParentPopover(e) {
 	var popover = e.sender.element.closest('[data-role=popover]').data('kendoMobilePopOver');				
 	popover.close();
 }
+
+function onInit(e) {//alert(e.view.title);
+                    //e.view.title =="My custom Title";
+                    e.view.footer.find(".youthdevelopment").hide();}
