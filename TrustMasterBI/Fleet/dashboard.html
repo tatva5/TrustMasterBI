@@ -67,11 +67,11 @@
                         <script>
                                                    
                             $(document).ready(function () {
-                                
+                             
                              var temp = ((callwebservice('fleet', 'getexpenditures').dataSource));  
                                 
                                 //Dashboard Numeric Display
-                                
+     
 								$("#lblexplastYear").html(temp.data[2].LastYearExpenditure);
 								$("#lblexpnpreMonth").html(temp.data[1].PrevioudMonthExpenditure);
 								$("#lblexpncurrentDate").html(temp.data[0].TotalExpenditure);
@@ -102,7 +102,7 @@
 								});
 							    }, 200);
 						    });
-						
+						  
 				            var bardata = callwebservice('fleet', 'GetExpendituresByCategory').dataSource;
 						    var internetUsers = callwebservice('fleet', 'GetActiveVehiclesPerMonth').dataSource;
                             
