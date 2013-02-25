@@ -94,7 +94,7 @@ function closeParentPopover(e) {
 
 function transit(e) {    
 	$("#chartArea").empty();
-	alert(e.button.context);
+	//alert(e.button.context);
 	if (e.button.context.innerText == "Tabular") {
 		e.button.context.innerText = "Graphical";
 		callwebservice('Chart', 'Test2', '', showreportcomplete);
