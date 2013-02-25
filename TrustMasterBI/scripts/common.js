@@ -38,6 +38,10 @@ function closeParentPopover(e) {
 	popover.close();
 }
 
+function onmoduleclick(url){
+    app.navigate(url);
+}
+
 function transit(e) {    
 	$("#chartArea").empty();
 	alert(e.button.context);
@@ -215,6 +219,3 @@ function showreportcomplete(result) {
 	$("#chartArea").kendoGrid(result);  
 }
 
-function btnClick(url){
-    app.navigate(url);
-}

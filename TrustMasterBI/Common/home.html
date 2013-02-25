@@ -68,11 +68,8 @@
 		<section data-role="layout" data-id="servicesLayout" >
 			<header data-role="header">
 				<div data-role="navbar">
-
 					<span data-role="view-title"/>
-
-					<a data-role="button" href="#home" data-align="right">Logout</a>
-
+					<a data-role="button" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -89,8 +86,7 @@
 				<div data-role="navbar" id="module-navbar">
 					<a data-role="backbutton" data-align="left" data-click="backClick">Back</a>
 					<span data-role="view-title"/>
-					<a data-role="button" href="#home" data-align="right">Logout</a>
-
+					<a data-role="button" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -107,7 +103,7 @@
 				<div data-role="navbar">
 					<a  data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
-					<a data-role="button" href="#home" data-align="right">Logout</a>
+					<a data-role="button" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -125,7 +121,7 @@
 					<a  data-role="backbutton" data-align="left">Back</a>
 					<a  data-role="button" href="graphList.html" data-align="left">Graphical</a>
 					<span data-role="view-title"/>
-					<a data-role="button" href="#home" data-align="right">Logout</a>
+					<a data-role="button" data-align="right">Logout</a>
 
 				</div>
 			</header>
@@ -145,7 +141,7 @@
 					<a  data-role="button" data-click="transit" data-align="left">Tabular</a>
 					<span data-role="view-title"/>
 					<a data-role="button" href="#popover-people" data-align="right" data-rel="popover">Search</a>
-					<a data-role="button" href="#home" data-align="right">Logout</a>
+					<a data-role="button" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -164,7 +160,7 @@
 					<a  data-role="button" href="graphList.html" data-align="left">Graphical</a>
 					<span data-role="view-title"/>
 					<a data-role="button" href="#popover-people" data-align="right" data-rel="popover">Search</a>
-					<a data-role="button" href="#home" data-align="right">Logout</a>
+					<a data-role="button" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -227,7 +223,7 @@
 				<div data-role="navbar">
 					<a data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
-					<a data-role="button" href="#home" data-align="right">Logout</a>
+					<a data-role="button" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -278,12 +274,13 @@
 				</ul>
 			</div>
 		</script>
+        
 		<script id="moduletemplete" type="text/x-kendo-template">
 			<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
 				# for (var i = 0; i < data.length; i++) { #
 				<li>
 					<!--<a href="#= data[i].href #" data-role="button" class="km-listview-link">#= data[i].name #</a>-->
-					<input type="button" onclick="btnClick('#= data[i].href #')" value="#= data[i].name #" style="position:relative;"/>
+					<input type="button" onclick="onmoduleclick('#= data[i].href #')" value="#= data[i].name #" style="position:relative;" />
                         <img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;left:95%;top:25%;"/>
 				</li>
 				# }
