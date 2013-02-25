@@ -163,6 +163,13 @@ function reset(e) {
 	$("#txtemailId").val('');
 };
 
+function registrationFormReset(e){
+    $("#txtFirstName").val('');
+    $("#txtSurname").val('');
+    $("#email").val('');
+    $("#pin").val('');
+}
+
 function servicelist(e) {
 	callwebservice('Home', 'Servicelist', '', servicelistcomplete);
 }
