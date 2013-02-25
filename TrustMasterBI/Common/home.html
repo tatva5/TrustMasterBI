@@ -71,7 +71,7 @@
 
 					<span data-role="view-title"/>
 
-					<a data-role="button" href="#home" data-align="right" data-click="logout">Logout</a>
+					<a data-role="button" href="#home" data-align="right">Logout</a>
 
 				</div>
 			</header>
@@ -89,7 +89,7 @@
 				<div data-role="navbar" id="module-navbar">
 					<a data-role="backbutton" data-align="left" data-click="backClick">Back</a>
 					<span data-role="view-title"/>
-					<a data-role="button" href="#home" data-align="right" data-click="logout">Logout</a>
+					<a data-role="button" href="#home" data-align="right">Logout</a>
 
 				</div>
 			</header>
@@ -107,7 +107,7 @@
 				<div data-role="navbar">
 					<a  data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
-					<a data-role="button" href="#home" data-align="right" data-click="logout">Logout</a>
+					<a data-role="button" href="#home" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -125,7 +125,7 @@
 					<a  data-role="backbutton" data-align="left">Back</a>
 					<a  data-role="button" href="graphList.html" data-align="left">Graphical</a>
 					<span data-role="view-title"/>
-					<a data-role="button" href="#home" data-align="right" data-click="logout">Logout</a>
+					<a data-role="button" href="#home" data-align="right">Logout</a>
 
 				</div>
 			</header>
@@ -145,7 +145,7 @@
 					<a  data-role="button" data-click="transit" data-align="left">Tabular</a>
 					<span data-role="view-title"/>
 					<a data-role="button" href="#popover-people" data-align="right" data-rel="popover">Search</a>
-					<a data-role="button" href="#home" data-align="right" data-click="logout">Logout</a>
+					<a data-role="button" href="#home" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -164,7 +164,7 @@
 					<a  data-role="button" href="graphList.html" data-align="left">Graphical</a>
 					<span data-role="view-title"/>
 					<a data-role="button" href="#popover-people" data-align="right" data-rel="popover">Search</a>
-					<a data-role="button" href="#home" data-align="right" data-click="logout">Logout</a>
+					<a data-role="button" href="#home" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -227,7 +227,7 @@
 				<div data-role="navbar">
 					<a data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
-					<a data-role="button" href="#home" data-align="right" data-click="logout">Logout</a>
+					<a data-role="button" href="#home" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -244,17 +244,6 @@
 		<script src="../scripts/common.js"></script>
 		<script>			
 			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader"});
-            
-            //Add event listener
-            document.addEventListener("resume", onResume, true);
-            
-            // Handle the resume event          
-            function onResume()
-            {
-                //alert("OnResume called");
-                logout();
-                //app.navigate('../Authentication/login.html');
-            }
             
 			// TrustMaster Mobile global variables
 			if (typeof window.top.Onit1 == "undefined") {
@@ -274,7 +263,7 @@
 				};
 			}
 		</script>
-		
+
 		<script id="servicetemplete" type="text/x-kendo-template">
 			<div class="services_list">
 				<ul>
@@ -289,15 +278,16 @@
 				</ul>
 			</div>
 		</script>
-        
-        <script id="moduletemplete" type="text/x-kendo-template">
+		<script id="moduletemplete" type="text/x-kendo-template">
 			<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
 				# for (var i = 0; i < data.length; i++) { #
 				<li>
-					<a href="#= data[i].href #" data-role="button" class="km-listview-link">#= data[i].name #</a>
+					<!--<a href="#= data[i].href #" data-role="button" class="km-listview-link">#= data[i].name #</a>-->
+					<input type="button" onclick="btnClick('#= data[i].href #')" value="#= data[i].name #" style="position:relative;"/>
+                        <img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;left:95%;top:25%;"/>
 				</li>
 				# }
-				
+		
 				#
 			</ul>
 		</script>
