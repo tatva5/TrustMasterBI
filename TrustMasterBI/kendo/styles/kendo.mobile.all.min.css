@@ -85,7 +85,7 @@
 
 .km-tablet .km-ios .inputbtn
 {
-	border: none !important; background: #c1c2c4 url(images/butbg.png) top repeat-x !important;
+	background: #c1c2c4 url(images/butbg.png) top repeat-x !important;
 	cursor: pointer !important; height: 30px !important; overflow: visible !important;
 	font: bold 13px Arial, Helvetica, sans-serif !important; margin: 0 !important; padding: 0 20px 0px 20px !important;
 	line-height: 28px !important; color: #FFF !important;
@@ -100,7 +100,7 @@
 
 .km-ios .inputbtn
 {
-	border: none !important; background: #c1c2c4 url(images/butbg.png) top repeat-x !important;
+	background: #c1c2c4 url(images/butbg.png) top repeat-x !important;
 	cursor: pointer !important; height: 20px !important; overflow: visible !important;
 	font: bold 10px Arial, Helvetica, sans-serif !important; margin: 0 !important; padding: 0 15px 0px 15px !important;
 	line-height: 18px !important; color: #FFF !important;
@@ -2112,8 +2112,8 @@ body:before
 	background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
 	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
 	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
-    color:#26313e;
-    /*background-color: #d68421 !important;*/
+	color: #26313e;
+	/*background-color: #d68421 !important;*/
 }
 .km-ios li.km-state-active
 {
@@ -6569,11 +6569,12 @@ body:before
 .login .btn { float: left; }
 .login .fg_link { float: right; padding: 5px 0 0 0; }
 .login .fg_link a { text-decoration: none; font-size: 12px; color: #333; border: none !important; background: none !important; padding: 0px !important; margin: 0px !important; }
-.login .fg_link a:active { text-decoration: none; font-size: 12px; color: blue !important; border: none !important; background: none !important; padding: 0px !important; margin: 0px !important; }
+.login .fg_link a:active { text-decoration: none; color: #073876  !important; border: none !important; background: none !important; padding: 0px !important; margin: 0px !important; }
 .login .fg_link a:hover { text-decoration: underline; }
 .inputbtn
 {
-	border: none !important; background: #c1c2c4 url(images/butbg.png) top repeat-x !important;
+    float: left;
+	border: 1px solid #828587 !important; ; background: #c1c2c4 url(images/butbg.png) top repeat-x !important;
 	cursor: pointer !important; height: 30px !important; overflow: visible !important;
 	font: bold 13px Arial, Helvetica, sans-serif !important; margin: 0 !important; padding: 0 20px 0px 20px !important;
 	line-height: 28px !important; color: #FFF !important;
@@ -6581,6 +6582,12 @@ body:before
 	-moz-border-radius: 6px !important;
 	-webkit-border-radius: 6px !important;
 }
+
+.km-tablet .km-ios .inputbtn:active,.km-ios .inputbtn:active,.inputbtn:active
+{
+    border: 1px solid #de8f32  !important; ; background:url(images/login_hoverbg.png) top repeat-x !important;
+}
+
 .login input[type=text]
 {
 	font: normal 13px Arial; color: #666;
@@ -6813,5 +6820,5 @@ body:before
 
 .chartArea .km-content
 {
-    background-color:White !important;
+	background-color: White !important;
 }
