@@ -67,6 +67,7 @@
     <Content Include="Common\blog.html" />
     <Content Include="Common\graphList.html" />
     <Content Include="Common\home.html" />
+    <Content Include="Common\mis.html" />
     <Content Include="Common\modules.html" />
     <Content Include="Common\report.html" />
     <Content Include="Common\services.html" />

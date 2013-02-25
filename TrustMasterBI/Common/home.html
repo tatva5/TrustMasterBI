@@ -263,7 +263,7 @@
 				};
 			}
 		</script>
-		
+
 		<script id="servicetemplete" type="text/x-kendo-template">
 			<div class="services_list">
 				<ul>
@@ -278,14 +278,16 @@
 				</ul>
 			</div>
 		</script>
-        <script id="moduletemplete" type="text/x-kendo-template">
+		<script id="moduletemplete" type="text/x-kendo-template">
 			<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
 				# for (var i = 0; i < data.length; i++) { #
 				<li>
-					<a href="#= data[i].href #" data-role="button" class="km-listview-link">#= data[i].name #</a>
+					<!--<a href="#= data[i].href #" data-role="button" class="km-listview-link">#= data[i].name #</a>-->
+					<input type="button" onclick="btnClick('#= data[i].href #')" value="#= data[i].name #" style="position:relative;"/>
+                        <img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;left:95%;top:25%;"/>
 				</li>
 				# }
-				
+		
 				#
 			</ul>
 		</script>

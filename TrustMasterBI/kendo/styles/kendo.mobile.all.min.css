@@ -6,6 +6,21 @@
 * https://www.kendoui.com/purchase/license-agreement/kendo-ui-mobile-commercial.aspx
 * If you do not own a commercial license, this file shall be governed by the trial license terms.
 */
+
+.km-list input[type=button]
+{
+    border: none !important;
+	width: 100%;
+    text-align:left;
+	background: inherit;
+    color:White;
+    font-size: 1.2em;
+    font-weight:bold;
+    padding: .5em .7em;
+    margin:0px;
+    border-radius:inherit;
+}
+
 ::-webkit-input-placeholder
 {
 	color: LightGray;
@@ -2105,7 +2120,7 @@ body:before
 	background-image: -o-linear-gradient(top, rgba(114, 147, 186, 100), rgba(64, 97, 139, 100));
 	background-image: linear-gradient(top, rgba(114, 147, 186, 100), rgba(64, 97, 139, 100));
 }
-.km-ios .km-button:active, .km-ios .km-button.km-state-active
+.km-ios .km-button:active, .km-ios .km-button.km-state-active,.km-list input[type=button]:active
 {
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(114, 147, 186, 100))) !important;
 	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
@@ -2674,7 +2689,7 @@ body:before
 	-moz-border-radius:7px;
 	-webkit-border-radius:7px*/
 }
-.km-ios li.km-state-active .km-listview-link, .km-ios li.km-state-active .km-listview-label,km-ios li.km-state-active h3
+.km-ios li.km-state-active .km-listview-link, .km-ios li.km-state-active .km-listview-label
 {
 	/*color: #fff;
 	background: #0260e8;
@@ -2764,7 +2779,7 @@ body:before
 	font-weight: bold;
 	overflow: hidden;
 	color: white;
-	padding: .5em .7em;
+	/*padding: .5em .7em;*/
 	border: 2px solid #FFF !important;
 	margin: 0 0 15px 0 !important;
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(65, 98, 140, 100)), color-stop(1, rgba(43, 67, 97, 100)));

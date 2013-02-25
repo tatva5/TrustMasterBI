@@ -39,8 +39,8 @@ function closeParentPopover(e) {
 }
 
 function transit(e) {    
-    $("#chartArea").empty();
-    alert(e.button.context);
+	$("#chartArea").empty();
+	alert(e.button.context);
 	if (e.button.context.innerText == "Tabular") {
 		e.button.context.innerText = "Graphical";
 		callwebservice('Chart', 'Test2', '', showreportcomplete);
@@ -163,11 +163,11 @@ function reset(e) {
 	$("#txtemailId").val('');
 };
 
-function registrationFormReset(e){
-    $("#txtFirstName").val('');
-    $("#txtSurname").val('');
-    $("#email").val('');
-    $("#pin").val('');
+function registrationFormReset(e) {
+	$("#txtFirstName").val('');
+	$("#txtSurname").val('');
+	$("#email").val('');
+	$("#pin").val('');
 }
 
 function servicelist(e) {
@@ -213,4 +213,8 @@ function showchartcomplete(result) {
 
 function showreportcomplete(result) {
 	$("#chartArea").kendoGrid(result);  
+}
+
+function btnClick(url){
+    app.navigate(url);
 }
