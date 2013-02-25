@@ -7,7 +7,7 @@
 .clear { clear: both}
 #dashboard
 {
-	font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
+	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
 }
 .centerWrap
 {
@@ -19,7 +19,6 @@
 {
 	margin: 00px auto;
 	padding: 0px 10px 10px 10px;
-
 }
 
 .dashboard-title,
@@ -28,7 +27,7 @@
 .dashboard-description,
 .stat dd
 {
-	font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
+	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
 }
 .dashboard-title,
 .dashboard-subtitle
@@ -73,8 +72,8 @@
 	font-weight: 700;
 	Margin-top: 30px;
 	color: #454447;
-    float : right;
-    font-family:  'Open Sans Condensed',Calibri, Verdana, sans-serif;
+	float: right;
+	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
 }
 .metric
 {
@@ -93,9 +92,9 @@
 	font-size: 16px;
 	color: #999999;
 	Margin-top: 30px;
-    Margin-left :5px;
-    font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
-    float:right;
+	Margin-left: 5px;
+	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
+	float: right;
 }
 .dashboard-title,
 .dashboard-description
@@ -120,7 +119,6 @@
 {
 	font-size: 44px;
 	color: #454447;
-	
 }
 .stat .volumeBig_right
 {
@@ -148,7 +146,6 @@
 	*display: inline;
 	zoom: 1;
 	vertical-align: top;
-   
 }
 .trend-container_first
 {
@@ -176,6 +173,22 @@
 	width: 500px;
 	height: 300px;
 	margin-left: 20px;
-    margin-top: 60px;
+	margin-top: 60px;
 } 
 /*-------------------------------*/
+
+.messagebox-icon
+{
+	padding-right: 10px;
+	width: 32px;
+	height: 32px;
+	background-repeat: no-repeat;
+}
+
+.messagebox-button
+{
+	margin: 0px 5px 5px 0px !important;
+	padding: 0px 20px 0px 20px !important;
+	display: none;
+	float: right;
+}

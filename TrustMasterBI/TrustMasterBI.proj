@@ -74,6 +74,7 @@
     <Content Include="Fleet\index.html" />
     <Content Include="images\bosasagroup.png" />
     <Content Include="images\HumanCapital.png" />
+    <Content Include="images\info.png" />
     <Content Include="images\Kgwerano.png" />
     <Content Include="images\login-bg.jpg" />
     <Content Include="images\loginbg.png" />
@@ -101,6 +102,7 @@
     <Content Include="kendo\styles\images\KendoUI.woff" />
     <Content Include="kendo\styles\images\loading-image.gif" />
     <Content Include="kendo\styles\images\loading.gif" />
+    <Content Include="kendo\styles\images\login_hoverbg.png" />
     <Content Include="kendo\styles\images\mainbg.png" />
     <Content Include="kendo\styles\images\sprite.png" />
     <Content Include="kendo\styles\kendo.common.css" />
