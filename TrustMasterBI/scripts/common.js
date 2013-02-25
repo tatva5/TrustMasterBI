@@ -39,8 +39,8 @@ function closeParentPopover(e) {
 }
 
 function transit(e) {    
-	$("#chartArea").empty();
-	alert(e.button.context);
+    $("#chartArea").empty();
+    alert(e.button.context);
 	if (e.button.context.innerText == "Tabular") {
 		e.button.context.innerText = "Graphical";
 		callwebservice('Chart', 'Test2', '', showreportcomplete);
@@ -53,9 +53,9 @@ function transit(e) {
 
 function callwebservice(controller, method, parameter, callbackFunction) {
 	var url;
-	url = "http://196.214.67.67/TrustMasterMobileServices/" + controller + "/" + method;
+	//url = "http://196.214.67.67/TrustMasterMobileServices/" + controller + "/" + method;
 	//url = "http://183.182.91.146/TrustMasterBI/" + controller + "/" + method;
-	//url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
+	url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
     
 	if (typeof(parameter)==='undefined')
 		parameter = '';
@@ -119,6 +119,17 @@ function logincomplete(result) {
 		alert("We did not recognise your pin and device. Please try again");
 }
 
+function logout() {callwebservice('User', 'Logout', 'uidDevice=' + window.top.device.uuid, logoutcomplete);}
+
+function logoutcomplete(result) {
+	if (result.resultCode == window.top.Onit1.ResultCode.Success) {
+		//alert("logout successfully!");
+		app.navigate("../Common/home.html");
+	}
+	else 
+		alert("oops....there is an error while logout");
+}
+
 function registeruser() {		
 	//Validate control
 	if (!validateControl('registationForm'))
@@ -163,13 +174,6 @@ function reset(e) {
 	$("#txtemailId").val('');
 };
 
-function registrationFormReset(e) {
-	$("#txtFirstName").val('');
-	$("#txtSurname").val('');
-	$("#email").val('');
-	$("#pin").val('');
-}
-
 function servicelist(e) {
 	callwebservice('Home', 'Servicelist', '', servicelistcomplete);
 }
@@ -199,7 +203,7 @@ function graphlistcomplete(result) {
 	$("#graph_list").html(moduletemplete(result.dataSource));
 }
 
-function showchart(e) {
+function showchart(e) {     
 	if (typeof(e)!=='undefined') {
 		localStorage.setItem("controller", e.view.params.controller);
 		localStorage.setItem("method", e.view.params.method);      
@@ -213,8 +217,4 @@ function showchartcomplete(result) {
 
 function showreportcomplete(result) {
 	$("#chartArea").kendoGrid(result);  
-}
-
-function btnClick(url){
-    app.navigate(url);
 }

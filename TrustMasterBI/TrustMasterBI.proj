@@ -75,6 +75,7 @@
     <Content Include="Fleet\index.html" />
     <Content Include="images\bosasagroup.png" />
     <Content Include="images\HumanCapital.png" />
+    <Content Include="images\info.png" />
     <Content Include="images\Kgwerano.png" />
     <Content Include="images\login-bg.jpg" />
     <Content Include="images\loginbg.png" />
