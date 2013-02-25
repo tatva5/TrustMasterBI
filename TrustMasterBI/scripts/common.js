@@ -38,8 +38,10 @@ function closeParentPopover(e) {
 	popover.close();
 }
 
-function onmoduleclick(url){
-    app.navigate(url);
+function onmoduleclick(url, name, ismodule) {
+	if (ismodule)
+		localStorage.setItem("youthcare", name);
+	app.navigate(url);
 }
 
 function transit(e) {    
@@ -199,7 +201,7 @@ function graphlist(e) {
 }
 
 function graphlistcomplete(result) {
-	var moduletemplete = kendo.template($("#moduletemplete").html(), {useWithBlock:false});
+	var moduletemplete = kendo.template($("#listtemplete").html(), {useWithBlock:false});
 	$("#graph_list").html(moduletemplete(result.dataSource));
 }
 
@@ -208,7 +210,7 @@ function showchart(e) {
 		localStorage.setItem("controller", e.view.params.controller);
 		localStorage.setItem("method", e.view.params.method);      
 	}
-	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), '', showchartcomplete);	
+	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") , showchartcomplete);	
 }
 
 function showchartcomplete(result) {
@@ -219,3 +221,15 @@ function showreportcomplete(result) {
 	$("#chartArea").kendoGrid(result);  
 }
 
+function logout() {
+	callwebservice('User', 'Logout', 'uidDevice=' + window.top.device.uuid, logoutcomplete);
+}
+
+function logoutcomplete(result) {
+	if (result.resultCode == window.top.Onit1.ResultCode.Success) {
+		//alert("logout successfully!");
+		app.navigate("../Common/home.html");
+	}
+	else 
+		alert("oops....there is an error while logout");
+}
