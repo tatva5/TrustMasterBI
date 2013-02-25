@@ -238,12 +238,32 @@
 			</footer>
 		</section>
 
+		<div id="divMessagbox">
+			<table>
+				<tr>
+					<td>
+						<div id="iconType" class="messagebox-icon"></div>
+					</td>
+					<td>
+						<div id="displayMessage"></div>
+					</td>
+				</tr>
+			</table>
+			<div class="btn">
+				<input class="inputbtn messagebox-button" type="button" id="btnOK" onclick="onMessageBoxButtonClick()" value="OK" />
+				<a data-role="button" id="btnYes" class="inputbtn messagebox-button" data-click="onMessageBoxButtonClick">Yes</a>
+				<a data-role="button" id="btnNo" class="inputbtn messagebox-button" data-click="onMessageBoxButtonClick">No</a>
+			</div>
+		</div>
+
 		<script src="../cordova.js"></script>
 		<script src="../kendo/js/jquery.min.js"></script>
 		<script src="../kendo/js/kendo.all.js"></script>
 		<script src="../scripts/common.js"></script>
 		<script>			
 			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader"});
+            
+			$("#divMessagbox").css('display', 'none');
             
 			// TrustMaster Mobile global variables
 			if (typeof window.top.Onit1 == "undefined") {
@@ -262,30 +282,32 @@
 					"Index": ""
 				};
 			}
-		</script>
 		
+		</script>
+
 		<script id="servicetemplete" type="text/x-kendo-template">
 			<div class="services_list">
 				<ul>
 					# for (var i = 0; i < data.length; i++) { #
 					<li>
 						<a href="#= data[i].href #" data-role="button">
-							<img src="#= data[i].imagepath #" alt=""/><br/>#= data[i].name #</a>
+							<img src="#= data[i].imagepath #
+								 " alt=""/><br/>#= data[i].name #</a>
 					</li>
 					# }
-					
+				
 					#
 				</ul>
 			</div>
 		</script>
-        <script id="moduletemplete" type="text/x-kendo-template">
+		<script id="moduletemplete" type="text/x-kendo-template">
 			<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
 				# for (var i = 0; i < data.length; i++) { #
 				<li>
-					<a href="#= data[i].href #" data-role="button" class="km-listview-link">#= data[i].name #</a>
+					<a href="#= data[i].href #
+					   " data-role="button" class="km-listview-link">#= data[i].name #</a>
 				</li>
-				# }
-				
+				# }				
 				#
 			</ul>
 		</script>

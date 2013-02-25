@@ -1,6 +1,60 @@
 var windowWidth = $(window).width(); //retrieve current window width
 var windowHeight = $(window).height(); //retrieve current window height
 
+/* Message box start */
+function showMessageBox(ok, yes, no) {
+	var window = $("#divMessagbox");
+	window.kendoWindow({
+		width:  "400px",
+		height:"auto",
+		resizable: false,
+		modal: true,
+		title : "Trustmaster BI"
+	});
+	$("#btnOK").css('display', ok);
+	$("#btnYes").css('display', yes);
+	$("#btnNo").css('display', no);
+	window.data("kendoWindow").content($("#divMessagbox").html());
+	window.data("kendoWindow").center().open();
+}
+
+function onMessageBoxButtonClick() {
+	//debugger;
+	var window = $("#divMessagbox");
+	window.data("kendoWindow").close();     
+	/*czDLGResult = e;
+	if(czDLGResult=="Yes")
+	{
+	$("#btnOK").show();
+	$("#btnYes").hide();
+	$("#btnNo").hide();
+	$("#displayMessage").html("Delete record successfully");
+	$("#iconType").html('<img src="../images/DeleteIcon.png" class="messagebox-icon" />');
+	MessagePopup();
+	}
+	else
+	window.data("kendoWindow").close();*/     
+}
+
+function ShowInformation(message) {
+	$("#displayMessage").html(message);
+	$("#iconType").html('<img src="../images/info.png" class="messagebox-icon" />');
+	showMessageBox('block', 'none', 'none');
+} 
+
+function ShowError(message) {
+	$("#displayMessage").html(message);
+	$("#iconType").html('<img src="../images/info.png" class="messagebox-icon" />');
+	showMessageBox('block', 'none', 'none');
+}
+
+function ShowConfirmation(message) {
+	$("#displayMessage").html(message);
+	$("#iconType").html('<img src="../images/info.png" class="messagebox-icon" />');
+	showMessageBox('none', 'block', 'block');
+}
+/* Message box end */
+
 function validateControl(divname) {
 	var validator = $("#" + divname).kendoValidator().data("kendoValidator");
 	return validator.validate();
@@ -39,8 +93,8 @@ function closeParentPopover(e) {
 }
 
 function transit(e) {    
-    $("#chartArea").empty();
-    alert(e.button.context);
+	$("#chartArea").empty();
+	alert(e.button.context);
 	if (e.button.context.innerText == "Tabular") {
 		e.button.context.innerText = "Graphical";
 		callwebservice('Chart', 'Test2', '', showreportcomplete);
@@ -115,8 +169,10 @@ function logincomplete(result) {
 		//alert("Logedin successfully!");
 		app.navigate("../Common/services.html");
 	}
-	else 
+	else {
 		alert("We did not recognise your pin and device. Please try again");
+		//ShowError("We did not recognise your pin and device. Please try again");
+	}
 }
 
 function registeruser() {		
@@ -163,11 +219,11 @@ function reset(e) {
 	$("#txtemailId").val('');
 };
 
-function registrationFormReset(e){
-    $("#txtFirstName").val('');
-    $("#txtSurname").val('');
-    $("#email").val('');
-    $("#pin").val('');
+function registrationFormReset(e) {
+	$("#txtFirstName").val('');
+	$("#txtSurname").val('');
+	$("#email").val('');
+	$("#pin").val('');
 }
 
 function servicelist(e) {
