@@ -251,9 +251,3 @@ function logoutcomplete(result) {
 	else 
 		alert("oops....there is an error while logout");
 }
-
-$(window).resize(function() {
-	//alert("resize");
-	$("#chartArea").data("kendoChart").redraw();
-	//$("#Linechart").data("kendoChart").redraw();
-});

@@ -5,17 +5,68 @@
 		<title></title>
 	</head>
 	<body>
-		<div data-role="view" data-title="Graphics" data-layout="graphicsLayout" data-before-show="cleanview" data-show="customgraphlist">
-			<div>
-				<div id="graph_list" class="graph-list"></div>
-				<div id="chartArea" class="chart-area"></div>
+		<div data-role="view" data-title="Graphics" data-layout="grahicalDataLayout" data-before-show="cleanview" data-show="customgraphlist">
+			<div data-role="popover" id="popover-people" data-popup='{"height": 200, "width": 290}' class="popupContent">
+				<div data-role="view" data-title="Search">
+					<div data-role="header">
+						<div data-role="navbar">
+							<a data-role="button" data-align="left" data-click="closeParentPopover">Apply</a>
+							<span data-role="view-title" ></span>
+							<a data-role="button" data-align="right" data-click="clearPopover">Reset</a>
+						</div>
+					</div>
+					<div id="validateDate">
+						<table cellpadding="5px" cellspacing="5px">
+							<tr>
+								<td>Range :</td>
+								<td>
+									<select id="ddlSelect" data-change="onChange">
+										<option value="since" >Since</option>
+										<option value="custom" >Custom</option>
+									</select>
+								</td>
+							</tr>
+							<tr id="since">
+								<td id="changeFrom">Date :</td>
+								<td>
+									<input id="dpFrom" name="dpFrom" required validationMessage="*" />
+								</td>
+							</tr>
+							<tr id="datePickerId" style="display:none">
+								<td>To :</td>
+								<td>
+									<input id="dpTo" name="dpTo" required validationMessage="*" />
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
 			</div>
+
+			<div id="graph_list" class="graph-list"></div>
+			<div id="chartArea" class="chart-area"></div>
+
 			<script>
+				$(document).ready(function() {
+					$("#ddlSelect").kendoComboBox();
+					$("#dpFrom").kendoDatePicker(); 
+					$("#dpTo").kendoDatePicker();
+				});
+                
 				$(window).resize(function() {
 					//alert("resize");
 					$("#chartArea").data("kendoChart").redraw();
-					//$("#Linechart").data("kendoChart").redraw();
 				});
+                
+				function onChange(e) {
+					$("#datePickerId").hide();
+					document.getElementById('changeFrom').innerHTML = "Date :";
+					if (e.sender.selectedIndex == 1) {
+						document.getElementById('changeFrom').innerHTML = "From :";
+						alert(currentText);
+						$("#datePickerId").show();
+					}
+				}
 			</script>
 		</div>
 	</body>
