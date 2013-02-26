@@ -233,6 +233,8 @@
 				</div>
 			</footer>
 		</section>
+        
+        <div id="glass" class="glass" style="display: none;"></div>
 
 		<script src="../cordova.js"></script>
 		<script src="../kendo/js/jquery.min.js"></script>
@@ -241,8 +243,8 @@
 		<script>			
 			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader"});
             
-			//document.addEventListener("resume", logout, true);
-			document.addEventListener("pause", logout, true);
+            //document.addEventListener("resume", logout, true);
+            document.addEventListener("pause", logout, true);
             
 			// TrustMaster Mobile global variables
 			if (typeof window.top.Onit1 == "undefined") {
@@ -261,12 +263,6 @@
 					"Index": ""
 				};
 			}
-            
-			$(window).resize(function() {
-                //alert("resize");
-				$("#chartArea").data("kendoChart").redraw();
-				//$("#Linechart").data("kendoChart").redraw();
-			});
 		</script>
 
 		<script id="servicetemplete" type="text/x-kendo-template">
@@ -283,33 +279,38 @@
 				</ul>
 			</div>
 		</script>
-		
+        
 		<script id="moduletemplete" type="text/x-kendo-template">
 			<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
 				# for (var i = 0; i < data.length; i++) { #
 				<li>
-					<!--<a href="#= data[i].href #
-					" data-role="button" class="km-listview-link">#= data[i].name #</a>-->
+					<!--<a href="#= data[i].href #" data-role="button" class="km-listview-link">#= data[i].name #</a>
 					<input type="button" onclick="onmoduleclick('#= data[i].href #','#= data[i].name #',true)" value="#= data[i].name #" style="position:relative;" />
-					<img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;left:95%;top:25%;"/>
+                        <img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;right:5%;top:25%;"/>-->
+                        <button onclick="onmoduleclick('#= data[i].href #','#= data[i].name #',true)" >
+                        #= data[i].name #
+                        <img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;right:5%;top:25%;"/></button>
 				</li>
 				# }
 		
 				#
 			</ul>
 		</script>
-				
-		<script id="listtemplete" type="text/x-kendo-template">
+        
+        <script id="listtemplete" type="text/x-kendo-template">
 			<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
 				# for (var i = 0; i < data.length; i++) { #
 				<li>
-					<!--<a href="#= data[i].href #
-					" data-role="button" class="km-listview-link">#= data[i].name #</a>-->
+					<!--<a href="#= data[i].href #" data-role="button" class="km-listview-link">#= data[i].name #</a>
 					<input type="button" onclick="onmoduleclick('#= data[i].href #','#= data[i].name #',false)" value="#= data[i].name #" style="position:relative;" />
-					<img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;left:95%;top:25%;"/>
+                        <img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;right:5%;top:25%;"/>-->
+                        <button onclick="onmoduleclick('#= data[i].href #','#= data[i].name #',false)" >
+                        #= data[i].name #
+                        <img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;right:5%;top:25%;"/></button>
+                        
 				</li>
 				# }
-
+		
 				#
 			</ul>
 		</script>
