@@ -69,6 +69,7 @@ function callwebservice(controller, method, parameter, callbackFunction) {
 	//alert(url);
 	//alert(parameter);
     
+     $("#glass").show(); 
 	app.showLoading();
 	try {
 		var request = $.ajax({
@@ -97,6 +98,7 @@ function callwebservice(controller, method, parameter, callbackFunction) {
 		// callback handler that will be called regardless
 		// if the request failed or succeeded
 		request.always(function () {
+            $("#glass").hide();
 			app.hideLoading();
 			// reenable the inputs
 			//alert("always");
@@ -104,6 +106,7 @@ function callwebservice(controller, method, parameter, callbackFunction) {
 	}
 	catch (e) {
 		alert("Errour occurred " + e);
+        $("#glass").hide(); 
 		app.hideLoading();
 	}
 }
