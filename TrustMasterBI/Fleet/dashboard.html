@@ -1,201 +1,256 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" class="k-webkit k-webkit24">
+<html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
 		<title>Kgwerano TrustMaster Fleet| Maintenance History</title>
+
 	</head>
 	<body>
-		<div id="mainWrap" data-role="view" data-layout="fleetdashboardLayout" data-title="OPERATIONS">
-			<div id="dashboard" class="centerWrap">
-				<div class="demo-section">
-					<div  id="Fleet">
-						<dl class="stat first">
-							<dt class="dashboard-subtitle1">
-								TOTAL EXPENDITURE
-							</dt>
-							<dl class="stat trend-container_first">
-								<dt class="dashboard-subtitle">Last Year</dt><span class="metric" id="lblexpnlastyearDate"></span>
-								<dd class="volumeMedium" id="lblexplastYear" ></dd>
-							</dl>
-							<!--<dl class="stat trend-container"></dl>-->
-							<dl class="stat trend-container">
-								<dt class="dashboard-subtitle">
-									Previous Month<span class="metric" id="lblexpnprevmonthDate" ></span>
-								</dt>
-								<dd class="volumeMedium" id="lblexpnpreMonth"></dd>
-							</dl>
+		<div id="mainWrap" data-role="view" data-layout="fleetdashboardLayout" data-title="OPERATIONS" data-before-show="cleanview"  data-zoom ="true">
+			<div id="dashboard" >
+				<div class="demo-section" >
+					<div id="Fleet"  >
+						<table width="100%" cellpadding="0" cellspacing="0"  >
+							<tr class="stat first" >
+								<td colspan="2" class="dashboard-subtitle1"> TOTAL EXPENDITURE</td>
+							</tr>
+							<tr width="100%">
+								<td width="70%" >
+									<table width="100%"  cellpadding="0" cellspacing="0" >
+										<tr >
+											<td class="dashboard-subtitle" width="50%">
+												Previous Year<span class="metric" id="lblexpnlastyearDate"></span>
+											</td>
+											<td class="dashboard-subtitle" width="50%">
+												Previous Month<span class="metric" id="lblexpnprevmonthDate" ></span>
+											</td>
+										</tr>
+										<tr  >
+											<td class="volumeMedium"  width="50%">
+												<div id="lblexplastYear"></div>
+											</td>
+											<td class="volumeMedium" width="50%">
+												<div id="lblexpnpreMonth"></div>
+											</td>
 
-						</dl>
-						<div class="company-trends">
-							<dl class="stat first">
-								<span class="metric_right" id="lblexpncurrDate" ></span>
-								<dt class="dashboard-subtitle-right">Date</dt>
-								<dd class="volumeBig_right" id="lblexpncurrentDate"></dd>
-							</dl>
-						</div>
+										</tr>
+									</table>
+								</td>
+								<td width="30%">
+									<table width="100%"  cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="dashboard-subtitle-right">
+												Date<span class="metric_right" id="lblexpncurrDate" ></span>
+											</td>
+										</tr>
+										<tr>
+											<td class="volumeBig_right">
+												<div id="lblexpncurrentDate"> </div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+
+						</table>
+
 						<div class="separator"></div>
 					</div>
 					<br/>
-					<dt class="dashboard-subtitle1">MONTHLY EXPENDITURE PER CATEGORY </dt>
-					<div id="Barchart"></div>
+					<table width="100%" cellpadding="0" cellspacing="0" >
+						<tr>
+							<td class="dashboard-subtitle1">MONTHLY EXPENDITURE PER CATEGORY</td>
+						</tr>
+						<tr>
+							<td>
+								<div id="Barchart"></div>
+							</td>
+						</tr>
+					</table>
+					<table width="100%" border="0" cellpadding="0"  cellspacing="0" >
+						<tr>
+							<td  colspan="2">
+								<div class="separator"></div>
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20%" >
+								<table width="100%" cellpadding="0" cellspacing="0" >
 
-					<div  id="google">
-						<div class="separator"></div>
-						<dl class="stat first">
-							<dt class="dashboard-subtitle1">
-								FLEET SIZE
-							</dt>
-							<br/>
-							<dt class="dashboard-subtitle">
-								Date<span class="metric" id="lblfleetcurDate" ></span>
-							</dt>
-							<dd class="volumeBig" id="currentFleet" ></dd>
-
-							<dt class="dashboard-subtitle">
-								Previous Month<span class="metric" id="lblfleetprevmonthDate" ></span>
-							</dt>
-							<dd class="volumeMedium" id="prevFleet"></dd>
-
-							<dt class="dashboard-subtitle">
-								Last Year<span class="metric" id="lblfleetlastyearDate" ></span>
-							</dt>
-							<dd class="volumeMedium" id="lastyearFleet" ></dd>
-
-						</dl>
-						<div class="volume-chart k-chart" >
-							<div id="chart" ></div>
-
-							<script>
-                                                   
-								$(document).ready(function () {
-									callwebservice('fleet', 'getexpenditures', '', servicelistcomplete);  
+									<tr>
+										<td class="dashboard-subtitle1">FLEET SIZE</td>
+									</tr>
+									<tr>
+										<td class="dashboard-subtitle">
+											Date<span class="metric" id="lblfleetcurDate" ></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="volumeBig" >
+											<div id="currentFleet" ></div>
+										</td>
+									</tr>
+									<tr>
+										<td class="dashboard-subtitle">
+											Previous Month<span class="metric" id="lblfleetprevmonthDate" ></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="volumeMedium" >
+											<div id="prevFleet" ></div>
+										</td>
+									</tr>
+									<tr>
+										<td class="dashboard-subtitle">
+											Previous Year<span class="metric" id="lblfleetlastyearDate" ></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="volumeMedium" >
+											<div id="lastyearFleet" ></div>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td width="60%">
+								<div id="Linechart"   ></div>
+							</td>
+						</tr>
+					</table>
+					<script>
+							$(window).resize(function() {
+								$("#Barchart").data("kendoChart").redraw();
+                                $("#Linechart").data("kendoChart").redraw();
+							});                       
+							$(document).ready(function () {
+                                app.showLoading();
+								callwebservice('fleet', 'getexpenditures', '', servicelistcomplete);  
 								
-									function servicelistcomplete(result) {
-										var temp = result.dataSource;
-										//Dashboard Numeric Display
+								function servicelistcomplete(result) {
+									var temp = result.dataSource;
+									//Dashboard Numeric Display
 								
-										$("#lblexplastYear").html(temp.data[2].LastYearExpenditure);
-										$("#lblexpnpreMonth").html(temp.data[1].PrevioudMonthExpenditure);
-										$("#lblexpncurrentDate").html(temp.data[0].TotalExpenditure);
-										$("#currentFleet").html(temp.data[3].FleetSize);
-										$("#prevFleet").html(temp.data[4].PrevMonthFleetSize);
-										$("#lastyearFleet").html(temp.data[5].FleetSizeLastYear);
+									$("#lblexplastYear").html(temp.data[2].LastYearExpenditure);
+									$("#lblexpnpreMonth").html(temp.data[1].PrevioudMonthExpenditure);
+									$("#lblexpncurrentDate").html(temp.data[0].TotalExpenditure);
+									$("#currentFleet").html(temp.data[3].FleetSize);
+									$("#prevFleet").html(temp.data[4].PrevMonthFleetSize);
+									$("#lastyearFleet").html(temp.data[5].FleetSizeLastYear);
 								
-										//Dasboard Date Display
+									//Dasboard Date Display
 								
-										$("#lblexpnlastyearDate").html("(" + temp.data[2].Date + ")");
-										$("#lblexpnprevmonthDate").html("(" + temp.data[1].Date + ")");
-										$("#lblexpncurrDate").html("(" + temp.data[0].Date + ")");
-										$("#lblfleetcurDate").html("(" + temp.data[3].Date + ")");
-										$("#lblfleetprevmonthDate").html("(" + temp.data[4].Date + ")");
-										$("#lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");            
-									} 
+									$("#lblexpnlastyearDate").html("(" + temp.data[2].Date + ")");
+									$("#lblexpnprevmonthDate").html("(" + temp.data[1].Date + ")");
+									$("#lblexpncurrDate").html("(" + temp.data[0].Date + ")");
+									$("#lblfleetcurDate").html("(" + temp.data[3].Date + ")");
+									$("#lblfleetprevmonthDate").html("(" + temp.data[4].Date + ")");
+									$("#lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");            
+								} 
                                 
-									callwebservice('fleet', 'GetExpendituresByCategory', '', bardatacomplete);
-									callwebservice('fleet', 'GetActiveVehiclesPerMonth', '', linedatacomplete);
-								});
+								callwebservice('fleet', 'GetExpendituresByCategory', '', bardatacomplete);
+								callwebservice('fleet', 'GetActiveVehiclesPerMonth', '', linedatacomplete);
+							});
 								
-								var bardata ;
-								var internetUsers;
+							var bardata ;
+							var internetUsers;
                             
-								function bardatacomplete(result) {
-									bardata = result.dataSource;
+							function bardatacomplete(result) {
+								bardata = result.dataSource;
                                 
-									$("#Barchart").kendoChart({
-										theme: "blueopal",
+								$("#Barchart").kendoChart({
+									theme: "blueopal",
 						
-										legend: {
-											position: "top",
-											offsetX: 240
+									legend: {
+										position: "top",
+										offsetX: 240
 								
-										},
-										seriesDefaults: {
-											type: "column"
-										},
-										series: [
-											{
-												name: "Prev. Month same date",
-												data: bardata.data1
-											}, {
-												name: "Current Month",
-												data: bardata.data2
-											}
-										],
-										valueAxis: {
-											labels: {
-												format: "{0}"
-											},
-								
-										},
-										categoryAxis: {
-											categories: bardata.data3,
-											baseUnit :"fit",
-											labels: {
-												rotation: -30,
-												margin: 0,
-												padding: { top: 0, left: 10, right :50 }
-								
-											}
-										},
-										chartArea:{
-											width:750,
-											height :340,
-											background: ""
-										},
-										tooltip: {
-											visible: true,
-											format: "{0}"
+									},
+									seriesDefaults: {
+										type: "column"
+									},
+									series: [
+										{
+											name: "Prev. Month same date",
+											data: bardata.data1
+										}, {
+											name: "Current Month",
+											data: bardata.data2
 										}
-									});
-								}
-								function linedatacomplete(result) {
-									internetUsers = result.dataSource;
-								
-									$("#chart").kendoChart({
-										theme: "blueopal",
-										dataSource: {
-											data: internetUsers.data
+									],
+									valueAxis: {
+										labels: {
+											format: "{0:N0}"
 										},
 								
-										legend: {
-											visible: false
-										},
-										seriesDefaults: {
-											type: "line",
-											labels: {
-												visible: false,
-												format: "{0}"
-											}
-										},
-										series: [
-											{
-												field: "value",
-												name: "Fleet"
-											}
-										],
-										valueAxis: {
-											labels: {
-												format: "{0}"
-											},
-											majorUnit: 2000
-										},
-										chartArea:{
-											height:300, width:500,background: ""
+									},
+									categoryAxis: {
+										categories: bardata.data3,
+										justified :true,
+										baseUnit :"fit",
+										labels: {
+											rotation: -30,
+											margin: 0,
+											padding: { top: 0, left: 10, right :50 }
 								
-										},
-										categoryAxis: {
-											field: "year"
-										},
-										tooltip: {
-											visible: true,
-											format: "{0}"
 										}
-									});
-								}
+									},
+									chartArea:{
+											
+										background: ""
+									},
+									tooltip: {
+										visible: true,
+										format: "{0:N0}"
+									}
+								});
+							}
+							function linedatacomplete(result) {
+								internetUsers = result.dataSource;
 								
-							</script>
-						</div>
-					</div>
+								$("#Linechart").kendoChart({
+									theme: "blueopal",
+									dataSource: {
+										data: internetUsers.data
+									},
+								
+									legend: {
+										visible: false
+									},
+									seriesDefaults: {
+										type: "line",
+										labels: {
+											visible: false,
+											format: "{0:N0}"
+										}
+									},
+									series: [
+										{
+											field: "value",
+											name: "Fleet"
+										}
+									],
+									valueAxis: {
+										labels: {
+											format:"{0:N0}"
+										},
+										majorUnit: 2000
+									},
+									chartArea:{
+										background: ""
+									},
+									categoryAxis: {
+										field: "year",
+										justified :true
+									},
+									tooltip: {
+										visible: true,
+										format: "{0:N0}"
+									}
+								});
+                                
+                                app.hideLoading();
+							}								
+						</script>
 				</div>
 			</div>
 		</div>
