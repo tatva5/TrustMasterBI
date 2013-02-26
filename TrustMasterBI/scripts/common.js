@@ -33,8 +33,27 @@ function onInit(e) {//alert(e.view.title);
 	e.view.footer.find(".youthdevelopment").hide();
 }
 
+function clearPopover() {
+	$(".k-datepicker input").val('');
+}
+
 function closeParentPopover(e) {
-	var popover = e.sender.element.closest('[data-role=popover]').data('kendoMobilePopOver');				
+	var popover = e.sender.element.closest('[data-role=popover]').data('kendoMobilePopOver');
+	//Validate control
+	if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 0) {
+		if (!validateControl('since'))
+			return;
+		localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd/MM/yyyy"));
+		showchart();
+		//callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + localStorage.getItem("date") , showchartcomplete);	
+	}
+	else if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 1) {
+		if (!validateControl('validateDate'))
+			return;
+		var dateTo = $("#dpTo").data("kendoDatePicker").value();
+		alert(dateTo);
+	}
+	clearPopover();
 	popover.close();
 }
 
@@ -42,7 +61,7 @@ function onmoduleclick(url, name, ismodule) {
 	if (ismodule)
 		localStorage.setItem("youthcare", name);
 	//app.navigate("mis.html");
-    app.navigate(url);
+	app.navigate(url);
 }
 
 function oncustommoduleclick(url, name, ismodule) {
@@ -227,7 +246,7 @@ function showchart(e) {
 		localStorage.setItem("controller", e.view.params.controller);
 		localStorage.setItem("method", e.view.params.method);      
 	}
-	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") , showchartcomplete);	
+	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + localStorage.getItem("fromdate"), showchartcomplete);	
 }
 
 function showchartcomplete(result) {
@@ -246,7 +265,6 @@ function logoutcomplete(result) {
 	if (result.resultCode == window.top.Onit1.ResultCode.Success) {
 		//alert("logout successfully!");
 		app.navigate("#home");
-		//app.navigate("../index.html");
 	}
 	else 
 		alert("oops....there is an error while logout");
