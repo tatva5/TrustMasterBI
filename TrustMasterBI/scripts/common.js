@@ -228,7 +228,8 @@ function logout() {
 function logoutcomplete(result) {
 	if (result.resultCode == window.top.Onit1.ResultCode.Success) {
 		//alert("logout successfully!");
-		app.navigate("../Common/home.html");
+		app.navigate("#home");
+        //app.navigate("../index.html");
 	}
 	else 
 		alert("oops....there is an error while logout");
