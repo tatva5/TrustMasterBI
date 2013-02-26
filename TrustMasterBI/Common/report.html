@@ -7,7 +7,7 @@
 	<body>
 		<div data-role="view" data-title="Report" data-layout="grahicalDataLayout" data-before-show="cleanview" data-show="showchart">
 			<div data-role="popover" id="popover-people" data-popup='{"height": 200, "width": 290}' class="popupContent">
-				<div data-role="view" data-title="Search">
+				<div data-role="view" data-title="Search" id="validateDate" data-before-show="cleanview">
 					<div data-role="header">
 						<div data-role="navbar">
 							<a data-role="button" data-align="left" data-click="closeParentPopover">Apply</a>
@@ -15,26 +15,26 @@
 							<a data-role="button" data-align="right" >Reset</a>
 						</div>
 					</div>
-					<table cellpadding="5px" cellspacing="5px" >
+					<table cellpadding="5px" cellspacing="5px">
 						<tr>
 							<td>Range :</td>
 							<td>
-								<select id="ddlSelect" >
-									<option value="Custom" >Custom</option>
-									<option value="Auto" >Auto</option>
+								<select id="ddlSelect" data-change="onChange">
+									<option value="since" >Since</option>
+									<option value="custom" >Custom</option>
 								</select>
 							</td>
 						</tr>
-						<tr>
+						<tr id="since">
 							<td>From :</td>
 							<td>
-								<input id="datepicker"  />
+								<input id="datepicker" required validationMessage="*"/>
 							</td>
 						</tr>
-						<tr>
+						<tr id="datePickerId" style="display:none">
 							<td>To :</td>
 							<td>
-								<input id="datepicker1" />
+								<input id="datepicker1" required validationMessage="*"/>
 							</td>
 						</tr>
 					</table>
@@ -47,6 +47,11 @@
 					$("#datepicker").kendoDatePicker(); 
 					$("#datepicker1").kendoDatePicker();
 				});
+				function onChange(e) {
+					$("#datePickerId").hide();
+					if (e.sender.selectedIndex == 1)
+						$("#datePickerId").show();
+				}
 			</script>
 		</div>
 	</body>
