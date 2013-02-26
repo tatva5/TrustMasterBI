@@ -7,20 +7,31 @@
 * If you do not own a commercial license, this file shall be governed by the trial license terms.
 */
 
-.km-list input[type=button]
+.km-list input[type=button], .km-list button,.km-android .km-list button
 {
-    border: none !important;
+	border: none !important;
 	width: 100%;
-    text-align:left;
+	text-align: left;
 	background: inherit;
-    color:White;
-    font-size: 1.2em;
-    font-weight:bold;
-    padding: .5em .7em;
-    margin:0px;
-    border-radius:inherit;
+	color: White;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: .5em .7em;
+	margin: 0px;
+	border-radius: inherit;
 }
-
+.km-list input[type=button]:active, .km-list button:active,.km-android .km-list button:active
+{
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(114, 147, 186, 100))) !important;
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
+	background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
+	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
+	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
+	color: #26313e;
+    border: .1px solid white !important;
+    border-radius: 2px 2px 0px 4px;
+	/*background-color: #d68421 !important;*/
+}
 ::-webkit-input-placeholder
 {
 	color: LightGray;
@@ -2120,7 +2131,7 @@ body:before
 	background-image: -o-linear-gradient(top, rgba(114, 147, 186, 100), rgba(64, 97, 139, 100));
 	background-image: linear-gradient(top, rgba(114, 147, 186, 100), rgba(64, 97, 139, 100));
 }
-.km-ios .km-button:active, .km-ios .km-button.km-state-active,.km-list input[type=button]:active
+.km-ios .km-button:active, .km-ios .km-button.km-state-active
 {
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(114, 147, 186, 100))) !important;
 	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
@@ -2698,13 +2709,12 @@ body:before
 	background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0));
 	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0));
 	background-image: linear-gradient(top, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0))*/
-     background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(114, 147, 186, 100))) !important;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(114, 147, 186, 100))) !important;
 	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
 	background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
 	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
 	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
-    color: #26313e !important;
-	
+	color: #26313e !important;
 }
 .km-ios .km-listview-link:after
 {
@@ -2771,7 +2781,7 @@ body:before
 	-webkit-box-shadow: none;
 	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8)
 }
-.km-ios .km-list>li
+.km-ios .km-list>li,.km-list>li
 {
 	display: block;
 	vertical-align: middle; 
@@ -6596,7 +6606,7 @@ body:before
 .login .fg_link a:hover { text-decoration: underline; }
 .inputbtn
 {
-    float: left;
+	float: left;
 	border: 1px solid #828587 !important; ; background: #c1c2c4 url(images/butbg.png) top repeat-x !important;
 	cursor: pointer !important; height: 30px !important; overflow: visible !important;
 	font: bold 13px Arial, Helvetica, sans-serif !important; margin: 0 !important; padding: 0 20px 0px 20px !important;
@@ -6606,9 +6616,9 @@ body:before
 	-webkit-border-radius: 6px !important;
 }
 
-.km-tablet .km-ios .inputbtn:active,.km-ios .inputbtn:active,.inputbtn:active
+.km-tablet .km-ios .inputbtn:active, .km-ios .inputbtn:active, .inputbtn:active
 {
-    border: 1px solid #de8f32  !important; ; background:url(images/login_hoverbg.png) top repeat-x !important;
+	border: 1px solid #de8f32  !important; ; background: url(images/login_hoverbg.png) top repeat-x !important;
 }
 
 .login input[type=text]
