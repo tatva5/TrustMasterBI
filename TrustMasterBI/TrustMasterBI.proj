@@ -120,7 +120,6 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
-    <Content Include="videos\BI - Splash 03.mov" />
     <Content Include="Youthcentre\index.html" />
     <Content Include="Youthcentre\YouthCare.html" />
   </ItemGroup>
