@@ -118,12 +118,15 @@
 						</tr>
 					</table>
 					<script>
-							$(window).resize(function() {
-								$("#Barchart").data("kendoChart").redraw();
-                                $("#Linechart").data("kendoChart").redraw();
-							});                       
+							
+                            $(window).resize(function() {
+                                       $("#Barchart").data("kendoChart").redraw();
+                                        $("#Linechart").data("kendoChart").redraw();
+
+                             });
+                        
 							$(document).ready(function () {
-                                app.showLoading();
+                                
 								callwebservice('fleet', 'getexpenditures', '', servicelistcomplete);  
 								
 								function servicelistcomplete(result) {
@@ -248,7 +251,7 @@
 									}
 								});
                                 
-                                app.hideLoading();
+                                
 							}								
 						</script>
 				</div>
