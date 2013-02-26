@@ -10,6 +10,13 @@
 				<div id="graph_list" class="graph-list"></div>
 				<div id="chartArea" class="chart-area"></div>
 			</div>
+			<script>
+				$(window).resize(function() {
+					//alert("resize");
+					$("#chartArea").data("kendoChart").redraw();
+					//$("#Linechart").data("kendoChart").redraw();
+				});
+			</script>
 		</div>
 	</body>
 </html>
