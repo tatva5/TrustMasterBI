@@ -41,7 +41,8 @@ function closeParentPopover(e) {
 function onmoduleclick(url, name, ismodule) {
 	if (ismodule)
 		localStorage.setItem("youthcare", name);
-	app.navigate("mis.html");
+	app.navigate(url);
+    //app.navigate("mis.html");
 }
 
 function oncustommoduleclick(url, name, ismodule) {
