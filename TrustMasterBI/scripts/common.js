@@ -45,7 +45,6 @@ function closeParentPopover(e) {
 			return;
 		localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd/MM/yyyy"));
 		showchart();
-		//callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + localStorage.getItem("date") , showchartcomplete);	
 	}
 	else if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 1) {
 		if (!validateControl('validateDate'))
@@ -57,10 +56,11 @@ function closeParentPopover(e) {
 	popover.close();
 }
 
-function onmoduleclick(url, name, ismodule) {
-	if (ismodule)
-		localStorage.setItem("youthcare", name);
-	//app.navigate("mis.html");
+function onmoduleclick(url, name, id, ismodule) {
+	if (ismodule) {
+		localStorage.setItem("youthcare", name);	
+		localStorage.setItem("idService", id);	
+	}
 	app.navigate(url);
 }
 
@@ -72,7 +72,7 @@ function oncustommoduleclick(url, name, ismodule) {
 
 function transit(e) {    
 	$("#chartArea").empty();
-	alert(e.button.context);
+	//alert(e.button.context);
 	if (e.button.context.innerText == "Tabular") {
 		e.button.context.innerText = "Graphical";
 		callwebservice('Chart', 'Test2', '', showreportcomplete);
@@ -233,7 +233,7 @@ function graphlistcomplete(result) {
 
 function customgraphlist(e) {
 	//$("#module-navbar").data("kendoMobileNavBar").title(localStorage.getItem("title"));
-	callwebservice('YouthCentre', 'Chartlist', '', customgraphlistcomplete);
+	callwebservice('YouthCentre', 'Chartlist', 'idService=' + localStorage.getItem("idService"), customgraphlistcomplete);
 }
 
 function customgraphlistcomplete(result) {
