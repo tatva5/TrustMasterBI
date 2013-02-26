@@ -41,7 +41,8 @@ function closeParentPopover(e) {
 function onmoduleclick(url, name, ismodule) {
 	if (ismodule)
 		localStorage.setItem("youthcare", name);
-	app.navigate("mis.html");
+	//app.navigate("mis.html");
+    app.navigate(url);
 }
 
 function oncustommoduleclick(url, name, ismodule) {
@@ -250,3 +251,9 @@ function logoutcomplete(result) {
 	else 
 		alert("oops....there is an error while logout");
 }
+
+$(window).resize(function() {
+	//alert("resize");
+	$("#chartArea").data("kendoChart").redraw();
+	//$("#Linechart").data("kendoChart").redraw();
+});
