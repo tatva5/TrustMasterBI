@@ -75,6 +75,7 @@
     <Content Include="Fleet\dashboard.html" />
     <Content Include="Fleet\index.html" />
     <Content Include="images\bosasagroup.png" />
+    <Content Include="images\CISplash.gif" />
     <Content Include="images\HumanCapital.png" />
     <Content Include="images\info.png" />
     <Content Include="images\Kgwerano.png" />
@@ -121,6 +122,7 @@
       <TargetName>cordova.js</TargetName>
     </Content>
     <Content Include="videos\BI - Splash 03.mov" />
+    <Content Include="videos\CI - Splash 03.gif" />
     <Content Include="Youthcentre\index.html" />
     <Content Include="Youthcentre\YouthCare.html" />
   </ItemGroup>
