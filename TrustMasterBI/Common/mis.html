@@ -5,16 +5,47 @@
 		<title></title>
 	</head>
 	<body>
-		<div data-role="view" data-title="Graphics" data-layout="graphicsLayout" data-before-show="cleanview" data-show="customgraphlist">
-			<div>
-				<div id="graph_list" class="graph-list"></div>
-				<div id="chartArea" class="chart-area"></div>
+		<div data-role="view" data-title="Report" data-layout="grahicalDataLayout" data-before-show="cleanview" data-show="showchart">
+			<div data-role="popover" id="popover-people" data-popup='{"height": 200, "width": 290}' class="popupContent">
+				<div data-role="view" data-title="Search">
+					<div data-role="header">
+						<div data-role="navbar">
+							<a data-role="button" data-align="left" data-click="closeParentPopover">Apply</a>
+							<span data-role="view-title" ></span>
+							<a data-role="button" data-align="right" >Reset</a>
+						</div>
+					</div>
+					<table cellpadding="5px" cellspacing="5px" >
+						<tr>
+							<td>Range :</td>
+							<td>
+								<select id="ddlSelect" >
+									<option value="Custom" >Custom</option>
+									<option value="Auto" >Auto</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>From :</td>
+							<td>
+								<input id="datepicker"  />
+							</td>
+						</tr>
+						<tr>
+							<td>To :</td>
+							<td>
+								<input id="datepicker1" />
+							</td>
+						</tr>
+					</table>
+				</div>
 			</div>
+			<div id="chartArea"/>
 			<script>
-				$(window).resize(function() {
-					//alert("resize");
-					$("#chartArea").data("kendoChart").redraw();
-					//$("#Linechart").data("kendoChart").redraw();
+				$(document).ready(function() {
+					$("#ddlSelect").kendoComboBox();
+					$("#datepicker").kendoDatePicker(); 
+					$("#datepicker1").kendoDatePicker();
 				});
 			</script>
 		</div>
