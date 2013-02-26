@@ -7,7 +7,34 @@
 * If you do not own a commercial license, this file shall be governed by the trial license terms.
 */
 
-.km-list input[type=button], .km-list button,.km-android .km-list button
+.graph-list
+{
+	width: 25%;
+	float: left;
+	margin: 1%;
+	border: 1px solid gray;
+	border-radius: 5px;
+    height:97%;
+}
+
+.chart-area
+{
+	width: 70%;
+	float: left;
+	margin: 1%;
+	border: 1px solid gray;
+	border-radius: 5px;
+    height:97%;
+}
+
+.graph-list .km-listview li
+{
+	padding: 10px;
+	border: 1px solid gray;
+	cursor: pointer;
+}
+
+.km-list input[type=button], .km-list button, .km-android .km-list button
 {
 	border: none !important;
 	width: 100%;
@@ -20,7 +47,7 @@
 	margin: 0px;
 	border-radius: inherit;
 }
-.km-list input[type=button]:active, .km-list button:active,.km-android .km-list button:active
+.km-list input[type=button]:active, .km-list button:active, .km-android .km-list button:active
 {
 	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(114, 147, 186, 100))) !important;
 	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
@@ -28,8 +55,8 @@
 	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
 	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
 	color: #26313e;
-    border: .1px solid white !important;
-    border-radius: 2px 2px 0px 4px;
+	border: .1px solid white !important;
+	border-radius: 2px 2px 0px 4px;
 	/*background-color: #d68421 !important;*/
 }
 ::-webkit-input-placeholder
@@ -2781,7 +2808,7 @@ body:before
 	-webkit-box-shadow: none;
 	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8)
 }
-.km-ios .km-list>li,.km-list>li
+.km-ios .km-list>li, .km-list>li
 {
 	display: block;
 	vertical-align: middle; 

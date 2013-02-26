@@ -41,7 +41,13 @@ function closeParentPopover(e) {
 function onmoduleclick(url, name, ismodule) {
 	if (ismodule)
 		localStorage.setItem("youthcare", name);
-	app.navigate(url);
+	app.navigate("mis.html");
+}
+
+function oncustommoduleclick(url, name, ismodule) {
+	localStorage.setItem("controller", GetQueryStringParams("controller", url));
+	localStorage.setItem("method", GetQueryStringParams("method", url));   
+	showchart();
 }
 
 function transit(e) {    
@@ -205,6 +211,16 @@ function graphlistcomplete(result) {
 	$("#graph_list").html(moduletemplete(result.dataSource));
 }
 
+function customgraphlist(e) {
+	//$("#module-navbar").data("kendoMobileNavBar").title(localStorage.getItem("title"));
+	callwebservice('YouthCentre', 'Chartlist', '', customgraphlistcomplete);
+}
+
+function customgraphlistcomplete(result) {
+	var moduletemplete = kendo.template($("#customlisttemplete").html(), {useWithBlock:false});
+	$("#graph_list").html(moduletemplete(result.dataSource));
+}
+
 function showchart(e) {
 	if (typeof(e)!=='undefined') {
 		localStorage.setItem("controller", e.view.params.controller);
@@ -229,7 +245,7 @@ function logoutcomplete(result) {
 	if (result.resultCode == window.top.Onit1.ResultCode.Success) {
 		//alert("logout successfully!");
 		app.navigate("#home");
-        //app.navigate("../index.html");
+		//app.navigate("../index.html");
 	}
 	else 
 		alert("oops....there is an error while logout");
