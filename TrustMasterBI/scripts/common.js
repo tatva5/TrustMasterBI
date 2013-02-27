@@ -211,11 +211,11 @@ function showchartcomplete(result) {
 }
 
 function showreportcomplete(result) {
-	$("#chartArea").kendoGrid(result);   
+	$("#gridArea").kendoGrid(result);   
 }
 
 function showGridData() {
-	if ($.trim($("#chartArea").html()) == '') {
+	if ($.trim($("#gridArea").html()) == '') {
 		alert(localStorage.getItem("controller"));
 		alert(localStorage.getItem("method"));
 		
