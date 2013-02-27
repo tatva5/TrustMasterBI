@@ -53,7 +53,6 @@
 							</tr>
 
 						</table>
-
 						<div class="separator"></div>
 					</div>
 					<br/>
@@ -116,20 +115,21 @@
 								<div id="Linechart"  width="60%" ></div>
 							</td>
 						</tr>
-					</table>
-                    
-					<script>
+					</table>                
+				</div>
+			</div>
+            <script>
                      
-                        // Add dynamic style on page
-                        var ss = document.createElement("link");
-                        ss.type = "text/css";
-                        ss.rel = "stylesheet";
-                        ss.href = "../styles/fleet.css";
-                        document.getElementsByTagName("head")[0].appendChild(ss);
+                            // Add dynamic style on page
+                            var ss = document.createElement("link");
+                            ss.type = "text/css";
+                            ss.rel = "stylesheet";
+                            ss.href = "../styles/fleet.css";
+                            document.getElementsByTagName("head")[0].appendChild(ss);
 					
                
-                        // Change the chart width when ipad is rotate
-                        $(window).resize(function() {
+                            // Change the chart width when ipad is rotate
+                            $(window).resize(function() {
 
                                  
                                 $("#Barchart").data("kendoChart").redraw();
@@ -265,9 +265,10 @@
                                 
                                 
 							}								
-						</script>
-				</div>
-			</div>
+					
+                        
+                    </script>
+
 		</div>
 	</body>
 </html>
