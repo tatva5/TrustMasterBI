@@ -50,8 +50,8 @@ function closeParentPopover(e) {
 	if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 0) {
 		if (!validateControl('since'))
 			return;
-		localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd/MM/yyyy"));
-		showchart();
+		//localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd/MM/yyyy"));
+       	showchart();
 	}
 	else if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 1) {
 		if (!validateControl('validateDate'))
@@ -194,11 +194,12 @@ function customgraphlistcomplete(result) {
 }
 
 function showchart(e) {
+    //alert(kendo.toString($("#dpFrom").data("kendoDatePicker").value(),"dd/MM/yyyy"));
 	if (typeof(e)!=='undefined') {
 		localStorage.setItem("controller", e.view.params.controller);
 		localStorage.setItem("method", e.view.params.method);      
 	}
-	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + localStorage.getItem("fromdate"), showchartcomplete);	
+	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(),"dd/MM/yyyy"), showchartcomplete);	
 }
 
 function showchartcomplete(result) {
