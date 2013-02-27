@@ -9,22 +9,17 @@
 
 .graph-list
 {
-	width: 25%;
+	width: 24%;
 	float: left;
-	margin: 1%;
-	border: 1px solid gray;
-	border-radius: 5px;
-    height:97%;
+	border-right: 1px solid gray; 
+	padding: 0;
 }
 
 .chart-area
 {
-	width: 70%;
+	width: 75%;
 	float: right;
-	margin: 1%;
-	border: 1px solid gray;
-	border-radius: 5px;
-    height:97%;
+	padding: 0;
 }
 
 .graph-list .km-listview li
@@ -6882,3 +6877,29 @@ body:before
 {
 	background-color: White !important;
 }
+
+/******************** Left Navigation *************************/
+/*.leftnav { width: 190px; background: #f9f9f9; border-right: 1px solid #d6d6d6; float: left; min-height: 400px; }*/
+.leftnav ul { list-style: none; padding: 0; margin: 0; }
+.leftnav ul li
+{
+	list-style-type: none; padding: 7px 8px; margin: 0; border-bottom: 1px solid #d6d6d6;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(226, 226, 226, 100)));
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 100), rgba(226, 226, 226, 100));
+	background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 100), rgba(226, 226, 226, 100));
+	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 100), rgba(226, 226, 226, 100));
+	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(226, 226, 226, 100));
+	background-color: #e2e2e2;
+}
+.leftnav ul li a { font: bold 1.0em Arial, Helvetica, sans-serif; text-decoration: none; color: #393939; display: block; background: url(images/ar_right.png) right center no-repeat; }
+
+.leftnav ul li:hover, .leftnav ul li.active
+{ 
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(113, 146, 186, 100)), color-stop(1, rgba(83, 116, 157, 100)));
+	background-image: -moz-linear-gradient(top, rgba(113, 146, 186, 100), rgba(83, 116, 157, 100));
+	background-image: -ms-linear-gradient(top, rgba(113, 146, 186, 100), rgba(83, 116, 157, 100));
+	background-image: -o-linear-gradient(top, rgba(113, 146, 186, 100), rgba(83, 116, 157, 100));
+	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(83, 116, 157, 100));
+	background-color: #53749d;
+}
+.leftnav ul li a:hover, .leftnav ul li:hover a, .leftnav ul li.active a { color: #FFF; background: url(images/ar_right_h.png) right center no-repeat; }
