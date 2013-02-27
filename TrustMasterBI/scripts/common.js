@@ -62,13 +62,17 @@ function onmoduleclick(url, name, id, ismodule) {
 		localStorage.setItem("youthcare", name);	
 		localStorage.setItem("idService", id);	
 	}
-    contentheight = $(window).height() - $("#youthcareheader").height() - $("#youthcarefooter").height();
+	contentheight = $(window).height() - $("#youthcareheader").height() - $("#youthcarefooter").height();
 	app.navigate(url);
 }
 
-function oncustommoduleclick(url, name, ismodule,obj) {
-    $("#reportlist li").removeClass('active');
-    $(obj).addClass('active');
+function oncustommoduleclick(url, name, ismodule, obj) {
+	$("#gridArea").empty();
+	$("#chartArea").empty();
+	$("#scrollview").data("kendoMobileScrollView").page = 0;
+	$("#scrollview").data("kendoMobileScrollView").scrollTo(0);
+	$("#reportlist li").removeClass('active');
+	$(obj).addClass('active');
 	localStorage.setItem("controller", GetQueryStringParams("controller", url));
 	localStorage.setItem("method", GetQueryStringParams("method", url));   
 	showchart();
@@ -203,6 +207,10 @@ function showchartcomplete(result) {
 }
 
 function showreportcomplete(result) {
-	$("#chartArea").kendoGrid(result);  
+	$("#gridArea").kendoGrid(result);   
 }
 
+function showGridData() {
+	if ($.trim($("#gridArea").html()) == '')
+		callwebservice('Chart', 'Test2', '', showreportcomplete);
+}
