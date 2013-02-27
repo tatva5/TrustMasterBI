@@ -34,7 +34,14 @@ function onInit(e) {//alert(e.view.title);
 }
 
 function clearPopover() {
-	$(".k-datepicker input").val('');
+	//$(".k-datepicker input").val(new Date());
+	var date = new Date();
+	if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 0) 
+		$("#dpFrom").data("kendoDatePicker").value(date);
+	else {
+		$("#dpFrom").data("kendoDatePicker").value(new Date(date.getFullYear(), date.getMonth(), 1));
+		$("#dpTo").data("kendoDatePicker").value(date);
+	}
 }
 
 function closeParentPopover(e) {
@@ -43,8 +50,8 @@ function closeParentPopover(e) {
 	if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 0) {
 		if (!validateControl('since'))
 			return;
-		localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd/MM/yyyy"));
-		showchart();
+		//localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd/MM/yyyy"));
+       	showchart();
 	}
 	else if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 1) {
 		if (!validateControl('validateDate'))
@@ -52,7 +59,7 @@ function closeParentPopover(e) {
 		var dateTo = $("#dpTo").data("kendoDatePicker").value();
 		alert(dateTo);
 	}
-	clearPopover();
+	//clearPopover();
 	popover.close();
 }
 
@@ -187,11 +194,12 @@ function customgraphlistcomplete(result) {
 }
 
 function showchart(e) {
+    //alert(kendo.toString($("#dpFrom").data("kendoDatePicker").value(),"MM/dd/yyyy"));
 	if (typeof(e)!=='undefined') {
 		localStorage.setItem("controller", e.view.params.controller);
 		localStorage.setItem("method", e.view.params.method);      
 	}
-	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + localStorage.getItem("fromdate"), showchartcomplete);	
+	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(),"MM/dd/yyyy"), showchartcomplete);	
 }
 
 function showchartcomplete(result) {
@@ -201,4 +209,3 @@ function showchartcomplete(result) {
 function showreportcomplete(result) {
 	$("#chartArea").kendoGrid(result);  
 }
-
