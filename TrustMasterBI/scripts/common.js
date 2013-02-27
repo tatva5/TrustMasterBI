@@ -34,7 +34,14 @@ function onInit(e) {//alert(e.view.title);
 }
 
 function clearPopover() {
-	$(".k-datepicker input").val('');
+	//$(".k-datepicker input").val(new Date());
+	var date = new Date();
+	if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 0) 
+		$("#dpFrom").data("kendoDatePicker").value(date);
+	else {
+		$("#dpFrom").data("kendoDatePicker").value(new Date(date.getFullYear(), date.getMonth(), 1));
+		$("#dpTo").data("kendoDatePicker").value(date);
+	}
 }
 
 function closeParentPopover(e) {
@@ -52,7 +59,7 @@ function closeParentPopover(e) {
 		var dateTo = $("#dpTo").data("kendoDatePicker").value();
 		alert(dateTo);
 	}
-	clearPopover();
+	//clearPopover();
 	popover.close();
 }
 
@@ -201,4 +208,3 @@ function showchartcomplete(result) {
 function showreportcomplete(result) {
 	$("#chartArea").kendoGrid(result);  
 }
-
