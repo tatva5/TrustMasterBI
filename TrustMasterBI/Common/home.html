@@ -81,14 +81,14 @@
 
 		<!--youthCareLayout-->
 		<section data-role="layout" data-id="youthCareLayout" >
-			<header data-role="header">
+			<header data-role="header" id="youthcareheader">
 				<div data-role="navbar" id="module-navbar">
 					<a data-role="backbutton" data-align="left" data-click="backClick">Back</a>
 					<span data-role="view-title"/>
 					<a data-role="button" data-click="logout" data-align="right">Logout</a>
 				</div>
 			</header>
-			<footer data-role="footer">
+			<footer data-role="footer" id="youthcarefooter">
 				<div data-role="tabstrip">
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
 					<a data-icon="ic2" href="aboutUs.html">About Us</a>
@@ -132,9 +132,8 @@
 			</footer>
 		</section>
 
-		<!--grahicalDataLayout-->
 		<section data-role="layout" data-id="grahicalDataLayout" >
-			<header data-role="header">
+			<header data-role="header" id="reportheader">
 				<div data-role="navbar" id="navbar">
 					<a  data-role="backbutton" data-align="left">Back</a>
 					<!--<a  data-role="button" data-click="transit" data-align="left">Tabular</a>-->
@@ -143,7 +142,7 @@
 					<a data-role="button" data-click="logout" data-align="right">Logout</a>
 				</div>
 			</header>
-			<footer data-role="footer">
+			<footer data-role="footer" id="reportfooter">
 				<div data-role="tabstrip">
 					<a class="youthdevelopment" data-icon="ic4" href="../Youthcentre/index.html">Youth Development Centre</a>
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
@@ -293,15 +292,17 @@
 		</script>
 				
 		<script id="customlisttemplete" type="text/x-kendo-template">
-			<ul data-role="listview" data-style="inset" class="km-listview">
-				# for (var i = 0; i < data.length; i++) { #
-					<li onclick="oncustommoduleclick('#= data[i].href #','#= data[i].name #',false)">
-						#= data[i].name #					
-					</li>
-				# }
-	
-				#
-			</ul>
+			<div class="leftnav" >
+				<ul id="reportlist">
+					# for (var i = 0; i < data.length; i++) { #
+						<li onclick="oncustommoduleclick('#= data[i].href #','#= data[i].name #',false,this)">
+							<a>#= data[i].name #</a>
+						</li>
+					# }
+			
+					#
+				</ul>
+			</div>
 		</script>
 	</body>
 </html>

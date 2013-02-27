@@ -1,5 +1,6 @@
 var windowWidth = $(window).width(); //retrieve current window width
 var windowHeight = $(window).height(); //retrieve current window height
+var contentheight;
 
 function validateControl(divname) {
 	var validator = $("#" + divname).kendoValidator().data("kendoValidator");
@@ -34,14 +35,7 @@ function onInit(e) {//alert(e.view.title);
 }
 
 function clearPopover() {
-	//$(".k-datepicker input").val(new Date());
-	var date = new Date();
-	if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 0) 
-		$("#dpFrom").data("kendoDatePicker").value(date);
-	else {
-		$("#dpFrom").data("kendoDatePicker").value(new Date(date.getFullYear(), date.getMonth(), 1));
-		$("#dpTo").data("kendoDatePicker").value(date);
-	}
+	$(".k-datepicker input").val('');
 }
 
 function closeParentPopover(e) {
@@ -50,8 +44,8 @@ function closeParentPopover(e) {
 	if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 0) {
 		if (!validateControl('since'))
 			return;
-		//localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd/MM/yyyy"));
-       	showchart();
+		localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd/MM/yyyy"));
+		showchart();
 	}
 	else if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 1) {
 		if (!validateControl('validateDate'))
@@ -59,7 +53,7 @@ function closeParentPopover(e) {
 		var dateTo = $("#dpTo").data("kendoDatePicker").value();
 		alert(dateTo);
 	}
-	//clearPopover();
+	clearPopover();
 	popover.close();
 }
 
@@ -68,10 +62,13 @@ function onmoduleclick(url, name, id, ismodule) {
 		localStorage.setItem("youthcare", name);	
 		localStorage.setItem("idService", id);	
 	}
+    contentheight = $(window).height() - $("#youthcareheader").height() - $("#youthcarefooter").height();
 	app.navigate(url);
 }
 
-function oncustommoduleclick(url, name, ismodule) {
+function oncustommoduleclick(url, name, ismodule,obj) {
+    $("#reportlist li").removeClass('active');
+    $(obj).addClass('active');
 	localStorage.setItem("controller", GetQueryStringParams("controller", url));
 	localStorage.setItem("method", GetQueryStringParams("method", url));   
 	showchart();
@@ -184,7 +181,7 @@ function graphlistcomplete(result) {
 }
 
 function customgraphlist(e) {
-	//$("#module-navbar").data("kendoMobileNavBar").title(localStorage.getItem("title"));
+	$("#graph_list").css('height', contentheight);
 	callwebservice('YouthCentre', 'Chartlist', 'idService=' + localStorage.getItem("idService"), customgraphlistcomplete);
 }
 
@@ -194,12 +191,11 @@ function customgraphlistcomplete(result) {
 }
 
 function showchart(e) {
-    //alert(kendo.toString($("#dpFrom").data("kendoDatePicker").value(),"MM/dd/yyyy"));
 	if (typeof(e)!=='undefined') {
 		localStorage.setItem("controller", e.view.params.controller);
 		localStorage.setItem("method", e.view.params.method);      
 	}
-	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(),"MM/dd/yyyy"), showchartcomplete);	
+	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + localStorage.getItem("fromdate"), showchartcomplete);	
 }
 
 function showchartcomplete(result) {
@@ -209,3 +205,4 @@ function showchartcomplete(result) {
 function showreportcomplete(result) {
 	$("#chartArea").kendoGrid(result);  
 }
+

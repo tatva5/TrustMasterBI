@@ -43,25 +43,22 @@
 				</div>
 			</div>
 
-			<!--<div id="splitter" style="width:100%">-->
+			
 				<div id="graph_list" class="graph-list"></div>
 				<div id="chartArea" class="chart-area"></div>
-			<!--</div>-->
+			
 			<script>
 				$(document).ready(function() {
     
 					$("#ddlSelect").kendoComboBox();
                     $("#dpFrom").kendoDatePicker({value:new Date()}); 
-					$("#dpTo").kendoDatePicker({value:new Date()});
-					/*$("#splitter").kendoSplitter({
-						panes: [
-							{ size: "220px" }
-						]
-					});*/
+					$("#dpTo").kendoDatePicker({value:new Date()});			
+					
 				});
                 
 				$(window).resize(function() {
-					//alert("resize");
+                    var contentHeight = $(window).height() - $("#reportheader").height() - $("#reportfooter").height();
+					$("#graph_list").css('height', contentHeight);
 					$("#chartArea").data("kendoChart").redraw();
 				});
 				
