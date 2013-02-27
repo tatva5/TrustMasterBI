@@ -1,0 +1,174 @@
+/* Fleet Style */
+
+/*-- Dashbaord--*/
+.floatWrap:after, #dashboard:after { content: ""; display: block; clear: both}
+.floatWrap, #dashboard { display: inline-block}
+.floatWrap, #dashboard { display: block}
+.clear { clear: both}
+#dashboard
+{
+	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
+}
+
+.demo-section
+{
+	margin: 00px auto;
+	padding: 0px 10px 10px 10px;
+}
+
+.dashboard-title,
+.dashboard-subtitle,
+.metric,
+.dashboard-description,
+.stat dd
+{
+	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
+}
+.dashboard-title,
+.dashboard-subtitle
+{
+	text-transform: lowercasse;
+}
+
+.dashboard-title
+{
+	color: #2b8abe;
+	font-size: 48px;
+	font-weight: 300;
+}
+.dashboard-title span,
+.first dd
+{
+	font-weight: 700;
+}
+.dashboard-description
+{
+	font-size: 18px;
+	font-weight: 300;
+	color: #1a364a;
+}
+.dashboard-subtitle1
+{
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 0;
+	color: #454447;
+}
+.dashboard-subtitle
+{
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 0;
+	color: #454447;
+}
+.dashboard-subtitle-right
+{
+	font-size: 18px;
+	font-weight: 700;
+	color: #454447;
+	float: right;
+	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
+}
+.metric
+{
+	display: block;
+	text-transform: none;
+	font-weight: 300;
+	font-size: 16px;
+	color: #999999;
+	margin: 0;
+}
+.metric_right
+{
+	display: block;
+	text-transform: none;
+	font-weight: 300;
+	font-size: 16px;
+	color: #999999;
+	Margin-left: 5px;
+	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
+	float: right;
+}
+.dashboard-title,
+.dashboard-description
+{
+	display: inline-block;
+	margin: 0;
+}
+.stat .eoy-closing
+{
+	font-size: 110px;
+	line-height: 1em;
+	letter-spacing: -2px;
+	text-indent: -8px;
+	color: #454447;
+}
+.stat .volume
+{
+	font-size: 42px;
+	color: #454447;
+}
+.volumeBig
+{
+	font-size: 45px;
+	color: #454447;
+    font-weight: 700;
+    font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
+}
+.volumeBig_right
+{
+	font-size: 45px;
+	color: #454447;
+    font-weight: 700;
+    font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
+    float:right;
+}
+
+.volumeMedium
+{
+	font-size: 29px;
+	color: #1c638d;
+	Margin-bottom: 10px;
+     font-weight: 700;
+     font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
+}
+.stat dd
+{
+	margin: 0;
+}
+.stat,
+.relative-value-pie,
+.company-trends
+{
+	margin: 1em 0 0;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	vertical-align: top;
+}
+.trend-container_first
+{
+	background: transparent none no-repeat 100% 29px;
+	width: 180px;
+	margin-right: 0px;
+}
+
+.trend-container
+{
+	background: transparent none no-repeat 100% 29px;
+	width: 200px;
+	margin-right: 0px;
+}
+.separator
+{
+	height: 1px;
+	background: #b3bbc5;
+}
+.volume-chart
+{
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin-left: 20px;
+	margin-top: 60px;
+} 

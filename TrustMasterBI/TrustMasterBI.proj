@@ -88,7 +88,6 @@
     <Content Include="index.html" />
     <Content Include="kendo\js\jquery.min.js" />
     <Content Include="kendo\js\kendo.all.js" />
-    <Content Include="kendo\js\kendo.mobile.min.js" />
     <Content Include="kendo\styles\images\arrow.png" />
     <Content Include="kendo\styles\images\back.png" />
     <Content Include="kendo\styles\images\butbg.png" />
@@ -112,6 +111,7 @@
     <Content Include="kendo\styles\kendo.mobile.all.min.css" />
     <Content Include="scripts\authentication.js" />
     <Content Include="scripts\common.js" />
+    <Content Include="styles\fleet.css" />
     <Content Include="styles\main.css" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>
