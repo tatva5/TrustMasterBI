@@ -267,9 +267,7 @@
 			<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
 				# for (var i = 0; i < data.length; i++) { #
 				<li>
-					<button onclick="onmoduleclick('#= data[i].href #
-					','#= data[i].name #
-					','#= data[i].id #',true)" >
+					<button onclick="onmoduleclick('#= data[i].href #','#= data[i].name #','#= data[i].id #',true)" >
 						#= data[i].name #
 						<img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;right:5%;top:25%;"/>
 					</button>
@@ -284,8 +282,7 @@
 			<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
 				# for (var i = 0; i < data.length; i++) { #
 				<li>
-					<button onclick="onmoduleclick('#= data[i].href #
-					','#= data[i].name #',false)" >
+					<button onclick="onmoduleclick('#= data[i].href #','#= data[i].name #',false)" >
 						#= data[i].name #
 						<img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;right:5%;top:25%;"/>
 					</button>
@@ -299,8 +296,7 @@
 		<script id="customlisttemplete" type="text/x-kendo-template">
 			<ul data-role="listview" data-style="inset" class="km-listview">
 				# for (var i = 0; i < data.length; i++) { #
-					<li onclick="oncustommoduleclick('#= data[i].href #
-					','#= data[i].name #',false)">
+					<li onclick="oncustommoduleclick('#= data[i].href #','#= data[i].name #',false)">
 						#= data[i].name #					
 					</li>
 				# }
