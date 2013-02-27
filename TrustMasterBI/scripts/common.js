@@ -66,7 +66,7 @@ function onmoduleclick(url, name, id, ismodule) {
 	app.navigate(url);
 }
 
-function oncustommoduleclick(url, name, ismodule, obj) {
+function oncustommoduleclick(url, name, ismodule, obj, type) {
 	$("#gridArea").empty();
 	$("#chartArea").empty();
 	$("#scrollview").data("kendoMobileScrollView").page = 0;
@@ -74,8 +74,12 @@ function oncustommoduleclick(url, name, ismodule, obj) {
 	$("#reportlist li").removeClass('active');
 	$(obj).addClass('active');
 	localStorage.setItem("controller", GetQueryStringParams("controller", url));
-	localStorage.setItem("method", GetQueryStringParams("method", url));   
-	showchart();
+	localStorage.setItem("method", GetQueryStringParams("method", url)); 
+	alert(type);
+	if (type != 'R')
+		showchart();
+	else
+		showGridData();
 }
 
 function transit(e) {    
@@ -207,10 +211,33 @@ function showchartcomplete(result) {
 }
 
 function showreportcomplete(result) {
-	$("#gridArea").kendoGrid(result);   
+	$("#chartArea").kendoGrid(result);   
 }
 
 function showGridData() {
-	if ($.trim($("#gridArea").html()) == '')
-		callwebservice('Chart', 'Test2', '', showreportcomplete);
+	if ($.trim($("#chartArea").html()) == '') {
+		alert(localStorage.getItem("controller"));
+		alert(localStorage.getItem("method"));
+		
+		callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), '', showreportcomplete);
+	}
+}
+
+//Human capital dashboard functions
+
+function dashboard() {
+	alert("dashboard");
+	debugger;
+	var data = callwebservice('People', 'EngagementsPerCostCentrePerCompany', '', dashboardComplete);
+    
+	$("#countPerCost").kendoChart();
+}
+
+function engagement() {
+	alert("engagement");
+	$("#engagement").kendoChart(callwebservice('People', 'CountPerCostCentrePerCompany', '', dashboardComplete));
+}
+
+function dashboardComplete() {
+	alert("You have completed dashboard");
 }
