@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
 		<title>Kgwerano TrustMaster Fleet| Maintenance History</title>
-
+        
 	</head>
 	<body>
 		<div id="mainWrap" data-role="view" data-layout="fleetdashboardLayout" data-title="OPERATIONS" data-before-show="cleanview"  data-zoom ="true">
@@ -63,7 +63,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div id="Barchart"></div>
+								<div id="Barchart" width="100%" ></div>
 							</td>
 						</tr>
 					</table>
@@ -113,16 +113,25 @@
 								</table>
 							</td>
 							<td width="60%">
-								<div id="Linechart"   ></div>
+								<div id="Linechart"  width="60%" ></div>
 							</td>
 						</tr>
 					</table>
 					<script>
-							
-                            $(window).resize(function() {
-                                       $("#Barchart").data("kendoChart").redraw();
-                                        $("#Linechart").data("kendoChart").redraw();
-
+                        
+                        // Add dynamic style on page
+                        var ss = document.createElement("link");
+                        ss.type = "text/css";
+                        ss.rel = "stylesheet";
+                        ss.href = "../styles/fleet.css";
+                        document.getElementsByTagName("head")[0].appendChild(ss);
+					
+                        // Change the chart width when ipad is rotate
+                        $(window).resize(function() {
+                                      
+                                $("#Barchart").data("kendoChart").redraw();
+                                $("#Linechart").data("kendoChart").redraw();
+                              
                              });
                         
 							$(document).ready(function () {
