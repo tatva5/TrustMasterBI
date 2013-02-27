@@ -73,6 +73,7 @@
     <Content Include="Common\services.html" />
     <Content Include="Fleet\dashboard.html" />
     <Content Include="Fleet\index.html" />
+    <Content Include="Humancapital\dashboard.html" />
     <Content Include="images\bosasagroup.png" />
     <Content Include="images\CISplash.gif" />
     <Content Include="images\HumanCapital.png" />
