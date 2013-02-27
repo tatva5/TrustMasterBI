@@ -49,9 +49,10 @@
 			<!--</div>-->
 			<script>
 				$(document).ready(function() {
+    
 					$("#ddlSelect").kendoComboBox();
-					$("#dpFrom").kendoDatePicker(); 
-					$("#dpTo").kendoDatePicker();
+                    $("#dpFrom").kendoDatePicker({value:new Date()}); 
+					$("#dpTo").kendoDatePicker({value:new Date()});
 					/*$("#splitter").kendoSplitter({
 						panes: [
 							{ size: "220px" }
@@ -65,11 +66,13 @@
 				});
 				
 				function onChange(e) {
+                    var date = new Date();
+                    $("#dpFrom").data("kendoDatePicker").value(date);
 					$("#datePickerId").hide();
 					document.getElementById('changeFrom').innerHTML = "Date :";
 					if (e.sender.selectedIndex == 1) {
 						document.getElementById('changeFrom').innerHTML = "From :";
-						alert(currentText);
+                        $("#dpFrom").kendoDatePicker({value:new Date(date.getFullYear(),date.getMonth(),1)}); 
 						$("#datePickerId").show();
 					}
 				}
