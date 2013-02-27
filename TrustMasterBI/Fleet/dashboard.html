@@ -63,7 +63,7 @@
 						</tr>
 						<tr>
 							<td>
-								<div id="Barchart"></div>
+								<div id="Barchart" width="100%" ></div>
 							</td>
 						</tr>
 					</table>
@@ -113,15 +113,17 @@
 								</table>
 							</td>
 							<td width="60%">
-								<div id="Linechart"   ></div>
+								<div id="Linechart"  width="60%" ></div>
 							</td>
 						</tr>
 					</table>
 					<script>
 							
                             $(window).resize(function() {
+                                      
                                        $("#Barchart").data("kendoChart").redraw();
                                         $("#Linechart").data("kendoChart").redraw();
+                              
 
                              });
                         
