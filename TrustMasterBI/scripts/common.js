@@ -194,12 +194,12 @@ function customgraphlistcomplete(result) {
 }
 
 function showchart(e) {
-    //alert(kendo.toString($("#dpFrom").data("kendoDatePicker").value(),"dd/MM/yyyy"));
+    //alert(kendo.toString($("#dpFrom").data("kendoDatePicker").value(),"MM/dd/yyyy"));
 	if (typeof(e)!=='undefined') {
 		localStorage.setItem("controller", e.view.params.controller);
 		localStorage.setItem("method", e.view.params.method);      
 	}
-	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(),"dd/MM/yyyy"), showchartcomplete);	
+	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(),"MM/dd/yyyy"), showchartcomplete);	
 }
 
 function showchartcomplete(result) {
