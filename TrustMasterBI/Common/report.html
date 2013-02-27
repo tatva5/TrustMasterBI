@@ -43,30 +43,27 @@
 				</div>
 			</div>
 
-			<div id="splitter" style="width:100%">
+			<!--<div id="splitter" style="width:100%">-->
 				<div id="graph_list" class="graph-list"></div>
 				<div id="chartArea" class="chart-area"></div>
-			</div>
-
+			<!--</div>-->
 			<script>
 				$(document).ready(function() {
 					$("#ddlSelect").kendoComboBox();
 					$("#dpFrom").kendoDatePicker(); 
 					$("#dpTo").kendoDatePicker();
+					/*$("#splitter").kendoSplitter({
+						panes: [
+							{ size: "220px" }
+						]
+					});*/
 				});
                 
-				$("#splitter").kendoSplitter({
-					panes: [
-						{ collapsible: true, size: "220px" },
-						{  collapsible: false, resizable: false }
-					]
-				});
-				
 				$(window).resize(function() {
 					//alert("resize");
 					$("#chartArea").data("kendoChart").redraw();
 				});
-                
+				
 				function onChange(e) {
 					$("#datePickerId").hide();
 					document.getElementById('changeFrom').innerHTML = "Date :";
