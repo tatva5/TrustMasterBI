@@ -6,6 +6,7 @@
 .floatWrap, #dashboard { display: inline-block}
 .floatWrap, #dashboard { display: block}
 .clear { clear: both}
+
 #dashboard
 {
 	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
@@ -131,9 +132,7 @@
 	margin: 0;
 }
 .km-ios
-.stat,
-.relative-value-pie,
-.company-trends
+.stat
 {
 	margin: 1em 0 0;
 	display: inline-block;
@@ -269,9 +268,7 @@
 	margin: 0;
 }
 .km-tablet
-.stat,
-.relative-value-pie,
-.company-trends
+.stat
 {
 	margin: 1em 0 0;
 	display: inline-block;
