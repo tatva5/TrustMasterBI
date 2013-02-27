@@ -9,17 +9,17 @@
 
 .graph-list
 {
-	width: 25%;
+	width: 24%;
 	float: left;
-	border-right: 1px solid gray;	 
-    padding:0;
+	border-right: 1px solid gray; 
+	padding: 0;
 }
 
 .chart-area
 {
-	width: 70%;
+	width: 75%;
 	float: right;
-     padding:0;
+	padding: 0;
 }
 
 .graph-list .km-listview li
@@ -6891,7 +6891,7 @@ body:before
 	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(226, 226, 226, 100));
 	background-color: #e2e2e2;
 }
-.leftnav ul li a { font: bold 12px Arial, Helvetica, sans-serif; text-decoration: none; color: #393939; display: block; background: url(images/ar_right.png) right center no-repeat; }
+.leftnav ul li a { font: bold 1.0em Arial, Helvetica, sans-serif; text-decoration: none; color: #393939; display: block; background: url(images/ar_right.png) right center no-repeat; }
 
 .leftnav ul li:hover, .leftnav ul li.active
 { 
