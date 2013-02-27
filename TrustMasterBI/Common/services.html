@@ -5,7 +5,20 @@
 	</head>
 	<body>
 		<div data-role="view" data-layout="servicesLayout" data-title="Integrated Knowledge" data-before-show="cleanview" data-show="servicelist">
-			<div id="divservice"></div>			
+			<div id="divservice"></div>
+			<script id="servicetemplete" type="text/x-kendo-template">
+				<div class="services_list">
+					<ul>
+						# for (var i = 0; i < data.length; i++) { #
+						<li>
+							<a href="#= data[i].href #" data-role="button">
+								<img src="#= data[i].imagepath #" alt=""/><br/>#= data[i].name #</a>
+						</li>
+						# }					
+						#
+					</ul>
+				</div>
+			</script>
 		</div>
 	</body>
 </html>
