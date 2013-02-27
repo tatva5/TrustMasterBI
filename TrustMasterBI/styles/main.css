@@ -9,12 +9,7 @@
 {
 	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
 }
-.centerWrap
-{
-	width: 780px;
-	margin: 0 auto;
-	padding: 0;
-}
+
 .demo-section
 {
 	margin: 00px auto;
@@ -70,7 +65,6 @@
 {
 	font-size: 18px;
 	font-weight: 700;
-	Margin-top: 30px;
 	color: #454447;
 	float: right;
 	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
@@ -91,7 +85,6 @@
 	font-weight: 300;
 	font-size: 16px;
 	color: #999999;
-	Margin-top: 30px;
 	Margin-left: 5px;
 	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
 	float: right;
@@ -115,23 +108,29 @@
 	font-size: 42px;
 	color: #454447;
 }
-.stat .volumeBig
+.volumeBig
 {
-	font-size: 44px;
+	font-size: 45px;
 	color: #454447;
+    font-weight: 700;
+    font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
 }
-.stat .volumeBig_right
+.volumeBig_right
 {
-	font-size: 44px;
+	font-size: 45px;
 	color: #454447;
-	Margin-top: 55px;
+    font-weight: 700;
+    font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
+    float:right;
 }
 
-.stat .volumeMedium
+.volumeMedium
 {
-	font-size: 24px;
+	font-size: 29px;
 	color: #1c638d;
 	Margin-bottom: 10px;
+     font-weight: 700;
+     font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
 }
 .stat dd
 {
@@ -170,8 +169,6 @@
 	display: inline-block;
 	*display: inline;
 	zoom: 1;
-	width: 500px;
-	height: 300px;
 	margin-left: 20px;
 	margin-top: 60px;
 } 
