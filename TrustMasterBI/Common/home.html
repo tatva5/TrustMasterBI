@@ -263,27 +263,11 @@
 			}
 		</script>
 
-		<script id="servicetemplete" type="text/x-kendo-template">
-			<div class="services_list">
-				<ul>
-					# for (var i = 0; i < data.length; i++) { #
-					<li>
-						<a href="#= data[i].href #" data-role="button">
-							<img src="#= data[i].imagepath #
-							" alt=""/><br/>#= data[i].name #</a>
-					</li>
-					# }
-					
-					#
-				</ul>
-			</div>
-		</script>
-		
 		<script id="moduletemplete" type="text/x-kendo-template">
 			<ul data-role="listview" data-style="inset" class="km-listview km-list km-listinset">
 				# for (var i = 0; i < data.length; i++) { #
 				<li>
-					<button onclick="onmoduleclick('#= data[i].href #','#= data[i].name #',true)" >
+					<button onclick="onmoduleclick('#= data[i].href #','#= data[i].name #','#= data[i].id #',true)" >
 						#= data[i].name #
 						<img src="../kendo/styles/images/arrow.png" alt="" style="position:absolute;right:5%;top:25%;"/>
 					</button>
@@ -304,11 +288,11 @@
 					</button>
 				</li>
 				# }
-			
+		
 				#
 			</ul>
 		</script>
-			
+				
 		<script id="customlisttemplete" type="text/x-kendo-template">
 			<ul data-role="listview" data-style="inset" class="km-listview">
 				# for (var i = 0; i < data.length; i++) { #
@@ -316,7 +300,7 @@
 						#= data[i].name #					
 					</li>
 				# }
-		
+	
 				#
 			</ul>
 		</script>
