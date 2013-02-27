@@ -31,6 +31,145 @@
 	text-transform: lowercasse;
 }
 
+
+
+/* --------- Mobile-------------*/
+
+.km-ios .dashboard-title
+{
+	color: #2b8abe;
+	font-size: 48px;
+	font-weight: 300;
+}
+.km-ios .dashboard-title span,
+.first dd
+{
+	font-weight: 700;
+}
+
+.km-ios .dashboard-description
+{
+	font-size: 18px;
+	font-weight: 300;
+	color: #1a364a;
+}
+.km-ios .dashboard-subtitle1
+{
+	font-size: 19px;
+	font-weight: 700;
+	margin-bottom: 0;
+	color: #454447;
+}
+.km-ios .dashboard-subtitle
+{
+	font-size: 11px;
+	font-weight: 700;
+	margin-bottom: 0;
+	color: #454447;
+}
+.km-ios .dashboard-subtitle-right
+{
+	font-size: 11px;
+	font-weight: 700;
+	color: #454447;
+	float: right;
+	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
+}
+.km-ios .metric
+{
+	display: block;
+	text-transform: none;
+	font-weight: 300;
+	font-size: 12px;
+	color: #999999;
+	margin: 0;
+}
+.km-ios .metric_right
+{
+	display: block;
+	text-transform: none;
+	font-weight: 300;
+	font-size: 12px;
+	color: #999999;
+	Margin-left: 5px;
+	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
+	float: right;
+}
+.dashboard-title,
+.dashboard-description
+{
+	display: inline-block;
+	margin: 0;
+}
+
+.km-ios .volumeBig
+{
+	font-size: 30px;
+	color: #454447;
+    font-weight: 700;
+    font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
+}
+.km-ios .volumeBig_right
+{
+	font-size: 30px;
+	color: #454447;
+    font-weight: 700;
+    font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
+    float:right;
+}
+
+.km-ios .volumeMedium
+{
+	font-size: 15px;
+	color: #1c638d;
+	Margin-bottom: 10px;
+     font-weight: 700;
+     font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
+}
+.km-ios .stat dd
+{
+	margin: 0;
+}
+.km-ios
+.stat,
+.relative-value-pie,
+.company-trends
+{
+	margin: 1em 0 0;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	vertical-align: top;
+}
+
+.km-ios .separator
+{
+	height: 1px;
+	background: #b3bbc5;
+}
+.km-ios .volume-chart
+{
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	margin-left: 10px;
+	margin-top: 30px;
+} 
+
+.km-ios .BarChart
+{
+	Width:100%;
+    
+} 
+.km-ios .LineChart
+{
+	Width:100%;
+   
+} 
+
+
+
+
 /* -------- Tablet-------------*/
 
 .km-tablet .dashboard-title
@@ -166,137 +305,3 @@
 } 
 
 
-/* --------- Mobile-------------*/
-
-.km-ios .dashboard-title
-{
-	color: #2b8abe;
-	font-size: 48px;
-	font-weight: 300;
-}
-.km-ios .dashboard-title span,
-.first dd
-{
-	font-weight: 700;
-}
-
-.km-ios .dashboard-description
-{
-	font-size: 18px;
-	font-weight: 300;
-	color: #1a364a;
-}
-.km-ios .dashboard-subtitle1
-{
-	font-size: 19px;
-	font-weight: 700;
-	margin-bottom: 0;
-	color: #454447;
-}
-.km-ios .dashboard-subtitle
-{
-	font-size: 11px;
-	font-weight: 700;
-	margin-bottom: 0;
-	color: #454447;
-}
-.km-ios .dashboard-subtitle-right
-{
-	font-size: 11px;
-	font-weight: 700;
-	color: #454447;
-	float: right;
-	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
-}
-.km-ios .metric
-{
-	display: block;
-	text-transform: none;
-	font-weight: 300;
-	font-size: 12px;
-	color: #999999;
-	margin: 0;
-}
-.km-ios .metric_right
-{
-	display: block;
-	text-transform: none;
-	font-weight: 300;
-	font-size: 12px;
-	color: #999999;
-	Margin-left: 5px;
-	font-family: 'Open Sans Condensed', Calibri, Verdana, sans-serif;
-	float: right;
-}
-.dashboard-title,
-.dashboard-description
-{
-	display: inline-block;
-	margin: 0;
-}
-
-
-.km-ios .volumeBig
-{
-	font-size: 30px;
-	color: #454447;
-    font-weight: 700;
-    font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
-}
-.km-ios .volumeBig_right
-{
-	font-size: 30px;
-	color: #454447;
-    font-weight: 700;
-    font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
-    float:right;
-}
-
-.km-ios .volumeMedium
-{
-	font-size: 15px;
-	color: #1c638d;
-	Margin-bottom: 10px;
-     font-weight: 700;
-     font-family: 'Open Sans Condensed',Calibri, Verdana, sans-serif;
-}
-.km-ios .stat dd
-{
-	margin: 0;
-}
-.km-ios
-.stat,
-.relative-value-pie,
-.company-trends
-{
-	margin: 1em 0 0;
-	display: inline-block;
-	*display: inline;
-	zoom: 1;
-	vertical-align: top;
-}
-
-.km-ios .separator
-{
-	height: 1px;
-	background: #b3bbc5;
-}
-.km-ios .volume-chart
-{
-	display: inline-block;
-	*display: inline;
-	zoom: 1;
-	margin-left: 10px;
-	margin-top: 30px;
-} 
-
-.km-ios .BarChart
-{
-	Width:100%;
-    
-} 
-.km-ios .LineChart
-{
-	Width:100%;
-    Height:20%;   
-} 
