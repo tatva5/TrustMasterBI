@@ -35,7 +35,16 @@ function onInit(e) {//alert(e.view.title);
 }
 
 function clearPopover() {
-	$(".k-datepicker input").val('');
+	var date = new Date();
+	if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 0) {
+		$("#dpFrom").kendoDatePicker({value:new Date()});
+	}
+	else {
+		$("#dpFrom").kendoDatePicker({value:new Date(date.getFullYear(), date.getMonth(), 1)}, "MM/dd/yyyy"); 
+		//$("#dpFrom").data(kendoDatePicker).value(new Date(date.getFullyear, date.getmonth, 1), "MM/dd/yyyy");
+		$("#dpTo").data(kendoDatePicker).value(date); 
+	}
+	//$(".k-datepicker input").val('');
 }
 
 function closeParentPopover(e) {
@@ -44,7 +53,7 @@ function closeParentPopover(e) {
 	if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 0) {
 		if (!validateControl('since'))
 			return;
-		localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd/MM/yyyy"));
+		//localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "MM/dd/yyyy"));
 		showchart();
 	}
 	else if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 1) {
@@ -53,7 +62,7 @@ function closeParentPopover(e) {
 		var dateTo = $("#dpTo").data("kendoDatePicker").value();
 		alert(dateTo);
 	}
-	clearPopover();
+	//clearPopover();
 	popover.close();
 }
 
@@ -75,7 +84,8 @@ function oncustommoduleclick(url, name, ismodule, obj, type) {
 	$(obj).addClass('active');
 	localStorage.setItem("controller", GetQueryStringParams("controller", url));
 	localStorage.setItem("method", GetQueryStringParams("method", url)); 
-	alert(type);
+	localStorage.setItem("type", type);
+	
 	if (type != 'R')
 		showchart();
 	else
@@ -189,6 +199,7 @@ function graphlistcomplete(result) {
 }
 
 function customgraphlist(e) {
+    $("#ycnavbar").data("kendoMobileNavBar").title(localStorage.getItem("youthcare"));
 	$("#graph_list").css('height', contentheight);
 	callwebservice('YouthCentre', 'Chartlist', 'idService=' + localStorage.getItem("idService"), customgraphlistcomplete);
 }
@@ -196,6 +207,11 @@ function customgraphlist(e) {
 function customgraphlistcomplete(result) {
 	var moduletemplete = kendo.template($("#customlisttemplete").html(), {useWithBlock:false});
 	$("#graph_list").html(moduletemplete(result.dataSource));
+	$("#reportlist").children().first().addClass("active");
+	var url = result.dataSource[0].href;
+	localStorage.setItem("controller", GetQueryStringParams("controller", url));
+	localStorage.setItem("method", GetQueryStringParams("method", url)); 
+	showchart();
 }
 
 function showchart(e) {
@@ -203,7 +219,10 @@ function showchart(e) {
 		localStorage.setItem("controller", e.view.params.controller);
 		localStorage.setItem("method", e.view.params.method);      
 	}
-	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + localStorage.getItem("fromdate"), showchartcomplete);	
+	//alert(localStorage.getItem("youthcare"));
+	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method")
+    ,'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "MM/dd/yyyy") + '&type=' + localStorage.getItem("type")
+    ,showchartcomplete)	
 }
 
 function showchartcomplete(result) {
@@ -216,28 +235,10 @@ function showreportcomplete(result) {
 
 function showGridData() {
 	if ($.trim($("#gridArea").html()) == '') {
-		alert(localStorage.getItem("controller"));
-		alert(localStorage.getItem("method"));
-		
+		if (localStorage.getItem("controller") == "Youthcentre") {
+			callwebservice('Chart', 'Test2', '', showreportcomplete);
+			return;
+		}
 		callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), '', showreportcomplete);
 	}
-}
-
-//Human capital dashboard functions
-
-function dashboard() {
-	alert("dashboard");
-	debugger;
-	var data = callwebservice('People', 'EngagementsPerCostCentrePerCompany', '', dashboardComplete);
-    
-	$("#countPerCost").kendoChart();
-}
-
-function engagement() {
-	alert("engagement");
-	$("#engagement").kendoChart(callwebservice('People', 'CountPerCostCentrePerCompany', '', dashboardComplete));
-}
-
-function dashboardComplete() {
-	alert("You have completed dashboard");
 }

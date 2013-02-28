@@ -18,7 +18,7 @@
 .chart-area
 {
 	width: 75%;
-	float: right;
+	float: left;
 	padding: 0;
 }
 
@@ -765,7 +765,7 @@
 {
 	white-space: nowrap;
 	overflow: hidden;
-	width: 100%
+	/*width: 100%*/
 }
 .km-scrollview>div>*
 {
@@ -6901,5 +6901,6 @@ body:before
 	background-image: -o-linear-gradient(top, rgba(113, 146, 186, 100), rgba(83, 116, 157, 100));
 	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(83, 116, 157, 100));
 	background-color: #53749d;
+    cursor:pointer;
 }
 .leftnav ul li a:hover, .leftnav ul li:hover a, .leftnav ul li.active a { color: #FFF; background: url(images/ar_right_h.png) right center no-repeat; }

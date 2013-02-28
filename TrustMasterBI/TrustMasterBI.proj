@@ -71,6 +71,7 @@
     <Content Include="Common\modules.html" />
     <Content Include="Common\report.html" />
     <Content Include="Common\services.html" />
+    <Content Include="Common\whatsonline.html" />
     <Content Include="Fleet\dashboard.html" />
     <Content Include="Fleet\index.html" />
     <Content Include="Humancapital\dashboard.html" />
@@ -115,6 +116,8 @@
     <Content Include="kendo\styles\kendo.mobile.all.min.css" />
     <Content Include="scripts\authentication.js" />
     <Content Include="scripts\common.js" />
+    <Content Include="scripts\humancapital.js" />
+    <Content Include="scripts\youthcentre.js" />
     <Content Include="styles\fleet.css" />
     <Content Include="styles\main.css" />
     <Content Include="cordova.ios.js">
