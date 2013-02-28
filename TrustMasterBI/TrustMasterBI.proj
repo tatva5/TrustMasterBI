@@ -81,6 +81,7 @@
     <Content Include="images\Kgwerano.png" />
     <Content Include="images\login-bg.jpg" />
     <Content Include="images\loginbg.png" />
+    <Content Include="images\login_footer.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\mainbg2.png" />
     <Content Include="images\registrationBackground.png" />
