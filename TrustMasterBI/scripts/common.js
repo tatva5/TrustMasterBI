@@ -75,7 +75,7 @@ function oncustommoduleclick(url, name, ismodule, obj, type) {
 	$(obj).addClass('active');
 	localStorage.setItem("controller", GetQueryStringParams("controller", url));
 	localStorage.setItem("method", GetQueryStringParams("method", url)); 
-	alert(type);
+	/*alert(type);*/
 	if (type != 'R')
 		showchart();
 	else
@@ -97,9 +97,9 @@ function transit(e) {
 
 function callwebservice(controller, method, parameter, callbackFunction) {
 	var url;
-	url = "http://196.214.67.67/TrustMasterMobileServices/" + controller + "/" + method;
+	//url = "http://196.214.67.67/TrustMasterMobileServices/" + controller + "/" + method;
 	//url = "http://183.182.91.146/TrustMasterBI/" + controller + "/" + method;
-	//url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
+	url = "http://192.168.0.4/TrustMasterBI/" + controller + "/" + method;
     
 	if (typeof(parameter)==='undefined')
 		parameter = '';
@@ -216,9 +216,13 @@ function showreportcomplete(result) {
 
 function showGridData() {
 	if ($.trim($("#gridArea").html()) == '') {
-		alert(localStorage.getItem("controller"));
+		/*alert(localStorage.getItem("controller"));
 		alert(localStorage.getItem("method"));
-		
+        debugger;*/
+		if (localStorage.getItem("controller") == "Youthcentre") {
+			callwebservice('Chart', 'Test2', '', showreportcomplete);
+			return;
+		}
 		callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), '', showreportcomplete);
 	}
 }
@@ -227,7 +231,6 @@ function showGridData() {
 
 function dashboard() {
 	alert("dashboard");
-	debugger;
 	var data = callwebservice('People', 'EngagementsPerCostCentrePerCompany', '', dashboardComplete);
     
 	$("#countPerCost").kendoChart();

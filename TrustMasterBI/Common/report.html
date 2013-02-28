@@ -46,10 +46,10 @@
 			<div id="graph_list" class="graph-list" width="200px"></div>
 
 			<div id="scrollview" data-role="scrollview" data-page="0" class="chart-area" data-change="showGridData">
-				<div data-role="page" id="chartAreapage">
-					<div id="chartArea"></div>
-				</div><div data-role="page" id="gridAreapage">
-					<div id="gridArea"></div>
+				<div data-role="page" id="chartAreapage" align="center">
+					<div id="chartArea" align="center"></div>
+				</div><div data-role="page" id="gridAreapage" align="center">
+					<div id="gridArea" align="center"></div>
 				</div>
 			</div>
 
@@ -57,32 +57,25 @@
 				$(document).ready(function() {
 					$("#ddlSelect").kendoComboBox();
 					$("#dpFrom").kendoDatePicker({value:new Date()}); 
-					$("#dpTo").kendoDatePicker({value:new Date()});			
-				});
+					$("#dpTo").kendoDatePicker({value:new Date()});	
+z				});
                 
 				$(window).resize(function() {
-					var contentHeight = $(window).height() - $("#reportheader").height() - $("#reportfooter").height();
+                    alert($(window).height() +" " +$("#reportheader").height() +" "+ $("#reportfooter").height());
+					var contentHeight = $(window).height() - $("#reportheader").height() - $("#reportfooter").height()-5;
 					$("#graph_list").css('height', contentHeight);
                     
-					//var contentWidth=400;
-					var contentWidth = $(window).width() - $("#graph_list").width() - 30;
-					//alert(contentWidth);
+					var contentWidth = $(window).width() - $("#graph_list").width()-15;
+					
 					$("#chartAreapage").css('width', contentWidth);
 					$("#gridAreapage").css('width', contentWidth);
 					$("#chartArea").css('width', contentWidth);
 					$("#gridArea").css('width', contentWidth);
-					//$("#scrollview").data("kendoMobileScrollView").refresh();
-					//$("#scrollview").data("kendoMobileScrollView").viewShow();
-					
-					setTimeout(function() {
-                        $("#chartArea").data("kendoChart").redraw();
-						//$("#gridArea").data("kendoGrid").redraw();
-						$("#scrollview").data("kendoMobileScrollView").viewShow();
-					}, 2000);
-					//$("#scrollview").data("kendoMobileScrollView").refresh();
-					//$("#scrollview").css("-webkit-transform","translate3d(-contentWidth, 0px, 0px)");
-					//$("#scrollview").data("kendoMobileScrollView").scrollTo(1);
-					//$("#scrollview").data("kendoMobileScrollView").page=1;
+                    
+					$("#chartArea").data("kendoChart").redraw();
+					//$("#gridArea").data("kendoGrid").redraw();
+					$("#scrollview").data("kendoMobileScrollView").viewShow();
+					$('.firstdiv').css('transform', 'scale(1.0) translate3d('+(contentWidth*-1*$("#scrollview").data("kendoMobileScrollView").page)+'px,0px,0px)');
 				});
 				
 				function onChange(e) {
