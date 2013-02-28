@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
 		<title>Kgwerano TrustMaster Fleet| Maintenance History</title>
-        
+       
 	</head>
 	<body>
 		<div id="mainWrap" data-role="view" data-layout="fleetdashboardLayout" data-title="OPERATIONS" data-before-show="cleanview"  data-zoom ="true">
@@ -53,21 +53,20 @@
 							</tr>
 
 						</table>
-
 						<div class="separator"></div>
 					</div>
 					<br/>
-					<table width="100%" cellpadding="0" cellspacing="0" >
+					<table class="BarChart" cellpadding="0" cellspacing="0"  >
 						<tr>
 							<td class="dashboard-subtitle1">MONTHLY EXPENDITURE PER CATEGORY</td>
 						</tr>
 						<tr>
-							<td>
-								<div id="Barchart" width="100%" ></div>
+							<td valign="top" >
+								<div id="Barchart" ></div>
 							</td>
 						</tr>
 					</table>
-					<table width="100%" border="0" cellpadding="0"  cellspacing="0" >
+					<table class="LineChart" border="0" cellpadding="0"  cellspacing="0" >
 						<tr>
 							<td  colspan="2">
 								<div class="separator"></div>
@@ -116,23 +115,20 @@
 								<div id="Linechart"  width="60%" ></div>
 							</td>
 						</tr>
-					</table>
-					<script>
-                        
-                        // Add dynamic style on page
-                        var ss = document.createElement("link");
-                        ss.type = "text/css";
-                        ss.rel = "stylesheet";
-                        ss.href = "../styles/fleet.css";
-                        document.getElementsByTagName("head")[0].appendChild(ss);
+					</table>                
+				</div>
+			</div>
+            <script>
+                     
+                            // Add dynamic style on page
+                            var ss = document.createElement("link");
+                            ss.type = "text/css";
+                            ss.rel = "stylesheet";
+                            ss.href = "../styles/fleet.css";
+                            document.getElementsByTagName("head")[0].appendChild(ss);
 					
-                        // Change the chart width when ipad is rotate
-                        $(window).resize(function() {
-                                      
-                                $("#Barchart").data("kendoChart").redraw();
-                                $("#Linechart").data("kendoChart").redraw();
-                              
-                             });
+               
+                            
                         
 							$(document).ready(function () {
                                 
@@ -207,7 +203,7 @@
 										}
 									},
 									chartArea:{
-											
+										
 										background: ""
 									},
 									tooltip: {
@@ -215,6 +211,7 @@
 										format: "{0:N0}"
 									}
 								});
+                                
 							}
 							function linedatacomplete(result) {
 								internetUsers = result.dataSource;
@@ -248,7 +245,7 @@
 										majorUnit: 2000
 									},
 									chartArea:{
-										background: ""
+										background: ""                                       
 									},
 									categoryAxis: {
 										field: "year",
@@ -262,9 +259,16 @@
                                 
                                 
 							}								
-						</script>
-				</div>
-			</div>
+					        
+                            // Change the chart width when ipad is rotate
+                            $(window).resize(function() {
+
+                                $("#Barchart").data("kendoChart").refresh();
+                                $("#Linechart").data("kendoChart").refresh();
+                             });
+                        
+                    </script>
+
 		</div>
 	</body>
 </html>
