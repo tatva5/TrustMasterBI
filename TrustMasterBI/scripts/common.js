@@ -35,7 +35,17 @@ function onInit(e) {//alert(e.view.title);
 }
 
 function clearPopover() {
-	$(".k-datepicker input").val('');
+	var date = new Date();
+	alert(date);
+	if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 0) {
+		$("#dpFrom").kendoDatePicker({value:new Date()});
+	}
+	else {
+		$("#dpFrom").kendoDatePicker({value:new Date(date.getFullYear(), date.getMonth(), 1)}, "MM/dd/yyyy"); 
+		//$("#dpFrom").data(kendoDatePicker).value(new Date(date.getFullyear, date.getmonth, 1), "MM/dd/yyyy");
+		$("#dpTo").data(kendoDatePicker).value(date); 
+	}
+	//$(".k-datepicker input").val('');
 }
 
 function closeParentPopover(e) {
@@ -44,7 +54,7 @@ function closeParentPopover(e) {
 	if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 0) {
 		if (!validateControl('since'))
 			return;
-		localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd/MM/yyyy"));
+		//localStorage.setItem("fromdate", kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "MM/dd/yyyy"));
 		showchart();
 	}
 	else if ($("#ddlSelect").data("kendoComboBox").selectedIndex == 1) {
@@ -53,7 +63,7 @@ function closeParentPopover(e) {
 		var dateTo = $("#dpTo").data("kendoDatePicker").value();
 		alert(dateTo);
 	}
-	clearPopover();
+	//clearPopover();
 	popover.close();
 }
 
@@ -75,7 +85,8 @@ function oncustommoduleclick(url, name, ismodule, obj, type) {
 	$(obj).addClass('active');
 	localStorage.setItem("controller", GetQueryStringParams("controller", url));
 	localStorage.setItem("method", GetQueryStringParams("method", url)); 
-	alert(type);
+	localStorage.setItem("type", type);
+	
 	if (type != 'R')
 		showchart();
 	else
@@ -203,7 +214,9 @@ function showchart(e) {
 		localStorage.setItem("controller", e.view.params.controller);
 		localStorage.setItem("method", e.view.params.method);      
 	}
-	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + localStorage.getItem("fromdate"), showchartcomplete);	
+	//alert(localStorage.getItem("type"));
+	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "MM/dd/yyyy") + '&type=' + localStorage.getItem("type") ,showchartcomplete);
+	//callwebservice('Chart', 'MultiAxisChartC', '', showchartcomplete);	
 }
 
 function showchartcomplete(result) {
@@ -223,21 +236,3 @@ function showGridData() {
 	}
 }
 
-//Human capital dashboard functions
-
-function dashboard() {
-	alert("dashboard");
-	debugger;
-	var data = callwebservice('People', 'EngagementsPerCostCentrePerCompany', '', dashboardComplete);
-    
-	$("#countPerCost").kendoChart();
-}
-
-function engagement() {
-	alert("engagement");
-	$("#engagement").kendoChart(callwebservice('People', 'CountPerCostCentrePerCompany', '', dashboardComplete));
-}
-
-function dashboardComplete() {
-	alert("You have completed dashboard");
-}
