@@ -58,11 +58,10 @@
 					$("#ddlSelect").kendoComboBox();
 					$("#dpFrom").kendoDatePicker({value:new Date()}); 
 					$("#dpTo").kendoDatePicker({value:new Date()});	
-z				});
+				});
                 
 				$(window).resize(function() {
-                    alert($(window).height() +" " +$("#reportheader").height() +" "+ $("#reportfooter").height());
-					var contentHeight = $(window).height() - $("#reportheader").height() - $("#reportfooter").height()-5;
+					var contentHeight = $(window).height() - $("#reportheader").height() - $("#reportfooter").height();
 					$("#graph_list").css('height', contentHeight);
                     
 					var contentWidth = $(window).width() - $("#graph_list").width()-15;
