@@ -199,6 +199,7 @@ function graphlistcomplete(result) {
 }
 
 function customgraphlist(e) {
+    $("#ycnavbar").data("kendoMobileNavBar").title(localStorage.getItem("youthcare"));
 	$("#graph_list").css('height', contentheight);
 	callwebservice('YouthCentre', 'Chartlist', 'idService=' + localStorage.getItem("idService"), customgraphlistcomplete);
 }
@@ -218,9 +219,10 @@ function showchart(e) {
 		localStorage.setItem("controller", e.view.params.controller);
 		localStorage.setItem("method", e.view.params.method);      
 	}
-	//alert(localStorage.getItem("type"));
-	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "MM/dd/yyyy") + '&type=' + localStorage.getItem("type") , showchartcomplete);
-	//callwebservice('Chart', 'MultiAxisChartC', '', showchartcomplete);	
+	//alert(localStorage.getItem("youthcare"));
+	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method")
+    ,'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "MM/dd/yyyy") + '&type=' + localStorage.getItem("type")
+    ,showchartcomplete)	
 }
 
 function showchartcomplete(result) {
