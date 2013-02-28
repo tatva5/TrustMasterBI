@@ -69,7 +69,7 @@ function onmoduleclick(url, name, id, ismodule) {
 function oncustommoduleclick(url, name, ismodule, obj) {
 	$("#gridArea").empty();
 	$("#chartArea").empty();
-	$("#scrollview").data("kendoMobileScrollView").page = 0;
+	//$("#scrollview").data("kendoMobileScrollView").page = 0;
 	$("#scrollview").data("kendoMobileScrollView").scrollTo(0);
 	$("#reportlist li").removeClass('active');
 	$(obj).addClass('active');

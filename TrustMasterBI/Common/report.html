@@ -43,14 +43,13 @@
 				</div>
 			</div>
 
-			<div id="graph_list" class="graph-list"></div>
-			<div class="chart-area">
-				<div id="scrollview" data-role="scrollview" data-page="0" data-change="showGridData">
-					<div data-role="page">
-						<div id="chartArea"></div>
-					</div><div data-role="page">
-						<div id="gridArea"></div>
-					</div>
+			<div id="graph_list" class="graph-list" width="200px"></div>
+
+			<div id="scrollview" data-role="scrollview" data-page="0" class="chart-area" data-change="showGridData">
+				<div data-role="page" id="chartAreapage">
+					<div id="chartArea"></div>
+				</div><div data-role="page" id="gridAreapage">
+					<div id="gridArea"></div>
 				</div>
 			</div>
 
@@ -64,8 +63,26 @@
 				$(window).resize(function() {
 					var contentHeight = $(window).height() - $("#reportheader").height() - $("#reportfooter").height();
 					$("#graph_list").css('height', contentHeight);
-                    $("#chartArea").data("kendoChart").redraw();
-                    $("#gridArea").data("kendoGrid").redraw();
+                    
+					//var contentWidth=400;
+					var contentWidth = $(window).width() - $("#graph_list").width() - 30;
+					//alert(contentWidth);
+					$("#chartAreapage").css('width', contentWidth);
+					$("#gridAreapage").css('width', contentWidth);
+					$("#chartArea").css('width', contentWidth);
+					$("#gridArea").css('width', contentWidth);
+					//$("#scrollview").data("kendoMobileScrollView").refresh();
+					//$("#scrollview").data("kendoMobileScrollView").viewShow();
+					
+					setTimeout(function() {
+                        $("#chartArea").data("kendoChart").redraw();
+						//$("#gridArea").data("kendoGrid").redraw();
+						$("#scrollview").data("kendoMobileScrollView").viewShow();
+					}, 2000);
+					//$("#scrollview").data("kendoMobileScrollView").refresh();
+					//$("#scrollview").css("-webkit-transform","translate3d(-contentWidth, 0px, 0px)");
+					//$("#scrollview").data("kendoMobileScrollView").scrollTo(1);
+					//$("#scrollview").data("kendoMobileScrollView").page=1;
 				});
 				
 				function onChange(e) {
