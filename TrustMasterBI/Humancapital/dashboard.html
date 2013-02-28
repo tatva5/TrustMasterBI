@@ -17,5 +17,12 @@
             </div>
 		</div>
         <script src="../scripts/humancapital.js"></script>
+        <script>
+            $(window).resize(function() {
+                $("#engageTermination").data("kendoChart").redraw();
+                $("#union").data("kendoChart").redraw();
+                $("#yearsofservice").data("kendoChart").redraw();
+            });
+        </script>
 	</body>
 </html>
