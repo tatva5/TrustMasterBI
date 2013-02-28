@@ -5,19 +5,19 @@ function dashboardchart() {
 }
 
 function yearsofservice(result) {
-	alert("yearsofservice");
+	//alert("yearsofservice");
 	//debugger;
-	$("#union").kendoChart(result);
+	$("#engageTermination").kendoChart(result);
 	callwebservice('People', 'YearsOfServicePerCostCentrePerCompany', '', Union);
 	//$("#countPerCost").kendoChart(data);
 }
 function Union(result) {
-	$("#engageTermination").kendoChart(result);
-	alert("Union");
+	$("#yearsofservice").kendoChart(result);
+	//alert("Union");
 	callwebservice('People', 'UnionRepresentativesPerCompany', '', dashboardComplete);
 }
 function dashboardComplete(result) {
-	$("#yearsofservice").kendoChart(result);
+	$("#union").kendoChart(result);
 	//alert("dashboadrd complete");
 	//$("#countPerCost").kendoChart(result);
 }
