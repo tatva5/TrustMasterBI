@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div data-role="view" data-title="What" data-layout="aboutUsLayout" data-before-show="cleanview">
+			<div id="splitter">
+				<div></div>
+			</div>
+
+			<script>
+				$(document).ready(function() {
+					$("#splitter").kendoSplitter({
+						panes: [
+							{ contentUrl: 'https://www.google.co.in/' }
+						]
+					});
+				});
+			</script>
+		</div>
+	</body>
+</html>
