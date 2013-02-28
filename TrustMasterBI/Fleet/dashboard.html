@@ -156,7 +156,7 @@
 								} 
                                 
 								callwebservice('fleet', 'GetExpendituresByCategory', '', bardatacomplete);
-								callwebservice('fleet', 'GetActiveVehiclesPerMonth', '', linedatacomplete);
+								
 							});
 								
 							var bardata ;
@@ -211,7 +211,7 @@
 										format: "{0:N0}"
 									}
 								});
-                                
+                                callwebservice('fleet', 'GetActiveVehiclesPerMonth', '', linedatacomplete);
 							}
 							function linedatacomplete(result) {
 								internetUsers = result.dataSource;
@@ -242,14 +242,14 @@
 										labels: {
 											format:"{0:N0}"
 										},
-										majorUnit: 2000
+										majorUnit: 500
 									},
 									chartArea:{
 										background: ""                                       
 									},
 									categoryAxis: {
 										field: "year",
-										justified :true
+										justified :true              
 									},
 									tooltip: {
 										visible: true,
