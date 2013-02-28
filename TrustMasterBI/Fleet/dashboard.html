@@ -61,7 +61,7 @@
 							<td class="dashboard-subtitle1">MONTHLY EXPENDITURE PER CATEGORY</td>
 						</tr>
 						<tr>
-							<td valign="top"  >
+							<td valign="top" >
 								<div id="Barchart" ></div>
 							</td>
 						</tr>
@@ -128,14 +128,7 @@
                             document.getElementsByTagName("head")[0].appendChild(ss);
 					
                
-                            // Change the chart width when ipad is rotate
-                            $(window).resize(function() {
-
-                                 
-                                $("#Barchart").data("kendoChart").redraw();
-                                $("#Linechart").data("kendoChart").redraw();
-                     
-                             });
+                            
                         
 							$(document).ready(function () {
                                 
@@ -265,7 +258,13 @@
                                 
                                 
 							}								
-					
+					        
+                            // Change the chart width when ipad is rotate
+                            $(window).resize(function() {
+
+                                $("#Barchart").data("kendoChart").refresh();
+                                $("#Linechart").data("kendoChart").refresh();
+                             });
                         
                     </script>
 
