@@ -1,3 +1,10 @@
+function loginpinkeypress() {	
+	//alert(event.which);
+	//alert("Key " + String.fromCharCode(event.which) + " was pressed down");
+	if (event.which == 13)
+		login();
+}
+
 function login() {
 	//Validate control
 	if (!validateControl('divlogin'))
