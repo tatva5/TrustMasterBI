@@ -62,7 +62,8 @@
 			</div>
 
 			<div id="graph_list" class="graph-list" width="200px"></div>
-
+            <div id="onlygrid" align="center"class="chart-area"></div>
+            
 			<div id="scrollview" data-role="scrollview" data-page="0" class="chart-area" data-change="showGridData">
 				<div data-role="page" id="chartAreapage" align="center">
 					<div id="chartArea" align="center"></div>
@@ -71,7 +72,7 @@
 				</div>
 			</div>
 
-			<script>
+			<script>     
 				$(document).ready(function() {
 					$("#ddlSelect").kendoComboBox();
 					$("#dpFrom").kendoDatePicker({value:new Date()}); 
@@ -88,6 +89,10 @@
 					$("#gridAreapage").css('width', contentWidth);
 					$("#chartArea").css('width', contentWidth);
 					$("#gridArea").css('width', contentWidth);
+                    
+					$("#chartAreapage").css('height', contentHeight - 20);
+					$("#gridAreapage").css('height', contentHeight - 20);
+					
                     
 					$("#chartArea").data("kendoChart").redraw();
 					//$("#gridArea").data("kendoGrid").redraw();

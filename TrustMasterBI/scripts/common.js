@@ -66,32 +66,6 @@ function closeParentPopover(e) {
 	popover.close();
 }
 
-function onmoduleclick(url, name, id, ismodule) {
-	if (ismodule) {
-		localStorage.setItem("youthcare", name);	
-		localStorage.setItem("idService", id);	
-	}
-	contentheight = $(window).height() - $("#youthcareheader").height() - $("#youthcarefooter").height();
-	app.navigate(url);
-}
-
-function oncustommoduleclick(url, name, ismodule, obj, type) {
-	$("#gridArea").empty();
-	$("#chartArea").empty();
-	$("#scrollview").data("kendoMobileScrollView").page = 0;
-	$("#scrollview").data("kendoMobileScrollView").scrollTo(0);
-	$("#reportlist li").removeClass('active');
-	$(obj).addClass('active');
-	localStorage.setItem("controller", GetQueryStringParams("controller", url));
-	localStorage.setItem("method", GetQueryStringParams("method", url)); 
-	localStorage.setItem("type", type);
-	
-	if (type != 'R')
-		showchart();
-	else
-		showGridData();
-}
-
 function transit(e) {    
 	$("#chartArea").empty();
 	//alert(e.button.context);
@@ -198,9 +172,42 @@ function graphlistcomplete(result) {
 	$("#graph_list").html(moduletemplete(result.dataSource));
 }
 
+function onmoduleclick(url, name, id, ismodule) {
+	if (ismodule) {
+		localStorage.setItem("youthcare", name);	
+		localStorage.setItem("idService", id);	
+	}
+	contentheight = $(window).height() - $("#youthcareheader").height() - $("#youthcarefooter").height();
+	app.navigate(url);
+}
+
+function oncustommoduleclick(url, name, ismodule, obj, type) {
+	$("#gridArea").empty();
+	$("#chartArea").empty();
+	$("#scrollview").data("kendoMobileScrollView").scrollTo(0);
+	$("#reportlist li").removeClass('active');
+	$(obj).addClass('active');
+    
+	localStorage.setItem("controller", GetQueryStringParams("controller", url));
+	localStorage.setItem("method", GetQueryStringParams("method", url)); 
+	localStorage.setItem("type", type);
+	
+	if (type != 'R') {
+		$("#scrollview").show();
+		showchart();
+	}
+	else {
+		$("#onlygrid").show();
+		showGridData();      
+	}
+}
+
 function customgraphlist(e) {
-    $("#ycnavbar").data("kendoMobileNavBar").title(localStorage.getItem("youthcare"));
+	$("#ycnavbar").data("kendoMobileNavBar").title(localStorage.getItem("youthcare"));
 	$("#graph_list").css('height', contentheight);
+	$("#chartAreapage").css('height', contentheight - 20);
+	$("#gridAreapage").css('height', contentheight - 20);
+	
 	callwebservice('YouthCentre', 'Chartlist', 'idService=' + localStorage.getItem("idService"), customgraphlistcomplete);
 }
 
@@ -208,10 +215,23 @@ function customgraphlistcomplete(result) {
 	var moduletemplete = kendo.template($("#customlisttemplete").html(), {useWithBlock:false});
 	$("#graph_list").html(moduletemplete(result.dataSource));
 	$("#reportlist").children().first().addClass("active");
+    
 	var url = result.dataSource[0].href;
 	localStorage.setItem("controller", GetQueryStringParams("controller", url));
 	localStorage.setItem("method", GetQueryStringParams("method", url)); 
-	showchart();
+    
+	var type = result.dataSource[0].type;
+	localStorage.setItem("type", type); 
+	if (type != 'R') {
+		$("#scrollview").show();
+        $("#onlygrid").hide();
+		showchart();      
+	}
+	else {
+        $("#scrollview").hide();
+		$("#onlygrid").show();
+		showGridData();
+	}
 }
 
 function showchart(e) {
@@ -221,16 +241,12 @@ function showchart(e) {
 	}
 	//alert(localStorage.getItem("youthcare"));
 	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method")
-    ,'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "MM/dd/yyyy") + '&type=' + localStorage.getItem("type")
-    ,showchartcomplete)	
+				   , 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "MM/dd/yyyy") + '&type=' + localStorage.getItem("type")
+				   , showchartcomplete)	
 }
 
 function showchartcomplete(result) {
-	$("#chartArea").kendoChart(result);  
-}
-
-function showreportcomplete(result) {
-	$("#gridArea").kendoGrid(result);   
+	$("#chartArea").kendoChart(result);
 }
 
 function showGridData() {
@@ -241,4 +257,11 @@ function showGridData() {
 		}
 		callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), '', showreportcomplete);
 	}
+}
+
+function showreportcomplete(result) {
+	if (localStorage.getItem("type") == "R")
+		$("#onlygrid").kendoGrid(result);
+	else
+		$("#gridArea").kendoGrid(result);
 }
