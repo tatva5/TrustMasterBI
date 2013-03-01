@@ -5,7 +5,25 @@
 		<title></title>
 	</head>
 	<body>
-		<div data-role="view" data-title="Graphics" data-layout="grahicalDataLayout" data-before-show="cleanview" data-show="customgraphlist">
+		<section data-role="layout" data-id="ycreportlayout" >
+			<header data-role="header" id="reportheader">
+				<div data-role="navbar" id="ycnavbar">
+					<a  data-role="backbutton" data-align="left">Back</a>
+					<!--<a  data-role="button" data-click="transit" data-align="left">Tabular</a>-->
+					<span data-role="view-title"/>
+					<a data-role="button" href="#popover-people" data-align="right" data-rel="popover">Search</a>
+					<a data-role="button" data-click="logout" data-align="right">Logout</a>
+				</div>
+			</header>
+			<footer data-role="footer" id="reportfooter">
+				<div data-role="tabstrip">
+					<a class="youthdevelopment" data-icon="ic4" href="../Youthcentre/index.html">Youth Development Centre</a>
+					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
+				</div>
+			</footer>
+		</section>
+
+		<div data-role="view" data-title="Graphics" data-layout="ycreportlayout" data-before-show="cleanview" data-show="customgraphlist">
 			<div data-role="popover" id="popover-people" data-popup='{"height": 200, "width": 290}' class="popupContent">
 				<div data-role="view" data-title="Search">
 					<div data-role="header">
@@ -44,7 +62,8 @@
 			</div>
 
 			<div id="graph_list" class="graph-list" width="200px"></div>
-
+            <div id="onlygrid" align="center"class="chart-area"></div>
+            
 			<div id="scrollview" data-role="scrollview" data-page="0" class="chart-area" data-change="showGridData">
 				<div data-role="page" id="chartAreapage" align="center">
 					<div id="chartArea" align="center"></div>
@@ -53,7 +72,7 @@
 				</div>
 			</div>
 
-			<script>
+			<script>     
 				$(document).ready(function() {
 					$("#ddlSelect").kendoComboBox();
 					$("#dpFrom").kendoDatePicker({value:new Date()}); 
@@ -64,17 +83,21 @@
 					var contentHeight = $(window).height() - $("#reportheader").height() - $("#reportfooter").height();
 					$("#graph_list").css('height', contentHeight);
                     
-					var contentWidth = $(window).width() - $("#graph_list").width()-15;
+					var contentWidth = $(window).width() - $("#graph_list").width() - 15;
 					
 					$("#chartAreapage").css('width', contentWidth);
 					$("#gridAreapage").css('width', contentWidth);
 					$("#chartArea").css('width', contentWidth);
 					$("#gridArea").css('width', contentWidth);
                     
+					$("#chartAreapage").css('height', contentHeight - 20);
+					$("#gridAreapage").css('height', contentHeight - 20);
+					
+                    
 					$("#chartArea").data("kendoChart").redraw();
 					//$("#gridArea").data("kendoGrid").redraw();
 					$("#scrollview").data("kendoMobileScrollView").viewShow();
-					$('.firstdiv').css('transform', 'scale(1.0) translate3d('+(contentWidth*-1*$("#scrollview").data("kendoMobileScrollView").page)+'px,0px,0px)');
+					$('.firstdiv').css('transform', 'scale(1.0) translate3d(' + (contentWidth * -1 * $("#scrollview").data("kendoMobileScrollView").page) + 'px,0px,0px)');
 				});
 				
 				function onChange(e) {
