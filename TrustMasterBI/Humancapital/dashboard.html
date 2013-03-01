@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div data-role="view" data-title="Human Capital" data-layout="grahicalDataLayout" data-before-show="cleanview" data-show="dashboardchart">
-            <div id="engageTermination"  style="height:400px">
+            <div id="engageTermination"  style="height:400px;font-size:10px;">
               <!--  <div id="countPerCost" style="width:200px">counterPercost</div> 
                 <div id="engagement" style="float:left;width:50%;height:500px">counterPercost</div>
                 <div id="termination" style="float:left;width:50%;height:500px">counterPercost</div> -->
@@ -16,6 +16,12 @@
                 <div id="yearsofservice" style="float:left;width:50%;height:500px">yearsofservice</div>
             </div>
 		</div>
-        <script src="../scripts/humancapital.js"></script>
+        <script>
+            $(window).resize(function() {
+                $("#engageTermination").data("kendoChart").redraw();
+                $("#union").data("kendoChart").redraw();
+                $("#yearsofservice").data("kendoChart").redraw();
+            });
+        </script>
 	</body>
 </html>

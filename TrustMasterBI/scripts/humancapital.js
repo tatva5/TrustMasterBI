@@ -8,7 +8,7 @@ function yearsofservice(result) {
 	//alert("yearsofservice");
 	//debugger;
 	$("#engageTermination").kendoChart(result);
-	callwebservice('People', 'YearsOfServicePerCostCentrePerCompany', '', Union);
+	callwebservice('People', 'YearsOfServicePerCompany', '', Union);
 	//$("#countPerCost").kendoChart(data);
 }
 function Union(result) {
