@@ -5,7 +5,7 @@
 		<title></title>
 	</head>
 	<body>
-        <!--blogHeader-->
+		<!--blogHeader-->
 		<section data-role="layout" data-id="blogHeader">
 			<header data-role="header">
 				<div data-role="navbar">
@@ -15,7 +15,7 @@
 				</div>
 			</header>
 		</section>
-        
+
 		<div  data-role="view" data-title="Innovative Leadership" data-layout="blogHeader" class="mainbg" data-before-show="cleanview">
 			<div id="rssfeed" data-role="content" class="blog_box">
 				<h1 id="title"></h1>
@@ -24,17 +24,46 @@
 		</div>
 		<script>
 			$(document).ready(function() {
-                app.showLoading();
-				$.get('http://www.watsonline.co.za/?page=rss&id=7', function(data) {
-					var $xmldoc = $($.parseXML(data));
-					$xmldoc.find("channel item").each(function() {                 
-						$('#title').append($(this).find("title").text());
-						$('#description').append($(this).find("description").text());
-						return false;
-					});                  
-				}, 'html');
-                app.hideLoading();
-			});
+				var url = "http://www.watsonline.co.za/?page=rss&id=7";
+				app.showLoading();
+				try {
+					var request = $.ajax({
+						url: url,
+						cache: false,
+                        dataType: 'html',
+					});
+    
+					// callback handler that will be called on success
+					request.done(function (response, textStatus, jqXHR) {
+						// log a message to the console
+						//alert("Hooray, it worked!" + response);
+						var $xmldoc = $($.parseXML(response));
+						$xmldoc.find("channel item").each(function() {                 
+							$('#title').append($(this).find("title").text());
+							$('#description').append($(this).find("description").text());
+							return false;
+						});                  
+					});
+    
+					// callback handler that will be called on failure
+					request.fail(function (jqXHR, textStatus, errorThrown) {
+						// log the error to the console
+						alert("The following error occured: " + textStatus, errorThrown);
+					});
+    
+					// callback handler that will be called regardless
+					// if the request failed or succeeded
+					request.always(function () {
+						app.hideLoading();
+						// reenable the inputs
+						//alert("always");
+					});
+				}
+				catch (e) {
+					alert("Errour occurred " + e);
+					app.hideLoading();
+				}
+			});			
 		</script>
 	</body>
 </html>
