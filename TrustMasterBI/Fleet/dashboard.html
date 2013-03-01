@@ -3,10 +3,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 	<head>
 		<title>Kgwerano TrustMaster Fleet| Maintenance History</title>
-       
+
 	</head>
 	<body>
-		<div id="mainWrap" data-role="view" data-layout="fleetdashboardLayout" data-title="OPERATIONS" data-before-show="cleanview"  data-zoom ="true">
+        <!--fleetdashboardLayout-->
+		<section data-role="layout" data-id="fleetdashboardLayout">
+			<header data-role="header">
+				<div data-role="navbar">
+					<a data-role="backbutton" data-align="left">Back</a>
+					<span data-role="view-title"/>
+					<a data-role="button" data-click="logout" data-align="right">Logout</a>
+				</div>
+			</header>
+			<footer data-role="footer">
+				<div data-role="tabstrip">
+					<a data-icon="ic3" href="modules.html?id=3&title=Kgwerano">Kgwerano</a>
+					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
+				</div>
+			</footer>
+		</section>
+		<div id="mainWrap" data-role="view" data-layout="fleetdashboardLayout" data-title="OPERATIONS" data-before-show="cleanview"  data-zoom ="true" >
 			<div id="dashboard" >
 				<div class="demo-section" >
 					<div id="Fleet"  >
@@ -115,160 +131,181 @@
 								<div id="Linechart"  width="60%" ></div>
 							</td>
 						</tr>
-					</table>                
+					</table>
 				</div>
 			</div>
-            <script>
+			<script>
                      
-                            // Add dynamic style on page
-                            var ss = document.createElement("link");
-                            ss.type = "text/css";
-                            ss.rel = "stylesheet";
-                            ss.href = "../styles/fleet.css";
-                            document.getElementsByTagName("head")[0].appendChild(ss);
-					
-               
-                            
-                        
-							$(document).ready(function () {
+				// Add dynamic style on page
+				var ss = document.createElement("link");
+				
+				ss.type = "text/css";
+				ss.rel = "stylesheet";
+				ss.href = "../styles/fleet.css";
+				document.getElementsByTagName("head")[0].appendChild(ss);
+				
+				$(document).ready(function () {
+					callwebservice('fleet', 'getexpenditures', '', servicelistcomplete);  
+								
+					function servicelistcomplete(result) {
+						var temp = result.dataSource;
+						//Dashboard Numeric Display
+								
+						$("#lblexplastYear").html(temp.data[2].LastYearExpenditure);
+						$("#lblexpnpreMonth").html(temp.data[1].PrevioudMonthExpenditure);
+						$("#lblexpncurrentDate").html(temp.data[0].TotalExpenditure);
+						$("#currentFleet").html(temp.data[3].FleetSize);
+						$("#prevFleet").html(temp.data[4].PrevMonthFleetSize);
+						$("#lastyearFleet").html(temp.data[5].FleetSizeLastYear);
+								
+						//Dasboard Date Display
+								
+						$("#lblexpnlastyearDate").html("(" + temp.data[2].Date + ")");
+						$("#lblexpnprevmonthDate").html("(" + temp.data[1].Date + ")");
+						$("#lblexpncurrDate").html("(" + temp.data[0].Date + ")");
+						$("#lblfleetcurDate").html("(" + temp.data[3].Date + ")");
+						$("#lblfleetprevmonthDate").html("(" + temp.data[4].Date + ")");
+						$("#lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");            
+					} 
                                 
-								callwebservice('fleet', 'getexpenditures', '', servicelistcomplete);  
-								
-								function servicelistcomplete(result) {
-									var temp = result.dataSource;
-									//Dashboard Numeric Display
-								
-									$("#lblexplastYear").html(temp.data[2].LastYearExpenditure);
-									$("#lblexpnpreMonth").html(temp.data[1].PrevioudMonthExpenditure);
-									$("#lblexpncurrentDate").html(temp.data[0].TotalExpenditure);
-									$("#currentFleet").html(temp.data[3].FleetSize);
-									$("#prevFleet").html(temp.data[4].PrevMonthFleetSize);
-									$("#lastyearFleet").html(temp.data[5].FleetSizeLastYear);
-								
-									//Dasboard Date Display
-								
-									$("#lblexpnlastyearDate").html("(" + temp.data[2].Date + ")");
-									$("#lblexpnprevmonthDate").html("(" + temp.data[1].Date + ")");
-									$("#lblexpncurrDate").html("(" + temp.data[0].Date + ")");
-									$("#lblfleetcurDate").html("(" + temp.data[3].Date + ")");
-									$("#lblfleetprevmonthDate").html("(" + temp.data[4].Date + ")");
-									$("#lblfleetlastyearDate").html("(" + temp.data[5].Date + ")");            
-								} 
-                                
-								callwebservice('fleet', 'GetExpendituresByCategory', '', bardatacomplete);
-								callwebservice('fleet', 'GetActiveVehiclesPerMonth', '', linedatacomplete);
-							});
-								
-							var bardata ;
-							var internetUsers;
-                            
-							function bardatacomplete(result) {
-								bardata = result.dataSource;
-                                
-								$("#Barchart").kendoChart({
-									theme: "blueopal",
-						
-									legend: {
-										position: "top",
-										offsetX: 240
-								
-									},
-									seriesDefaults: {
-										type: "column"
-									},
-									series: [
-										{
-											name: "Prev. Month same date",
-											data: bardata.data1
-										}, {
-											name: "Current Month",
-											data: bardata.data2
-										}
-									],
-									valueAxis: {
-										labels: {
-											format: "{0:N0}"
-										},
-								
-									},
-									categoryAxis: {
-										categories: bardata.data3,
-										justified :true,
-										baseUnit :"fit",
-										labels: {
-											rotation: -30,
-											margin: 0,
-											padding: { top: 0, left: 10, right :50 }
-								
-										}
-									},
-									chartArea:{
-										
-										background: ""
-									},
-									tooltip: {
-										visible: true,
-										format: "{0:N0}"
-									}
-								});
-                                
+					callwebservice('fleet', 'GetExpendituresByCategory', '', bardatacomplete);
+				});
+				
+				var bardata ;
+				var internetUsers;
+				
+				function bardatacomplete(result) {
+					bardata = result.dataSource;
+				
+					$("#Barchart").kendoChart({
+						theme: "blueopal",
+				
+						legend: {
+							position: "top",
+							offsetX: 240
+				
+						},
+						seriesDefaults: {
+							type: "column"
+						},
+						series: [
+							{
+								name: "Prev. Month same date",
+								data: bardata.data1
+							}, {
+								name: "Current Month",
+								data: bardata.data2
 							}
-							function linedatacomplete(result) {
-								internetUsers = result.dataSource;
-								
-								$("#Linechart").kendoChart({
-									theme: "blueopal",
-									dataSource: {
-										data: internetUsers.data
-									},
-								
-									legend: {
-										visible: false
-									},
-									seriesDefaults: {
-										type: "line",
-										labels: {
-											visible: false,
-											format: "{0:N0}"
-										}
-									},
-									series: [
-										{
-											field: "value",
-											name: "Fleet"
-										}
-									],
-									valueAxis: {
-										labels: {
-											format:"{0:N0}"
-										},
-										majorUnit: 2000
-									},
-									chartArea:{
-										background: ""                                       
-									},
-									categoryAxis: {
-										field: "year",
-										justified :true
-									},
-									tooltip: {
-										visible: true,
-										format: "{0:N0}"
-									}
-								});
-                                
-                                
-							}								
+						],
+						valueAxis: {
+							labels: {
+								format: "{0:N0}"
+							},
+				
+						},
+						categoryAxis: {
+							categories: bardata.data3,
+							justified :true,
+							baseUnit :"fit",
+							labels: {
+								rotation: -30,
+								margin: 0,
+								padding: { top: 0, left: 10, right :50 }
+				
+							}
+						},
+						chartArea:{
+				
+							background: ""
+						},
+						tooltip: {
+							visible: true,
+							format: "{0:N0}"
+						}
+					});
+					callwebservice('fleet', 'GetActiveVehiclesPerMonth', '', linedatacomplete);
+				}
+				function linedatacomplete(result) {
+					internetUsers = result.dataSource;
+				
+					$("#Linechart").kendoChart({
+						theme: "blueopal",
+						dataSource: {
+							data: internetUsers.data
+						},
+				
+						legend: {
+							visible: false
+						},
+						seriesDefaults: {
+							type: "line",
+							labels: {
+								visible: false,
+								format: "{0:N0}"
+							}
+						},
+						series: [
+							{
+								field: "value",
+								name: "Fleet"
+							}
+						],
+						valueAxis: {
+							labels: {
+								format:"{0:N0}"
+							},
+							majorUnit: 500
+						},
+						chartArea:{
+							background: ""                                       
+						},
+						categoryAxis: {
+							field: "year",
+							justified :true              
+						},
+						tooltip: {
+							visible: true,
+							format: "{0:N0}"
+						}
+					});
+				}								
 					        
-                            // Change the chart width when ipad is rotate
-                            $(window).resize(function() {
+				// Change the chart width when ipad is rotate
+				
+				(function($, sr) {
+					var debounce = function (func, threshold, execAsap) {
+						var timeout;
+				
+						return function debounced () {
+							var obj = this, args = arguments;
+							function delayed () {
+								if (!execAsap)
+									func.apply(obj, args);
+								timeout = null; 
+							};
+				
+							if (timeout)
+								clearTimeout(timeout);
+							else if (execAsap)
+								func.apply(obj, args);
 
-                                $("#Barchart").data("kendoChart").refresh();
-                                $("#Linechart").data("kendoChart").refresh();
-                             });
-                        
-                    </script>
-
+							timeout = setTimeout(delayed, threshold || 100); 
+						};
+					}
+					// smartresize 
+					jQuery.fn[sr] = function(fn) {
+						return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr);
+					};
+				})(jQuery, 'smartresize');
+				
+				// usage:
+				$(window).smartresize(function() {  
+					
+					$("#Barchart").data("kendoChart").redraw();
+					$("#Linechart").data("kendoChart").redraw();
+				});                          
+			</script>
+				
 		</div>
 	</body>
 </html>

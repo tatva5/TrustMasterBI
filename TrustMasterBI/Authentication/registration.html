@@ -5,7 +5,22 @@
 		<title></title>
 	</head>
 	<body>
-		<div data-role="view" data-title="Registration" data-layout="BackHeader" data-before-show="cleanview" >
+        <!--registrationHeader-->
+        <section data-role="layout" data-id="registrationHeader">
+			<header data-role="header">
+				<div data-role="navbar">
+					<a data-role="backbutton" data-align="left">Back</a>
+					<span data-role="view-title"/>
+				</div>
+			</header>
+			<div data-role="footer">
+				<div>
+					<img class="footerimg"  src="../images/mainbg2.png"  />
+				</div>
+			</div>
+		</section>
+        
+		<div data-role="view" data-title="Registration" data-layout="registrationHeader" data-before-show="cleanview" >
 			<div class="textboxStyle" id="registationForm">
 
 				<div class="logo">

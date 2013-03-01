@@ -5,7 +5,21 @@
 		<title></title>
 	</head>
 	<body>
-		<div data-role="view" data-title="Forgot Pin" data-layout="BackHeader" data-before-show="cleanview">
+        <section data-role="layout" data-id="forgotpinHeader">
+			<header data-role="header">
+				<div data-role="navbar">
+					<a data-role="backbutton" data-align="left">Back</a>
+					<span data-role="view-title"/>
+				</div>
+			</header>
+			<div data-role="footer">
+				<div>
+					<img class="footerimg"  src="../images/mainbg2.png"  />
+				</div>
+			</div>
+		</section>
+        
+		<div data-role="view" data-title="Forgot Pin" data-layout="forgotpinHeader" data-before-show="cleanview">
 			<div class="textboxStyle" id="forgotPinForm">
 				<div class="logo">
 					<img src="../images/logo.png" alt="" />
@@ -16,7 +30,7 @@
 							<label class="lblStyle">Email :</label>
 						</td>
 						<td>
-							<input type="text" id="txtemailId" name="txtemailId" value="" required validationMessage="*" pattern="\b[a-zA-Z0-9._%-]+@?bosasa\.com" placeholder="Please enter your email address"/>
+							<input type="text" id="txtemailId" name="txtemailId" onkeypress="forgotpinkeypress()" required validationMessage="*" pattern="\b[a-zA-Z0-9._%-]+@?bosasa\.com" placeholder="Please enter your email address"/>
 						</td>
 					</tr>
 					<tr>
