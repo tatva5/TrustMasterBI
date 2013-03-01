@@ -7,7 +7,7 @@
 	<body>
 		<div data-role="view" data-title="Registration" data-layout="BackHeader" data-before-show="cleanview" >
 			<div class="textboxStyle" id="registationForm">
-				<h3>Please note this section is for Authorized Bosasa Group Employees only.</h3>
+
 				<div class="logo">
 					<img src="../images/logo.png" alt="" />
 				</div>
@@ -48,12 +48,15 @@
 						<td></td>
 						<td class="button">
 							<a id="btnRegister" data-role="button" data-click="registeruser">Submit</a>
-                            <a id="btnReset" data-role="button" data-click="registrationFormReset">Reset</a>
+							<a id="btnReset" data-role="button" data-click="registrationFormReset">Reset</a>
 						</td>
 					</tr>
 				</table>
-                </div>
-                <div id="result">
+				<div class="registrationNote">
+					<label >Registration is for Authorised Bosasa Group Employees only.</label>
+				</div>
+			</div>
+			<div id="result">
 				<table class="registrationresult">
 					<tr>
 						<td>
@@ -65,7 +68,9 @@
 							<label class="lblStyle">We’ll get back to you once we have processed your request.</label>
 						</td>
 					</tr>
-                    <tr><td>&nbsp;</td></tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
 					<tr>
 						<td>
 							<label class="lblStyle">Best Regards,</label>
@@ -77,8 +82,9 @@
 						</td>
 					</tr>
 				</table>
+
 			</div>
-            <script src="../scripts/authentication.js"></script>
+			<script src="../scripts/authentication.js"></script>
 			<script>
 				$(document).ready(function() {
 					$("#registationForm").show();

@@ -29,6 +29,13 @@
 	cursor: pointer;
 }
 
+.registrationNote
+{
+    padding:15px !important;
+    margin-top:15px !important;
+    font-weight:bold !important;
+}
+
 .km-list input[type=button], .km-list button, .km-android .km-list button
 {
 	border: none !important;
@@ -6657,18 +6664,21 @@ body:before
 .km-tablet .km-ios .services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 230px; height: 250px; margin: 0 10px; text-align: center; }
 .km-tablet .km-ios .services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; width: 141px; height: 170px; }
 .km-tablet .km-ios .services_list ul li a { color: #2c4564 !important; font-size: 20px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
+.km-tablet .km-ios .services_list ul li a:active { color: #f45a1d !important; }
 
+        
 .km-ios .services_list { margin: 0 auto; padding: 20px 0 0 0; }
 .km-ios .services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 100px; height: 110px; margin: 0 3px; text-align: center; }
 .km-ios .services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; width: 63px; height: 77px; }
 .km-ios .services_list ul li a { color: #2c4564 !important; font-size: 10px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
+.km-ios .services_list ul li a:active { color: #f45a1d !important; }
 
 .services_list { margin: 0px auto !important; padding: 30px 0 0 0; }
 .services_list ul { margin: 0px auto !important; padding: 0; list-style: none; width: 750px; }
 .services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 230px; height: 250px; margin: 0 10px; text-align: center; }
 .services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; }
 .services_list ul li a { color: #2c4564 !important; font-size: 20px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
-.services_list ul li a:hover { color: #f45a1d !important; }
+.services_list ul li a:active { color: #f45a1d !important; }
 .services_list ul li .km-button { margin: 0 !important; padding: 0 !important; border: none !important; background: none !important; }
 
 .mainbg { background: #f1f1f1; }
