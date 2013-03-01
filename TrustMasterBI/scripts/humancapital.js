@@ -3,7 +3,13 @@ function dashboardchart(e) {
 	//$("#countPerCost").kendoChart(result);
 	$("#humannavbar").data("kendoMobileNavBar").title(e.view.params.title);
 	callwebservice('People', 'CountPerCompany', '', dashboardComplete);
-    //callwebservice('People', 'CompanyWithEngagementsTerminationLeaveDaysAndEmployeesCollection', '', dashboardComplete);
+    //var fromdate = kendo.toString(new Date(date.getFullYear(), date.getMonth(), 1), "dd MMM yyyy");
+    var fromdate="01 Jan 2010";
+	var date = new Date();
+	//alert(fromdate);
+	callwebservice('People', 'CompanyWithEngagementsTerminationLeaveDaysAndEmployees', 'dtFrom=' + fromdate + '&dtTo=' + date + '&periodEndDate=' + date, listbindingcomplete);
+	//oncompanyclick(temp.datasource.data.0.TotalEmployees,'#= temp.datasource.data.0.Engagements #','#= temp.datasource.data.0.Terminations #','#= temp.datasource.data.0.LeaveDays #')
+	//alert(temp);
 }
 
 function dashboardComplete(result) {
@@ -11,12 +17,21 @@ function dashboardComplete(result) {
 	//alert("dashboadrd complete");
 	//$("#countPerCost").kendoChart(result);
 }
-
-function onCompanyclick(url, name) {
-	if (ismodule) {
-		localStorage.setItem("youthcare", name);	
-		localStorage.setItem("idService", id);	
-	}
-	contentheight = $(window).height() - $("#youthcareheader").height() - $("#youthcarefooter").height();
-	app.navigate(url);
+function listbindingcomplete(result) {
+	var hccompanylist = kendo.template($("#hccompanylist").html(), {useWithBlock:false});
+	$("#companyData").html(hccompanylist(result.dataSource.data));
+    
+	var data = result.dataSource.data[0];
+	oncompanyclick(data.TotalEmployees, data.Engagements, data.Terminations, data.LeaveDays);
+	//alert("dashboadrd complete");
+}
+function oncompanyclick(TotalEmployees, Engagements, Terminations, LeaveDays) {
+	//alert(name.Companyname);
+	//debugger;
+	document.getElementById('employeeno').innerHTML = TotalEmployees;
+	document.getElementById('engagements').innerHTML = Engagements;
+	document.getElementById('terminations').innerHTML = Terminations;
+	document.getElementById('leavedays').innerHTML = LeaveDays;
+	//$("#companyData").html(hccompanylist(result.dataSource.data));
+	//alert("dashboadrd complete");
 }

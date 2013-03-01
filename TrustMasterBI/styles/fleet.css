@@ -300,5 +300,14 @@
 {
 	Width:100%;
 } 
+.filtering-tabs {
+border: 0;
+background: none;
+}
 
+.filtering-tabs .k-state-active {
+    border-bottom: 8px solid #2B8ABE;
+    color: #2B8ABE;
+    padding: 0;
+}
 

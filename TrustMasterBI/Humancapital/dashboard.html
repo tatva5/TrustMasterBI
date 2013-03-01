@@ -5,95 +5,72 @@
 		<title></title>
 	</head>
 	<body>
-        
-        <!-- Layout Section -->
-        <section data-role="layout" data-id="humancapital">
+		<!-- Layout Section -->
+		<section data-role="layout" data-id="humancapital">
 			<header data-role="header">
 				<div data-role="navbar" id="humannavbar">
 					<a  data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
-                    <a data-role="button" data-click="logout" data-align="right">Logout</a>
+					<a data-role="button" data-click="logout" data-align="right">Logout</a>
 				</div>
 			</header>
 			<!--View content will render here-->
 			<div data-role="footer">
 				<div data-role="tabstrip">
-                    <a data-icon="hc" href="../Common/services.html">Human Capital</a>
+					<a data-icon="hc" href="../Common/services.html">Human Capital</a>
 					<a href="../Common/aboutus.html" data-icon="ic2">About Us</a>
 				</div>
 			</div>
 		</section>
-        <!-- Ends Here -->
-        
+		<!-- Ends Here -->
+
 		<div data-role="view" data-layout="humancapital" data-before-show="cleanview" data-show="dashboardchart">
-            <div id="countpercompany"  style="height:50%"></div>
-            <div id="companyData">
-                <!-- <div id="union" style="float:left;width:50%;height:500px">union</div>
-                <div id="yearsofservice" style="float:left;width:50%;height:500px">yearsofservice</div> -->
-						<table width="100%" cellpadding="0" cellspacing="0"  >
-							<tr class="stat first" >
-								<td colspan="2" class="dashboard-subtitle1"> TOTAL EXPENDITURE</td>
-							</tr>
-							<tr width="100%">
-								<td width="70%" >
-									<table width="100%"  cellpadding="0" cellspacing="0" >
-										<tr >
-											<td class="dashboard-subtitle" width="50%">
-												Previous Year<span class="metric" id="lblexpnlastyearDate"></span>
-											</td>
-											<td class="dashboard-subtitle" width="50%">
-												Previous Month<span class="metric" id="lblexpnprevmonthDate" ></span>
-											</td>
-										</tr>
-										<tr  >
-											<td class="volumeMedium"  width="50%">
-												<div id="lblexplastYear"></div>
-											</td>
-											<td class="volumeMedium" width="50%">
-												<div id="lblexpnpreMonth"></div>
-											</td>
-
-										</tr>
-									</table>
-								</td>
-								<td width="30%">
-									<table width="100%"  cellpadding="0" cellspacing="0">
-										<tr>
-											<td class="dashboard-subtitle-right">
-												Date<span class="metric_right" id="lblexpncurrDate" ></span>
-											</td>
-										</tr>
-										<tr>
-											<td class="volumeBig_right">
-												<div id="lblexpncurrentDate"> </div>
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-
-						</table>
-            </div>
+			<div id="countpercompany"  style="height:50%"></div>
+			<div id="companyData" style="height:200px"></div>
+			<!-- <div id="union" style="float:left;width:50%;height:500px">union</div>
+			<div id="yearsofservice" style="float:left;width:50%;height:500px">yearsofservice</div> -->
+			<div id="engageData">
+				<table width="100%" cellpadding="0" cellspacing="0"  >
+					<tr >
+						<td class="dashboard-subtitle1"> No of Employees</td>
+						<td class="dashboard-subtitle1"> Engagements</td>
+						<td class="dashboard-subtitle1"> Terminations</td>
+						<td class="dashboard-subtitle1"> Leave Days</td>
+					</tr>
+					<tr>
+						<td id="employeeno" style="color: #454447;font-size: 110px;padding-left:15px;"></td>
+						<td id="engagements" style="font-size: 36px;font-weight: 700;padding-left:15px;color: #639514;"></td>
+						<td id="terminations" style="font-size: 36px;font-weight: 700;padding-left:15px;color: #4DA3D5;"></td>
+						<td id="leavedays" style="font-size: 36px;font-weight: 700;padding-left:15px;color: #CD151E;"></td>
+					</tr>
+				</table>
+			</div>
 		</div>
-        <script id="hccompanylist" type="text/x-kendo-template">
-			<ul data-role="listview" class="km-listview km-list km-listinset">
-				# for (var i = 0; i < data.length; i++) { #
-				<li>
-					<button onclick="onCompanyclick('#= data[i].href #','#= data[i].name #')" >
-						#= data[i].name #
-					</button>
-				</li>
-				# }
-				#
-			</ul>
+		<script id="hccompanylist" type="text/x-kendo-template">
+			<div class="filtering-tabs k-widget k-header k-tabstrip" data-role="tabstrip">
+				<ul class="k-tabstrip-items k-reset" style="border:0px;">
+					# for (var i = 0; i <data.length; i++) { #
+						<li class="k-item k-state-default k-first k-tab-on-top k-state-active" style="display: inline-block;padding:5px;margin:3px;" onclick="oncompanyclick('#= data[i].TotalEmployees #','#= data[i].Engagements #','#= data[i].Terminations #','#= data[i].LeaveDays #')" data-role="tab">
+							<span class="k-link" style="color:black;background-color:transparent;">#= data[i].CompanyName #</span>
+						</li>
+					# }
+					#
+				</ul>
+			</div>
 		</script>
-        <script src="../scripts/humancapital.js"></script>
-        <script>
-            $(window).resize(function() {
-                $("#engageTermination").data("kendoChart").redraw();
-                $("#union").data("kendoChart").redraw();
-                $("#yearsofservice").data("kendoChart").redraw();
-            });
-        </script>
+		<script src="../scripts/humancapital.js"></script>
+		<script>
+			var ss = document.createElement("link");
+			
+			ss.type = "text/css";
+			ss.rel = "stylesheet";
+			ss.href = "../styles/fleet.css";
+			document.getElementsByTagName("head")[0].appendChild(ss);
+			$(window).resize(function() {
+				$("#countpercompany").data("kendoChart").redraw();
+				$("#companyData").data("kendoChart").redraw();
+				//$("#yearsofservice").data("kendoChart").redraw();
+			});
+		</script>
 	</body>
 </html>
