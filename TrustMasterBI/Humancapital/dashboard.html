@@ -5,6 +5,8 @@
 		<title></title>
 	</head>
 	<body>
+        
+        <!-- Layout Section -->
         <section data-role="layout" data-id="humancapital">
 			<header data-role="header">
 				<div data-role="navbar" id="humannavbar">
@@ -16,19 +18,75 @@
 			<!--View content will render here-->
 			<div data-role="footer">
 				<div data-role="tabstrip">
-                    <a data-icon="hc" href="#">Human Capital</a>
-					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
+                    <a data-icon="hc" href="../Common/services.html">Human Capital</a>
+					<a href="../Common/aboutus.html" data-icon="ic2">About Us</a>
 				</div>
 			</div>
 		</section>
+        <!-- Ends Here -->
         
 		<div data-role="view" data-layout="humancapital" data-before-show="cleanview" data-show="dashboardchart">
-            <div id="engageTermination"  style="height:50%"></div>
-            <div>
-                <div id="union" style="float:left;width:50%;height:500px">union</div>
-                <div id="yearsofservice" style="float:left;width:50%;height:500px">yearsofservice</div>
+            <div id="countpercompany"  style="height:50%"></div>
+            <div id="companyData">
+                <!-- <div id="union" style="float:left;width:50%;height:500px">union</div>
+                <div id="yearsofservice" style="float:left;width:50%;height:500px">yearsofservice</div> -->
+						<table width="100%" cellpadding="0" cellspacing="0"  >
+							<tr class="stat first" >
+								<td colspan="2" class="dashboard-subtitle1"> TOTAL EXPENDITURE</td>
+							</tr>
+							<tr width="100%">
+								<td width="70%" >
+									<table width="100%"  cellpadding="0" cellspacing="0" >
+										<tr >
+											<td class="dashboard-subtitle" width="50%">
+												Previous Year<span class="metric" id="lblexpnlastyearDate"></span>
+											</td>
+											<td class="dashboard-subtitle" width="50%">
+												Previous Month<span class="metric" id="lblexpnprevmonthDate" ></span>
+											</td>
+										</tr>
+										<tr  >
+											<td class="volumeMedium"  width="50%">
+												<div id="lblexplastYear"></div>
+											</td>
+											<td class="volumeMedium" width="50%">
+												<div id="lblexpnpreMonth"></div>
+											</td>
+
+										</tr>
+									</table>
+								</td>
+								<td width="30%">
+									<table width="100%"  cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="dashboard-subtitle-right">
+												Date<span class="metric_right" id="lblexpncurrDate" ></span>
+											</td>
+										</tr>
+										<tr>
+											<td class="volumeBig_right">
+												<div id="lblexpncurrentDate"> </div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+
+						</table>
             </div>
 		</div>
+        <script id="hccompanylist" type="text/x-kendo-template">
+			<ul data-role="listview" class="km-listview km-list km-listinset">
+				# for (var i = 0; i < data.length; i++) { #
+				<li>
+					<button onclick="onCompanyclick('#= data[i].href #','#= data[i].name #')" >
+						#= data[i].name #
+					</button>
+				</li>
+				# }
+				#
+			</ul>
+		</script>
         <script src="../scripts/humancapital.js"></script>
         <script>
             $(window).resize(function() {
