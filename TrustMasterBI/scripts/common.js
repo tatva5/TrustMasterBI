@@ -240,8 +240,9 @@ function showchart(e) {
 		localStorage.setItem("method", e.view.params.method);      
 	}
 	//alert(localStorage.getItem("youthcare"));
+    //alert(kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd MMM yyyy"));
 	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method")
-				   , 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "MM/dd/yyyy") + '&type=' + localStorage.getItem("type")
+				   , 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd MMM yyyy") + '&type=' + localStorage.getItem("type")
 				   , showchartcomplete)	
 }
 

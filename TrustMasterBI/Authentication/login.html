@@ -5,6 +5,22 @@
 		<title></title>
 	</head>
 	<body>
+        <!--loginHeader-->
+		<section data-role="layout" data-id="loginHeader">
+			<header data-role="header">
+				<div data-role="navbar">
+					<a data-role="backbutton" data-align="left">Back</a>
+					<span data-role="view-title"/>
+					<a  data-role="button" href="../Authentication/registration.html" data-align="right">Registration</a>
+				</div>
+			</header>
+			<div data-role="footer">
+				<div>
+					<img class="footerimg" src="../images/login_footer.png"  />
+				</div>
+			</div>
+		</section>
+        
 		<div class="loginbg" data-role="view" data-title="Login" data-layout="loginHeader" style="position: relative;" data-before-show="cleanview">
 			<div class="logo">
 				<img src="../images/logo.png" alt="" />
@@ -14,7 +30,7 @@
 					<tr>
 						<td class="pinWidth" align="right">Pin :</td>
 						<td>
-							<input id="loginpin" type="password" name="loginpin" required validationMessage="*" pattern="\d{4}" placeholder="Please enter your pin" maxlength="4"/>
+							<input id="loginpin" type="password" name="loginpin" onkeypress="loginpinkeypress()" required validationMessage="*" pattern="\d{4}" placeholder="Please enter your pin" maxlength="4"/>
 						</td>
 					</tr>
 					<tr>

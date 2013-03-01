@@ -71,7 +71,7 @@
     <Content Include="Common\modules.html" />
     <Content Include="Common\report.html" />
     <Content Include="Common\services.html" />
-    <Content Include="Common\whatsonline.html" />
+    <Content Include="Common\watsonline.html" />
     <Content Include="Fleet\dashboard.html" />
     <Content Include="Fleet\index.html" />
     <Content Include="Humancapital\dashboard.html" />
@@ -96,6 +96,8 @@
     <Content Include="kendo\styles\images\ar_right_h.png" />
     <Content Include="kendo\styles\images\back.png" />
     <Content Include="kendo\styles\images\butbg.png" />
+    <Content Include="kendo\styles\images\hc.png" />
+    <Content Include="kendo\styles\images\hc_h.png" />
     <Content Include="kendo\styles\images\ic1.png" />
     <Content Include="kendo\styles\images\ic1_h.png" />
     <Content Include="kendo\styles\images\ic2.png" />
