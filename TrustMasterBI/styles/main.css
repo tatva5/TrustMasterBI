@@ -13,3 +13,26 @@
 	display: none;
 	float: right;
 }
+
+.about_box
+{
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(198, 228, 247, 100))) !important;
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 100), rgba(198, 228, 247, 100)) !important;
+	background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 100), rgba(198, 228, 247, 100)) !important;
+	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 100), rgba(198, 228, 247, 100)) !important;
+	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(198, 228, 247, 100)) !important;
+	background-color: #c5e3f6 !important;
+    margin: auto;
+}
+.box
+{
+	background: #FFFFFF; margin: 0 auto; width: 530px; font: normal 14px Calibri, Arial, Helvetica, sans-serif; color: #999999; padding: 25px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #c5d7e2;
+	box-shadow: 3px 3px 3px #afc5d2;
+}
+.version { font-size: 28px; color: #333333; font-weight: bold; padding: 0 0 0 18px; }
+.box p { font: normal 14px Calibri, Arial, Helvetica, sans-serif; padding: 0; margin: 0; font-weight: normal; }
+.copy { color: #333; padding-left: 10px; font-size: 13px; }
