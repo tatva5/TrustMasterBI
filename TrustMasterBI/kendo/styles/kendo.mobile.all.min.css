@@ -36,6 +36,13 @@
     font-weight:bold !important;
 }
 
+#home .km-content .km-button
+{
+    padding:0px;
+    border:none !important;
+    background:none !important;
+}
+
 .km-list input[type=button], .km-list button, .km-android .km-list button
 {
 	border: none !important;
@@ -2729,7 +2736,7 @@ body:before
 	-moz-border-radius:7px;
 	-webkit-border-radius:7px*/
 }
-.km-ios li.km-state-active .km-listview-link, .km-ios li.km-state-active .km-listview-label
+.km-ios li.km-state-active .km-listview-link, .km-ios li.km-state-active .km-listview-label, #home li.km-state-active .km-button
 {
 	/*color: #fff;
 	background: #0260e8;
