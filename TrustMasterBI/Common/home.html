@@ -6,11 +6,12 @@
 		<link rel="stylesheet" href="../kendo/styles/kendo.mobile.all.min.css"/>
 		<link rel="stylesheet" href="../kendo/styles/kendo.common.css"  />
 		<link rel="stylesheet" href="../kendo/styles/kendo.default.css" />
+        <link rel="stylesheet" href="../styles/main.css" />
 	</head>
 	<body>
 		<!--Home page-->
 		<div id="home" data-role="view" data-title="trustMASTER | CI">
-			<ul class="mylist" data-role="listview" data-style="inset">
+			<ul class="mylist km-listview km-list km-listinset" data-role="listview" data-style="inset">
 				<li>
 					<a href="blog.html">
 						<img src="../images/watsonline.png" class="mylist_img" />
@@ -18,12 +19,12 @@
 					</a>
 				</li>
 				<li>
-					<a href="watsonline.html">
+					<a id="websitelink">
 						<img src="../images/bosasagroup.png"  class="mylist_img" />
 						<h3>Bosasa Group Website</h3>
-					</a>
+					</a>                   
 				</li>
-			</ul>
+            </ul>
 		</div>
 
 		<!--mainHeader-->
@@ -47,6 +48,8 @@
 		<script src="../scripts/common.js"></script>
 		<script>			
 			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "mainHeader"});
+            
+            $('#websitelink').kendoMobileButton({click: openchildbrowser});
             
 			//document.addEventListener("resume", logout, true);
 			document.addEventListener("pause", logout, true);

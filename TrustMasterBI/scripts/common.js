@@ -266,3 +266,12 @@ function showreportcomplete(result) {
 	else
 		$("#gridArea").kendoGrid(result);
 }
+
+function openchildbrowser() {
+	var ss = document.createElement("script");
+	ss.type = "text/javascript";
+	ss.charset = "utf-8";
+	ss.src = "../Plugins/Child Browser/childbrowser.js"
+    $("#home").append(ss);
+	window.plugins.childBrowser.showWebPage("http://www.bosasagroup.com");
+}

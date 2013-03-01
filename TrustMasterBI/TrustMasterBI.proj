@@ -7,7 +7,7 @@
     <ProjectName>TrustMasterBI</ProjectName>
     <IsRunnable>true</IsRunnable>
     <TemplateAppName>Cordova220</TemplateAppName>
-    <AndroidPermissions>android.permission.CAMERA;android.permission.VIBRATE;android.permission.ACCESS_COARSE_LOCATION;android.permission.ACCESS_FINE_LOCATION;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS;android.permission.READ_PHONE_STATE;android.permission.INTERNET;android.permission.RECEIVE_SMS;android.permission.RECORD_AUDIO;android.permission.MODIFY_AUDIO_SETTINGS;android.permission.READ_CONTACTS;android.permission.WRITE_CONTACTS;android.permission.WRITE_EXTERNAL_STORAGE;android.permission.ACCESS_NETWORK_STATE;android.permission.ACCOUNT_MANAGER;android.permission.GET_ACCOUNTS;android.permission.MANAGE_ACCOUNTS;android.permission.BROADCAST_STICKY</AndroidPermissions>
+    <AndroidPermissions>android.permission.CAMERA;android.permission.VIBRATE;android.permission.ACCESS_COARSE_LOCATION;android.permission.ACCESS_FINE_LOCATION;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS;android.permission.READ_PHONE_STATE;android.permission.INTERNET;android.permission.RECEIVE_SMS;android.permission.RECORD_AUDIO;android.permission.MODIFY_AUDIO_SETTINGS;android.permission.READ_CONTACTS;android.permission.WRITE_CONTACTS;android.permission.WRITE_EXTERNAL_STORAGE;android.permission.ACCESS_NETWORK_STATE</AndroidPermissions>
     <DeviceOrientations>Portrait;Landscape</DeviceOrientations>
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
@@ -71,7 +71,6 @@
     <Content Include="Common\modules.html" />
     <Content Include="Common\report.html" />
     <Content Include="Common\services.html" />
-    <Content Include="Common\watsonline.html" />
     <Content Include="Fleet\dashboard.html" />
     <Content Include="Fleet\index.html" />
     <Content Include="Humancapital\dashboard.html" />
@@ -84,6 +83,8 @@
     <Content Include="images\loginbg.png" />
     <Content Include="images\login_footer.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\logo1.png" />
+    <Content Include="images\logo2.png" />
     <Content Include="images\mainbg2.png" />
     <Content Include="images\registrationBackground.png" />
     <Content Include="images\watsonline.png" />
@@ -132,6 +133,15 @@
     </Content>
     <Content Include="Youthcentre\index.html" />
     <Content Include="Youthcentre\YouthCare.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <CordovaPluginContent Include="com.phonegap.plugins.childbrowser\childbrowser.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <CordovaPlugin Include="com.phonegap.plugins.childbrowser">
+      <Version>4.0.0</Version>
+      <Name>Child Browser</Name>
+    </CordovaPlugin>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
