@@ -5,17 +5,31 @@
 		<title></title>
 	</head>
 	<body>
-		<div data-role="view" data-title="Human Capital" data-layout="grahicalDataLayout" data-before-show="cleanview" data-show="dashboardchart">
-            <div id="engageTermination"  style="height:400px;font-size:10px;">
-              <!--  <div id="countPerCost" style="width:200px">counterPercost</div> 
-                <div id="engagement" style="float:left;width:50%;height:500px">counterPercost</div>
-                <div id="termination" style="float:left;width:50%;height:500px">counterPercost</div> -->
-            </div>
+        <section data-role="layout" data-id="humancapital">
+			<header data-role="header">
+				<div data-role="navbar" id="humannavbar">
+					<a  data-role="backbutton" data-align="left">Back</a>
+					<span data-role="view-title"/>
+                    <a data-role="button" data-click="logout" data-align="right">Logout</a>
+				</div>
+			</header>
+			<!--View content will render here-->
+			<div data-role="footer">
+				<div data-role="tabstrip">
+                    <a data-icon="hc" href="#">Human Capital</a>
+					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
+				</div>
+			</div>
+		</section>
+        
+		<div data-role="view" data-layout="humancapital" data-before-show="cleanview" data-show="dashboardchart">
+            <div id="engageTermination"  style="height:50%"></div>
             <div>
                 <div id="union" style="float:left;width:50%;height:500px">union</div>
                 <div id="yearsofservice" style="float:left;width:50%;height:500px">yearsofservice</div>
             </div>
 		</div>
+        <script src="../scripts/humancapital.js"></script>
         <script>
             $(window).resize(function() {
                 $("#engageTermination").data("kendoChart").redraw();
