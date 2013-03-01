@@ -42,6 +42,13 @@ function registerusercomplete(result) {
 		alert("Error occured while registration. Please try again");   
 }
 
+function forgotpinkeypress() {	
+	//alert(event.which);
+	//alert("Key " + String.fromCharCode(event.which) + " was pressed down");
+	if (event.which == 13)
+		forgotPin();
+}
+
 function forgotPin() {
 	//Validate control
 	if (!validateControl('forgotPinForm'))
