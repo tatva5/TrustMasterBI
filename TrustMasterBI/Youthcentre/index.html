@@ -5,6 +5,23 @@
 		<title></title>
 	</head>
 	<body>
+        <!--youthCareLayout-->
+		<section data-role="layout" data-id="youthCareLayout" >
+			<header data-role="header" id="youthcareheader">
+				<div data-role="navbar" id="module-navbar">
+					<a data-role="backbutton" data-align="left">Back</a>
+					<span data-role="view-title"/>
+					<a data-role="button" data-click="logout" data-align="right">Logout</a>
+				</div>
+			</header>
+			<footer data-role="footer" id="youthcarefooter">
+				<div data-role="tabstrip">
+					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
+					<a data-icon="ic2" href="aboutUs.html">About Us</a>
+				</div>
+			</footer>
+		</section>
+        
 		<div data-role="view" data-layout="youthCareLayout" data-show="modulelist" data-before-show="cleanview" data-title="Youth Development Centres">
 			<div id="divmodule"></div>
 		</div>

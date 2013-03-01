@@ -1,6 +1,7 @@
-function dashboardchart() {
+function dashboardchart(e) {
 	//alert("engagement");
 	//$("#countPerCost").kendoChart(result);
+	$("#humannavbar").data("kendoMobileNavBar").title(e.view.params.title);
 	callwebservice('People', 'TotalEmployeesWithEngagementsAndTermination', '', yearsofservice);
 }
 
