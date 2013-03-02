@@ -842,7 +842,9 @@
 	word-spacing: normal;
 	box-shadow: none;
 	-webkit-box-shadow: none;
-	vertical-align: bottom
+	vertical-align: bottom;
+    border-left:1px solid #afafaf !important;
+    border-right:1px solid #afafaf !important;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0)
 {
@@ -3235,7 +3237,7 @@ body:before
 }
 .km-tablet .km-ios.km-horizontal .km-tabstrip .km-button
 {
-	padding: 0 .2rem
+	/*padding: 0 .2rem*/
 }
 .km-tablet .km-ios .km-view-title, .km-tablet .km-ios .km-modalview .km-view-title
 {

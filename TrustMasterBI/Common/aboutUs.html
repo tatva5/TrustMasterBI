@@ -9,7 +9,9 @@
 		<section data-role="layout" data-id="aboutUsLayout">
 			<header data-role="header">
 				<div data-role="navbar">
+					<a data-role="backbutton" data-align="left">Back</a>
 					<span data-role="view-title"/>
+					<a data-role="button" data-click="logout" data-align="right">Logout</a>
 				</div>
 			</header>
 			<footer data-role="footer">
@@ -21,10 +23,9 @@
 		</section>
 
 		<div data-role="view" data-title="About Us" class="mainbg" data-layout="aboutUsLayout" data-before-show="cleanview">
-			<div data-role="content" class="about_box">
-				<br /><br />
-				<div class="box">
-					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<div data-role="content" class="about_box" >
+				<div class="box" id="aboutbox">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" >
 						<tr>
 							<td width="191" height="71">
 								<img src="../images/logo1.png" alt="trustMASTER | CI" />
@@ -48,6 +49,16 @@
 					</table>
 				</div>
 			</div>
+			<script>
+				$(document).ready(function() {
+					aboutusshow();
+				});
+                
+                $(window).resize(function() {                    
+                    aboutusshow();
+                });
+			</script>
+
 		</div>
 	</body>
 </html>

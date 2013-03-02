@@ -2,6 +2,11 @@ var windowWidth = $(window).width(); //retrieve current window width
 var windowHeight = $(window).height(); //retrieve current window height
 var contentheight;
 
+function aboutusshow() {    
+	var divmargin = ($(window).height() - 445) / 2;
+	$("#aboutbox").css('margin-top', divmargin);    
+}
+
 function validateControl(divname) {
 	var validator = $("#" + divname).kendoValidator().data("kendoValidator");
 	return validator.validate();
@@ -30,8 +35,13 @@ function GetQueryStringParams(sParam, url) {
 }
 
 function onInit(e) {//alert(e.view.title);
-	//e.view.title =="My custom Title";
-	e.view.footer.find(".youthdevelopment").hide();
+	//e.view.title =="My custom Title";    
+	if (localStorage.getItem("idService") == window.top.Onit1.ServiceID.YouthDevelopmentCentres)
+		e.view.footer.find("#youthdevelopment").css('display', 'block');
+	else if (localStorage.getItem("idService") == window.top.Onit1.ServiceID.Kgwerano) {        
+		e.view.footer.find("#kgwerano").css('display', 'block');
+        e.view.footer.find("#kgwerano").addClass('km-state-active');
+	}
 }
 
 function clearPopover() {
@@ -153,8 +163,10 @@ function servicelistcomplete(result) {
 }
 
 function modulelist(e) {
+	if (typeof(e.view.params.id)!=='undefined')
+		localStorage.setItem("idService", e.view.params.id);
 	//$("#module-navbar").data("kendoMobileNavBar").title(e.view.params.title);
-	callwebservice('Home', 'Modulelist', 'idService=' + e.view.params.id, modulelistcomplete);
+	callwebservice('Home', 'Modulelist', 'idService=' + localStorage.getItem("idService"), modulelistcomplete);
 }
 
 function modulelistcomplete(result) {
@@ -175,7 +187,7 @@ function graphlistcomplete(result) {
 function onmoduleclick(url, name, id, ismodule) {
 	if (ismodule) {
 		localStorage.setItem("youthcare", name);	
-		localStorage.setItem("idService", id);	
+		localStorage.setItem("idModule", id);	
 	}
 	contentheight = $(window).height() - $("#youthcareheader").height() - $("#youthcarefooter").height();
 	app.navigate(url);
@@ -208,7 +220,7 @@ function customgraphlist(e) {
 	$("#chartAreapage").css('height', contentheight - 20);
 	$("#gridAreapage").css('height', contentheight - 20);
 	
-	callwebservice('YouthCentre', 'Chartlist', 'idService=' + localStorage.getItem("idService"), customgraphlistcomplete);
+	callwebservice('YouthCentre', 'Chartlist', 'idService=' + localStorage.getItem("idModule"), customgraphlistcomplete);
 }
 
 function customgraphlistcomplete(result) {
@@ -224,11 +236,11 @@ function customgraphlistcomplete(result) {
 	localStorage.setItem("type", type); 
 	if (type != 'R') {
 		$("#scrollview").show();
-        $("#onlygrid").hide();
+		$("#onlygrid").hide();
 		showchart();      
 	}
 	else {
-        $("#scrollview").hide();
+		$("#scrollview").hide();
 		$("#onlygrid").show();
 		showGridData();
 	}
@@ -240,7 +252,7 @@ function showchart(e) {
 		localStorage.setItem("method", e.view.params.method);      
 	}
 	//alert(localStorage.getItem("youthcare"));
-    //alert(kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd MMM yyyy"));
+	//alert(kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd MMM yyyy"));
 	callwebservice(localStorage.getItem("controller"), localStorage.getItem("method")
 				   , 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd MMM yyyy") + '&type=' + localStorage.getItem("type")
 				   , showchartcomplete)	
@@ -272,6 +284,6 @@ function openchildbrowser() {
 	ss.type = "text/javascript";
 	ss.charset = "utf-8";
 	ss.src = "../Plugins/Child Browser/childbrowser.js"
-    $("#home").append(ss);
+	$("#home").append(ss);
 	window.plugins.childBrowser.showWebPage("http://www.bosasagroup.com");
 }

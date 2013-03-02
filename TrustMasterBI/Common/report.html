@@ -17,13 +17,15 @@
 			</header>
 			<footer data-role="footer" id="reportfooter">
 				<div data-role="tabstrip">
-					<a class="youthdevelopment" data-icon="ic4" href="../Youthcentre/index.html">Youth Development Centres</a>
+					<a id="youthdevelopment" style="display:none" data-icon="ic4">Youth Development Centres</a>
+                    <a id="kgwerano" style="display:none"  data-icon="ic3">Kgwerano</a>					
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
+                    <a data-icon="ic2" href="aboutUs.html">About Us</a>
 				</div>
 			</footer>
 		</section>
 
-		<div data-role="view" data-title="Graphics" data-layout="ycreportlayout" data-before-show="cleanview" data-show="customgraphlist">
+		<div data-role="view" data-title="Graphics" data-layout="ycreportlayout" data-before-show="cleanview" data-show="customgraphlist" data-init="onInit">
 			<div data-role="popover" id="popover-people" data-popup='{"height": 200, "width": 290}' class="popupContent">
 				<div data-role="view" data-title="Search">
 					<div data-role="header">
