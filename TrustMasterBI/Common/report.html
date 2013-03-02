@@ -63,21 +63,23 @@
 				</div>
 			</div>
 
-            <div id="onlygrid" align="center"class="chart-area"></div>
+			<div id="onlygrid" align="center"class="chart-area"></div>
 			<div id="splitter" data-collapse="oncollapsed" data-expand="onexpanded">
 				<div id="graph_list" class="graph-list"></div>
-				
+
 				<div id="scrollview" data-role="scrollview" data-page="0" class="chart-area" data-change="showGridData">
 					<div data-role="page" id="chartAreapage" align="center">
-						<div id="chartArea" align="center"></div>
+						<div id="chartFrame" class="chart-wrapper">
+							<div id="chartArea" class="k-chart" style="position:relative;" align="center"></div>
+						</div>
 					</div><div data-role="page" id="gridAreapage" align="center">
 						<div id="gridArea" align="center"></div>
 					</div>
 				</div>
 			</div>
 
-			<script>     
-                $("#onlygrid").hide();
+			<script>    
+				$("#onlygrid").hide();
 				$(document).ready(function() {
 					$("#ddlSelect").kendoComboBox();
 					$("#dpFrom").kendoDatePicker({value:new Date()}); 
@@ -97,19 +99,21 @@
 						],
 					});
 				});
-                
+				
 				$(window).resize(function() {
 					var contentHeight = $(window).height() - $("#reportheader").height() - $("#reportfooter").height();
-                    $("#splitter").css('height', contentHeight);
+					$("#splitter").css('height', contentHeight);
 					$("#graph_list").css('height', contentHeight);
-					
+				
 					$("#chartAreapage").css('height', contentHeight - 20);
 					$("#gridAreapage").css('height', contentHeight - 20);
-					
+				
 					var contentWidth = $(window).width() - $("#graph_list").width() - 30;
-					$("#chartAreapage").css('width', contentWidth);
+                    $("#chartFrame").css('width', contentWidth - 15);
+					$("#chartAreapage").css('width', contentWidth - 70);
+					$("#chartArea").css('width', contentWidth - 70);
+                    
 					$("#gridAreapage").css('width', contentWidth);
-					$("#chartArea").css('width', contentWidth);
 					$("#gridArea").css('width', contentWidth);
 				
 					$("#chartArea").data("kendoChart").redraw();
@@ -128,7 +132,7 @@
 						$("#dpFrom").kendoDatePicker({value:new Date(date.getFullYear(), date.getMonth(), 1)}); 
 						$("#datePickerId").show();
 					}
-				}
+				}				
 			</script>
 		</div>
 	</body>
