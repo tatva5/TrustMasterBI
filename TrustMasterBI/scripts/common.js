@@ -266,11 +266,12 @@ function showchartcomplete(result) {
 function showGridData() {
 	if ($.trim($("#gridArea").html()) == '') {
 		if (localStorage.getItem("controller") == "Youthcentre") {
-			callwebservice('Chart', 'Test2', '', showreportcomplete);
             $('.firstdiv').css('transform', 'scale(1.0) translate3d(' + (contentWidth * -1 * $("#scrollview").data("kendoMobileScrollView").page) + 'px,0px,0px)');
 			return;
 		}
-		callwebservice(localStorage.getItem("controller"), localStorage.getItem("method"), '', showreportcomplete);		
+		callwebservice(localStorage.getItem("controller"), localStorage.getItem("method")
+        , 'site=' + localStorage.getItem("youthcare") + '&date=' + kendo.toString($("#dpFrom").data("kendoDatePicker").value(), "dd MMM yyyy") + '&type=R'
+        , showreportcomplete);		
 	}
     $('.firstdiv').css('transform', 'scale(1.0) translate3d(' + (contentWidth * -1 * $("#scrollview").data("kendoMobileScrollView").page) + 'px,0px,0px)');
 }
