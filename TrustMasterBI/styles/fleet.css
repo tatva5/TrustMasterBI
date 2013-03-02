@@ -310,4 +310,15 @@ background: none;
     color: #2B8ABE;
     padding: 0;
 }
-
+.chart-wrapper {
+    position: relative;
+    
+    background: url("../images/chart-wrapper.png") no-repeat scroll 0 0 transparent;
+    margin: 15px 15px;
+    background-size: 100% 100%;
+}
+.chart-wrapper .k-chart {
+    
+    padding: 20px 30px 90px 30px;
+    
+}

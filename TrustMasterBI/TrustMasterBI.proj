@@ -75,6 +75,7 @@
     <Content Include="Fleet\index.html" />
     <Content Include="Humancapital\dashboard.html" />
     <Content Include="images\bosasagroup.png" />
+    <Content Include="images\chart-wrapper.png" />
     <Content Include="images\CISplash.gif" />
     <Content Include="images\HumanCapital.png" />
     <Content Include="images\info.png" />

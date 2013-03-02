@@ -6923,7 +6923,7 @@ body:before
 	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(226, 226, 226, 100));
 	background-color: #e2e2e2;
 }
-.leftnav ul li a { font: bold 1.0em Arial, Helvetica, sans-serif; text-decoration: none; color: #393939; display: block; background: url(images/ar_right.png) right center no-repeat; }
+.leftnav ul li a { font: bold 1.0em Arial, Helvetica, sans-serif; text-decoration: none; color: #393939; display: block; background: url(images/ar_right.png) right center no-repeat;padding-right:15px; }
 
 .leftnav ul li:hover, .leftnav ul li.active
 { 
@@ -6936,3 +6936,29 @@ body:before
     cursor:pointer;
 }
 .leftnav ul li a:hover, .leftnav ul li:hover a, .leftnav ul li.active a { color: #FFF; background: url(images/ar_right_h.png) right center no-repeat; }
+
+/******************** Dashboard of human capital *************************/
+.sub_box{ padding:13px 15px; margin:0 10px 20px 10px; text-align:center; color:#545454; font:bold 18px  Calibri, Arial, Helvetica, sans-serif; text-transform:uppercase;
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(241, 241, 241, 100)));
+	background-image:-moz-linear-gradient(top, rgba(255, 255, 255, 100), rgba(241, 241, 241, 100));
+	background-image:-ms-linear-gradient(top, rgba(255, 255, 255, 100), rgba(241, 241, 241, 100));
+	background-image:-o-linear-gradient(top, rgba(255, 255, 255, 100), rgba(241, 241, 241, 100));
+	background-image:linear-gradient(top, rgba(255, 255, 255, 100), rgba(241, 241, 241, 100));
+	background-color:#f1f1f1;
+	border-radius:6px;
+-moz-border-radius:6px;
+-webkit-border-radius:6px;
+border:1px solid #e8e8e8;
+	
+	}
+.sub_box span{ font-size:38px; display:inline-block; padding-top:5px;}
+.sub_box span.green{ color:#66a934;}
+.sub_box span.blue{ color:#4b9fd1;}
+.sub_box span.red{ color:#d46e4a;}
+.sub_box span.big_blue{ color:#1c638d; font-size:54px;}
+
+.big_box{ font-size:20px; color:#333;}
+
+
+
+

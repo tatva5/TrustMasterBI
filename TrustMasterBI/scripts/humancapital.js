@@ -20,14 +20,20 @@ function dashboardComplete(result) {
 function listbindingcomplete(result) {
 	var hccompanylist = kendo.template($("#hccompanylist").html(), {useWithBlock:false});
 	$("#companyData").html(hccompanylist(result.dataSource.data));
+    var chi=$("#companylist").children().first();
+    debugger;
+    $("#companylist").children().first().addClass('active');
     
 	var data = result.dataSource.data[0];
-	oncompanyclick(data.TotalEmployees, data.Engagements, data.Terminations, data.LeaveDays);
+	oncompanyclick(data.TotalEmployees, data.Engagements, data.Terminations, data.LeaveDays,$("#companylist").children().first());
 	//alert("dashboadrd complete");
 }
-function oncompanyclick(TotalEmployees, Engagements, Terminations, LeaveDays) {
+function oncompanyclick(TotalEmployees, Engagements, Terminations, LeaveDays,obj) {
 	//alert(name.Companyname);
 	//debugger;
+    
+    $("#companylist li").removeClass('active');
+	$(obj).addClass('active');
 	document.getElementById('employeeno').innerHTML = TotalEmployees;
 	document.getElementById('engagements').innerHTML = Engagements;
 	document.getElementById('terminations').innerHTML = Terminations;
