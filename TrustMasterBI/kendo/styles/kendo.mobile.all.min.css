@@ -9,7 +9,7 @@
 
 .graph-list
 {
-	width: 24%;
+	width: 22%;
 	float: left;
 	border-right: 1px solid gray; 
 	padding: 0;
@@ -18,7 +18,7 @@
 .chart-area
 {
 	width: 75%;
-	float: left;
+	float: right;
 	padding: 0;
 }
 
@@ -3227,8 +3227,8 @@ body:before
 .km-tablet .km-ios .km-tabstrip .km-button
 {
 	display: table-cell;
-	padding: .1rem .3rem;
-	margin: 0 1.5%
+	/*padding: .1rem .3rem;
+	margin: 0 1.5%*/
 }
 .km-tablet .km-ios6 .km-tabstrip .km-button
 {

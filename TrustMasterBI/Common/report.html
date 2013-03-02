@@ -18,9 +18,9 @@
 			<footer data-role="footer" id="reportfooter">
 				<div data-role="tabstrip">
 					<a id="youthdevelopment" style="display:none" data-icon="ic4">Youth Development Centres</a>
-                    <a id="kgwerano" style="display:none"  data-icon="ic3">Kgwerano</a>					
+					<a id="kgwerano" style="display:none"  data-icon="ic3">Kgwerano</a>
 					<a href="services.html" data-icon="ic1">Integrated Knowledge</a>
-                    <a data-icon="ic2" href="aboutUs.html">About Us</a>
+					<a data-icon="ic2" href="aboutUs.html">About Us</a>
 				</div>
 			</footer>
 		</section>
@@ -63,14 +63,15 @@
 				</div>
 			</div>
 
-			<div id="graph_list" class="graph-list" width="200px"></div>
-            <div id="onlygrid" align="center"class="chart-area"></div>
-            
-			<div id="scrollview" data-role="scrollview" data-page="0" class="chart-area" data-change="showGridData">
-				<div data-role="page" id="chartAreapage" align="center">
-					<div id="chartArea" align="center"></div>
-				</div><div data-role="page" id="gridAreapage" align="center">
-					<div id="gridArea" align="center"></div>
+			<div id="splitter" data-collapse="oncollapsed" data-expand="onexpanded">
+				<div id="graph_list" class="graph-list"></div>
+				<!--<div id="onlygrid" align="center"class="chart-area"></div>-->
+				<div id="scrollview" data-role="scrollview" data-page="0" class="chart-area" data-change="showGridData">
+					<div data-role="page" id="chartAreapage" align="center">
+						<div id="chartArea" align="center"></div>
+					</div><div data-role="page" id="gridAreapage" align="center">
+						<div id="gridArea" align="center"></div>
+					</div>
 				</div>
 			</div>
 
@@ -78,28 +79,41 @@
 				$(document).ready(function() {
 					$("#ddlSelect").kendoComboBox();
 					$("#dpFrom").kendoDatePicker({value:new Date()}); 
-					$("#dpTo").kendoDatePicker({value:new Date()});	
+					$("#dpTo").kendoDatePicker({value:new Date()});
+					$("#splitter").kendoSplitter({
+						panes : [
+							{
+								collapsible : true,
+								size : "22%",
+								scrollable: false
+							},{
+								collapsible : false,
+								size : "75%",
+								resizable: false,
+								scrollable: false
+							}
+						],
+					});
 				});
                 
 				$(window).resize(function() {
 					var contentHeight = $(window).height() - $("#reportheader").height() - $("#reportfooter").height();
+                    $("#splitter").css('height', contentHeight);
 					$("#graph_list").css('height', contentHeight);
-                    
-					var contentWidth = $(window).width() - $("#graph_list").width() - 15;
 					
+					$("#chartAreapage").css('height', contentHeight - 20);
+					$("#gridAreapage").css('height', contentHeight - 20);
+					
+					var contentWidth = $(window).width() - $("#graph_list").width() - 30;
 					$("#chartAreapage").css('width', contentWidth);
 					$("#gridAreapage").css('width', contentWidth);
 					$("#chartArea").css('width', contentWidth);
 					$("#gridArea").css('width', contentWidth);
-                    
-					$("#chartAreapage").css('height', contentHeight - 20);
-					$("#gridAreapage").css('height', contentHeight - 20);
-					
-                    
+				
 					$("#chartArea").data("kendoChart").redraw();
 					//$("#gridArea").data("kendoGrid").redraw();
 					$("#scrollview").data("kendoMobileScrollView").viewShow();
-					$('.firstdiv').css('transform', 'scale(1.0) translate3d(' + (contentWidth * -1 * $("#scrollview").data("kendoMobileScrollView").page) + 'px,0px,0px)');
+					$('.firstdiv').css('transform', 'scale(1.0) translate3d(' + (contentWidth * -1 * $("#scrollview").data("kendoMobileScrollView").page) + 'px,0px,0px)');                    
 				});
 				
 				function onChange(e) {

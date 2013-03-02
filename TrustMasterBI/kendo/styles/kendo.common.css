@@ -6,6 +6,15 @@
 * https://www.kendoui.com/purchase/license-agreement.aspx
 * If you do not own a commercial license, this file shall be governed by the trial license terms.
 */
+
+.k-collapse-prev, .k-expand-prev
+{
+    background-image:url('images/arrow.png') !important;
+    background-position: center center !important;
+    background-size:22px !important;
+    width:26px !Important;
+}
+
 :-webkit-any(body):after
 {
     content: "";
@@ -3232,7 +3241,7 @@ span.k-tooltip
 .k-splitter .k-ghost-splitbar-horizontal, .k-splitter .k-splitbar-horizontal
 {
     top: 0;
-    width: 5px;
+    width: 26px;
     border-width: 0 1px;
     background-repeat: repeat-y;
 }
