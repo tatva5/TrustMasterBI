@@ -20,8 +20,8 @@ function dashboardComplete(result) {
 function listbindingcomplete(result) {
 	var hccompanylist = kendo.template($("#hccompanylist").html(), {useWithBlock:false});
 	$("#companyData").html(hccompanylist(result.dataSource.data));
-    var chi=$("#companylist").children().first();
-    debugger;
+    //var chi=$("#companylist").children().first();
+    //debugger;
     $("#companylist").children().first().addClass('active');
     
 	var data = result.dataSource.data[0];

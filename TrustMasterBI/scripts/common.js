@@ -70,7 +70,7 @@ function closeParentPopover(e) {
 		if (!validateControl('validateDate'))
 			return;
 		var dateTo = $("#dpTo").data("kendoDatePicker").value();
-		alert(dateTo);
+		//alert(dateTo);
 	}
 	//clearPopover();
 	popover.close();
