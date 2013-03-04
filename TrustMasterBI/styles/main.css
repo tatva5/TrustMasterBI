@@ -36,3 +36,690 @@
 .version { font-size: 28px; color: #333333; font-weight: bold; padding: 0 0 0 18px; }
 .box p { font: normal 14px Calibri, Arial, Helvetica, sans-serif; padding: 0; margin: 0; font-weight: normal; }
 .copy { color: #333; padding-left: 10px; font-size: 13px; }
+
+.modulelist
+{
+	width: 43%;
+	float: left;
+	padding: 2%;
+	margin: 2% 1% 2% 2%;
+	border: 1px solid black;
+	border-radius: 15px;
+	background: white;
+	float: left;
+}
+
+.graphlist
+{
+	width: 43%;
+	float: left;
+	padding: 2%;
+	margin: 2% 2% 2% 1%;
+	border: 1px solid black;
+	border-radius: 15px;
+	background: white;
+	float: left;
+}
+
+.graph-list
+{
+	width: 22%;
+	float: left;
+	padding: 0;
+}
+
+#graph_list
+{
+	border-right: 1px solid gray; 
+}
+
+.chart-area
+{
+	width: 75%;
+	float: right;
+	padding: 0;
+}
+
+.registrationNote
+{
+	padding: 15px !important;
+	margin-top: 0px !important;
+	font-weight: bold !important;
+}
+
+.footerimg
+{
+	width: 100%;
+}
+
+.loginbg
+{
+	background: url(../images/login-bg.jpg);
+	background-size: 100% 100%;
+	width: 100% !important;
+	height: 100% !important;
+	position: relative;
+}
+
+.loginbg .km-content 
+{
+	background: none !important;
+}
+.loginbg .km-footer
+{
+	background: none;
+}
+
+[data-role="layout"]
+{
+	display: none
+}
+
+.secondbtn { display: inline-block !important; float: left; }
+.mylist_img { float: left; margin-right: 10px; height: 48px; }
+.mylist h3 { margin: 0px 20px 0 0; padding: 0; padding-right: 20px; height: 48px; display: table-cell; line-height: 100%; vertical-align: middle; font-size: 0.8em; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5); text-overflow: ellipsis }
+.mylist a { overflow: hidden !important; }
+.mylist li { padding: 0px !important; }
+.login { background: url(../images/loginbg.png) no-repeat; margin: 0 auto; height: 115px; padding: 40px 0 0 0; color: #FFF; }
+.login table { border-spacing: 13px; }
+.logo { width: 312px; margin: 0 auto; }
+.login .btn { float: left; }
+.login .fg_link { float: right; padding: 5px 0 0 0; }
+.login .fg_link a { text-decoration: none; font-size: 12px; color: #333; border: none !important; background: none !important; padding: 0px !important; margin: 0px !important; }
+.login .fg_link a:active { text-decoration: none; color: #073876  !important; border: none !important; background: none !important; padding: 0px !important; margin: 0px !important; }
+.login .fg_link a:hover { text-decoration: underline; }
+.inputbtn
+{
+	float: left;
+	border: 1px solid #828587 !important; ; background: #c1c2c4 url(../kendo/styles/images/butbg.png) top repeat-x !important;
+	cursor: pointer !important; height: 30px !important; overflow: visible !important;
+	font: bold 13px Arial, Helvetica, sans-serif !important; margin: 0 !important; padding: 0 20px 0px 20px !important;
+	line-height: 28px !important; color: #FFF !important;
+	border-radius: 6px !important;
+	-moz-border-radius: 6px !important;
+	-webkit-border-radius: 6px !important;
+}
+
+.km-tablet .km-ios .inputbtn:active, .km-ios .inputbtn:active, .inputbtn:active
+{
+	border: 1px solid #de8f32  !important; ; background: url(../kendo/styles/images/login_hoverbg.png) top repeat-x !important;
+}
+
+.login input[type=text]
+{
+	font: normal 13px Arial; color: #666;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #a3a9b0;
+	padding: 5px; margin: 0; width: 272px;
+}
+
+.km-tablet .km-ios .services_list { margin: 0 auto; padding: 30px 0 0 0; }
+.km-tablet .km-ios .services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 230px; height: 250px; margin: 0 10px; text-align: center; }
+.km-tablet .km-ios .services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; width: 141px; height: 170px; }
+.km-tablet .km-ios .services_list ul li a { color: #2c4564 !important; font-size: 20px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
+.km-tablet .km-ios .services_list ul li a:active { color: #f45a1d !important; }
+        
+.km-ios .services_list { margin: 0 auto; padding: 20px 0 0 0; }
+.km-ios .services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 100px; height: 110px; margin: 0 3px; text-align: center; }
+.km-ios .services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; width: 63px; height: 77px; }
+.km-ios .services_list ul li a { color: #2c4564 !important; font-size: 10px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
+.km-ios .services_list ul li a:active { color: #f45a1d !important; }
+
+.services_list { margin: 0px auto !important; padding: 30px 0 0 0; }
+.services_list ul { margin: 0px auto !important; padding: 0; list-style: none; width: 750px; }
+.services_list ul li { margin: 0; padding: 0; list-style-type: none; float: left; display: block; width: 230px; height: 250px; margin: 0 10px; text-align: center; }
+.services_list ul li img { display: inline-block !important; padding: 0 !important; margin: 0 !important; }
+.services_list ul li a { color: #2c4564 !important; font-size: 20px !important; line-height: 115% !important; font-weight: bold !important; text-decoration: none !important; }
+.services_list ul li a:active { color: #f45a1d !important; }
+.services_list ul li .km-button { margin: 0 !important; padding: 0 !important; border: none !important; background: none !important; }
+
+.mainbg { background: #f1f1f1; }
+.blog_box
+{
+	background: #FFF !important; margin: 15px; border: 1px solid #d6d6d6;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+}
+.blog_box h1
+{
+	margin: 0; padding: 8px 10px; font-size: 12px; color: #2d2f32;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(241, 241, 241, 100)), color-stop(1, rgba(182, 182, 182, 100)));
+	background-image: -moz-linear-gradient(top, rgba(241, 241, 241, 100), rgba(182, 182, 182, 100));
+	background-image: -ms-linear-gradient(top, rgba(241, 241, 241, 100), rgba(182, 182, 182, 100));
+	background-image: -o-linear-gradient(top, rgba(241, 241, 241, 100), rgba(182, 182, 182, 100));
+	background-image: linear-gradient(top, rgba(241, 241, 241, 100), rgba(182, 182, 182, 100));
+	background-color: #cfcfcf;
+	border-radius: 6px 6px 0px 0px;
+	-moz-border-radius: 6px 6px 0px 0px;
+	-webkit-border-radius: 6px 6px 0px 0px;
+}
+
+.con_area { padding: 15px; font-weight: normal; color: #333; }
+.con_area h3 { color: #1e4072; font-size: 18px; padding: 0 0 10px 0; margin: 0; }
+.con_area h3 span { font-weight: normal; font-size: 16px; }
+.con_area p { padding: 0 0 25px 0; margin: 0; }
+
+/******************** Icon Style **************************/
+/*.km-tabstrip .km-button{ border-left:1px solid #afafaf !important;}*/
+
+
+.km-ic1:after, .km-ic1:before
+{
+	content: "";
+	background: url(../kendo/styles/images/ic1.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; 
+}
+.km-state-active .km-ic1:after, .km-state-active .km-ic1:before
+{
+	content: "";
+	background: url(../kendo/styles/images/ic1_h.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important;
+}
+
+.km-ic2:after, .km-ic2:before
+{
+	content: "";
+	background: url(../kendo/styles/images/ic2.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; 
+}
+.km-state-active .km-ic2:after, .km-state-active .km-ic2:before
+{
+	content: "";
+	background: url(../kendo/styles/images/ic2_h.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important;
+}
+
+.km-ic3:after, .km-ic3:before
+{
+	content: "";
+	background: url(../kendo/styles/images/ic3.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; width: 40px !important; 
+}
+.km-state-active .km-ic3:after, .km-state-active .km-ic3:before
+{
+	content: "";
+	background: url(../kendo/styles/images/ic3_h.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; width: 40px !important;
+}
+
+.km-ic4:after, .km-ic4:before
+{
+	content: "";
+	background: url(../kendo/styles/images/ic4.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; width: 40px !important; 
+}
+.km-state-active .km-ic4:after, .km-state-active .km-ic4:before
+{
+	content: "";
+	background: url(../kendo/styles/images/ic4_h.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; width: 40px !important;
+}
+
+.km-hc:after, .km-hc:before
+{
+	content: "";
+	background: url(../kendo/styles/images/hc.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; width: 40px !important; 
+}
+.km-state-active .km-hc:after, .km-state-active .km-hc:before
+{
+	content: "";
+	background: url(../kendo/styles/images/hc_h.png) no-repeat !important;
+	margin: 0 !important; padding: 0 !important; width: 40px !important;
+}
+
+/*** style for textbox **/
+.km-tablet .km-ios .textboxStyle input[type=text], .km-tablet .textboxStyle input[type=password]
+{
+	font: normal 13px Arial; color: #666;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #a3a9b0;
+	padding: 5px; margin: 0; width: 272px;
+}
+
+.textboxStyle input[type=text], .textboxStyle input[type=password]
+{
+	font: normal 10px Arial !important; color: #666;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #a3a9b0;
+	padding: 2px; margin: 0; width: 165px; height: 15px;
+}
+
+.km-tablet .km-ios .textboxStyle input[type=text], .km-tablet .km-ios .textboxStyle input[type=password]
+{
+	font-size: 1.2em !important;
+	height: 21px !important;
+}
+
+.textboxStyle
+{
+	text-align: center; margin: 0px auto; margin-top: 15px;
+}
+
+.textboxStyle h3
+{
+	font-weight: bold;
+	font-size: 12px;
+	margin-bottom: 0px;
+}
+
+.km-tablet .km-ios .textboxStyle h3
+{
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.scatterbg .km-content 
+{
+	background-image: url(../images/registrationBackground.png) !important;
+	background-size: 641px 311px;
+}
+
+.km-tablet .km-ios .scatterbg .km-content 
+{
+	background-image: url(../images/registrationBackground.png) !important;
+	background-size: 100% 100%;
+	background-repeat: repeat;
+}
+
+.km-ios .scatterbg .km-content 
+{
+	background-image: url(../images/registrationBackground.png) !important;
+	background-size: 50% 50%;
+}
+
+.popupContent
+{
+	padding: 0px;
+}
+
+.popupContent .km-content
+{
+	background: white !important;
+}
+
+/**custom style for pages**/
+.lblStyle
+{
+	font-weight: bold;
+	text-align: right;
+}
+
+.linkStyle
+{
+	border: none; background: none; padding: 0px; margin: 0px;
+}
+
+.aboutUsStyle
+{
+	text-align: center; margin: 20px;
+}
+
+.form
+{
+	margin: 0px auto;
+}
+
+.form td
+{
+	text-align: right;
+}
+
+.form .button
+{
+	text-align: left;
+}
+
+.registrationresult
+{
+	text-align: left;
+	padding: 10px; 
+}
+
+.response
+{
+	font-weight: bold;
+	text-align: left;
+	padding: 10px; 
+}
+
+.chartArea .km-content
+{
+	background-color: White !important;
+}
+
+/******************** Left Navigation *************************/
+/*.leftnav { width: 190px; background: #f9f9f9; border-right: 1px solid #d6d6d6; float: left; min-height: 400px; }*/
+.leftnav ul { list-style: none; padding: 0; margin: 0; }
+.leftnav ul li
+{
+	list-style-type: none; padding: 7px 8px; margin: 0; border-bottom: 1px solid #d6d6d6;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(226, 226, 226, 100)));
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 100), rgba(226, 226, 226, 100));
+	background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 100), rgba(226, 226, 226, 100));
+	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 100), rgba(226, 226, 226, 100));
+	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(226, 226, 226, 100));
+	background-color: #e2e2e2;
+}
+.leftnav ul li a { font: bold 1.0em Arial, Helvetica, sans-serif; text-decoration: none; color: #393939; display: block; background: url(../kendo/styles/images/ar_right.png) right center no-repeat; padding-right: 15px; }
+
+.leftnav ul li:hover, .leftnav ul li.active
+{ 
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(113, 146, 186, 100)), color-stop(1, rgba(83, 116, 157, 100)));
+	background-image: -moz-linear-gradient(top, rgba(113, 146, 186, 100), rgba(83, 116, 157, 100));
+	background-image: -ms-linear-gradient(top, rgba(113, 146, 186, 100), rgba(83, 116, 157, 100));
+	background-image: -o-linear-gradient(top, rgba(113, 146, 186, 100), rgba(83, 116, 157, 100));
+	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(83, 116, 157, 100));
+	background-color: #53749d;
+	cursor: pointer;
+}
+.leftnav ul li a:hover, .leftnav ul li:hover a, .leftnav ul li.active a { color: #FFF; background: url(../kendo/styles/images/ar_right_h.png) right center no-repeat; }
+
+/******************** Dashboard of human capital *************************/
+.sub_box
+{
+	padding: 13px 15px; margin: 0 10px 20px 10px; text-align: center; color: #545454; font: bold 18px  Calibri, Arial, Helvetica, sans-serif; text-transform: uppercase;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(241, 241, 241, 100)));
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 100), rgba(241, 241, 241, 100));
+	background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 100), rgba(241, 241, 241, 100));
+	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 100), rgba(241, 241, 241, 100));
+	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(241, 241, 241, 100));
+	background-color: #f1f1f1;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #e8e8e8;
+}
+.sub_box span { font-size: 38px; display: inline-block; padding-top: 5px; }
+.sub_box span.green { color: #66a934; }
+.sub_box span.blue { color: #4b9fd1; }
+.sub_box span.red { color: #d46e4a; }
+.sub_box span.big_blue { color: #1c638d; font-size: 54px; }
+
+.big_box { font-size: 20px; color: #333; }
+
+.graph-list .km-listview li
+{
+	padding: 10px;
+	border: 1px solid gray;
+	cursor: pointer;
+}
+
+#home .km-content .km-button
+{
+	padding: 0px;
+	border: none !important;
+	background: none !important;
+}
+
+.km-list input[type=button], .km-list button, .km-android .km-list button
+{
+	border: none !important;
+	width: 100%;
+	text-align: left;
+	background: inherit;
+	color: White;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: .5em .7em;
+	margin: 0px;
+	border-radius: inherit;
+}
+.km-list input[type=button]:active, .km-list button:active, .km-android .km-list button:active
+{
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, rgba(255, 255, 255, 100)), color-stop(1, rgba(114, 147, 186, 100))) !important;
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
+	background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
+	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
+	background-image: linear-gradient(top, rgba(255, 255, 255, 100), rgba(114, 147, 186, 100)) !important;
+	color: #26313e;
+	border: .1px solid white !important;
+	border-radius: 2px 2px 0px 4px;
+	/*background-color: #d68421 !important;*/
+}
+::-webkit-input-placeholder
+{
+	color: LightGray;
+}
+
+.km-tablet .km-ios .logo img
+{
+	width: 100%;
+	margin: 18% 0% 0% 36%;
+}
+
+.km-ios .logo img
+{
+	width: 55%;
+	margin: 10% 0% 0% 30%;
+}
+
+.km-tablet .km-android .logo img
+{
+	width: 70%;
+	margin: 18% 0% 0% 36%;
+}
+
+.km-android .logo img
+{
+	width: 40%;
+	margin: 18% 0% 0% 36%;
+}
+
+.km-tablet .km-ios .textboxStyle .logo img
+{
+	width: 100%;
+	margin: 0px auto;
+}
+
+.km-ios .textboxStyle .logo img
+{
+	width: 55%;
+	margin: 0px auto;
+}
+
+.km-tablet .km-android .textboxStyle .logo img
+{
+	width: 70%;
+	margin: 0px auto;
+}
+
+.km-android .textboxStyle .logo img
+{
+	width: 40%;
+	margin: 0px auto;
+}
+
+.km-tablet .km-ios .login
+{
+	background-size: 100%;
+	width: 387px;
+	font-size: 100%;
+	margin: 2% 0% 0% 41%;
+	padding: 40px 0 0 0;
+}
+.km-tablet .km-ios .login table { border-spacing: 13px; }
+.km-tablet .km-ios .pinWidth { width: 50px; }
+
+.km-tablet .km-ios .mylist_img { float: left; height: 87px; width: 248px; margin-right: 20px; }
+.km-tablet .km-ios .mylist h3 { margin: 31px 40px 0 0; padding: 17px 0 0 0; font-size: 20px; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5); }
+
+.km-tablet .km-ios .login input[type=text], .km-tablet .km-ios .login input[type=password]
+{
+	font: normal 13px Arial; color: #666;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #a3a9b0;
+	padding: 5px; margin: 0; width: 272px;
+}
+
+.km-tablet .km-ios .inputbtn
+{
+	background: #c1c2c4 url(../kendo/styles/images/butbg.png) top repeat-x !important;
+	cursor: pointer !important; height: 30px !important; overflow: visible !important;
+	font: bold 13px Arial, Helvetica, sans-serif !important; margin: 0 !important; padding: 0 20px 0px 20px !important;
+	line-height: 28px !important; color: #FFF !important;
+	border-radius: 6px !important;
+	-moz-border-radius: 6px !important;
+	-webkit-border-radius: 6px !important;
+}
+
+.km-tablet .km-ios .login .fg_link { float: right; padding: 5px 0 0 0; }
+.km-tablet .km-ios .login .fg_link a { text-decoration: none; font-size: 12px; color: #333; }
+.km-tablet .km-ios .login .fg_link a:hover { text-decoration: underline; }
+
+.km-ios .inputbtn
+{
+	background: #c1c2c4 url(../kendo/styles/images/butbg.png) top repeat-x !important;
+	cursor: pointer !important; height: 20px !important; overflow: visible !important;
+	font: bold 10px Arial, Helvetica, sans-serif !important; margin: 0 !important; padding: 0 15px 0px 15px !important;
+	line-height: 18px !important; color: #FFF !important;
+	border-radius: 6px !important;
+	-moz-border-radius: 6px !important;
+	-webkit-border-radius: 6px !important;
+}
+
+.km-ios .login
+{
+	background-size: 233px; 
+	font-size: 70%;
+	margin: 2% 0% 0% 20%;
+	padding: 25px 0 0 0;
+}
+
+.km-ios .login table { border-spacing: 6px; }
+.km-ios .pinWidth { width: 35px; }
+
+.km-ios .login input[type=text], .km-ios .login input[type=password]
+{
+	font: normal 8px Arial; color: #666;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #a3a9b0;
+	padding: 2px; margin: 0; width: 165px;
+}
+
+.km-ios .login .fg_link { float: right; padding: 4px 0 0 0; }
+.km-ios .login .fg_link a { text-decoration: none; font-size: 9px; color: #333; }
+.km-ios .login .fg_link a:hover { text-decoration: underline; }
+
+.km-tablet .km-android .login
+{
+	background-size: 80%;
+	font-size: 80%;
+	margin: 2% 0% 0% 41%;
+	padding: 32px 0 0 0;
+}
+.km-tablet .km-android .login table { border-spacing: 10px; }
+.km-tablet .km-android .pinWidth { width: 40px; }
+
+.km-tablet .km-android .login input[type=text]
+{
+	font: normal 10px Arial; color: #666;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #a3a9b0;
+	padding: 5px; margin: 0; width: 215px;
+}
+
+.km-tablet .km-android .inputbtn
+{
+	border: none !important; background: #c1c2c4 url(../kendo/styles/images/butbg.png) top repeat-x !important;
+	cursor: pointer !important; height: 24px !important; overflow: visible !important;
+	font: bold 10px Arial, Helvetica, sans-serif !important; margin: 0 !important; padding: 0 20px 0px 20px !important;
+	line-height: 22px !important; color: #FFF !important;
+	border-radius: 6px !important;
+	-moz-border-radius: 6px !important;
+	-webkit-border-radius: 6px !important;
+}
+
+.km-tablet .km-android .login .fg_link { float: right; padding: 4px 0 0 0; }
+.km-tablet .km-android .login .fg_link a { text-decoration: none; font-size: 9px; color: #333; }
+.km-tablet .km-android .login .fg_link a:hover { text-decoration: underline; }
+
+.km-android .inputbtn
+{
+	border: none !important; background: #c1c2c4 url(../kendo/styles/images/butbg.png) top repeat-x !important;
+	cursor: pointer !important; height: 20px !important; overflow: visible !important;
+	font: bold 10px Arial, Helvetica, sans-serif !important; margin: 0 !important; padding: 0 15px 0px 15px !important;
+	line-height: 18px !important; color: #FFF !important;
+	border-radius: 6px !important;
+	-moz-border-radius: 6px !important;
+	-webkit-border-radius: 6px !important;
+}
+
+.km-android .login
+{
+	background-size: 60%;
+	font-size: 70%;
+	margin: 2% 0% 0% 20%;
+	padding: 25px 0 0 0;
+}
+
+.km-android .login table { border-spacing: 6px; }
+.km-android .pinWidth { width: 35px; }
+
+.km-android .login input[type=text]
+{
+	font: normal 8px Arial; color: #666;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #a3a9b0;
+	padding: 2px; margin: 0; width: 165px;
+}
+
+.km-android .login .fg_link { float: right; padding: 4px 0 0 0; }
+.km-android .login .fg_link a { text-decoration: none; font-size: 9px; color: #333; }
+.km-android .login .fg_link a:hover { text-decoration: underline; }
+
+.km-tablet .km-ios .servicesListFirst
+{
+	float: left; height: 200; width: 200; border: none !important; background: none !important; padding: 0px; margin: 60px 35px 20px 70px;
+}
+
+.km-tablet .km-ios .servicesList
+{
+	float: left; height: 200; width: 200; border: none; background: none; padding: 0px; margin: 60px 35px 20px 35px;
+}
+ 
+.km-ios .servicesList, .km-ios .servicesListFirst
+{
+	float: left; height: 200; width: 200; border: none !important; background: none !important; padding: 0px; margin: 20px 35px 0px 70px;
+}
+
+.km-tablet .km-android .login background-image
+{
+	width: 70%;
+	margin: 9% 0% 0% 50%;
+}
+
+.km-android .login background-image
+{
+	width: 40%;
+	margin: 9% 0% 0% 50%;
+}
+
+.km-ios #popover .km-view-title,
+.km-ios #popover-people .km-view-title
+{
+	color: #fff;
+	text-shadow: 0 -1px rgba(0, 0, 0, .5);
+}
+
+.km-ios #popover .km-navbar,
+.km-root > * > #popover > .km-content
+{
+	background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0.35)), color-stop(0.5, rgba(255, 255, 255, 0.1)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0))) #000;
+}
+
