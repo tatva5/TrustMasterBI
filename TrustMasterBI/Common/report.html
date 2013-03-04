@@ -119,7 +119,10 @@
 					$("#chartArea").data("kendoChart").redraw();
 					//$("#gridArea").data("kendoGrid").redraw();
 					$("#scrollview").data("kendoMobileScrollView").viewShow();
-					$('.firstdiv').css('transform', 'scale(1.0) translate3d(' + (contentWidth * -1 * $("#scrollview").data("kendoMobileScrollView").page) + 'px,0px,0px)');                    
+					$('.firstdiv').css('transform', 'scale(1.0) translate3d(' + (contentWidth * -1 * $("#scrollview").data("kendoMobileScrollView").page) + 'px,0px,0px)');
+                    
+                    var popover= $('div[data-role=popover]').data('kendoMobilePopOver');                       
+                    popover.close();
 				});
 				
 				function onChange(e) {
