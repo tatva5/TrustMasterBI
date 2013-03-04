@@ -34,7 +34,7 @@ function registeruser() {
 
 function registerusercomplete(result) {
 	if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
-		alert("Registration successfully!");
+		//alert("Registration successfully!");
 		$("#registationForm").hide();
 		$("#result").show();
 	}
@@ -59,12 +59,12 @@ function forgotPin() {
 
 function forgotPincomplete(result) {
 	if (result.resultCode == window.top.Onit1.ResultCode.Success) { // login successful
-		alert("Your pin sent successfully!");
+		//alert("Your pin sent successfully!");
 		$("#forgotPinForm").hide();
 		$("#Response").show();
 	}
-	else 
-		alert(result.message);   
+	/*else 
+		alert(result.message);*/   
 }
 
 function reset(e) {
