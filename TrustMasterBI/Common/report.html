@@ -63,17 +63,20 @@
 				</div>
 			</div>
 
-			<div id="onlygrid" align="center"class="chart-area"></div>
 			<div id="splitter" data-collapse="oncollapsed" data-expand="onexpanded">
-				<div id="graph_list" class="graph-list"></div>
-
-				<div id="scrollview" data-role="scrollview" data-page="0" class="chart-area" data-change="showGridData">
-					<div data-role="page" id="chartAreapage" align="center">
-						<div id="chartFrame" class="chart-wrapper">
-							<div id="chartArea" class="k-chart" style="position:relative;" align="center"></div>
+				<div class="graph-list">
+					<div id="graph_list"></div>
+				</div>
+				<div class="chart-area">
+					<div id="onlygrid" align="center"></div>
+					<div id="scrollview" data-role="scrollview" data-page="0" data-change="showGridData">
+						<div data-role="page" id="chartAreapage" align="center">
+							<div id="chartFrame" class="chart-wrapper">
+								<div id="chartArea" class="k-chart" style="position:relative;" align="center"></div>
+							</div>
+						</div><div data-role="page" id="gridAreapage" align="center">
+							<div id="gridArea" align="center"></div>
 						</div>
-					</div><div data-role="page" id="gridAreapage" align="center">
-						<div id="gridArea" align="center"></div>
 					</div>
 				</div>
 			</div>
@@ -88,11 +91,10 @@
 						panes : [
 							{
 								collapsible : true,
-								size : "22%",
+								size:"22%",
 								scrollable: false
 							},{
 								collapsible : false,
-								size : "75%",
 								resizable: false,
 								scrollable: false
 							}
@@ -102,14 +104,20 @@
 				
 				$(window).resize(function() {
 					var contentHeight = $(window).height() - $("#reportheader").height() - $("#reportfooter").height();
+     /*               alert(contentHeight);
 					$("#splitter").css('height', contentHeight);
+                    $('.graph-list').css('height', contentHeight);*/        
+                     $('.graph-list').css('height', contentHeight)
 					$("#graph_list").css('height', contentHeight);
-				
+				    $('.k-splitbar-horizontal').css('height', contentHeight);
+                    $('.k-splitbar-horizontal').css('margin', '0');
+                    $('.k-splitbar-horizontal').css('padding ', '0');                   
+                    
 					$("#chartAreapage").css('height', contentHeight - 20);
 					$("#gridAreapage").css('height', contentHeight - 20);
 				
 					var contentWidth = $(window).width() - $("#graph_list").width() - 30;
-                    $("#chartFrame").css('width', contentWidth - 15);
+					$("#chartFrame").css('width', contentWidth - 15);
 					$("#chartAreapage").css('width', contentWidth - 70);
 					$("#chartArea").css('width', contentWidth - 70);
                     
@@ -121,8 +129,8 @@
 					$("#scrollview").data("kendoMobileScrollView").viewShow();
 					$('.firstdiv').css('transform', 'scale(1.0) translate3d(' + (contentWidth * -1 * $("#scrollview").data("kendoMobileScrollView").page) + 'px,0px,0px)');
                     
-                    var popover= $('div[data-role=popover]').data('kendoMobilePopOver');                       
-                    popover.close();
+					var popover = $('div[data-role=popover]').data('kendoMobilePopOver');                       
+					popover.close();
 				});
 				
 				function onChange(e) {

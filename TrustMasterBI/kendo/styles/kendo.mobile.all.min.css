@@ -11,8 +11,12 @@
 {
 	width: 22%;
 	float: left;
-	border-right: 1px solid gray; 
 	padding: 0;
+}
+
+#graph_list
+{
+    border-right: 1px solid gray; 
 }
 
 .chart-area
