@@ -3234,7 +3234,7 @@ span.k-tooltip
 .k-ghost-splitbar, .k-splitbar
 {
     position: absolute;
-    border-style: solid;
+    /*border-style: solid;*/
     font-size: 0;
     outline: 0;
 }

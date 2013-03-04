@@ -181,8 +181,8 @@ input.k-textbox, textarea.k-textbox, input.k-textbox:hover, textarea.k-textbox:h
 }
 .k-state-focused, .k-grouping-row .k-state-focused
 {
-	background-color: #a99f9a;
-	border-color: #a99f9a;
+	/*background-color: #a99f9a;
+	border-color: #a99f9a;*/
 	color: #2e2e2e;
 }
 .k-state-selected, .k-link.k-state-selected, .k-list > .k-state-selected, .k-list > .k-state-focused, .k-list > .k-state-highlight, .k-panel > .k-state-selected, .k-button:active, .k-ghost-splitbar-vertical, .k-ghost-splitbar-horizontal, .k-draghandle.k-state-selected:hover
@@ -306,7 +306,7 @@ input.k-textbox, textarea.k-textbox, input.k-textbox:hover, textarea.k-textbox:h
 }
 .k-splitbar
 {
-	background-color: #e3e3e3;
+	/*background-color: #e3e3e3;*/
 }
 .k-restricted-size-vertical, .k-restricted-size-horizontal
 {

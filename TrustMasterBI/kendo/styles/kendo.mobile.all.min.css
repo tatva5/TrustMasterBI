@@ -3210,7 +3210,7 @@ body:before
 }
 .km-tablet .km-ios.km-horizontal .km-tabstrip
 {
-	padding: .2rem 0 0
+	/*padding: .2rem 0 0*/
 }
 .km-tablet .km-pane.km-ios6 .km-tabstrip
 {
